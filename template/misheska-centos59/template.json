@@ -1,12 +1,12 @@
 {
   "builders": [
     {
-      "vm_name": "misheska-centos64",
+      "vm_name": "misheska-centos59",
       "type": "vmware",
       "guest_os_type": "centos-64",
       "http_directory": "http",
-      "iso_url": "http://mirrors.kernel.org/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-bin-DVD1.iso",
-      "iso_md5": "0128cfc7c86072b13ee80dd013e0e5d7",
+      "iso_url": "http://mirror.stanford.edu/yum/pub/centos/5.9/isos/x86_64/CentOS-5.9-x86_64-bin-DVD-1of2.iso",
+      "iso_md5": "bb795391846e76a7071893cbdf6163c3",
       "ssh_username": "packer",
       "ssh_password": "packer",
       "tools_upload_flavor": "linux",
@@ -14,7 +14,7 @@
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
       ],
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo 'packer'|sudo -S shutdown -P now",
+      "shutdown_command": "echo 'packer'|sudo -S /sbin/shutdown -h now",
       "disk_size": 10140,
       "vmx_data": {
         "memsize": "512",
@@ -23,19 +23,19 @@
       }
     },
     {
-      "vm_name": "misheska-centos64",
+      "vm_name": "misheska-centos59",
       "type": "virtualbox",
       "guest_os_type": "RedHat_64",
       "http_directory": "http",
-      "iso_url": "http://mirrors.kernel.org/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-bin-DVD1.iso",
-      "iso_md5": "0128cfc7c86072b13ee80dd013e0e5d7",
+      "iso_url": "http://mirror.stanford.edu/yum/pub/centos/5.9/isos/x86_64/CentOS-5.9-x86_64-bin-DVD-1of2.iso",
+      "iso_md5": "bb795391846e76a7071893cbdf6163c3",
       "ssh_username": "packer",
       "ssh_password": "packer",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
       ],
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo 'packer'|sudo -S shutdown -P now",
+      "shutdown_command": "echo 'packer'|sudo -S /sbin/shutdown -h now",
       "disk_size": 10140,
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "512"],
@@ -64,6 +64,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/misheska-centos64.box"
+    "output": "../../{{.Provider}}/misheska-centos59.box"
   }]
 }
