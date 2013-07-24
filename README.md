@@ -27,7 +27,8 @@ Getting Started
 ===============
 
 A GNU Make makefile is provided to support automated builds.  It assumes
-that both GNU Make and Packer are in the PATH.
+that both GNU Make and Packer are in the PATH.  Download and install
+Packer from <http://www.packer.io/downloads.html>  
 
 To build a VirtualBox box:
 
