@@ -1,27 +1,27 @@
 basebox
 =======
 
-Packer definitions for vagrant VirtualBox and VMware Fusion baseboxes. 
+Packer definitions for vagrant VirtualBox and VMware baseboxes. 
 These are the vagrant baseboxes I use for my own personal projents. 
 This project is run against a private Jenkins instance, and as template
 definitions are added and/or updated, links to the generated images are
 added below:
 
-Current VMware Fusion Baseboxes
-===============================
+Current VMware Baseboxes
+========================
 
-* [misheska-centos-6.4](https://www.dropbox.com/s/z939ia4kurfuw6h/misheska-centos-6.4.box) - CentOS 6.4 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
-* [misheska-centos-5.9](https://www.dropbox.com/s/j9y298amevw7sfh/misheska-centos-5.9.box) - CentOS 5.9 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
-* [misheska-ubuntu-12.04](https://www.dropbox.com/s/z2pa3qvrgyl77k1/misheska-ubuntu-12.04.box) - Ubuntu 12.04.2 server 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
-* [misheska-ubuntu-10.04](https://www.dropbox.com/s/1rl14o3u3b8y5ea/misheska-ubuntu-10.04.box) - Ubuntu 10.04.4 server 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
+* [misheska-centos64](https://www.dropbox.com/s/78amja9zgzsxfcm/misheska-centos64.box) - CentOS 6.4 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
+* [misheska-centos59](https://www.dropbox.com/s/26w92xn6dcwu1zv/misheska-centos59.box) - CentOS 5.9 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
+* [misheska-ubuntu1204](/Users/misheska/Dropbox/basebox-packer/vmware/misheska-ubuntu1204.box) - Ubuntu 12.04.2 server 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
+* [misheska-ubuntu1004](https://www.dropbox.com/s/gaa8frli5g6e2tr/misheska-ubuntu1004.box) - Ubuntu 10.04.4 server 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
 
 Current VirtualBox Baseboxes
 ============================
 
-* [misheska-centos-6.4](https://www.dropbox.com/s/y42egyh9cqsge24/misheska-centos-6.4.box) - CentOS 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-* [misheska-centos-5.9](https://www.dropbox.com/s/5wpk5mhy3ovs0av/misheska-centos-5.9.box) - CentOS 5.9 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-* [misheska-ubuntu-12.04](https://www.dropbox.com/s/dauh3gn69dp1bfq/misheska-ubuntu-10.04.box) - Ubuntu 12.04.2 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-* [misheska-ubuntu-10.04](https://www.dropbox.com/s/m47nubjupedduvh/misheska-ubuntu-12.04.box) - Ubuntu 10.04.4 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
+* [misheska-centos64](https://www.dropbox.com/s/y733o4ifkowc1w0/misheska-centos64.box) - CentOS 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
+* [misheska-centos59](https://www.dropbox.com/s/to898rawsb5klz1/misheska-centos59.box) - CentOS 5.9 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
+* [misheska-ubuntu1204](https://www.dropbox.com/s/yfojlwxq66im9hk/misheska-ubuntu1204.box) - Ubuntu 12.04.2 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
+* [misheska-ubuntu1004](https://www.dropbox.com/s/i8g9udzui3fm6yf/misheska-ubuntu1004.box) - Ubuntu 10.04.4 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 
 Getting Started
 ===============
