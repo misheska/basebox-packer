@@ -28,7 +28,10 @@ cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add r
 
 net start sshd
 
-# Fix corrupt recycle bin
-# http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
+REM Put local users home directories in the Windows Profiles directory
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l -p "$(cygpath $(cygpath -dH))" > /etc/passwd'
+
+REM Fix corrupt recycle bin
+REM http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
 cmd /c rd /s /q c:\$Recycle.bin
 

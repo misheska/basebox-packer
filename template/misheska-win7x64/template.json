@@ -4,13 +4,14 @@
       "vm_name": "misheska-win7x64",
       "type": "vmware",
       "guest_os_type": "windows7-64",
-      "iso_url": "file:///Users/misheska/Desktop/en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
+      "iso_url": "file:///Users/misheska/git/basebox-packer/iso/en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
       "iso_checksum": "6467c3875955df4514395f0afcaaa62a",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "floppy_files": ["floppy/Autounattend.xml", "floppy/install-cygwin-sshd.bat"],
+      "floppy_files": ["floppy/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat"],
       "tools_upload_flavor": "windows",
+      "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "disk_size": 40960,
@@ -25,14 +26,15 @@
       "type": "virtualbox",
       "guest_os_type": "Windows7_64",
       "http_directory": "http",
-      "iso_url": "file:///Users/misheska/Desktop/en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
+      "iso_url": "file:///Users/misheska/git/basebox-packer/iso/en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
       "iso_checksum": "6467c3875955df4514395f0afcaaa62a",
       "iso_checksum_type": "md5",
+      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
       "disk_size": 40000,
-      "floppy_files": ["floppy/Autounattend.xml", "floppy/install-cygwin-sshd.bat", "floppy/oracle-cert.cer"],
+      "floppy_files": ["floppy/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat", "floppy/oracle-cert.cer"],
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "768"],
@@ -43,6 +45,7 @@
   "provisioners": [{
     "type": "shell",
     "scripts": [
+      "script/change-home-dirs.sh",
       "script/postinstall.sh"
     ]
   }],
