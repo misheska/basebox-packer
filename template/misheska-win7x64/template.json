@@ -25,7 +25,6 @@
       "vm_name": "misheska-win7x64",
       "type": "virtualbox",
       "guest_os_type": "Windows7_64",
-      "http_directory": "http",
       "iso_url": "file:///Users/misheska/git/basebox-packer/iso/en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
       "iso_checksum": "6467c3875955df4514395f0afcaaa62a",
       "iso_checksum_type": "md5",
@@ -33,7 +32,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
-      "disk_size": 40000,
+      "disk_size": 40960,
       "floppy_files": ["floppy/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat", "floppy/oracle-cert.cer"],
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "vboxmanage": [
