@@ -26,6 +26,8 @@ cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add r
 
 cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
 
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkdir -p /cygdrive/c/cygwin/home/vagrant
+
 net start sshd
 
 REM Put local users home directories in the Windows Profiles directory

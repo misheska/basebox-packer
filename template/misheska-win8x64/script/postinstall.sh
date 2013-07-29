@@ -33,7 +33,7 @@ elif [ -f windows.iso ]; then
     /cygdrive/c/Program\ Files/7-Zip/7z.exe x windows.iso setup64.exe
 
     # Install VMware tools
-    ./setup64.exe /s /v"/qn REBOOT=R ADDLOCAL=ALL" || true
+    ./setup64.exe /S /v "/qn REBOOT=R ADDLOCAL=ALL" || true
 
     # Cleanup
     rm -f windows.iso
