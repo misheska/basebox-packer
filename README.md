@@ -10,10 +10,10 @@ added below:
 Current VMware Baseboxes
 ========================
 
-* [misheska-centos64](https://www.dropbox.com/s/78amja9zgzsxfcm/misheska-centos64.box) - CentOS 6.4 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
-* [misheska-centos59](https://www.dropbox.com/s/26w92xn6dcwu1zv/misheska-centos59.box) - CentOS 5.9 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
-* [misheska-ubuntu1204](/Users/misheska/Dropbox/basebox-packer/vmware/misheska-ubuntu1204.box) - Ubuntu 12.04.2 server 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
-* [misheska-ubuntu1004](https://www.dropbox.com/s/gaa8frli5g6e2tr/misheska-ubuntu1004.box) - Ubuntu 10.04.4 server 64-bit VMware Fusion basebox (VMware Tools 9.2.2.18018)
+* [misheska-centos64](https://www.dropbox.com/s/78amja9zgzsxfcm/misheska-centos64.box) - CentOS 6.4 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018)
+* [misheska-centos59](https://www.dropbox.com/s/26w92xn6dcwu1zv/misheska-centos59.box) - CentOS 5.9 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018)
+* [misheska-ubuntu1204](/Users/misheska/Dropbox/basebox-packer/vmware/misheska-ubuntu1204.box) - Ubuntu 12.04.2 server 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018)
+* [misheska-ubuntu1004](https://www.dropbox.com/s/gaa8frli5g6e2tr/misheska-ubuntu1004.box) - Ubuntu 10.04.4 server 64-bit VMware Fusion/VMware Workstaton basebox (VMware Tools 9.2.2.18018)
 
 Current VirtualBox Baseboxes
 ============================
@@ -36,7 +36,7 @@ To build a VirtualBox box:
     # Choose a definition, like 'virtualbox/misheska-ubuntu1204'
     make virtualbox/misheska-ubuntu1204
 
-To build a VMware Fusion box:
+To build a VMware Fusion/VMware Workstation box:
 
     make list
     # Choose a definition, like 'misheska-centos64'
