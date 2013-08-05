@@ -1,0 +1,72 @@
+{
+  "builders": [
+    {
+      "vm_name": "misheska-fedora19",
+      "type": "vmware",
+      "guest_os_type": "fedora-64",
+      "http_directory": "http",
+      "iso_url": "http://download.fedoraproject.org/pub/fedora/linux/releases/19/Fedora/x86_64/iso/Fedora-19-x86_64-DVD.iso",
+      "iso_checksum": "6e7e263e607cfcadc90ea2ef5668aa3945d9eca596485a7a1f8a9f2478cc7084",
+      "iso_checksum_type": "sha256",
+      "ssh_username": "packer",
+      "ssh_password": "packer",
+      "tools_upload_flavor": "linux",
+      "boot_command": [
+        "<tab> linux text biosdevname=0 ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter><enter>"
+      ],
+      "floppy_files": ["floppy/vmware9.k3.8rc4.patch", "floppy/vmware9.compat_mm.patch", "floppy/vmware9.k3.9.vmhgfs.patch"],
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "echo 'packer'|sudo -S shutdown -P now",
+      "disk_size": 10140,
+      "vmx_data": {
+        "memsize": "512",
+        "numvcpus": "1",
+        "cpuid.coresPerSocket": "1"
+      }
+    },
+    {
+      "vm_name": "misheska-fedora19",
+      "type": "virtualbox",
+      "guest_os_type": "Fedora_64",
+      "http_directory": "http",
+      "iso_url": "http://download.fedoraproject.org/pub/fedora/linux/releases/19/Fedora/x86_64/iso/Fedora-19-x86_64-DVD.iso",
+      "iso_checksum": "6e7e263e607cfcadc90ea2ef5668aa3945d9eca596485a7a1f8a9f2478cc7084",
+      "iso_checksum_type": "sha256",
+      "ssh_username": "packer",
+      "ssh_password": "packer",
+      "boot_command": [
+        "<tab> linux text biosdevname=0 ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter><enter>"
+      ],
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "echo 'packer'|sudo -S shutdown -P now",
+      "disk_size": 10140,
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "512"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ]
+    }
+  ],
+  "provisioners": [{
+    "type": "shell",
+    "scripts": [
+      "script/base.sh",
+      "script/vagrant.sh",
+      "script/vmtools.sh",
+      "script/cleanup.sh",
+      "script/zerodisk.sh"
+    ],
+    "override": {
+      "virtualbox": {
+        "execute_command": "echo 'packer'|sudo -S sh '{{.Path}}'"
+      },
+      "vmware": {
+        "execute_command": "echo 'packer'|sudo -S sh '{{.Path}}'"
+      }
+    }
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": true,
+    "output": "../../{{.Provider}}/misheska-fedora19.box"
+  }]
+}
