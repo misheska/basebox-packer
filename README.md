@@ -13,6 +13,7 @@ Current VMware Baseboxes
 * [misheska-centos64](https://www.dropbox.com/s/78amja9zgzsxfcm/misheska-centos64.box) - CentOS 6.4 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-centos59](https://www.dropbox.com/s/26w92xn6dcwu1zv/misheska-centos59.box) - CentOS 5.9 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-fedora19](https://www.dropbox.com/s/ydcdppet0tgbggl/misheska-fedora19.box) - Fedora 19 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
+* [misheska-ubuntu1304](https://www.dropbox.com/s/i95ij2nzg9lut2l/misheska-ubuntu1304.box) - Ubuntu 13.04 server 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-ubuntu1204](/Users/misheska/Dropbox/basebox-packer/vmware/misheska-ubuntu1204.box) - Ubuntu 12.04.2 server 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-ubuntu1004](https://www.dropbox.com/s/gaa8frli5g6e2tr/misheska-ubuntu1004.box) - Ubuntu 10.04.4 server 64-bit VMware Fusion/VMware Workstaton basebox (VMware Tools 9.2.2.18018 build-893683)
 
@@ -22,6 +23,7 @@ Current VirtualBox Baseboxes
 * [misheska-centos64](https://www.dropbox.com/s/y733o4ifkowc1w0/misheska-centos64.box) - CentOS 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-centos59](https://www.dropbox.com/s/to898rawsb5klz1/misheska-centos59.box) - CentOS 5.9 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-fedora19](https://www.dropbox.com/s/dvin3su7tr4rsme/misheska-fedora19.box) - Fedora 19 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
+* [misheska-ubuntu1304](https://www.dropbox.com/s/sacy9xv7065j3i7/misheska-ubuntu1304.box) - Ubuntu 13.04 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-ubuntu1204](https://www.dropbox.com/s/yfojlwxq66im9hk/misheska-ubuntu1204.box) - Ubuntu 12.04.2 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-ubuntu1004](https://www.dropbox.com/s/i8g9udzui3fm6yf/misheska-ubuntu1004.box) - Ubuntu 10.04.4 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 
