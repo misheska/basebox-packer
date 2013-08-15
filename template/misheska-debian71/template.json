@@ -1,0 +1,89 @@
+{
+  "builders": [
+    {
+      "vm_name": "misheska-debian71",
+      "type": "vmware",
+      "guest_os_type": "debian6-64",
+      "http_directory": "http",
+      "iso_url": "http://cdimage.debian.org/cdimage/release/current/amd64/iso-dvd/debian-7.1.0-amd64-DVD-1.iso",
+      "iso_checksum": "1c55a7d938fd9cb5fdbd6c41543c90e89e6cff8c67ae263933c13775d8bf0be3",
+      "iso_checksum_type": "sha256",
+      "ssh_username": "packer",
+      "ssh_password": "packer",
+      "tools_upload_flavor": "linux",
+      "boot_command": [
+        "<esc><wait>",
+        "install",
+        " auto",
+        " url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
+        " debian-installer=en_US",
+        " locale=en_US",
+        " keymap=us",
+        " netcfg/get_hostname=vagrant",
+        " netcfg/get_domain=vm ",
+        "<enter>"
+      ],
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "echo 'packer'|sudo -S shutdown -h now",
+      "disk_size": 10140,
+      "vmx_data": {
+        "memsize": "512",
+        "numvcpus": "1",
+        "cpuid.coresPerSocket": "1"
+      }
+    },
+    {
+      "vm_name": "misheska-debian71",
+      "type": "virtualbox",
+      "guest_os_type": "Debian_64",
+      "http_directory": "http",
+      "iso_url": "http://cdimage.debian.org/cdimage/release/current/amd64/iso-dvd/debian-7.1.0-amd64-DVD-1.iso",
+      "iso_checksum": "1c55a7d938fd9cb5fdbd6c41543c90e89e6cff8c67ae263933c13775d8bf0be3",
+      "iso_checksum_type": "sha256",
+      "ssh_username": "packer",
+      "ssh_password": "packer",
+      "boot_command": [
+        "<esc><wait>",
+        "install",
+        " auto",
+        " url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
+        " debian-installer=en_US",
+        " locale=en_US",
+        " keymap=us",
+        " netcfg/get_hostname=vagrant",
+        " netcfg/get_domain=vm ",
+        "<enter>"
+      ],
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "echo 'packer'|sudo -S shutdown -h now",
+      "disk_size": 10140,
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "512"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ]
+    }
+  ],
+  "provisioners": [{
+    "type": "shell",
+    "scripts": [
+      "script/base.sh",
+      "script/vagrant.sh",
+      "script/vmtools.sh",
+      "script/cleanup.sh",
+      "script/zerodisk.sh"
+    ],
+    "override": {
+      "virtualbox": {
+        "execute_command": "echo 'packer'|sudo -S sh '{{.Path}}'"
+      },
+      "vmware": {
+        "execute_command": "echo 'packer'|sudo -S sh '{{.Path}}'"
+      }
+    }
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": true,
+    "output": "../../{{.Provider}}/misheska-debian71.box"
+  }]
+}
