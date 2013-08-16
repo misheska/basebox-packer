@@ -28,6 +28,7 @@ Current VirtualBox Baseboxes
 * [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/yfojlwxq66im9hk/misheska-ubuntu1204.box?token_hash=AAFUeOXWpPnRaPh6s_9JHKQiF0Y-q7rE8BrNxQN5d4Qj1Q&dl=1) - Ubuntu 12.04.2 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/i8g9udzui3fm6yf/misheska-ubuntu1004.box?token_hash=AAH7AKBi5S7A7BJMdbreEiBHb5ZlrmDeefRG-ciiSITNBA&dl=1) - Ubuntu 10.04.4 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-debian71](https://dl.dropboxusercontent.com/s/it2y0qvrencv3jg/misheska-debian71.box?token_hash=AAGkdmtEBG6xpskfaITDKSfsSNqVE2P2mJwsWeSJ76ZyvA&dl=1) - Debian "wheezy" 7.1 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
+* [misheska-opensuse114](https://dl.dropboxusercontent.com/s/qyi6y8wlcrut6j4/misheska-opensuse114.box?token_hash=AAF-jfwM2tQ0NskTS2cgRdOcd314nmdWuu0hPOkyMbPyBg&dl=1) - openSUSE 11.4 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 
 Getting Started
 ===============
