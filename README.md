@@ -17,6 +17,7 @@ Current VMware Baseboxes
 * [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/663x623xvvf571e/misheska-ubuntu1204.box?token_hash=AAEzyWiKRpuU5v321BSKkEzigDUJ2imSN75usrMBnU-5sw&dl=1) - Ubuntu 12.04.2 server 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/gaa8frli5g6e2tr/misheska-ubuntu1004.box?token_hash=AAHlTAZJeb2SxdzlardrfA4rWXN5CcJuRjhhsaW5FqBZeA&dl=1) - Ubuntu 10.04.4 server 64-bit VMware Fusion/VMware Workstaton basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-debian71](https://dl.dropboxusercontent.com/s/l96ew3z8auhn8kd/misheska-debian71.box?token_hash=AAGxp64UIE4mVnXawCEWx77zN871ZRTGrpPfB-y_9I3WQA&dl=1) - Debian "wheezy" 7.1 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
+* [misheska-opensuse114](https://dl.dropboxusercontent.com/s/rmnoo7p7cedezd9/misheska-opensuse114.box?token_hash=AAHsOGsy6reh8fclrwboMSeTciYDVzCYiJUBORHZwTHnrQ&dl=1) - openSUSE 11.4 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
 
 Current VirtualBox Baseboxes
 ============================
