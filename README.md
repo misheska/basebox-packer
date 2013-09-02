@@ -10,6 +10,8 @@ added below:
 Current VMware Baseboxes
 ========================
 
+## VMWare Tools 9.2.2.18018 build-893683
+
 * [misheska-centos64](https://dl.dropboxusercontent.com/s/78amja9zgzsxfcm/misheska-centos64.box?token_hash=AAE9hgUbbNWVb9Hz-dHmZRvBbC_iF9A8DdrDLOoSSh8Yug&dl=1) - CentOS 6.4 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-centos59](https://dl.dropboxusercontent.com/s/26w92xn6dcwu1zv/misheska-centos59.box?token_hash=AAFSotlaoJHz26EduPqIt5IEi7o4Q4ZHE1MNs6ecIyyV4g&dl=1) - CentOS 5.9 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-fedora19](https://dl.dropboxusercontent.com/s/ydcdppet0tgbggl/misheska-fedora19.box?token_hash=AAHJdxY0ER-CjAXY8kWaeLVw4huqFjuTK5poG-ayIiGUHQ&dl=1) - Fedora 19 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
