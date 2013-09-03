@@ -12,8 +12,8 @@ echo "pre-up sleep 2" >> /etc/network/interfaces
 # Clean up tmp
 rm -rf /tmp/*
 
+# Remove leftover leases
 if [ -d "/var/lib/dhcp" ]; then
-    # Remove leftover leases and persistent rules
     echo "cleaning up dhcp leases"
     rm /var/lib/dhcp/*
 fi
