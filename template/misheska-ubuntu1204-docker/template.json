@@ -1,13 +1,13 @@
 {
   "builders": [
     {
-      "vm_name": "misheska-ubuntu1204",
+      "vm_name": "misheska-ubuntu1204-docker",
       "type": "vmware",
       "guest_os_type": "ubuntu-64",
       "http_directory": "http",
-      "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.2-server-amd64.iso",
-      "iso_checksum": "af5f788aee1b32c4b2634734309cc9e9",
-      "iso_checksum_type": "md5",
+      "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso",
+      "iso_checksum": "61d5e67c70d97b33c13537461a0b153b41304ef412bb0e9d813bb157068c3c65",
+      "iso_checksum_type": "sha256",
       "ssh_username": "packer",
       "ssh_password": "packer",
       "tools_upload_flavor": "linux",
@@ -32,6 +32,7 @@
         " -- ",
         "<enter>"
       ],
+      "floppy_files": ["floppy/vmware9.compat_mm.patch", "floppy/vmware9.k3.8rc4.patch", "floppy/vmtools.inode.c.patch"],
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "echo 'packer'|sudo -S shutdown -P now",
       "disk_size": 10140,
@@ -42,13 +43,13 @@
       }
     },
     {
-      "vm_name": "misheska-ubuntu1204",
+      "vm_name": "misheska-ubuntu1204-docker",
       "type": "virtualbox",
       "guest_os_type": "Ubuntu_64",
       "http_directory": "http",
-      "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.2-server-amd64.iso",
-      "iso_checksum": "af5f788aee1b32c4b2634734309cc9e9",
-      "iso_checksum_type": "md5",
+      "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso",
+      "iso_checksum": "61d5e67c70d97b33c13537461a0b153b41304ef412bb0e9d813bb157068c3c65",
+      "iso_checksum_type": "sha256",
       "ssh_username": "packer",
       "ssh_password": "packer",
       "boot_command": [
@@ -76,17 +77,17 @@
     "scripts": [
       "script/base.sh",
       "script/vagrant.sh",
-      "script/docker.sh",
       "script/vmtools.sh",
+      "script/docker.sh",
       "script/cleanup.sh",
       "script/zerodisk.sh"
     ],
     "override": {
       "virtualbox": {
-        "execute_command": "echo 'packer'|sudo -S sh '{{.Path}}'"
+        "execute_command": "echo 'packer'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
       },
       "vmware": {
-        "execute_command": "echo 'packer'|sudo -S sh '{{.Path}}'"
+        "execute_command": "echo 'packer'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
       }
     }
   }],
