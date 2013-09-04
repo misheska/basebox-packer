@@ -54,6 +54,28 @@ if test -f linux.iso ; then
         tar cf vmci.tar vmci-only
         rm -rf vmci-only
         popd
+    elif [[ -f /mnt/cdrom/VMwareTools-9.2.3-1031360.tar.gz ]]
+    then
+        mkdir -p /mnt/floppy
+        modprobe floppy
+        mount -t vfat /dev/fd0 /mnt/floppy
+
+        cd /tmp/vmware-tools-distrib
+
+        # Patch vmhgfs so it will compile using the 3.8 header files
+        pushd lib/modules/source
+        if [ ! -f vmhgfs.tar.orig ]
+        then
+            cp vmhgfs.tar vmhgfs.tar.orig
+        fi
+        rm -rf vmhgfs-only
+        tar xf vmhgfs.tar
+        pushd vmhgfs-only
+        patch -p1 < /mnt/floppy/vmtools.inode.c.patch
+        popd
+        tar cf vmhgfs.tar vmhgfs-only
+        rm -rf vmhgfs-only
+        popd
     fi
 
     /tmp/vmware-tools-distrib/vmware-install.pl -d
