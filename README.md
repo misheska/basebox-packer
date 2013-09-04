@@ -12,7 +12,7 @@ Current VMware Baseboxes
 
 ## VMware Tools 9.2.3.21136 (build-1031360)
 
-[misheska-centos64](https://dl.dropboxusercontent.com/s/q96c6icvspjkrv4/misheska-centos64.box?token_hash=AAEBTZaa3w-lhunf0cR0Cq5Jh2tGisA1AwEp4HhyW1LGOw&dl=1) - CentOS 6.4 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
+* [misheska-centos64](https://dl.dropboxusercontent.com/s/q96c6icvspjkrv4/misheska-centos64.box?token_hash=AAEBTZaa3w-lhunf0cR0Cq5Jh2tGisA1AwEp4HhyW1LGOw&dl=1) - CentOS 6.4 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
 * [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/0z1xhmtmcjs3h5n/misheska-ubuntu1204.box?token_hash=AAGCKIGHG_iiPMLItfcfYpPBBvtFNVz76uR1Lka2_jzGHw&dl=1) - Ubuntu 12.04.3 server 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
 
 ## VMware Tools 9.2.2.18018 (build-893683)
