@@ -23,8 +23,8 @@ Current VMware Baseboxes
 * [misheska-ubuntu1304](https://dl.dropboxusercontent.com/s/i95ij2nzg9lut2l/misheska-ubuntu1304.box?token_hash=AAGyNj5T7CAEL9_as5MIkgOViow1w8BW76HKcPYG8EbPyg&dl=1) - Ubuntu 13.04 server 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/hb3xouxk96ow1w8/misheska-ubuntu1204.box?token_hash=AAElfc2aj3Qu4QdJmZGnQEiZU9rd3-lb3wP7JwovWI0dMw&dl=1) - Ubuntu 12.04.3 server 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/gaa8frli5g6e2tr/misheska-ubuntu1004.box?token_hash=AAHlTAZJeb2SxdzlardrfA4rWXN5CcJuRjhhsaW5FqBZeA&dl=1) - Ubuntu 10.04.4 server 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
-* [misheska-debian71](https://dl.dropboxusercontent.com/s/l96ew3z8auhn8kd/misheska-debian71.box?token_hash=AAGxp64UIE4mVnXawCEWx77zN871ZRTGrpPfB-y_9I3WQA&dl=1) - Debian "wheezy" 7.1 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
-* [misheska-opensuse114](https://dl.dropboxusercontent.com/s/rmnoo7p7cedezd9/misheska-opensuse114.box?token_hash=AAHsOGsy6reh8fclrwboMSeTciYDVzCYiJUBORHZwTHnrQ&dl=1) - openSUSE 11.4 64-bit VMware Fusion/VMware Workstation basebox (VMware Tools 9.2.2.18018 build-893683)
+* [misheska-debian71](https://dl.dropboxusercontent.com/s/l96ew3z8auhn8kd/misheska-debian71.box?token_hash=AAGxp64UIE4mVnXawCEWx77zN871ZRTGrpPfB-y_9I3WQA&dl=1) - Debian "wheezy" 7.1 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
+* [misheska-opensuse114](https://dl.dropboxusercontent.com/s/rmnoo7p7cedezd9/misheska-opensuse114.box?token_hash=AAHsOGsy6reh8fclrwboMSeTciYDVzCYiJUBORHZwTHnrQ&dl=1) - openSUSE 11.4 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
 
 Current VirtualBox Baseboxes
 ============================
