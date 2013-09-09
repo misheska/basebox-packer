@@ -10,6 +10,14 @@ added below:
 Current VMware Baseboxes
 ========================
 
+## VMware Tools 9.6.0.26048 (build-1294478)
+
+* [misheska-centos64](https://dl.dropboxusercontent.com/s/vqnqd9bdf9l9ept/misheska-centos64.box?token_hash=AAHFE6kSedB-fEyU_PfKyBDGXBp36kIMZvK7rxeTxvsppg&dl=1) - CentOS 6.4 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-ubuntu1304](https://dl.dropboxusercontent.com/s/9vari3vcedl4fuc/misheska-ubuntu1304.box?token_hash=AAHF8EjVl4zuQm7pCa3tMjek0efdgtYehPSSyURiFaCICw&dl=1) - Ubuntu 13.04 server 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/5kwfb90hxjrm4ec/misheska-ubuntu1204.box?token_hash=AAFNW1zjATXQeUl5UXnv9eO4CO2rP5Cb-Sk4HDlfp6i7yA&dl=1) - Ubuntu 12.04.3 server 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-ubuntu1204-docker](https://dl.dropboxusercontent.com/s/chz873uc8jvy9q5/misheska-ubuntu1204-docker.box?token_hash=AAFxTiCHlJUiR2OV0smBem2VkwBSvzQMev6B_Bjp4MBfcA&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/sedl8qk02zdp1cb/misheska-ubuntu1004.box?token_hash=AAGEc4F7GtZp2exYl9QGiNJbo606VxcIUoMC1D-zkClJRA&dl=1) - Ubuntu 10.04.4 server 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
+
 ## VMware Tools 9.2.3.21136 (build-1031360)
 
 * [misheska-centos64](https://dl.dropboxusercontent.com/s/q96c6icvspjkrv4/misheska-centos64.box?token_hash=AAEBTZaa3w-lhunf0cR0Cq5Jh2tGisA1AwEp4HhyW1LGOw&dl=1) - CentOS 6.4 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
