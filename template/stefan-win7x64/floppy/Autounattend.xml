@@ -98,23 +98,12 @@
                     <Order>3</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
-				<SynchronousCommand wcm:action="add">
-					<CommandLine>cmd.exe /c a:\install-chocolatey.bat</CommandLine>
-					<Description>Install Chocolatey</Description>
-					<Order>4</Order>
-					<RequiresUserInput>true</RequiresUserInput>
-				</SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <RequiresUserInput>true</RequiresUserInput>
-                    <Order>98</Order>
+                    <Order>4</Order>
                     <Description>Install Cygwin SSHD</Description>
                     <CommandLine>cmd /c a:install-cygwin-sshd.bat</CommandLine>
                 </SynchronousCommand>
-				<SynchronousCommand wcm:action="add">
-					<CommandLine>cmd.exe /c start a:\start-sshd-delayed.bat</CommandLine>
-					<Description>Start Cygwin SSH</Description>
-					<Order>99</Order>
-				</SynchronousCommand>
             </FirstLogonCommands>
         </component>
     </settings>

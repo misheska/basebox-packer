@@ -34,11 +34,9 @@ cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add r
 %SystemDrive%\cygwin\bin\sleep 2
 
 rem Do not start sshd yet, do it later in Autounattend.xml as last step
-rem net start sshd
+net start sshd
 
 rem # Fix corrupt recycle bin
 rem # http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
 cmd /c rd /s /q c:\$Recycle.bin
 
-copy a:\sudo %SystemDrive%\cygwin\usr\local\bin
-cmd /c %SystemDrive%\cygwin\bin\chmod 755 %SystemDrive%\cygwin\usr\local\bin\sudo

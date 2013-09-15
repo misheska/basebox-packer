@@ -11,9 +11,7 @@
       "ssh_password": "vagrant",
       "floppy_files": ["floppy/Autounattend.xml",
                        "floppy/set-power-config.bat",
-                       "floppy/install-cygwin-sshd.bat",
-                       "floppy/start-sshd-delayed.bat",
-                       "floppy/install-chocolatey.bat"
+                       "floppy/install-cygwin-sshd.bat"
                       ],
       "tools_upload_flavor": "windows",
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
@@ -41,9 +39,7 @@
       "floppy_files": ["floppy/Autounattend.xml",
                        "floppy/oracle-cert.cer",
                        "floppy/set-power-config.bat",
-                       "floppy/install-cygwin-sshd.bat",
-                       "floppy/start-sshd-delayed.bat",
-                       "floppy/install-chocolatey.bat"
+                       "floppy/install-cygwin-sshd.bat"
                       ],
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "vboxmanage": [
@@ -56,7 +52,8 @@
     "type": "shell",
     "scripts": [
       "script/change-home-dirs.sh",
-      "script/postinstall.sh"
+      "script/postinstall.sh",
+      "script/install-chocolatey.sh"
     ]
   }],
   "post-processors": [{
