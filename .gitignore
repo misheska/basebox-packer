@@ -6,5 +6,5 @@ virtualbox
 vmware
 iso
 *.swp
-
+packer.log
 .DS_Store
