@@ -1,5 +1,6 @@
 set -x
 
+
 VAGRANT_HOME=/cygdrive/c/Users/vagrant
 # Install ssh certificates
 mkdir $VAGRANT_HOME/.ssh
