@@ -47,24 +47,27 @@ Current VirtualBox Baseboxes
 
 * [misheska-centos64](https://dl.dropboxusercontent.com/s/ksv1bwqqt5lnqpn/misheska-centos64.box?token_hash=AAFBkKk3X5htukxU1FpJGGO7idUgSsrjUG3Q5dpnHBfIig&dl=1) - CentOS 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-centos59](https://dl.dropboxusercontent.com/s/auh8yuwbdyojjyl/misheska-centos59.box?token_hash=AAGd80aIhhXfweSdQbmI3w5th84CXS7Nd25Lbx8ynta2yQ&dl=1) - CentOS 5.9 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
-* [misheska-fedora19](https://dl.dropboxusercontent.com/s/axb3abv181ogvrt/misheska-fedora19.box?token_hash=AAHsYjDw-d5z_IR6gJTVg_aEm9ZfjbDETVrAeXegPRZMFQ&dl=1) - Fedora 19 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-ubuntu1304](https://dl.dropboxusercontent.com/s/ttq2xai33zyvrgr/misheska-ubuntu1304.box?token_hash=AAGXFdZA5y-_I-7RWmW1mOKAqHWN1KRg8CpC960Y6kmH7A&dl=1) - Ubuntu 13.04 server 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/s1l9zxaaamwm8el/misheska-ubuntu1204.box?token_hash=AAEY4sCY4vkt7TyfhzZnvlasiLktouuPzmbDGC1uyGAAaA&dl=1) - Ubuntu 12.04.3 server 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-ubuntu1204-docker](https://dl.dropboxusercontent.com/s/37zbgd4b6b832zn/misheska-ubuntu1204-docker.box?token_hash=AAFBPTEGmTF-L5Uwc35FMDfQHCldl9SRBkWnsNtu6Dfw0g&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/ulap0vc4cn53r96/misheska-ubuntu1004.box?token_hash=AAH_ZZJvuklz9kufqd2JvaHkOG2-s3Mz_USpWVyglwgcRw&dl=1) - Ubuntu 10.04.4 server 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
-* [misheska-debian71]() - Debian "wheezy" 7.1 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
-* [misheska-opensuse114]() - openSUSE 11.4 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
+* [misheska-fedora19](https://dl.dropboxusercontent.com/s/axb3abv181ogvrt/misheska-fedora19.box?token_hash=AAHsYjDw-d5z_IR6gJTVg_aEm9ZfjbDETVrAeXegPRZMFQ&dl=1) - Fedora 19 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
+* [misheska-oracle64](https://dl.dropboxusercontent.com/s/by0f6nsu1h894jg/misheska-oracle64.box?token_hash=AAG6ndr-r_uLXfsbzZy6jUu8w0nxw548do73CIgCb0uTCw&dl=1) - Oracle Linux 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
+* [misheska-opensuse114](https://dl.dropboxusercontent.com/s/wzq33y35cbs04gq/misheska-opensuse114.box?token_hash=AAHE4lcRMO8c47wTYMWKZxwd2de7Cuvt09u9tw9vjnSnRw&dl=1) - openSUSE 11.4 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
+* [misheska-debian71](https://dl.dropboxusercontent.com/s/tk0za6x2c1mcz7k/misheska-debian71.box?token_hash=AAHb-H5dJxeofl-QSMwBzBUAwLwJAliNNiQpv8mUekahFQ&dl=1) - Debian "wheezy" 7.1 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 
 ## VirtualBox 4.2.16
 
 * [misheska-centos64](https://dl.dropboxusercontent.com/s/y733o4ifkowc1w0/misheska-centos64.box?token_hash=AAFQZHmrtNB_Obc1Fvx3HL9Jl3EwQAmpXIKbpxy5IBxrwQ&dl=1) - CentOS 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-centos59](https://dl.dropboxusercontent.com/s/to898rawsb5klz1/misheska-centos59.box?token_hash=AAFdfkDOzzAwmauLOFgRpzDMxVYu4zPc_lB9MZRNUKkr4g&dl=1) - CentOS 5.9 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-* [misheska-fedora19](https://dl.dropboxusercontent.com/s/dvin3su7tr4rsme/misheska-fedora19.box?token_hash=AAE6Z4EOzW6lliUitACl-tBn76GfuQ4Hyx23j1ZwCfQzZw&dl=1) - Fedora 19 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-ubuntu1304](https://dl.dropboxusercontent.com/s/sacy9xv7065j3i7/misheska-ubuntu1304.box?token_hash=AAHuAaUCPvgms2ULMj_4ZTPYZfbf7XEJ0hU11UpIQmA2fg&dl=1) - Ubuntu 13.04 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/yfojlwxq66im9hk/misheska-ubuntu1204.box?token_hash=AAFUeOXWpPnRaPh6s_9JHKQiF0Y-q7rE8BrNxQN5d4Qj1Q&dl=1) - Ubuntu 12.04.3 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
+* [misheska-ubuntu1204-docker]() - Ubuntu 12.04.3 server 64-bit with Docker VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/i8g9udzui3fm6yf/misheska-ubuntu1004.box?token_hash=AAH7AKBi5S7A7BJMdbreEiBHb5ZlrmDeefRG-ciiSITNBA&dl=1) - Ubuntu 10.04.4 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-* [misheska-debian71](https://dl.dropboxusercontent.com/s/it2y0qvrencv3jg/misheska-debian71.box?token_hash=AAGkdmtEBG6xpskfaITDKSfsSNqVE2P2mJwsWeSJ76ZyvA&dl=1) - Debian "wheezy" 7.1 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
+* [misheska-fedora19](https://dl.dropboxusercontent.com/s/dvin3su7tr4rsme/misheska-fedora19.box?token_hash=AAE6Z4EOzW6lliUitACl-tBn76GfuQ4Hyx23j1ZwCfQzZw&dl=1) - Fedora 19 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
+* [misheska-oracle64]() - Oracle Linux 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-opensuse114](https://dl.dropboxusercontent.com/s/qyi6y8wlcrut6j4/misheska-opensuse114.box?token_hash=AAF-jfwM2tQ0NskTS2cgRdOcd314nmdWuu0hPOkyMbPyBg&dl=1) - openSUSE 11.4 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
+* [misheska-debian71](https://dl.dropboxusercontent.com/s/it2y0qvrencv3jg/misheska-debian71.box?token_hash=AAGkdmtEBG6xpskfaITDKSfsSNqVE2P2mJwsWeSJ76ZyvA&dl=1) - Debian "wheezy" 7.1 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 
 Getting Started
 ===============
