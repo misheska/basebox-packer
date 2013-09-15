@@ -53,7 +53,6 @@ Current VirtualBox Baseboxes
 * [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/ulap0vc4cn53r96/misheska-ubuntu1004.box?token_hash=AAH_ZZJvuklz9kufqd2JvaHkOG2-s3Mz_USpWVyglwgcRw&dl=1) - Ubuntu 10.04.4 server 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-fedora19](https://dl.dropboxusercontent.com/s/axb3abv181ogvrt/misheska-fedora19.box?token_hash=AAHsYjDw-d5z_IR6gJTVg_aEm9ZfjbDETVrAeXegPRZMFQ&dl=1) - Fedora 19 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-oracle64](https://dl.dropboxusercontent.com/s/by0f6nsu1h894jg/misheska-oracle64.box?token_hash=AAG6ndr-r_uLXfsbzZy6jUu8w0nxw548do73CIgCb0uTCw&dl=1) - Oracle Linux 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
-* [misheska-opensuse114](https://dl.dropboxusercontent.com/s/wzq33y35cbs04gq/misheska-opensuse114.box?token_hash=AAHE4lcRMO8c47wTYMWKZxwd2de7Cuvt09u9tw9vjnSnRw&dl=1) - openSUSE 11.4 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-debian71](https://dl.dropboxusercontent.com/s/tk0za6x2c1mcz7k/misheska-debian71.box?token_hash=AAHb-H5dJxeofl-QSMwBzBUAwLwJAliNNiQpv8mUekahFQ&dl=1) - Debian "wheezy" 7.1 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 
 ## VirtualBox 4.2.16
@@ -66,7 +65,6 @@ Current VirtualBox Baseboxes
 * [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/i8g9udzui3fm6yf/misheska-ubuntu1004.box?token_hash=AAH7AKBi5S7A7BJMdbreEiBHb5ZlrmDeefRG-ciiSITNBA&dl=1) - Ubuntu 10.04.4 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-fedora19](https://dl.dropboxusercontent.com/s/dvin3su7tr4rsme/misheska-fedora19.box?token_hash=AAE6Z4EOzW6lliUitACl-tBn76GfuQ4Hyx23j1ZwCfQzZw&dl=1) - Fedora 19 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-oracle64]() - Oracle Linux 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-* [misheska-opensuse114](https://dl.dropboxusercontent.com/s/qyi6y8wlcrut6j4/misheska-opensuse114.box?token_hash=AAF-jfwM2tQ0NskTS2cgRdOcd314nmdWuu0hPOkyMbPyBg&dl=1) - openSUSE 11.4 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 * [misheska-debian71](https://dl.dropboxusercontent.com/s/it2y0qvrencv3jg/misheska-debian71.box?token_hash=AAGkdmtEBG6xpskfaITDKSfsSNqVE2P2mJwsWeSJ76ZyvA&dl=1) - Debian "wheezy" 7.1 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
 
 Getting Started
