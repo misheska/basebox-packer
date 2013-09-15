@@ -5,17 +5,15 @@ Packer definitions for vagrant VirtualBox and VMware baseboxes.
 These are the vagrant baseboxes I use for my own personal projents. 
 For more informations, see original project
 <https://github.com/misheska/basebox-packer>
+This project is a fork running packer on a Windows host.
 
 Getting Started
 ===============
 
-A GNU Make makefile is provided to support automated builds.  It assumes
-that both GNU Make and Packer are in the PATH.  Download and install
+For Unix, a GNU Make makefile is provided to support automated builds.  It
+assumes that both GNU Make and Packer are in the PATH.  Download and install
 Packer from <http://www.packer.io/downloads.html>  
-On a Windows host, download GNU Make from
-<http://sourceforge.net/projects/gnuwin32/files/make/3.81/make-3.81-bin.zip>
-and its dependencies from
-<http://sourceforge.net/projects/gnuwin32/files/make/3.81/make-3.81-dep.zip>
+On a Windows host, use the make.bat instead.
 
 To build a VirtualBox box:
 

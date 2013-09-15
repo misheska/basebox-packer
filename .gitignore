@@ -5,5 +5,6 @@ output-*
 virtualbox
 vmware
 iso
+*.swp
 
 .DS_Store
