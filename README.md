@@ -25,14 +25,14 @@ Current VMware Baseboxes
 
 ## VMware Fusion 5 - VMware Tools 9.2.2.18018 (build-893683)
 
-* [misheska-centos64](https://dl.dropboxusercontent.com/s/78amja9zgzsxfcm/misheska-centos64.box?token_hash=AAE9hgUbbNWVb9Hz-dHmZRvBbC_iF9A8DdrDLOoSSh8Yug&dl=1) - CentOS 6.4 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
-* [misheska-fedora19](https://dl.dropboxusercontent.com/s/ydcdppet0tgbggl/misheska-fedora19.box?token_hash=AAHJdxY0ER-CjAXY8kWaeLVw4huqFjuTK5poG-ayIiGUHQ&dl=1) - Fedora 19 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
-* [misheska-ubuntu1304](https://dl.dropboxusercontent.com/s/i95ij2nzg9lut2l/misheska-ubuntu1304.box?token_hash=AAGyNj5T7CAEL9_as5MIkgOViow1w8BW76HKcPYG8EbPyg&dl=1) - Ubuntu 13.04 server 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
+* [misheska-centos64](https://dl.dropboxusercontent.com/s/iak9cyqqkq0v2pz/misheska-centos64.box?token_hash=AAF_YC1FE_s6SAvsIYzcGKHN100Y4LfasG--JAuYiwgACw&dl=1) - CentOS 6.4 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
+* [misheska-centos59](https://dl.dropboxusercontent.com/s/yb6n41hpkwp4y4n/misheska-centos59.box?token_hash=AAGwGfMDGtdjq5m7LL7oilZBdNMGaK8n6CQ70rlGoMZoWQ&dl=1) - CentOS 5.9 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
+* [misheska-ubuntu1304](https://dl.dropboxusercontent.com/s/lq55q85k61wz9if/misheska-ubuntu1304.box?token_hash=AAH70oQKYCIbsWe34QjSb7T9xyXg0c7Y_kZHPKdWQPPToQ&dl=1) - Ubuntu 13.04 server 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/hb3xouxk96ow1w8/misheska-ubuntu1204.box?token_hash=AAElfc2aj3Qu4QdJmZGnQEiZU9rd3-lb3wP7JwovWI0dMw&dl=1) - Ubuntu 12.04.3 server 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
 * [misheska-ubuntu1204-docker](https://dl.dropboxusercontent.com/s/chss7rehgv8tz3i/misheska-ubuntu1204-docker.box?token_hash=AAHSvRgD_Vi8Ikwx-wpLK1sRveLDLzX0JPJQj9NKoStcHw&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
-* [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/gaa8frli5g6e2tr/misheska-ubuntu1004.box?token_hash=AAHlTAZJeb2SxdzlardrfA4rWXN5CcJuRjhhsaW5FqBZeA&dl=1) - Ubuntu 10.04.4 server 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
-* [misheska-debian71](https://dl.dropboxusercontent.com/s/l96ew3z8auhn8kd/misheska-debian71.box?token_hash=AAGxp64UIE4mVnXawCEWx77zN871ZRTGrpPfB-y_9I3WQA&dl=1) - Debian "wheezy" 7.1 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
-* [misheska-opensuse114](https://dl.dropboxusercontent.com/s/rmnoo7p7cedezd9/misheska-opensuse114.box?token_hash=AAHsOGsy6reh8fclrwboMSeTciYDVzCYiJUBORHZwTHnrQ&dl=1) - openSUSE 11.4 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
+* [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/nzj8xjhz5zhe6xh/misheska-ubuntu1004.box?token_hash=AAGc96ReNMoKHo8FheeDgViLn8cJ5nPmo0L_JiLoZXWvjw&dl=1) - Ubuntu 10.04.4 server 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
+* [misheska-fedora19](https://dl.dropboxusercontent.com/s/osynl30n1808vov/misheska-fedora19.box?token_hash=AAH2zzGZeADHUFl3OYhWTIjq4e5KMECd5hhizg6Go_W8gQ&dl=1) - Fedora 19 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
+* [misheska-debian71](https://dl.dropboxusercontent.com/s/55yrcp4kqcua74s/misheska-debian71.box?token_hash=AAFVvv8bg5Pzkr7ut6z9AfJjlnf2l52xQ8OPUNRyWM3AFA&dl=1) - Debian "wheezy" 7.1 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.2.18018 build-893683)
 
 ## VMware Workstation 9 - VMware Tools 9.2.3.21136 (build-1031360)
 
@@ -42,7 +42,10 @@ Current VMware Baseboxes
 * [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/0z1xhmtmcjs3h5n/misheska-ubuntu1204.box?token_hash=AAGCKIGHG_iiPMLItfcfYpPBBvtFNVz76uR1Lka2_jzGHw&dl=1) - Ubuntu 12.04.3 server 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
 * [misheska-ubuntu1204-docker](https://dl.dropboxusercontent.com/s/fc0rw1ztthpl1em/misheska-ubuntu1204-docker.box?token_hash=AAEZRzyFD9gKO0-KQSBXo5URjMfP6SO2hhJdaWkRQYM78Q&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
 * [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/6edi800satikxmn/misheska-ubuntu1004.box?token_hash=AAEX59mNjUcdbjCLJJ9ijqzS3SJIDGrTk7XcKSFyeVcQhQ&dl=1) - Ubuntu 10.04.4 server 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
+* [misheska-fedora19](https://dl.dropboxusercontent.com/s/fm3p167b968nmha/misheska-fedora19.box?token_hash=AAERjdxNCbCJCHMMW9WQ9uDmy3Cztp8_p9YBrDjGe4WLRQ&dl=1) - Fedora 19 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
 * [misheska-oracle64](https://dl.dropboxusercontent.com/s/lhlszpcsp1dhl6o/misheska-oracle64.box?token_hash=AAFMnDDmoBR3oCxHDflhJ5oWPwg98R3Q8pvYTDPAp-o2NA&dl=1) - Oracle Linux 6.4 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
+* [misheska-opensuse114](https://dl.dropboxusercontent.com/s/1b8vaj9vo4sz6h1/misheska-opensuse114.box?token_hash=AAFQ0Fov8FnrVy4bhEKu6G2wmYUeYJWfDzwsx-4MY5P32g&dl=1) - openSUSE 11.4 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.3.21136 build-1031360)
+* [misheska-debian71](https://www.dropbox.com/s/h8yktun0dd06xfr/misheska-debian71.box) - Debian "wheezy" 7.1 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.3.21136 build-1031360)
 
 Current VirtualBox Baseboxes
 ============================
