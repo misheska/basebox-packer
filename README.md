@@ -40,6 +40,9 @@ Current VMware Baseboxes
 * [misheska-centos59](https://dl.dropboxusercontent.com/s/k23gactx0u7vms7/misheska-centos59.box?token_hash=AAGMki7UzxYxHnIPBW8IAob5nlt4mgq2uzJWzU6NI8Y8Dw&dl=1) - CentOS 5.9 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
 * [misheska-ubuntu1304](https://dl.dropboxusercontent.com/s/xnt6dr478ji5yx0/misheska-ubuntu1304.box?token_hash=AAEgItKagoNp_QjcSq6vUbMRH_s1PPwYPJrjUVczG3ERAA&dl=1) - Ubuntu 13.04 server 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
 * [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/0z1xhmtmcjs3h5n/misheska-ubuntu1204.box?token_hash=AAGCKIGHG_iiPMLItfcfYpPBBvtFNVz76uR1Lka2_jzGHw&dl=1) - Ubuntu 12.04.3 server 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
+* [misheska-ubuntu1204-docker](https://dl.dropboxusercontent.com/s/fc0rw1ztthpl1em/misheska-ubuntu1204-docker.box?token_hash=AAEZRzyFD9gKO0-KQSBXo5URjMfP6SO2hhJdaWkRQYM78Q&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
+* [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/6edi800satikxmn/misheska-ubuntu1004.box?token_hash=AAEX59mNjUcdbjCLJJ9ijqzS3SJIDGrTk7XcKSFyeVcQhQ&dl=1) - Ubuntu 10.04.4 server 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
+* [misheska-oracle64](https://dl.dropboxusercontent.com/s/lhlszpcsp1dhl6o/misheska-oracle64.box?token_hash=AAFMnDDmoBR3oCxHDflhJ5oWPwg98R3Q8pvYTDPAp-o2NA&dl=1) - Oracle Linux 6.4 64-bit VMware Workstation 9 basebox (VMware Tools 9.2.3.21136 build-1031360)
 
 Current VirtualBox Baseboxes
 ============================
