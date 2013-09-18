@@ -1,0 +1,6 @@
+# Set default behaviour, in case users don't have core.autocrlf set.
+* text=auto
+
+# all Unix / CYGWIN shell scripts must be unix
+*.sh text eol=lf
+
