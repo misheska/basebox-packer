@@ -3,13 +3,13 @@ REM http://webcache.googleusercontent.com/search?q=cache:SjoPPpuQxuoJ:www.tcm.ph
 REM create the cygwin directory
 cmd /c mkdir %SystemDrive%\cygwin
 
-cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal http://www.cygwin.com/setup.exe %SystemDrive%\cygwin\cygwin-setup.exe
+cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal http://www.cygwin.com/setup-x86_64.exe %SystemDrive%\cygwin\cygwin-setup.exe
 
 REM goto a temp directory
 cd %SystemDrive%\windows\temp
 
 REM run the installation
-cmd /c %SystemDrive%\cygwin\cygwin-setup.exe -q -R %SystemDrive%\cygwin -P openssh,openssl,curl,cygrunsrv,wget,rebase,vim -s http://cygwin.mirrors.pair.com
+cmd /c %SystemDrive%\cygwin\cygwin-setup.exe -q -R %SystemDrive%\cygwin -P openssh,openssl,curl,cygrunsrv,wget,rebase -s http://ftp.inf.tu-dresden.de/software/windows/cygwin32/
 
 %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -R sshd'
 
@@ -27,9 +27,6 @@ cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add r
 cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
 
 net start sshd
-
-REM Put local users home directories in the Windows Profiles directory
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l -p "$(cygpath $(cygpath -dH))" > /etc/passwd'
 
 REM Fix corrupt recycle bin
 REM http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/

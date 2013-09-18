@@ -36,6 +36,9 @@ cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add r
 rem Do not start sshd yet, do it later in Autounattend.xml as last step
 net start sshd
 
+REM Put local users home directories in the Windows Profiles directory
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l -p "$(cygpath $(cygpath -dH))" > /etc/passwd'
+
 rem # Fix corrupt recycle bin
 rem # http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
 cmd /c rd /s /q c:\$Recycle.bin

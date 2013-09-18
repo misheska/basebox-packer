@@ -12,6 +12,7 @@
       "floppy_files": [
                        "floppy/Autounattend.xml",
                        "floppy/set-power-config.bat",
+                       "floppy/install-chef.bat",
                        "floppy/install-cygwin-sshd.bat"
                        ],
       "tools_upload_flavor": "windows",
@@ -40,6 +41,7 @@
       "floppy_files": [
                        "floppy/Autounattend.xml",
                        "floppy/set-power-config.bat",
+                       "floppy/install-chef.bat",
                        "floppy/install-cygwin-sshd.bat",
                        "floppy/oracle-cert.cer"
                       ],
