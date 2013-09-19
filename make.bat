@@ -22,6 +22,7 @@ set LOGNAME=log\packer-%FAVOR%-%TEMPLATE%.log
 set PACKER_LOG_PATH=%~dp0\%LOGNAME%
 set PACKER_LOG=1
 packer build -only=%FAVOR% template.json
+cd %CUR%
 echo.
 echo A log file of this step could be found at %LOGNAME%
 call parselog.bat %PACKER_LOG_PATH%

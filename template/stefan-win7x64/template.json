@@ -53,7 +53,8 @@
     "scripts": [
       "script/change-home-dirs.sh",
       "script/postinstall.sh",
-      "script/install-chocolatey.sh"
+      "script/install-vmtools.sh",
+      "script/install-chef.sh"
     ]
   }],
   "post-processors": [{
