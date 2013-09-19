@@ -9,3 +9,4 @@ iso
 packer.log
 .DS_Store
 log
+*msi
