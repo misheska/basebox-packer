@@ -19,16 +19,27 @@ cmd /c %SystemDrive%\cygwin\bin\ash -c /bin/rebaseall
 cmd /c %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkgroup -l'>%SystemDrive%\cygwin\etc\group
 
 cmd /c %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l'>%SystemDrive%\cygwin\etc\passwd
+cmd /c mkdir %SystemDrive%\cygwin\home\vagrant
 
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin /usr/bin/ssh-host-config -y -c "ntsecbinmode mintty" -w "abc&&123!!" '
+%SystemDrive%\cygwin\bin\sleep 1
+
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin /bin/ssh-host-config -y -c "ntsecbinmode tty" -w "abc&&123!!" '
+
+%SystemDrive%\cygwin\bin\sleep 2 
 
 cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add rule name="SSHD" dir=in action=allow program="c:\cygwin\usr\sbin\sshd.exe" SSHD enable=yes
 
 cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
 
+%SystemDrive%\cygwin\bin\sleep 2
+
+rem Do not start sshd yet, do it later in Autounattend.xml as last step
 net start sshd
 
-REM Fix corrupt recycle bin
-REM http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
+REM Put local users home directories in the Windows Profiles directory
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l -p "$(cygpath $(cygpath -dH))" > /etc/passwd'
+
+rem # Fix corrupt recycle bin
+rem # http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
 cmd /c rd /s /q c:\$Recycle.bin
 

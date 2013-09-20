@@ -1,6 +1,7 @@
 @echo off
 setlocal
 set LOGFILE=%1
+if not exist %LOGFILE% exit /b 1
 
 rem grep start time
 findstr /r "Packer.Version:" %LOGFILE%
