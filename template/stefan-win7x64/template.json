@@ -11,6 +11,7 @@
       "ssh_password": "vagrant",
       "floppy_files": ["floppy/Autounattend.xml",
                        "floppy/set-power-config.bat",
+                       "floppy/install-winrm.bat",
                        "floppy/install-cygwin-sshd.bat"
                       ],
       "tools_upload_flavor": "windows",
@@ -39,6 +40,7 @@
       "floppy_files": ["floppy/Autounattend.xml",
                        "floppy/oracle-cert.cer",
                        "floppy/set-power-config.bat",
+                       "floppy/install-winrm.bat",
                        "floppy/install-cygwin-sshd.bat"
                       ],
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",

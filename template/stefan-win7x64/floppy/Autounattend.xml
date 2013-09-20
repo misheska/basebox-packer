@@ -99,8 +99,14 @@
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
-                    <RequiresUserInput>true</RequiresUserInput>
+                    <CommandLine>cmd.exe /c a:install-winrm.bat</CommandLine>
+                    <Description>Install Win RM</Description>
                     <Order>4</Order>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <RequiresUserInput>true</RequiresUserInput>
+                    <Order>5</Order>
                     <Description>Install Cygwin SSHD</Description>
                     <CommandLine>cmd /c a:install-cygwin-sshd.bat</CommandLine>
                 </SynchronousCommand>
