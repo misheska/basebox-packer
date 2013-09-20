@@ -19,13 +19,13 @@ cd /D template\%TEMPLATE%\
 if exist output-%FAVOR% del /S /Q /F output-%FAVOR%
 if exist output-%FAVOR% rmdir output-%FAVOR%
 set LOGNAME=log\packer-%FAVOR%-%TEMPLATE%.log
-set PACKER_LOG_PATH=..\..\\%LOGNAME%
+set PACKER_LOG_PATH=..\..\%LOGNAME%
 set PACKER_LOG=1
 packer build -only=%FAVOR% template.json
 cd /D "%CUR%"
 echo.
 echo A log file of this step could be found at %LOGNAME%
-call parselog.bat %PACKER_LOG_PATH%
+call parselog.bat %LOGNAME%
 goto done
 
 :list
