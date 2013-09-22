@@ -16,8 +16,7 @@ if not exist "%CUR%\log" mkdir "%CUR%\log"
 set TEMPLATE=%~n1
 if not exist %FAVOR% mkdir %FAVOR%
 cd /D template\%TEMPLATE%\
-if exist output-%FAVOR% del /S /Q /F output-%FAVOR%
-if exist output-%FAVOR% rmdir output-%FAVOR%
+if exist output-%FAVOR% rmdir /S /Q output-%FAVOR%
 set LOGNAME=log\packer-%FAVOR%-%TEMPLATE%.log
 set PACKER_LOG_PATH=..\..\%LOGNAME%
 set PACKER_LOG=1

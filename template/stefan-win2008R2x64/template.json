@@ -20,6 +20,8 @@
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "disk_size": 40960,
+      "disk_type_id": "0",
+      "skip_compaction": true,
       "vmx_data": {
         "memsize": "768",
         "numvcpus": "1",
