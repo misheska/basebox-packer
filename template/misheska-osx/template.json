@@ -1,0 +1,45 @@
+{
+  "builders": [{
+    "vm_name": "misheska-osx",
+    "type": "vmware",
+    "guest_os_type": "darwin12-64",
+    "iso_url": "file:///path/to/InstallESD_from_prepare_iso.dmg",
+    "iso_checksum": "checksum_from_iso",
+    "iso_checksum_type": "md5",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_port": 22,
+    "ssh_wait_timeout": "10000s",
+    "tools_upload_flavor": "darwin",
+    "boot_wait": "2s",
+    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -h now",
+    "disk_size": 20480,
+    "skip_compaction": true,
+    "vmx_data": {
+      "cpuid.coresPerSocket": "1",
+      "memsize": "2048",
+      "numvcpus": "1",
+      "firmware": "efi",
+      "keyboardAndMouseProfile": "macProfile",
+      "smc.present": "TRUE",
+      "hpet0.present": "TRUE",
+      "ich7m.present": "TRUE",
+      "ehci.present": "TRUE",
+      "usb.present": "TRUE"
+    }
+  }],
+  "provisioners": [{
+    "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
+    "scripts": [
+      "script/vagrant.sh",
+      "script/vmware.sh",
+      "script/xcode-cli-tools.sh"
+    ],
+    "type": "shell"
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": true,
+    "output": "../../{{.Provider}}//misheska-osx.box"
+  }]
+}
