@@ -1,24 +1,27 @@
 {
   "builders": [
     {
-      "vm_name": "stefan-win7x64",
+      "vm_name": "stefan-win2008R2x64",
       "type": "vmware",
-      "guest_os_type": "windows7-64",
-      "iso_url": "http://anywhere/at/microsoft/en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
-      "iso_checksum": "6467c3875955df4514395f0afcaaa62a",
+      "guest_os_type": "windows7srv-64",
+      "iso_url": "http://anywhere/at/microsoft/7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso",
+      "iso_checksum": "4263be2cf3c59177c45085c0a7bc6ca5",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "floppy_files": ["floppy/Autounattend.xml",
+      "floppy_files": [
+                       "floppy/Autounattend.xml",
                        "floppy/set-power-config.bat",
                        "floppy/install-winrm.bat",
                        "floppy/install-cygwin-sshd.bat"
-                      ],
+                       ],
       "tools_upload_flavor": "windows",
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "disk_size": 40960,
+      "disk_type_id": "0",
+      "skip_compaction": true,
       "vmx_data": {
         "memsize": "768",
         "numvcpus": "1",
@@ -26,22 +29,23 @@
       }
     },
     {
-      "vm_name": "stefan-win7x64",
+      "vm_name": "stefan-win2008R2x64",
       "type": "virtualbox",
-      "guest_os_type": "Windows7_64",
-      "iso_url": "http://anywhere/at/microsoft/en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
-      "iso_checksum": "6467c3875955df4514395f0afcaaa62a",
+      "guest_os_type": "Windows2008_64",
+      "iso_url": "http://anywhere/at/microsoft/7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso",
+      "iso_checksum": "4263be2cf3c59177c45085c0a7bc6ca5",
       "iso_checksum_type": "md5",
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
       "disk_size": 40960,
-      "floppy_files": ["floppy/Autounattend.xml",
-                       "floppy/oracle-cert.cer",
+      "floppy_files": [
+                       "floppy/Autounattend.xml",
                        "floppy/set-power-config.bat",
                        "floppy/install-winrm.bat",
-                       "floppy/install-cygwin-sshd.bat"
+                       "floppy/install-cygwin-sshd.bat",
+                       "floppy/oracle-cert.cer"
                       ],
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "vboxmanage": [
@@ -62,6 +66,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/stefan-win7x64.box"
+    "output": "../../{{.Provider}}/stefan-win2008R2x64.box"
   }]
 }

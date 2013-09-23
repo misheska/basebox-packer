@@ -8,3 +8,5 @@ iso
 *.swp
 packer.log
 .DS_Store
+log
+*msi

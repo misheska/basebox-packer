@@ -1,0 +1,603 @@
+
+Deployment Image Servicing and Management tool
+Version: 6.1.7600.16385
+
+Image Version: 6.1.7600.16385
+
+Features listing for package : Microsoft-Windows-Foundation-Package~31bf3856ad364e35~amd64~~6.1.7601.17514
+
+Feature Name : DirectoryServices-DomainController-Tools
+State : Disabled
+
+Feature Name : IIS-WebServerRole
+State : Disabled
+
+Feature Name : IIS-WebServer
+State : Disabled
+
+Feature Name : IIS-CommonHttpFeatures
+State : Disabled
+
+Feature Name : IIS-HttpErrors
+State : Disabled
+
+Feature Name : IIS-HttpRedirect
+State : Disabled
+
+Feature Name : IIS-ApplicationDevelopment
+State : Disabled
+
+Feature Name : IIS-Security
+State : Disabled
+
+Feature Name : IIS-URLAuthorization
+State : Disabled
+
+Feature Name : IIS-RequestFiltering
+State : Disabled
+
+Feature Name : IIS-NetFxExtensibility
+State : Disabled
+
+Feature Name : IIS-HealthAndDiagnostics
+State : Disabled
+
+Feature Name : IIS-HttpLogging
+State : Disabled
+
+Feature Name : IIS-LoggingLibraries
+State : Disabled
+
+Feature Name : IIS-RequestMonitor
+State : Disabled
+
+Feature Name : IIS-HttpTracing
+State : Disabled
+
+Feature Name : IIS-IPSecurity
+State : Disabled
+
+Feature Name : IIS-Performance
+State : Disabled
+
+Feature Name : IIS-HttpCompressionDynamic
+State : Disabled
+
+Feature Name : IIS-WebServerManagementTools
+State : Disabled
+
+Feature Name : IIS-ManagementScriptingTools
+State : Disabled
+
+Feature Name : IIS-IIS6ManagementCompatibility
+State : Disabled
+
+Feature Name : IIS-Metabase
+State : Disabled
+
+Feature Name : WAS-WindowsActivationService
+State : Disabled
+
+Feature Name : WAS-ProcessModel
+State : Disabled
+
+Feature Name : WAS-NetFxEnvironment
+State : Disabled
+
+Feature Name : WAS-ConfigurationAPI
+State : Disabled
+
+Feature Name : IIS-HostableWebCore
+State : Disabled
+
+Feature Name : IIS-ISAPIExtensions
+State : Disabled
+
+Feature Name : IIS-ISAPIFilter
+State : Disabled
+
+Feature Name : IIS-StaticContent
+State : Disabled
+
+Feature Name : IIS-DefaultDocument
+State : Disabled
+
+Feature Name : IIS-DirectoryBrowsing
+State : Disabled
+
+Feature Name : IIS-WebDAV
+State : Disabled
+
+Feature Name : IIS-ASPNET
+State : Disabled
+
+Feature Name : IIS-ASP
+State : Disabled
+
+Feature Name : IIS-CGI
+State : Disabled
+
+Feature Name : IIS-ServerSideIncludes
+State : Disabled
+
+Feature Name : IIS-CustomLogging
+State : Disabled
+
+Feature Name : IIS-BasicAuthentication
+State : Disabled
+
+Feature Name : IIS-HttpCompressionStatic
+State : Disabled
+
+Feature Name : IIS-ManagementConsole
+State : Disabled
+
+Feature Name : IIS-ManagementService
+State : Disabled
+
+Feature Name : IIS-WMICompatibility
+State : Disabled
+
+Feature Name : IIS-LegacyScripts
+State : Disabled
+
+Feature Name : IIS-LegacySnapIn
+State : Disabled
+
+Feature Name : IIS-FTPServer
+State : Disabled
+
+Feature Name : IIS-FTPSvc
+State : Disabled
+
+Feature Name : IIS-FTPExtensibility
+State : Disabled
+
+Feature Name : Smtpsvc-Admin-Update-Name
+State : Disabled
+
+Feature Name : Smtpsvc-Service-Update-Name
+State : Disabled
+
+Feature Name : NetFx3
+State : Disabled
+
+Feature Name : WCF-HTTP-Activation
+State : Disabled
+
+Feature Name : WCF-NonHTTP-Activation
+State : Disabled
+
+Feature Name : DirectoryServices-DomainController
+State : Disabled
+
+Feature Name : DirectoryServices-ADAM
+State : Disabled
+
+Feature Name : OEMHelpCustomization
+State : Disabled
+
+Feature Name : CorporationHelpCustomization
+State : Disabled
+
+Feature Name : Printing-LPRPortMonitor
+State : Disabled
+
+Feature Name : Printing-InternetPrinting-Client
+State : Disabled
+
+Feature Name : Printing-AdminTools-Collection
+State : Disabled
+
+Feature Name : BitLocker
+State : Disabled
+
+Feature Name : BitLocker-RemoteAdminTool
+State : Disabled
+
+Feature Name : BdeAducExtTool
+State : Disabled
+
+Feature Name : SimpleTCP
+State : Disabled
+
+Feature Name : SNMP
+State : Disabled
+
+Feature Name : WMISnmpProvider
+State : Disabled
+
+Feature Name : Microsoft-Windows-Web-Services-for-Management-IIS-Extension
+State : Disabled
+
+Feature Name : LightweightServer
+State : Disabled
+
+Feature Name : MicrosoftWindowsPowerShellISE
+State : Disabled
+
+Feature Name : RemoteAssistance
+State : Disabled
+
+Feature Name : WSRM
+State : Disabled
+
+Feature Name : TelnetServer
+State : Disabled
+
+Feature Name : TelnetClient
+State : Disabled
+
+Feature Name : BiometricFramework
+State : Disabled
+
+Feature Name : IIS-WindowsAuthentication
+State : Disabled
+
+Feature Name : IIS-DigestAuthentication
+State : Disabled
+
+Feature Name : IIS-ClientCertificateMappingAuthentication
+State : Disabled
+
+Feature Name : IIS-IISCertificateMappingAuthentication
+State : Disabled
+
+Feature Name : IIS-ODBCLogging
+State : Disabled
+
+Feature Name : Printing-Server-Role
+State : Disabled
+
+Feature Name : Printing-LPDPrintService
+State : Disabled
+
+Feature Name : BusScan-ScanServer
+State : Disabled
+
+Feature Name : Printing-InternetPrinting-Server
+State : Disabled
+
+Feature Name : FaxServiceConfigRole
+State : Disabled
+
+Feature Name : FaxServiceRole
+State : Disabled
+
+Feature Name : DFSR-Infrastructure-ServerEdition
+State : Disabled
+
+Feature Name : DHCPServer
+State : Disabled
+
+Feature Name : DHCPServer-Tools
+State : Disabled
+
+Feature Name : DHCPServer-RSATClient-Tools
+State : Disabled
+
+Feature Name : NetworkLoadBalancingFullServer
+State : Disabled
+
+Feature Name : FailoverCluster-FullServer
+State : Disabled
+
+Feature Name : NetworkLoadBalancingManagementClient
+State : Disabled
+
+Feature Name : FailoverCluster-AdminPak
+State : Disabled
+
+Feature Name : InkSupport
+State : Disabled
+
+Feature Name : DesktopExperience
+State : Disabled
+
+Feature Name : HandwritingRecognition
+State : Disabled
+
+Feature Name : AppServer
+State : Disabled
+
+Feature Name : AppServer-UI
+State : Disabled
+
+Feature Name : Licensing
+State : Disabled
+
+Feature Name : Licensing-UI
+State : Disabled
+
+Feature Name : SessionDirectory
+State : Disabled
+
+Feature Name : SBMgr-UI
+State : Disabled
+
+Feature Name : WebAccess
+State : Disabled
+
+Feature Name : SUA
+State : Disabled
+
+Feature Name : Microsoft-Windows-Deployment-Services
+State : Disabled
+
+Feature Name : Microsoft-Windows-Deployment-Services-Transport-Server
+State : Disabled
+
+Feature Name : Microsoft-Windows-Deployment-Services-Deployment-Server
+State : Disabled
+
+Feature Name : Microsoft-Windows-Deployment-Services-Legacy-SIS
+State : Disabled
+
+Feature Name : Microsoft-Windows-Deployment-Services-Admin-Pack
+State : Disabled
+
+Feature Name : ActiveDirectory-PowerShell
+State : Disabled
+
+Feature Name : DirectoryServices-AdministrativeCenter
+State : Disabled
+
+Feature Name : DNS-Server-Full-Role
+State : Disabled
+
+Feature Name : DirectoryServices-ADAM-Tools
+State : Disabled
+
+Feature Name : DNS-Server-Tools
+State : Disabled
+
+Feature Name : WINSRuntime
+State : Disabled
+
+Feature Name : Microsoft-Windows-Internet-Naming-Service-AdminTools
+State : Disabled
+
+Feature Name : IAS NT Service
+State : Disabled
+
+Feature Name : HCSRuntime
+State : Disabled
+
+Feature Name : HCSUI
+State : Disabled
+
+Feature Name : RPC-HTTP_Proxy
+State : Disabled
+
+Feature Name : Gateway
+State : Disabled
+
+Feature Name : Gateway-UI
+State : Disabled
+
+Feature Name : NPSManagementTools
+State : Disabled
+
+Feature Name : HCAP-Server
+State : Disabled
+
+Feature Name : RasServer
+State : Disabled
+
+Feature Name : RasServerAdminTools
+State : Disabled
+
+Feature Name : RasServerAll
+State : Disabled
+
+Feature Name : RasRoutingProtocols
+State : Disabled
+
+Feature Name : RasCMAK
+State : Disabled
+
+Feature Name : AdminUI
+State : Disabled
+
+Feature Name : NIS
+State : Disabled
+
+Feature Name : RSAT-NIS
+State : Disabled
+
+Feature Name : PSync
+State : Disabled
+
+Feature Name : WirelessNetworking
+State : Disabled
+
+Feature Name : WindowsRecoveryDisc
+State : Disabled
+
+Feature Name : WindowsServerBackup
+State : Disabled
+
+Feature Name : WindowsServerBackupCommandlet
+State : Disabled
+
+Feature Name : ServicesForNFS-ServerAndClient
+State : Disabled
+
+Feature Name : ServerForNFS-Infrastructure
+State : Disabled
+
+Feature Name : ClientForNFS-Infrastructure
+State : Disabled
+
+Feature Name : NFS-Administration
+State : Disabled
+
+Feature Name : DFS-Replication-All
+State : Disabled
+
+Feature Name : DfsMgmt
+State : Disabled
+
+Feature Name : FSRM-Infrastructure
+State : Disabled
+
+Feature Name : FSRM-Management
+State : Disabled
+
+Feature Name : CoreFileServer
+State : Disabled
+
+Feature Name : BITSExtensions-Upload
+State : Disabled
+
+Feature Name : BITSExtensions-AdminPack
+State : Disabled
+
+Feature Name : MSRDC-Infrastructure
+State : Disabled
+
+Feature Name : FRS-Infrastructure
+State : Disabled
+
+Feature Name : StorageManagerForSANs
+State : Disabled
+
+Feature Name : Indexing-Service-Package
+State : Disabled
+
+Feature Name : iSNS_Service
+State : Disabled
+
+Feature Name : Microsoft-Windows-GroupPolicy-ServerAdminTools-Update
+State : Disabled
+
+Feature Name : TFTP
+State : Disabled
+
+Feature Name : MultipathIo
+State : Disabled
+
+Feature Name : DirectoryServices-ISM-Smtp
+State : Disabled
+
+Feature Name : SearchEngine-Server-Package
+State : Disabled
+
+Feature Name : CertificateServicesManagementTools
+State : Disabled
+
+Feature Name : CertificateServices
+State : Disabled
+
+Feature Name : OnlineRevocationServicesManagementTools
+State : Disabled
+
+Feature Name : OnlineRevocationServices
+State : Disabled
+
+Feature Name : WebEnrollmentServices
+State : Disabled
+
+Feature Name : NetworkDeviceEnrollmentServices
+State : Disabled
+
+Feature Name : CertificateEnrollmentPolicyServer
+State : Disabled
+
+Feature Name : CertificateEnrollmentServer
+State : Disabled
+
+Feature Name : P2P-PnrpOnly
+State : Disabled
+
+Feature Name : MSMQ-Server
+State : Disabled
+
+Feature Name : MSMQ-Triggers
+State : Disabled
+
+Feature Name : MSMQ-ADIntegration
+State : Disabled
+
+Feature Name : MSMQ-HTTP
+State : Disabled
+
+Feature Name : MSMQ-Multicast
+State : Disabled
+
+Feature Name : MSMQ-DCOMProxy
+State : Disabled
+
+Feature Name : MSMQ-RoutingServer
+State : Disabled
+
+Feature Name : Printing-XPSServices-Features
+State : Enabled
+
+Feature Name : DFSN-Server
+State : Disabled
+
+Feature Name : ADFS-FederationService
+State : Disabled
+
+Feature Name : ADFS-FederationServiceProxy
+State : Disabled
+
+Feature Name : ADFS-WebAgentClaims
+State : Disabled
+
+Feature Name : ADFS-WebAgentToken
+State : Disabled
+
+Feature Name : RightsManagementServices
+State : Disabled
+
+Feature Name : RMS-Federation
+State : Disabled
+
+Feature Name : RightsManagementServices-AdminTools
+State : Disabled
+
+Feature Name : QWAVE
+State : Disabled
+
+Feature Name : PeerDist
+State : Disabled
+
+Feature Name : SIS-Limited
+State : Disabled
+
+Feature Name : Microsoft-Hyper-V
+State : Disabled
+
+Feature Name : VmHostAgent
+State : Disabled
+
+Feature Name : Microsoft-Hyper-V-Management-Clients
+State : Disabled
+
+Feature Name : DamgmtTools
+State : Disabled
+
+Feature Name : Internet-Explorer-Optional-amd64
+State : Enabled
+
+Feature Name : SMBHashGeneration
+State : Disabled
+
+Feature Name : ServerMigration
+State : Disabled
+
+Feature Name : Xps-Foundation-Xps-Viewer
+State : Disabled
+
+Feature Name : TIFFIFilter
+State : Disabled
+
+Feature Name : Microsoft-Windows-RemoteFX-Host-Package
+State : Disabled
+
+Feature Name : Microsoft-Windows-RemoteFX-EmbeddedVideoCap-Setup-Package
+State : Disabled
+
+The operation completed successfully.

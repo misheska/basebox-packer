@@ -24,5 +24,5 @@ To build a VirtualBox box:
 To build a VMware Fusion/VMware Workstation box:
 
     make list
-    # Choose a definition, like 'stefan-win7x64'
+    # Choose a definition, like 'vmware/stefan-win7x64'
     make vmware/stefan-win7x64
