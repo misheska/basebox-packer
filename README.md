@@ -10,17 +10,18 @@ added below:
 Current VMware Baseboxes
 ========================
 
-## VMware Fusion 6 - VMware Tools 9.6.0.26048 (build-1294478)
+## VMware Fusion 6.0.1 / VMware Workstation 10 - VMware Tools 9.6.0.26048 (build-1294478)
 
-* [misheska-centos64](https://dl.dropboxusercontent.com/s/vqnqd9bdf9l9ept/misheska-centos64.box?token_hash=AAHFE6kSedB-fEyU_PfKyBDGXBp36kIMZvK7rxeTxvsppg&dl=1) - CentOS 6.4 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
-* [misheska-centos59](https://dl.dropboxusercontent.com/s/a8drn7ejuqka138/misheska-centos59.box?token_hash=AAFSnDuYwVir_kin_5w1tAuXfNAbo9zUpGe-O59ixcIVUw&dl=1) - CentOS 5.9 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
-* [misheska-ubuntu1304](https://dl.dropboxusercontent.com/s/9vari3vcedl4fuc/misheska-ubuntu1304.box?token_hash=AAHF8EjVl4zuQm7pCa3tMjek0efdgtYehPSSyURiFaCICw&dl=1) - Ubuntu 13.04 server 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
-* [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/5kwfb90hxjrm4ec/misheska-ubuntu1204.box?token_hash=AAFNW1zjATXQeUl5UXnv9eO4CO2rP5Cb-Sk4HDlfp6i7yA&dl=1) - Ubuntu 12.04.3 server 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
-* [misheska-ubuntu1204-docker](https://dl.dropboxusercontent.com/s/chz873uc8jvy9q5/misheska-ubuntu1204-docker.box?token_hash=AAFxTiCHlJUiR2OV0smBem2VkwBSvzQMev6B_Bjp4MBfcA&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
-* [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/sedl8qk02zdp1cb/misheska-ubuntu1004.box?token_hash=AAGEc4F7GtZp2exYl9QGiNJbo606VxcIUoMC1D-zkClJRA&dl=1) - Ubuntu 10.04.4 server 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
-* [misheska-fedora19](https://dl.dropboxusercontent.com/s/4ifpc7snbwwpufd/misheska-fedora19.box?token_hash=AAGRhet6z5j0nXvxGy4rqbTMb7vAi-cGi27ymwWcI5mC2Q&dl=1) - Fedora 19 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
-* [misheska-opensuse114](https://dl.dropboxusercontent.com/s/w5rb0wsjug950qp/misheska-opensuse114.box?token_hash=AAHiaAsn9XEVEuLCMwGviGboNgbq4W0C7mo7qu2e_KVD7g&dl=1) - openSUSE 11.4 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
-* [misheska-debian71](https://dl.dropboxusercontent.com/s/3pk5tp8nium0nq1/misheska-debian71.box?token_hash=AAEa4Qto4-Kcd7LAVz3B355FnNwTrEJUuzGKd6zHRG2LNA&dl=1) - Debian "wheezy" 7.1 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-centos64](https://dl.dropboxusercontent.com/s/yzizpz7yh1ssj5v/misheska-centos64.box?token_hash=AAGct8nb3huQ1rYgpwSvrmhrIWvwBkke8x-gI0bfjc6q-g&dl=1) - CentOS 6.4 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-centos59](https://dl.dropboxusercontent.com/s/mrp9eozuiczrw6w/misheska-centos59.box?token_hash=AAGfjtG4O51F-wd21myUaKsNyBe3YpBkzivoCDBnqc3MNg&dl=1) - CentOS 5.9 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-ubuntu1304]() - Ubuntu 13.04 server 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-ubuntu1204]() - Ubuntu 12.04.3 server 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-ubuntu1204-docker](https://dl.dropboxusercontent.com/s/2e0f5eqd4kzbixg/misheska-ubuntu1204-docker.box?token_hash=AAEziUcD96Eu-sHB1ufKUvR3tCQCq3_joQ7BarXegPzZGw&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/i2aca5zdci3beuj/misheska-ubuntu1004.box?token_hash=AAFaclpsQn8241ReFL6tXuctalbtTMTxlpgmP7Gfi1NF8A&dl=1) - Ubuntu 10.04.4 server 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-fedora19](https://dl.dropboxusercontent.com/s/ypy263aqah39es9/misheska-fedora19.box?token_hash=AAFhDy7_uC8h876-mIxrYGdsm43ewkx7QeoB1ZDyrRzbCQ&dl=1) - Fedora 19 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-opensuse114]() - openSUSE 11.4 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-oracle64]() - Oracle Enterprise Linux 6.4 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-debian71](https://dl.dropboxusercontent.com/s/wrkyasqu9zc9r3c/misheska-debian71.box?token_hash=AAHDaUkfg_NKe2yzIRUxbpVAB0obLPNkT74ooZXbrG4HNw&dl=1) - Debian "wheezy" 7.1 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
 
 ## VMware Fusion 5 - VMware Tools 9.2.2.18018 (build-893683)
 
@@ -56,6 +57,7 @@ Current VirtualBox Baseboxes
 * [misheska-ubuntu1204-docker](https://dl.dropboxusercontent.com/s/37zbgd4b6b832zn/misheska-ubuntu1204-docker.box?token_hash=AAFBPTEGmTF-L5Uwc35FMDfQHCldl9SRBkWnsNtu6Dfw0g&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/ulap0vc4cn53r96/misheska-ubuntu1004.box?token_hash=AAH_ZZJvuklz9kufqd2JvaHkOG2-s3Mz_USpWVyglwgcRw&dl=1) - Ubuntu 10.04.4 server 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-fedora19](https://dl.dropboxusercontent.com/s/axb3abv181ogvrt/misheska-fedora19.box?token_hash=AAHsYjDw-d5z_IR6gJTVg_aEm9ZfjbDETVrAeXegPRZMFQ&dl=1) - Fedora 19 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
+* [misheska-oracle64](https://dl.dropboxusercontent.com/s/by0f6nsu1h894jg/misheska-oracle64.box?token_hash=AAG6ndr-r_uLXfsbzZy6jUu8w0nxw548do73CIgCb0uTCw&dl=1) - Oracle Enterprise Linux 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-debian71](https://dl.dropboxusercontent.com/s/tk0za6x2c1mcz7k/misheska-debian71.box?token_hash=AAHb-H5dJxeofl-QSMwBzBUAwLwJAliNNiQpv8mUekahFQ&dl=1) - Debian "wheezy" 7.1 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 
 ## VirtualBox 4.2.16
