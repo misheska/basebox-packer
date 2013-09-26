@@ -7,13 +7,8 @@ if id -u vagrant >/dev/null 2>&1; then
     echo "vagrant:vagrant" | chpasswd
 fi
 
-# Set up sudo.  Be careful to set permission BEFORE copying file to sudoers.d
-( cat <<'EOP'
-%vagrant ALL=NOPASSWD:ALL
-EOP
-) > /tmp/vagrant
-chmod 0440 /tmp/vagrant
-mv /tmp/vagrant /etc/sudoers.d/
+# Set up sudo
+echo "vagrant        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
 
 # Install vagrant keys
 mkdir /home/vagrant/.ssh
