@@ -4,9 +4,11 @@
 date > /etc/vagrant_box_build_time
 
 # Add vagrant user
-/usr/sbin/groupadd vagrant
-/usr/sbin/useradd vagrant -g vagrant
-echo "vagrant"|passwd --stdin vagrant
+if ! id -u vagrant >/dev/null 2>&1; then
+    /usr/sbin/groupadd vagrant
+    /usr/sbin/useradd vagrant -g vagrant
+    echo "vagrant"|passwd --stdin vagrant
+fi
 
 # Give Vagrant user permission to sudo
 echo 'Defaults:vagrant !requiretty' > /etc/sudoers.d/vagrant

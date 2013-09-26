@@ -1,14 +1,5 @@
-# Disable CDROM entries
+# Disable CDROM entries to prevent apt-get from prompting to insert a disk
 sed -i "/^deb cdrom:/s/^/#/" /etc/apt/sources.list
-
-# Set up sudo - base careful to set the file attribue before copying to
-# sudoers.d
-( cat <<'EOP'
-%packer ALL=NOPASSWD:ALL
-EOP
-) > /tmp/packer
-chmod 0440 /tmp/packer
-mv /tmp/packer /etc/sudoers.d/
 
 apt-get -y update
 apt-get -y upgrade

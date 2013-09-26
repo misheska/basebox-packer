@@ -1,3 +1,3 @@
-#yum -y clean all
+yum -y clean all
 
-#rm -rf /tmp/*
+rm -rf /tmp/*

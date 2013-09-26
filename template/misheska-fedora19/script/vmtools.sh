@@ -10,7 +10,7 @@ if test -f linux.iso ; then
 
     cd /tmp
     mkdir -p /mnt/cdrom
-    mount -o loop /home/packer/linux.iso /mnt/cdrom
+    mount -o loop /home/vagrant/linux.iso /mnt/cdrom
     tar zxf /mnt/cdrom/VMwareTools-*.tar.gz -C /tmp/
 
     if [[ -f /mnt/cdrom/VMwareTools-9.2.2-893683.tar.gz ]]
@@ -66,7 +66,7 @@ if test -f linux.iso ; then
         /tmp/vmware-tools-distrib/vmware-install.pl -d
     fi
 
-    rm /home/packer/linux.iso
+    rm /home/vagrant/linux.iso
     umount /mnt/cdrom
     rmdir /mnt/cdrom
 elif test -f .vbox_version ; then
@@ -76,9 +76,9 @@ elif test -f .vbox_version ; then
     # kernel-headers-$(uname -r) kernel-devel-$(uname -r) gcc make perl
     # from the install media via ks.cfg
 
-    VBOX_VERSION=$(cat /home/packer/.vbox_version)
-    mount -o loop /home/packer/VBoxGuestAdditions.iso /mnt
+    VBOX_VERSION=$(cat /home/vagrant/.vbox_version)
+    mount -o loop /home/vagrant/VBoxGuestAdditions.iso /mnt
     sh /mnt/VBoxLinuxAdditions.run
     umount /mnt
-    rm -rf /home/packer/VBoxGuestAdditions.iso
+    rm -rf /home/vagrant/VBoxGuestAdditions.iso
 fi

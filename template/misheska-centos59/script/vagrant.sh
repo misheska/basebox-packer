@@ -5,11 +5,13 @@ date > /etc/vagrant_box_build_time
 
 yum install -y wget
 
-# Add vagrant user
-/usr/sbin/groupadd vagrant
-/usr/sbin/useradd vagrant -g vagrant -G wheel
-echo "vagrant"|passwd --stdin vagrant
-echo "vagrant        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
+# Add vagrant user (if not already present)
+if ! id -u vagrant >/dev/null 2>&1; then
+    /usr/sbin/groupadd vagrant
+    /usr/sbin/useradd vagrant -g vagrant -G wheel
+    echo "vagrant"|passwd --stdin vagrant
+    echo "vagrant        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
+fi
 
 # Installing vagrant keys
 mkdir -pm 700 /home/vagrant/.ssh

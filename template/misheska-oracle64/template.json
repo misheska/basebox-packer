@@ -8,14 +8,14 @@
       "iso_url": "http://mirrors.dotsrc.org/oracle-linux/OL6/U4/x86_64/OracleLinux-R6-U4-Server-x86_64-dvd.iso",
       "iso_checksum": "c1a5e99c63e9485d4a6abe35c20e01c5cabb9e33edbe3399db64fb2d6d3b42ec",
       "iso_checksum_type": "sha256",
-      "ssh_username": "packer",
-      "ssh_password": "packer",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "10000s",
       "tools_upload_flavor": "linux",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
       ],
-      "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo 'packer'|sudo -S shutdown -P now",
+      "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "disk_size": 10140,
       "vmx_data": {
         "memsize": "512",
@@ -31,13 +31,13 @@
       "iso_url": "http://mirrors.dotsrc.org/oracle-linux/OL6/U4/x86_64/OracleLinux-R6-U4-Server-x86_64-dvd.iso",
       "iso_checksum": "c1a5e99c63e9485d4a6abe35c20e01c5cabb9e33edbe3399db64fb2d6d3b42ec",
       "iso_checksum_type": "sha256",
-      "ssh_username": "packer",
-      "ssh_password": "packer",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "10000s",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
       ],
-      "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo 'packer'|sudo -S shutdown -P now",
+      "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "disk_size": 10140,
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "512"],
@@ -56,10 +56,10 @@
     ],
     "override": {
       "virtualbox": {
-        "execute_command": "echo 'packer'|sudo -S sh '{{.Path}}'"
+        "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
       },
       "vmware": {
-        "execute_command": "echo 'packer'|sudo -S sh '{{.Path}}'"
+        "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
       }
     }
   }],
