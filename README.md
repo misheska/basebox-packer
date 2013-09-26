@@ -80,10 +80,10 @@ To build a VirtualBox box:
 
     make list
     # Choose a definition, like 'virtualbox/misheska-ubuntu1204'
-    make virtualbox/misheska-ubuntu1204
+    make virtualbox/misheska-ubuntu1204.box
 
 To build a VMware Fusion/VMware Workstation box:
 
     make list
     # Choose a definition, like 'misheska-centos64'
-    make vmware/misheska-centos64
+    make vmware/misheska-centos64.box
