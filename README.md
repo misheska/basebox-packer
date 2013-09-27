@@ -19,8 +19,8 @@ Current VMware Baseboxes
 * [misheska-ubuntu1204-docker](https://dl.dropboxusercontent.com/s/2e0f5eqd4kzbixg/misheska-ubuntu1204-docker.box?token_hash=AAEziUcD96Eu-sHB1ufKUvR3tCQCq3_joQ7BarXegPzZGw&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
 * [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/i2aca5zdci3beuj/misheska-ubuntu1004.box?token_hash=AAFaclpsQn8241ReFL6tXuctalbtTMTxlpgmP7Gfi1NF8A&dl=1) - Ubuntu 10.04.4 server 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
 * [misheska-fedora19](https://dl.dropboxusercontent.com/s/ypy263aqah39es9/misheska-fedora19.box?token_hash=AAFhDy7_uC8h876-mIxrYGdsm43ewkx7QeoB1ZDyrRzbCQ&dl=1) - Fedora 19 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
-* [misheska-opensuse114]() - openSUSE 11.4 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
-* [misheska-oracle64]() - Oracle Enterprise Linux 6.4 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-opensuse114](https://dl.dropboxusercontent.com/s/1x0xgl6cfctob0r/misheska-opensuse114.box?token_hash=AAHnJwp_iGfO0VHO-pJCCSeOlsQd1yy48VxJ4f9k762jOg&dl=1) - openSUSE 11.4 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [misheska-oracle64](https://dl.dropboxusercontent.com/s/82z8c9nyfy6326b/misheska-oracle64.box?token_hash=AAHlOt5CNAPmHhQDElk7Vfsc-N1kLgbjbAV5077iUXA2mA&dl=1) - Oracle Enterprise Linux 6.4 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
 * [misheska-debian71](https://dl.dropboxusercontent.com/s/wrkyasqu9zc9r3c/misheska-debian71.box?token_hash=AAHDaUkfg_NKe2yzIRUxbpVAB0obLPNkT74ooZXbrG4HNw&dl=1) - Debian "wheezy" 7.1 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
 
 ## VMware Fusion 5 - VMware Tools 9.2.2.18018 (build-893683)
