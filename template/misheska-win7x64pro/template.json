@@ -1,11 +1,11 @@
 {
   "builders": [
     {
-      "vm_name": "misheska-win8x64",
+      "vm_name": "misheska-win7x64pro",
       "type": "vmware",
-      "guest_os_type": "windows8-64",
-      "iso_url": "file://../../../iso/en_windows_8_enterprise_x64_dvd_917522.iso",
-      "iso_checksum": "27aa354b8088527ffcd32007b51b25bf",
+      "guest_os_type": "windows7-64",
+      "iso_url": "file://../../../iso/X17-24281.iso",
+      "iso_checksum": "338f3245d68527db47b8a44e55317d0a",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
@@ -13,7 +13,7 @@
       "tools_upload_flavor": "windows",
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "disk_size": 40960,
       "vmx_data": {
         "memsize": "768",
@@ -22,19 +22,19 @@
       }
     },
     {
-      "vm_name": "misheska-win8x64",
+      "vm_name": "misheska-win7x64pro",
       "type": "virtualbox",
-      "guest_os_type": "Windows8_64",
-      "iso_url": "file://../../../iso/en_windows_8_enterprise_x64_dvd_917522.iso",
-      "iso_checksum": "27aa354b8088527ffcd32007b51b25bf",
+      "guest_os_type": "Windows7_64",
+      "iso_url": "file://../../../iso/X17-24281.iso",
+      "iso_checksum": "338f3245d68527db47b8a44e55317d0a",
       "iso_checksum_type": "md5",
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c \"Packer Shutdown\"",
-      "floppy_files": ["floppy/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat", "floppy/oracle-cert.cer"],
       "disk_size": 40960,
+      "floppy_files": ["floppy/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat", "floppy/oracle-cert.cer"],
+      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "768"],
         ["modifyvm", "{{.Name}}", "--cpus", "1"]
@@ -51,6 +51,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/misheska-win8x64.box"
+    "output": "../../{{.Provider}}/misheska-win7x64pro.box"
   }]
 }
