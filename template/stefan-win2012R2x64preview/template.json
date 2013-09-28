@@ -1,0 +1,71 @@
+{
+  "builders": [
+    {
+      "vm_name": "stefan-win2012R2x64preview",
+      "type": "vmware",
+      "guest_os_type": "windows8srv-64",
+      "iso_url": "http://anywhere/at/microsoft/9431.0.WINMAIN_BLUEMP.130615-1214_X64FRE_SERVER_EN-US-IMP_SSS_X64FRE_EN-US_DV5.iso",
+      "iso_checksum": "c460592e63c5b1ab3f5955ec0b8bd490",
+      "iso_checksum_type": "md5",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "floppy_files": [
+                       "floppy/Autounattend.xml",
+                       "floppy/set-power-config.bat",
+                       "floppy/install-winrm.bat",
+                       "floppy/install-cygwin-sshd.bat"
+                       ],
+      "tools_upload_flavor": "windows",
+      "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "disk_size": 40960,
+      "disk_type_id": "0",
+      "skip_compaction": true,
+      "vmx_data": {
+        "memsize": "768",
+        "numvcpus": "1",
+        "cpuid.coresPerSocket": "1"
+      }
+    },
+    {
+      "vm_name": "stefan-win2012R2x64preview",
+      "type": "virtualbox",
+      "guest_os_type": "Windows2012_64",
+      "iso_url": "http://anywhere/at/microsoft/9431.0.WINMAIN_BLUEMP.130615-1214_X64FRE_SERVER_EN-US-IMP_SSS_X64FRE_EN-US_DV5.iso",
+      "iso_checksum": "c460592e63c5b1ab3f5955ec0b8bd490",
+      "iso_checksum_type": "md5",
+      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "10000s",
+      "disk_size": 40960,
+      "floppy_files": [
+                       "floppy/Autounattend.xml",
+                       "floppy/set-power-config.bat",
+                       "floppy/install-winrm.bat",
+                       "floppy/install-cygwin-sshd.bat",
+                       "floppy/oracle-cert.cer"
+                      ],
+      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "768"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ]
+    }
+  ],
+  "provisioners": [{
+    "type": "shell",
+    "scripts": [
+      "script/change-home-dirs.sh",
+      "script/postinstall.sh",
+      "script/install-vmtools.sh",
+      "script/install-chef.sh"
+    ]
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": true,
+    "output": "../../{{.Provider}}/stefan-win2012R2x64preview.box"
+  }]
+}
