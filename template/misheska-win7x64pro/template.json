@@ -1,11 +1,11 @@
 {
   "builders": [
     {
-      "vm_name": "misheska-win2008R2x64",
+      "vm_name": "misheska-win7x64pro",
       "type": "vmware",
-      "guest_os_type": "windows7srv-64",
-      "iso_url": "../../iso/en_windows_server_2008_r2_standard_enterprise_datacenter_and_web_with_sp1_vl_build_x64_dvd_617403.iso",
-      "iso_checksum": "8d397b69135d207452a78c3c3051339d",
+      "guest_os_type": "windows7-64",
+      "iso_url": "../../iso/X17-24281.iso",
+      "iso_checksum": "338f3245d68527db47b8a44e55317d0a",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
@@ -22,11 +22,11 @@
       }
     },
     {
-      "vm_name": "misheska-win2008R2x64",
+      "vm_name": "misheska-win7x64pro",
       "type": "virtualbox",
-      "guest_os_type": "Windows2008_64",
-      "iso_url": "../../iso/en_windows_server_2008_r2_standard_enterprise_datacenter_and_web_with_sp1_vl_build_x64_dvd_617403.iso",
-      "iso_checksum": "8d397b69135d207452a78c3c3051339d",
+      "guest_os_type": "Windows7_64",
+      "iso_url": "../../iso/X17-24281.iso",
+      "iso_checksum": "338f3245d68527db47b8a44e55317d0a",
       "iso_checksum_type": "md5",
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "ssh_username": "vagrant",
@@ -51,6 +51,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/misheska-win2008R2x64.box"
+    "output": "../../{{.Provider}}/misheska-win7x64pro.box"
   }]
 }

@@ -26,8 +26,11 @@ list:
 		for box_filename in $(BOX_FILENAMES) ; do \
 			echo $$builder/$$box_filename ; \
 		done ; \
-	done
+	done | sort
 
 .PHONY: clean
 clean:
 	$(foreach builder_type,$(BUILDER_TYPES),$(RM) -r $(builder_type);)
+	@for template_dir in $(TEMPLATE_DIRS) ; do \
+		$(RM) -r $$template_dir/output-vmware ;\
+	done

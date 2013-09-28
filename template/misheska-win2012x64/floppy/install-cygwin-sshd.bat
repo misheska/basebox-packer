@@ -3,15 +3,78 @@ REM http://webcache.googleusercontent.com/search?q=cache:SjoPPpuQxuoJ:www.tcm.ph
 REM create the cygwin directory
 cmd /c mkdir %SystemDrive%\cygwin
 
-cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal http://www.cygwin.com/setup.exe %SystemDrive%\cygwin\cygwin-setup.exe
+if "%PROCESSOR_ARCHITECTURE%" == "AMD64" (set ARCH=x86_64) else (set ARCH=x86)
+set URL=http://cygwin.com/setup-%ARCH%.exe
+
+cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal %URL% %SystemDrive%\cygwin\cygwin-setup.exe
 
 REM goto a temp directory
 cd %SystemDrive%\windows\temp
 
-REM run the installation
-cmd /c %SystemDrive%\cygwin\cygwin-setup.exe -q -R %SystemDrive%\cygwin -P openssh,openssl,curl,cygrunsrv,wget,rebase,vim -s http://cygwin.mirrors.pair.com
+REM dependencies for openssh,openssl,rebase,wget,vim:
+set PACKAGES= alternatives
+set PACKAGES=%PACKAGES%,csih
+set PACKAGES=%PACKAGES%,cygrunsrv
+set PACKAGES=%PACKAGES%,crypt
+set PACKAGES=%PACKAGES%,diffutils
+set PACKAGES=%PACKAGES%,libasn1_8
+set PACKAGES=%PACKAGES%,libattr1
+set PACKAGES=%PACKAGES%,libcom_err2
+set PACKAGES=%PACKAGES%,libcrypt0
+set PACKAGES=%PACKAGES%,libffi6
+set PACKAGES=%PACKAGES%,libgcc1
+set PACKAGES=%PACKAGES%,libgcrypt11
+set PACKAGES=%PACKAGES%,libgmp10
+set PACKAGES=%PACKAGES%,libgmp3
+set PACKAGES=%PACKAGES%,libgnutls26
+set PACKAGES=%PACKAGES%,libgpg-error0
+set PACKAGES=%PACKAGES%,libgssapi3
+set PACKAGES=%PACKAGES%,libheimbase1
+set PACKAGES=%PACKAGES%,libheimntlm0
+set PACKAGES=%PACKAGES%,libhx509_5
+set PACKAGES=%PACKAGES%,libiconv2
+set PACKAGES=%PACKAGES%,libidn11
+set PACKAGES=%PACKAGES%,libintl8
+set PACKAGES=%PACKAGES%,libkafs0
+set PACKAGES=%PACKAGES%,libkrb5_26
+set PACKAGES=%PACKAGES%,libmpfr4
+set PACKAGES=%PACKAGES%,libncursesw10
+set PACKAGES=%PACKAGES%,libopenssl100
+set PACKAGES=%PACKAGES%,libp11-kit0
+set PACKAGES=%PACKAGES%,libpcre0
+set PACKAGES=%PACKAGES%,libpcre1
+set PACKAGES=%PACKAGES%,libreadline7
+set PACKAGES=%PACKAGES%,libroken18
+set PACKAGES=%PACKAGES%,libsqlite3_0
+set PACKAGES=%PACKAGES%,libssp0
+set PACKAGES=%PACKAGES%,libtasn1_3
+set PACKAGES=%PACKAGES%,libwind0
+set PACKAGES=%PACKAGES%,libwrap0
+set PACKAGES=%PACKAGES%,zlib0
 
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -R sshd'
+REM the packages, less curl:
+set PACKAGES=%PACKAGES%,openssh
+set PACKAGES=%PACKAGES%,openssl
+set PACKAGES=%PACKAGES%,rebase
+set PACKAGES=%PACKAGES%,wget
+set PACKAGES=%PACKAGES%,vim
+
+REM dependencies for curl:
+set PACKAGES=%PACKAGES%,libexpat1
+set PACKAGES=%PACKAGES%,libmetalink3
+set PACKAGES=%PACKAGES%,libssh2_1
+set PACKAGES=%PACKAGES%,libsasl2_3
+set PACKAGES=%PACKAGES%,libopenldap2_4_2
+set PACKAGES=%PACKAGES%,libcurl4
+
+REM the curl:
+set PACKAGES=%PACKAGES%,curl
+
+REM run the installation
+%SystemDrive%\cygwin\cygwin-setup.exe -a %ARCH% -q -R %SystemDrive%\cygwin -P %PACKAGES% -s http://cygwin.mirrors.pair.com
+
+net stop sshd
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -E sshd'
 
 REM /bin/ash is the right shell for this command
 cmd /c %SystemDrive%\cygwin\bin\ash -c /bin/rebaseall
@@ -22,18 +85,19 @@ cmd /c %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/
 
 %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin /usr/bin/ssh-host-config -y -c "ntsecbinmode mintty" -w "abc&&123!!" '
 
-cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add rule name="SSHD" dir=in action=allow program="c:\cygwin\usr\sbin\sshd.exe" SSHD enable=yes
+cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add rule name="SSHD" dir=in action=allow program="%SystemDrive%\cygwin\usr\sbin\sshd.exe" enable=yes
 
 cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
 
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkdir -p /cygdrive/c/cygwin/home/vagrant
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin ln -s "$(/bin/dirname $(/bin/cygpath -D))" /home/$USERNAME'
 
 net start sshd
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -S sshd'
 
 REM Put local users home directories in the Windows Profiles directory
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l -p "$(cygpath $(cygpath -dH))" > /etc/passwd'
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l -p "$(/bin/cygpath -H)"'>%SystemDrive%\cygwin\etc\passwd
 
 REM Fix corrupt recycle bin
 REM http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
-cmd /c rd /s /q c:\$Recycle.bin
+cmd /c rd /s /q %SystemDrive%\$Recycle.bin
 
