@@ -4,8 +4,9 @@ VAGRANT_HOME=/cygdrive/c/Users/vagrant
 cd $VAGRANT_HOME
 
 #Rather than do the manual install of ruby and chef, just use the opscode msi
-curl -L http://www.opscode.com/chef/install.msi -o chef-client-latest.msi
-msiexec /qb /i chef-client-latest.msi
+# curl -L http://www.opscode.com/chef/install.msi -o chef-client-latest.msi
+wget http://www.opscode.com/chef/install.msi
+msiexec /qb /i install.msi
 
 #Making aliases
 cat <<EOF > /home/vagrant/.bash_profile
@@ -19,4 +20,4 @@ alias facter="facter.bat"
 EOF
 
 # Cleanup
-rm -f chef-client-latest.msi
+rm -f install.msi
