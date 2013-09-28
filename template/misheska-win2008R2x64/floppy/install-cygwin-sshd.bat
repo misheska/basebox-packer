@@ -11,6 +11,7 @@ cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal %URL% %Syst
 REM goto a temp directory
 cd %SystemDrive%\windows\temp
 
+REM dependencies for openssh,openssl,rebase,wget,vim:
 set PACKAGES= alternatives
 set PACKAGES=%PACKAGES%,csih
 set PACKAGES=%PACKAGES%,cygrunsrv
@@ -49,17 +50,31 @@ set PACKAGES=%PACKAGES%,libssp0
 set PACKAGES=%PACKAGES%,libtasn1_3
 set PACKAGES=%PACKAGES%,libwind0
 set PACKAGES=%PACKAGES%,libwrap0
+set PACKAGES=%PACKAGES%,zlib0
+
+REM the packages, less curl:
 set PACKAGES=%PACKAGES%,openssh
 set PACKAGES=%PACKAGES%,openssl
 set PACKAGES=%PACKAGES%,rebase
 set PACKAGES=%PACKAGES%,wget
-set PACKAGES=%PACKAGES%,zlib0
+set PACKAGES=%PACKAGES%,vim
+
+REM dependencies for curl:
+set PACKAGES=%PACKAGES%,libexpat1
+set PACKAGES=%PACKAGES%,libmetalink3
+set PACKAGES=%PACKAGES%,libssh2_1
+set PACKAGES=%PACKAGES%,libsasl2_3
+set PACKAGES=%PACKAGES%,libopenldap2_4_2
+set PACKAGES=%PACKAGES%,libcurl4
+
+REM the curl:
+set PACKAGES=%PACKAGES%,curl
 
 REM run the installation
 %SystemDrive%\cygwin\cygwin-setup.exe -a %ARCH% -q -R %SystemDrive%\cygwin -P %PACKAGES% -s http://cygwin.mirrors.pair.com
 
-REM Don't remove the ssh service
-rem %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -R sshd'
+net stop sshd
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -E sshd'
 
 REM /bin/ash is the right shell for this command
 cmd /c %SystemDrive%\cygwin\bin\ash -c /bin/rebaseall
@@ -77,6 +92,7 @@ cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add r
 %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin ln -s "$(/bin/dirname $(/bin/cygpath -D))" /home/$USERNAME'
 
 net start sshd
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -S sshd'
 
 REM Put local users home directories in the Windows Profiles directory
 %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l -p "$(/bin/cygpath -H)"'>%SystemDrive%\cygwin\etc\passwd
