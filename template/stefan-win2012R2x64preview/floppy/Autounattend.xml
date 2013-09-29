@@ -20,7 +20,7 @@
                     <InstallFrom>
                         <MetaData wcm:action="add">
                             <Key>/IMAGE/NAME</Key>
-                            <Value>Windows Server 2012 R2 SERVERDATACENTER PREVIEW</Value>
+                            <Value>Windows Server 2012 SERVERDATACENTER</Value>
                         </MetaData>
                     </InstallFrom>
                     <InstallTo>
