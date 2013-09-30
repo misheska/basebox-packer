@@ -34,4 +34,3 @@ fi
 
 # Cleanup
 rm -f 7z922-x64.msi
-
