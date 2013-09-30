@@ -9,7 +9,7 @@ set URL=http://cygwin.com/setup-%ARCH%.exe
 cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal %URL% %SystemDrive%\cygwin\cygwin-setup.exe
 
 REM goto a temp directory
-cd %SystemDrive%\windows\temp
+cd /D %SystemDrive%\windows\temp
 
 set PACKAGES= alternatives
 set PACKAGES=%PACKAGES%,csih
@@ -52,13 +52,16 @@ set PACKAGES=%PACKAGES%,libwrap0
 set PACKAGES=%PACKAGES%,openssh
 set PACKAGES=%PACKAGES%,openssl
 set PACKAGES=%PACKAGES%,rebase
+set PACKAGES=%PACKAGES%,termcap
+set PACKAGES=%PACKAGES%,terminfo
 set PACKAGES=%PACKAGES%,wget
 set PACKAGES=%PACKAGES%,zlib0
 
 REM run the installation
 %SystemDrive%\cygwin\cygwin-setup.exe -a %ARCH% -q -R %SystemDrive%\cygwin -P %PACKAGES% -s http://cygwin.mirrors.pair.com
 
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -R sshd'
+REM stop the service, instead of attempting to remove it
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -E sshd'
 
 REM /bin/ash is the right shell for this command
 cmd /c %SystemDrive%\cygwin\bin\ash -c /bin/rebaseall
