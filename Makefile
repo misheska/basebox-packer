@@ -28,6 +28,33 @@ list:
 		done ; \
 	done
 
-.PHONY: clean
-clean:
-	$(foreach builder_type,$(BUILDER_TYPES),$(RM) -r $(builder_type);)
+.PHONY: clean really-clean clean-builders clean-output clean-packer-cache
+clean: clean-builders clean-output
+
+really-clean: clean clean-packer-cache
+
+clean-builders:
+	@for builder in $(BUILDER_TYPES) ; do \
+		if test -d $$builder ; then \
+			echo Deleting $$builder ; \
+			$(ROM) -rf $$builder ; \
+		fi ; \
+	done
+
+clean-output:
+	@for template in $(TEMPLATE_DIRS) ; do \
+		for builder in $(BUILDER_TYPES) ; do \
+			if test -d $$template/output-$$builder ; then \
+				echo Deleting $$template/output-$$builder ; \
+				$(RM) -rf $$template/output-$$builder ; \
+			fi ; \
+		done ; \
+	done
+
+clean-packer-cache:
+	@for template in $(TEMPLATE_DIRS) ; do \
+		if test -d $$template/packer_cache ; then \
+			echo Deleting $$template/packer_cache ; \
+			$(RM) -rf $$template/packer_cache ; \
+		fi ; \
+	done
