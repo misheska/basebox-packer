@@ -19,7 +19,6 @@ cd /D template\%TEMPLATE%\
 if exist output-%FAVOR% rmdir /S /Q output-%FAVOR%
 set LOGNAME=log\packer-%FAVOR%-%TEMPLATE%.log
 if "%PACKER_CACHE_DIR%x" == "x" set "PACKER_CACHE_DIR=%CUR%\packer_cache"
-if not exist "%PACKER_CACHE_DIR%" mkdir "%PACKER_CACHE_DIR%"
 set PACKER_LOG_PATH=..\..\%LOGNAME%
 set PACKER_LOG=1
 packer build -only=%FAVOR% template.json
