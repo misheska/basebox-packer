@@ -1,4 +1,4 @@
-$NLMType = [Type]::GetTypeFromCLSID(‘DCB00C01-570F-4A9B-8D69-199FDBA5723B')
+$NLMType = [Type]::GetTypeFromCLSID('DCB00C01-570F-4A9B-8D69-199FDBA5723B')
 $INetworkListManager = [Activator]::CreateInstance($NLMType)
 
 $NLM_ENUM_NETWORK_CONNECTED = 1
