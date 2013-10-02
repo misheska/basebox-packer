@@ -4,18 +4,18 @@ REM create the cygwin directory
 cmd /c mkdir %SystemDrive%\cygwin
 
 if "%PROCESSOR_ARCHITECTURE%" == "AMD64" (set ARCH=x86_64) else (set ARCH=x86)
+set ARCH=x86
 set URL=http://cygwin.com/setup-%ARCH%.exe
 
 cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal %URL% %SystemDrive%\cygwin\cygwin-setup.exe
 
 REM goto a temp directory
-cd %SystemDrive%\windows\temp
+cd /D %SystemDrive%\windows\temp
 
 set PACKAGES= alternatives
 set PACKAGES=%PACKAGES%,csih
 set PACKAGES=%PACKAGES%,cygrunsrv
 set PACKAGES=%PACKAGES%,crypt
-set PACKAGES=%PACKAGES%,curl
 set PACKAGES=%PACKAGES%,diffutils
 set PACKAGES=%PACKAGES%,libasn1_8
 set PACKAGES=%PACKAGES%,libattr1
@@ -53,14 +53,16 @@ set PACKAGES=%PACKAGES%,libwrap0
 set PACKAGES=%PACKAGES%,openssh
 set PACKAGES=%PACKAGES%,openssl
 set PACKAGES=%PACKAGES%,rebase
+set PACKAGES=%PACKAGES%,termcap
+set PACKAGES=%PACKAGES%,terminfo
 set PACKAGES=%PACKAGES%,wget
 set PACKAGES=%PACKAGES%,zlib0
 
 REM run the installation
 %SystemDrive%\cygwin\cygwin-setup.exe -a %ARCH% -q -R %SystemDrive%\cygwin -P %PACKAGES% -s http://ftp.inf.tu-dresden.de/software/windows/cygwin32/
 
-REM Don't remove the ssh service
-rem %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -R sshd'
+REM stop the service, instead of attempting to remove it
+%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -E sshd'
 
 REM /bin/ash is the right shell for this command
 cmd /c %SystemDrive%\cygwin\bin\ash -c /bin/rebaseall
