@@ -1,6 +1,6 @@
 cd /D %SystemDrive%\windows\temp
 set URL=http://www.freesshd.com/freeSSHd.exe
-rem for https  [Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
+
 @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadFile('%URL%','freesshd.exe'))"
 freesshd.exe /VERYSILENT /NOICON /SUPPRESSMSGBOXES 
 net stop FreeSSHDService
@@ -15,8 +15,16 @@ cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add r
 copy /Y A:\FreeSSHDService.ini "%ProgramFiles(x86)%\freeSSHD\FreeSSHDService.ini"
 mkdir "%ProgramFiles(x86)%\freeSSHD\keys"
 @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadFile('https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub','%ProgramFiles(x86)%\freeSSHD\keys\vagrant'))"
-rem copy /Y A:\vagrant "%ProgramFiles(x86)\freeSSHD\keys\vagrant"
-rem net start FreeSSHDService
 
-rem sleep
-ping -n 1800 127.0.0.1 >nul
+net start FreeSSHDService
+
+rem But packer does not connect to freeSSHD 
+rem 2013/10/04 22:09:28 C:\Packer\packer-builder-virtualbox.exe: 2013/10/04 22:09:28 Opening conn for SSH to tcp 127.0.0.1:3499
+rem 2013/10/04 22:09:28 C:\Packer\packer-builder-virtualbox.exe: 2013/10/04 22:09:28 Attempting SSH connection...
+rem 2013/10/04 22:09:28 C:\Packer\packer-builder-virtualbox.exe: 2013/10/04 22:09:28 reconnecting to TCP connection for SSH
+rem 2013/10/04 22:09:28 C:\Packer\packer-builder-virtualbox.exe: 2013/10/04 22:09:28 Opening conn for SSH to tcp 127.0.0.1:3499
+rem 2013/10/04 22:09:28 C:\Packer\packer-builder-virtualbox.exe: 2013/10/04 22:09:28 handshaking with SSH
+rem 2013/10/04 22:09:58 C:\Packer\packer-builder-virtualbox.exe: 2013/10/04 22:09:58 handshake error: handshake failed: ssh: no common algorithms
+rem 2013/10/04 22:09:58 C:\Packer\packer-builder-virtualbox.exe: 2013/10/04 22:09:58 SSH handshake err: handshake failed: ssh: no common algorithms
+rem freeSSHD seems to support only vulnerable algorithms as listed in
+rem http://stackoverflow.com/questions/18998473/failed-to-dial-handshake-failed-ssh-no-common-algorithms-error-in-ssh-client
