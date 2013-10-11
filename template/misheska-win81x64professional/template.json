@@ -1,0 +1,57 @@
+{
+  "builders": [
+    {
+      "vm_name": "misheska-win81x64pro",
+      "type": "vmware",
+      "guest_os_type": "windows8-64",
+      "iso_url": "../../iso/en_windows_8_1_pro_vl_x64_dvd_2791292.iso",
+      "iso_checksum": "89b2a5dedee8f387b8131b2199758ce9",
+      "iso_checksum_type": "md5",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "floppy_files": ["floppy/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat"],
+      "tools_upload_flavor": "windows",
+      "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "disk_size": 40960,
+      "vmx_data": {
+        "memsize": "768",
+        "numvcpus": "1",
+        "cpuid.coresPerSocket": "1",
+        "scsi0.virtualDev": "lsisas1068"
+      }
+    },
+    {
+      "vm_name": "misheska-win81x64pro",
+      "type": "virtualbox",
+      "guest_os_type": "Windows8_64",
+      "iso_url": "../../iso/en_windows_8_1_pro_vl_x64_dvd_2791292.iso",
+      "iso_checksum": "89b2a5dedee8f387b8131b2199758ce9",
+      "iso_checksum_type": "md5",
+      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "floppy_files": ["floppy/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat", "floppy/oracle-cert.cer"],
+      "disk_size": 40960,
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "768"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ]
+    }
+  ],
+  "provisioners": [{
+    "type": "shell",
+    "scripts": [
+      "script/change-home-dirs.sh",
+      "script/postinstall.sh"
+    ]
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": true,
+    "output": "../../{{.Provider}}/misheska-win81x64pro.box"
+  }]
+}
