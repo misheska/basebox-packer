@@ -1,7 +1,7 @@
 {
   "builders": [
     {
-      "vm_name": "misheska-win2012R2x64",
+      "vm_name": "win2012R2-datacenter",
       "type": "vmware",
       "guest_os_type": "windows8srv-64",
       "iso_url": "../../iso/en_windows_server_2012_r2_x64_dvd_2707946.iso",
@@ -23,7 +23,7 @@
       }
     },
     {
-      "vm_name": "misheska-win2012R2x64",
+      "vm_name": "win2012R2-datacenter",
       "type": "virtualbox",
       "guest_os_type": "Windows2012_64",
       "iso_url": "../../iso/en_windows_server_2012_r2_x64_dvd_2707946.iso",
@@ -52,6 +52,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/misheska-win2012R2x64.box"
+    "output": "../../{{.Provider}}/win2012R2-datacenter.box"
   }]
 }
