@@ -1,33 +1,32 @@
 {
   "builders": [
     {
-      "vm_name": "win2012r2-datacenter",
+      "vm_name": "win8x86-enterprise",
       "type": "vmware",
-      "guest_os_type": "windows8srv-64",
-      "iso_url": "../../iso/en_windows_server_2012_r2_x64_dvd_2707946.iso",
-      "iso_checksum": "0e7c09aab20dec3cd7eab236dab90e78",
+      "guest_os_type": "windows8",
+      "iso_url": "../../iso/en_windows_8_enterprise_x86_dvd_917587.iso",
+      "iso_checksum": "ad055cae50cef987586c51cc6cc3c62e",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "10000s",
       "floppy_files": ["floppy/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat"],
       "tools_upload_flavor": "windows",
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
+      "ssh_wait_timeout": "10000s",
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c \"Packer Shutdown\"",
       "disk_size": 40960,
       "vmx_data": {
         "memsize": "768",
         "numvcpus": "1",
-        "cpuid.coresPerSocket": "1",
-        "scsi0.virtualDev": "lsisas1068"
+        "cpuid.coresPerSocket": "1"
       }
     },
     {
-      "vm_name": "win2012r2-datacenter",
+      "vm_name": "win8x86-enterpsie",
       "type": "virtualbox",
-      "guest_os_type": "Windows2012_64",
-      "iso_url": "../../iso/en_windows_server_2012_r2_x64_dvd_2707946.iso",
-      "iso_checksum": "0e7c09aab20dec3cd7eab236dab90e78",
+      "guest_os_type": "Windows8",
+      "iso_url": "../../iso/en_windows_8_enterprise_x86_dvd_917587.iso",
+      "iso_checksum": "ad055cae50cef987586c51cc6cc3c62e",
       "iso_checksum_type": "md5",
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "ssh_username": "vagrant",
@@ -52,6 +51,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/win2012r2-datacenter.box"
+    "output": "../../{{.Provider}}/win8x86-enterprise.box"
   }]
 }

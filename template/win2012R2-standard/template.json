@@ -1,7 +1,7 @@
 {
   "builders": [
     {
-      "vm_name": "win2012R2-standard",
+      "vm_name": "win2012r2-standard",
       "type": "vmware",
       "guest_os_type": "windows8srv-64",
       "iso_url": "../../iso/en_windows_server_2012_r2_x64_dvd_2707946.iso",
@@ -23,7 +23,7 @@
       }
     },
     {
-      "vm_name": "win2012R2x64-standard",
+      "vm_name": "win2012r2-standard",
       "type": "virtualbox",
       "guest_os_type": "Windows2012_64",
       "iso_url": "../../iso/en_windows_server_2012_r2_x64_dvd_2707946.iso",
@@ -52,6 +52,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/win2012R2-standard.box"
+    "output": "../../{{.Provider}}/win2012r2-standard.box"
   }]
 }

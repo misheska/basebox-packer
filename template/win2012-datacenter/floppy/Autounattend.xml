@@ -10,7 +10,7 @@
         <component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <UserData>
                 <ProductKey>
-                    <Key>W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9</Key>
+                    <Key>48HP8-DN98B-MYWDG-T2DCC-8W83P</Key>
                     <WillShowUI>OnError</WillShowUI>
                 </ProductKey>
                 <AcceptEula>true</AcceptEula>
@@ -20,7 +20,7 @@
                     <InstallFrom>
                         <MetaData wcm:action="add">
                             <Key>/IMAGE/NAME</Key>
-                            <Value>Windows Server 2012 R2 SERVERDATACENTER</Value>
+                            <Value>Windows Server 2012 SERVERDATACENTER</Value>
                         </MetaData>
                     </InstallFrom>
                     <InstallTo>
@@ -31,11 +31,12 @@
                 </OSImage>
             </ImageInstall>
             <DiskConfiguration>
+                <WillShowUI>OnError</WillShowUI>
                 <Disk wcm:action="add">
                     <CreatePartitions>
                         <CreatePartition wcm:action="add">
                             <Order>1</Order>
-                            <Size>20000</Size>
+                            <Size>10000</Size>
                             <Type>Primary</Type>
                         </CreatePartition>
                     </CreatePartitions>
@@ -52,7 +53,6 @@
                     <DiskID>0</DiskID>
                     <WillWipeDisk>true</WillWipeDisk>
                 </Disk>
-                <WillShowUI>OnError</WillShowUI>
             </DiskConfiguration>
         </component>
     </settings>
@@ -93,12 +93,12 @@
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c a:set-power-config.bat</CommandLine>
-                    <Description>Turn off all power saving and tmeouts</Description>
+                    <Description>Turn off all power saving and timeouts</Description>
                     <Order>2</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>cmd.exe /c a:install-cygwin-sshd.bat</CommandLine>
+                    <CommandLine>cmd /c a:install-cygwin-sshd.bat</CommandLine>
                     <Description>Install Cygwin SSHD</Description>
                     <Order>3</Order>
                     <RequiresUserInput>true</RequiresUserInput>
@@ -136,9 +136,6 @@
                     <ScopeUrl>http://www.google.com/search?q={searchTerms}</ScopeUrl>
                 </Scope>
             </SearchScopes>
-            <DisableAccelerators>true</DisableAccelerators>
-            <DisableFirstRunWizard>true</DisableFirstRunWizard>
-            <Home_Page>about:blank</Home_Page>
         </component>
         <component name="Microsoft-Windows-TerminalServices-LocalSessionManager" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <fDenyTSConnections>false</fDenyTSConnections>
@@ -161,5 +158,5 @@
             <EnableLUA>false</EnableLUA>
         </component>
     </settings>
-    <cpi:offlineImage cpi:source="wim:c:/users/misheska/sources/win2012r2/install.wim#Windows Server 2012 R2 SERVERDATACENTER" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+    <cpi:offlineImage cpi:source="wim:c:/users/misheska/sources/win2012/install.wim#Windows Server 2012 SERVERDATACENTER" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 </unattend>
