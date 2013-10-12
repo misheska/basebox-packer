@@ -1,0 +1,44 @@
+#set -x
+
+VAGRANT_HOME=/cygdrive/c/Users/vagrant
+# Install ssh certificates
+mkdir $VAGRANT_HOME/.ssh
+chmod 700 $VAGRANT_HOME/.ssh
+cd $VAGRANT_HOME/.ssh
+wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' -O authorized_keys
+chown -R vagrant $VAGRANT_HOME/.ssh
+cd ..
+
+cd $VAGRANT_HOME
+
+# 7zip will allow us to extract a file from an ISO
+wget http://downloads.sourceforge.net/sevenzip/7z922-x64.msi
+msiexec /qb /i 7z922-x64.msi
+
+if [ -f VBoxGuestAdditions.iso ]; then
+    # Extract the installer from the ISO
+    /cygdrive/c/Program\ Files/7-Zip/7z.exe x VBoxGuestAdditions.iso VBoxWindowsAdditions-amd64.exe
+
+    # Mark Oracle as a trusted installer
+    certutil -addstore -f "TrustedPublisher" $(cygpath -d /cygdrive/a/oracle-cert.cer)
+
+    # Install the Virtualbox Additions
+    ./VBoxWindowsAdditions-amd64.exe /S
+
+    # Cleanup
+    rm -f VBoxGuestAdditions.iso
+    rm -f VBoxWindowsAdditions-amd64.exe
+elif [ -f windows.iso ]; then
+    # Extract the installer from the ISO
+    /cygdrive/c/Program\ Files/7-Zip/7z.exe x windows.iso setup64.exe
+
+    # Install VMware tools
+    ./setup64.exe /S /v "/qn REBOOT=R ADDLOCAL=ALL" || true
+
+    # Cleanup
+    rm -f windows.iso
+    rm -f setup64.exe
+fi
+
+# Cleanup
+rm -f 7z922-x64.msi
