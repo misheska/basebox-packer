@@ -12,7 +12,7 @@ cd ..
 cd $VAGRANT_HOME
 
 ZIP_INSTALL=7z922.msi
-VBOX_INSTALL=VBoxWindowsAdditions.exe
+VBOX_INSTALL=VBoxWindowsAdditions-x86.exe
 VMWARE_INSTALL=setup.exe
 
 # 7zip will allow us to extract a file from an ISO
