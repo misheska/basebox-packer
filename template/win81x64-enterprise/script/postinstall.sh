@@ -1,1 +1,1 @@
-../../.windows/postinstall.sh
+../../.windows/postinstall64.sh
