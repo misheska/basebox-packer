@@ -1,0 +1,1 @@
+../../osx/scripts/vmware.sh

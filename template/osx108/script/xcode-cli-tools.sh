@@ -1,0 +1,1 @@
+../../osx/scripts/xcode-cli-tools.sh
