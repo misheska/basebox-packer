@@ -30,9 +30,10 @@
       }
     }
   ],
-  "post-processors": [
-    "vagrant"
-  ],
+  "post-processors": [{
+    "type": "vagrant",
+    "output": "../../{{.Provider}}/osx18.box"
+  }],
   "provisioners": [
     {
       "destination": "/private/tmp/kcpassword",
