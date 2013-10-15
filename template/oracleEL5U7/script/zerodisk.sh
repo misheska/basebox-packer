@@ -1,1 +1,0 @@
-../../.oracle/zerodisk.sh
