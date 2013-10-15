@@ -1,6 +1,6 @@
 {
   "builders": [{
-    "vm_name": "misheska-centos64",
+    "vm_name": "centos64",
     "type": "vmware",
     "guest_os_type": "centos-64",
     "http_directory": "http",
@@ -23,13 +23,15 @@
     }
   },
   {
-    "vm_name": "misheska-centos64",
+    "vm_name": "centos64",
     "type": "virtualbox",
-    "guest_os_type": "RedHat_64",
     "http_directory": "http",
     "iso_url": "http://mirrors.kernel.org/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-bin-DVD1.iso",
     "iso_checksum": "0128cfc7c86072b13ee80dd013e0e5d7",
     "iso_checksum_type": "md5",
+    "guest_os_type": "RedHat_64",
+    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+    "virtualbox_version_file": ".vbox_version",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
     "ssh_wait_timeout": "10000s",
@@ -54,16 +56,16 @@
     ],
     "override": {
       "virtualbox": {
-        "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
       },
       "vmware": {
-        "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
       }
     }
   }],
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/misheska-centos64.box"
+    "output": "../../{{.Provider}}/centos64.box"
   }]
 }

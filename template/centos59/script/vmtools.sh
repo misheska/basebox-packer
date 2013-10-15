@@ -32,8 +32,8 @@ elif test -f .vbox_version ; then
     # from the install media via ks.cfg
 
     VBOX_VERSION=$(cat /home/vagrant/.vbox_version)
-    mount -o loop /home/vagrant/VBoxGuestAdditions.iso /mnt
-    sh /mnt/VBoxLinuxAdditions.run
+    mount -o loop /home/vagrant/VBoxGuestAdditions_$VBOX_VERSION.iso /mnt
+    sh /mnt/VBoxLinuxAdditions.run --nox11
     umount /mnt
-    rm -rf /home/vagrant/VBoxGuestAdditions.iso
+    rm -rf /home/vagrant/VBoxGuestAdditions_$VBOX_VERSION.iso
 fi
