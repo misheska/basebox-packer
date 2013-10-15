@@ -1,6 +1,6 @@
 #!/bin/bash -eux
 
-if test -f linux.iso ; then
+if [ -f linux.iso ]; then
     if grep -q -i "release 6" /etc/redhat-release ; then
         # Uninstall fuse to fake out the vmware install so it won't try to
         # enable the VMware blocking filesystem
@@ -10,15 +10,21 @@ if test -f linux.iso ; then
     # kernel-headers-$(uname -r) kernel-devel-$(uname -r) gcc make perl
     # from the install media via ks.cfg
 
+    # On RHEL 5, add /sbin to PATH because vagrant does a probe for
+    # vmhgfs with lsmod sans PATH
+    if grep -q -i "release 5" /etc/redhat-release ; then
+        echo "export PATH=$PATH:/usr/sbin:/sbin" >> /home/vagrant/.bashrc
+    fi
+
     cd /tmp
     mkdir -p /mnt/cdrom
     mount -o loop /home/vagrant/linux.iso /mnt/cdrom
     tar zxf /mnt/cdrom/VMwareTools-*.tar.gz -C /tmp/
-    /tmp/vmware-tools-distrib/vmware-install.pl -d
+    /tmp/vmware-tools-distrib/vmware-install.pl --default
     rm /home/vagrant/linux.iso
     umount /mnt/cdrom
     rmdir /mnt/cdrom
-elif test -f .vbox_version ; then
+elif [ -f .vbox_version ] ; then
     echo "Installing VirtualBox guest additions"
 
     # Assume that we've installed all the prerequisites:
