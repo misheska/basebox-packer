@@ -20,7 +20,7 @@
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "cmd /C start A:\\uninstall-cygwin-and-shutdown.bat",
-      "disk_size": 40960,
+      "disk_size": 61440,
       "vmx_data": {
         "memsize": "768",
         "numvcpus": "1",
@@ -38,7 +38,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
-      "disk_size": 40960,
+      "disk_size": 61440,
       "floppy_files": ["floppy/Autounattend.xml",
                        "floppy/oracle-cert.cer",
                        "floppy/set-power-config.bat",
@@ -59,8 +59,7 @@
     "scripts": [
       "script/change-home-dirs.sh",
       "script/postinstall.sh",
-      "script/install-vmtools.sh",
-      "script/install-chef.sh"
+      "script/install-vmtools.sh"
     ]
   }],
   "post-processors": [{
