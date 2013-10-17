@@ -10,7 +10,7 @@
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
     "ssh_wait_timeout": "10000s",
-    "floppy_files": ["floppy/vmware9.compat_mm.patch", "floppy/vmware9.k3.8rc4.patch"],
+    "floppy_files": ["floppy/vmware9.compat_mm.patch", "floppy/vmware9.k3.8rc4.patch", "floppy/vmhgfs-d_count-kernel-3.11-tools-9.6.0.patch"],
     "tools_upload_flavor": "linux",
     "boot_command": [
       "<esc><esc><enter><wait>",
