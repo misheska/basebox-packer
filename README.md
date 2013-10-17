@@ -12,6 +12,8 @@ Current VMware Baseboxes
 
 ## VMware Fusion 6.0.1 / VMware Workstation 10 - VMware Tools 9.6.0.26048 (build-1294478)
 
+* [ubuntu1310](https://dl.dropboxusercontent.com/s/xi0jp8bfb6gdnkf/ubuntu1310.box?token_hash=AAEcaD5YTCx9FoOB55vDYKLEhBfBcezo2RN8MYpyAaHFLg&dl=1) - Ubuntu 13.10 server 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
+* [ubuntu1310-i386](https://dl.dropboxusercontent.com/s/c7jy8efytf1p9oy/ubuntu1310-i386.box?token_hash=AAHf0Ff1DqbIJRvoc7BokREngRoTLqD6viZOJv3IN3Q8yg&dl=1) - Ubuntu 13.10 server 32-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
 * [misheska-centos64](https://dl.dropboxusercontent.com/s/yzizpz7yh1ssj5v/misheska-centos64.box?token_hash=AAGct8nb3huQ1rYgpwSvrmhrIWvwBkke8x-gI0bfjc6q-g&dl=1) - CentOS 6.4 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
 * [misheska-centos59](https://dl.dropboxusercontent.com/s/mrp9eozuiczrw6w/misheska-centos59.box?token_hash=AAGfjtG4O51F-wd21myUaKsNyBe3YpBkzivoCDBnqc3MNg&dl=1) - CentOS 5.9 64-bit VMware Fusion 6 / VMware Workstation 10 basebox (VMware Tools 9.2.6.26048 build-1294478)
 * [misheska-ubuntu1304](https://dl.dropboxusercontent.com/s/gqblzowp3ngag6i/misheska-ubuntu1304.box?token_hash=AAGUqr36E18tEbJMfSeitztE2znrv-s-n2KEQ4YsN_A9eQ&dl=1) - Ubuntu 13.04 server 64-bit VMware Fusion 6 basebox (VMware Tools 9.2.6.26048 build-1294478)
@@ -47,6 +49,11 @@ Current VMware Baseboxes
 
 Current VirtualBox Baseboxes
 ============================
+
+## VirtualBox 4.3.0
+
+* [ubuntu1310](https://dl.dropboxusercontent.com/s/ng79gg5bg24r38p/ubuntu1310.box?token_hash=AAGKH9rJTMozemrLMLw8n8Htvg8-gGhb7xo8cwh0TaYCaw&dl=1) - Ubuntu 13.10 64-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
+* [ubuntu1310-i386](https://dl.dropboxusercontent.com/s/dg5xlil94hjvl23/ubuntu1310-i386.box?token_hash=AAE9Bykyb2lPQw49hDaWVQGSb4DleogF7ldboRHkdJdojQ&dl=1) - Ubuntu 13.10 32-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
 
 ## VirtualBox 4.2.18
 
