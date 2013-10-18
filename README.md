@@ -27,12 +27,12 @@ Current VMware Baseboxes
 * [oracle64]() - Oracle Linux Release 6 Update 4 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle63]() - Oracle Linux Release 6 Update 3 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle62]() - Oracle Linux Release 6 Update 2 64-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [oracle61]() - Oracle Linux Release 6 Update 1 64-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [oracle61](https://dl.dropboxusercontent.com/s/nta74kutadjyy1w/oracle61.box?token_hash=AAEtFQAUwhuHoaNDeuWoyzcQblKJDZGxDCnriG6PCzCR4w&dl=1) - Oracle Linux Release 6 Update 1 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle510](https://dl.dropboxusercontent.com/s/g251rwd2wr2rp7v/oracle510.box?token_hash=AAEOYD_5BEfKzr0nrEFumTz-rolmQANr1B6HHmphTb6n8A&dl=1) - Oracle Linux Release 5 Update 10 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle59](https://dl.dropboxusercontent.com/s/5u20w6mtcnhdcq2/oracle59.box?token_hash=AAHTh10L_SFKFl-bb3fPKr_XTQgvjkQwwp-EuzDnmrWFFw&dl=1) - Oracle Linux Release 5 Update 9 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle58](https://dl.dropboxusercontent.com/s/3v55841p0czjjij/oracle58.box?token_hash=AAE7yd0MfCAgcC0D2aeHofwDF-DyIl6mdcOPOpuImPLQgA&dl=1) - Oracle Linux Release 5 Update 8 64-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [oracle57]() - Oracle Linux Release 5 Update 7 64-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [debian72]() - Debian "wheezy" 7.2 64-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [oracle57](https://dl.dropboxusercontent.com/s/ap92o5071qiie6d/oracle57.box?token_hash=AAF_dXpGPbpCf6ujoP-_zaFe7DlXLZDAy7g8ueOTHpI0EQ&dl=1) - Oracle Linux Release 5 Update 7 64-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [debian72](https://dl.dropboxusercontent.com/s/g8djjlz1x5tz30j/debian72.box?token_hash=AAH1_-tgqx5PabhxLXD-X7hFEZ9x_-a899fMAYI_Kgd4Bg&dl=1) - Debian "wheezy" 7.2 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian71]() - Debian "wheezy" 7.1 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 
 32-bit boxes:
@@ -48,12 +48,12 @@ Current VMware Baseboxes
 * [oracle64-i386]() - Oracle Linux Release 6 Update 4 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle63-i386]() - Oracle Linux Release 6 Update 3 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle62-i386]() - Oracle Linux Release 6 Update 2 32-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [oracle61-i386]() - Oracle Linux Release 6 Update 1 32-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [oracle61-i386](https://dl.dropboxusercontent.com/s/axx0qwzupsxszw0/oracle61-i386.box?token_hash=AAE7RKqyTUFQucUbDfUX1-3HPQQFmsWvun61ptfz7MjTpA&dl=1) - Oracle Linux Release 6 Update 1 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle510-i386](https://dl.dropboxusercontent.com/s/fpuupri3do9b8uz/oracle510-i386.box?token_hash=AAEFx1w9OBHGXn87dk0KdEsSRr4TP3bQhfBFmevh0ft1qg&dl=1) - Oracle Linux Release 5 Update 10 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle59-i386](https://dl.dropboxusercontent.com/s/fsburywbcmikf06/oracle59-i386.box?token_hash=AAEMCflkvE1GGvJyKo70NA4otzqG_YqkDw9qMGgTHpXLZQ&dl=1) - Oracle Linux Release 5 Update 9 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle58-i386](https://dl.dropboxusercontent.com/s/ixt0ao0m30sfsxl/oracle58-i386.box?token_hash=AAHi9CgAF6tuPpHt07U5OKSByGngDPZ0HooZtJTArq1j1Q&dl=1) - Oracle Linux Release 5 Update 8 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle57-i386](https://dl.dropboxusercontent.com/s/qj9kwtwgiw5x72b/oracle57-i386.box?token_hash=AAHe0ShK47CCkIpbh6lOlPIyDTm0f81ac-3YwLFFWLJWzA&dl=1) - Oracle Linux Release 5 Update 7 32-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [debian72-i386]() - Debian "wheezy" 7.2 32-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [debian72-i386](https://dl.dropboxusercontent.com/s/75z1jqliq1jnl7k/debian72-i386.box?token_hash=AAH_Fj1Loiz58Q7wbNjDu2ZWYskIFMfo1hBULJFwGboGRw&dl=1) - Debian "wheezy" 7.2 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian71-i386]() - Debian "wheezy" 7.1 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 
 
