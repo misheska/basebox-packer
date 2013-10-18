@@ -52,8 +52,17 @@ Current VirtualBox Baseboxes
 
 ## VirtualBox 4.3.0
 
+* [centos64](https://dl.dropboxusercontent.com/s/dqv65qk6j79mq3o/centos64.box?token_hash=AAEO0urkBZTTpS3ndrKg5ek2rnGCxfa2T56tQk3fK8-sBQ&dl=1) - CentOS 6.4 64-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
+* [centos64-i386](https://dl.dropboxusercontent.com/s/guk2p3ypz456xlc/centos64-i386.box?token_hash=AAEwLvxb-pZUeyKYGABoHb-kwwD0OtvQuJQO0msKIVJWKQ&dl=1) - CentOS 6.4 32-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
+* [centos59](https://dl.dropboxusercontent.com/s/6nc2grl7bneaou7/centos59.box?token_hash=AAHJ4-rJMtBDawC-qDCRC_YWsoHE2D2t3iuchPWdJ9cNqw&dl=1) - CentOS 5.9 64-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
+* [centos59-i386](https://dl.dropboxusercontent.com/s/lb0q1vk3ojxypa2/centos59-i386.box?token_hash=AAHxzOJG4GhG5yJAAqqLPhRBFoL6liFnTT9nP-9dzkLH8g&dl=1) - CentOS 5.9 32-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1310](https://dl.dropboxusercontent.com/s/ng79gg5bg24r38p/ubuntu1310.box?token_hash=AAGKH9rJTMozemrLMLw8n8Htvg8-gGhb7xo8cwh0TaYCaw&dl=1) - Ubuntu 13.10 64-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1310-i386](https://dl.dropboxusercontent.com/s/dg5xlil94hjvl23/ubuntu1310-i386.box?token_hash=AAE9Bykyb2lPQw49hDaWVQGSb4DleogF7ldboRHkdJdojQ&dl=1) - Ubuntu 13.10 32-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
+* [ubuntu1204](https://dl.dropboxusercontent.com/s/19o6poe9jmk2kk4/ubuntu1204.box?token_hash=AAHeetBOJzLiKm9pLqvvB3SuBhcsh6DzNpGi6CWJP-vi9g&dl=1) - Ubuntu 12.04.3 server 64-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
+* [ubuntu1204-i386](https://dl.dropboxusercontent.com/s/v8xg8h0prcwyzi5/ubuntu1204-i386.box?token_hash=AAFxXyN6YepuMwR7ENYxDWDjTuhCwyKwhgicikD9_fNiTg&dl=1) - Ubuntu 12.04.3 server 32-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
+* [ubuntu1204-docker](https://dl.dropboxusercontent.com/s/c38u559ateohq64/ubuntu1204-docker.box?token_hash=AAHAM6vPqs12iGnty-yipAP9X1vjNeMqB9DdWe98DXcpsA&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
+* [ubuntu1004](https://dl.dropboxusercontent.com/s/6vz2596sch7xi4l/ubuntu1004.box?token_hash=AAG9wXEu1PCIlCIxN8F3a9K_GoNCFZFiI72d_JJ5-VQxYA&dl=1) - Ubuntu 10.04.4 server 64-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
+* [ubuntu1004-i386]() - Ubuntu 10.04.4 server 32-bit VirtualBox basebox (VirtualBox 4.3.0 Guest Additions)
 
 ## VirtualBox 4.2.18
 
