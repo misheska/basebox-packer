@@ -1,11 +1,11 @@
 {
   "builders": [{
-    "vm_name": "misheska-debian71",
+    "vm_name": "debian72",
     "type": "vmware",
     "guest_os_type": "debian6-64",
     "http_directory": "http",
-    "iso_url": "http://cdimage.debian.org/cdimage/release/current/amd64/iso-dvd/debian-7.1.0-amd64-DVD-1.iso",
-    "iso_checksum": "1c55a7d938fd9cb5fdbd6c41543c90e89e6cff8c67ae263933c13775d8bf0be3",
+    "iso_url": "http://cdimage.debian.org/cdimage/release/current/amd64/iso-dvd/debian-7.2.0-amd64-DVD-1.iso",
+    "iso_checksum": "5c926252b6dd4705d05bb4852e9a584ae5b3e7999b49d64a48e346714251466e",
     "iso_checksum_type": "sha256",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
@@ -32,13 +32,15 @@
     }
   },
   {
-    "vm_name": "misheska-debian71",
+    "vm_name": "debian72",
     "type": "virtualbox",
-    "guest_os_type": "Debian_64",
     "http_directory": "http",
-    "iso_url": "http://cdimage.debian.org/cdimage/release/current/amd64/iso-dvd/debian-7.1.0-amd64-DVD-1.iso",
-    "iso_checksum": "1c55a7d938fd9cb5fdbd6c41543c90e89e6cff8c67ae263933c13775d8bf0be3",
+    "iso_url": "http://cdimage.debian.org/cdimage/release/current/amd64/iso-dvd/debian-7.2.0-amd64-DVD-1.iso",
+    "iso_checksum": "5c926252b6dd4705d05bb4852e9a584ae5b3e7999b49d64a48e346714251466e",
     "iso_checksum_type": "sha256",
+    "guest_os_type": "Debian_64",
+    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+    "virtualbox_version_file": ".vbox_version",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
     "ssh_wait_timeout": "10000s",
@@ -72,16 +74,16 @@
     ],
     "override": {
       "virtualbox": {
-        "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
       },
       "vmware": {
-        "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
       }
     }
   }],
   "post-processors": [{
     "type": "vagrant",
-    "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/misheska-debian71.box"
+    "keep_input_artifact": false,
+    "output": "../../{{.Provider}}/debian72.box"
   }]
 }

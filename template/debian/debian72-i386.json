@@ -1,0 +1,89 @@
+{
+  "builders": [{
+    "vm_name": "debian72-i386",
+    "type": "vmware",
+    "guest_os_type": "debian6-64",
+    "http_directory": "http",
+    "iso_url": "http://cdimage.debian.org/debian-cd/7.2.0/i386/iso-cd/debian-7.2.0-i386-CD-1.iso",
+    "iso_checksum": "6044380d356b77e5b562b8b6faf9b5a3c16e41844ff738cb234daaf3101fab43",
+    "iso_checksum_type": "sha256",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "tools_upload_flavor": "linux",
+    "boot_command": [
+      "<esc><wait>",
+      "install",
+      " auto",
+      " url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
+      " debian-installer=en_US",
+      " locale=en_US",
+      " keymap=us",
+      " netcfg/get_hostname=vagrant",
+      " netcfg/get_domain=vm ",
+      "<enter>"
+    ],
+    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -h now",
+    "disk_size": 10140,
+    "vmx_data": {
+      "memsize": "512",
+      "numvcpus": "1",
+      "cpuid.coresPerSocket": "1"
+    }
+  },
+  {
+    "vm_name": "debian72-i386",
+    "type": "virtualbox",
+    "http_directory": "http",
+    "iso_url": "http://cdimage.debian.org/debian-cd/7.2.0/i386/iso-cd/debian-7.2.0-i386-CD-1.iso",
+    "iso_checksum": "6044380d356b77e5b562b8b6faf9b5a3c16e41844ff738cb234daaf3101fab43",
+    "iso_checksum_type": "sha256",
+    "guest_os_type": "Debian_64",
+    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+    "virtualbox_version_file": ".vbox_version",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "boot_command": [
+      "<esc><wait>",
+      "install",
+      " auto",
+      " url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
+      " debian-installer=en_US",
+      " locale=en_US",
+      " keymap=us",
+      " netcfg/get_hostname=vagrant",
+      " netcfg/get_domain=vm ",
+      "<enter>"
+    ],
+    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -h now",
+    "disk_size": 10140,
+    "vboxmanage": [
+      ["modifyvm", "{{.Name}}", "--memory", "512"],
+      ["modifyvm", "{{.Name}}", "--cpus", "1"]
+    ]
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "scripts": [
+      "script/base.sh",
+      "script/vagrant.sh",
+      "script/vmtools.sh",
+      "script/cleanup.sh",
+      "script/zerodisk.sh"
+    ],
+    "override": {
+      "virtualbox": {
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
+      },
+      "vmware": {
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
+      }
+    }
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": false,
+    "output": "../../{{.Provider}}/debian72-i386.box"
+  }]
+}
