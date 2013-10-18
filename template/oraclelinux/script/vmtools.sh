@@ -1,6 +1,6 @@
 #!/bin/bash -eux
 
-if test -f linux.iso ; then
+if [ $PACKER_BUILDER_TYPE == 'vmware' ]; then
     if grep -q -i "release 6" /etc/redhat-release ; then
         # Uninstall fuse to fake out the vmware install so it won't try to
         # enable the VMware blocking filesystem
@@ -18,7 +18,7 @@ if test -f linux.iso ; then
     rm /home/vagrant/linux.iso
     umount /mnt/cdrom
     rmdir /mnt/cdrom
-elif test -f .vbox_version ; then
+elif [ $PACKER_BUILDER_TYPE == 'virtualbox' ]; then
     echo "Installing VirtualBox guest additions"
 
     # Assume that we've installed all the prerequisites:
