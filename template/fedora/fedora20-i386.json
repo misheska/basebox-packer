@@ -1,0 +1,72 @@
+{
+  "builders": [{
+    "vm_name": "fedora20-i386",
+    "type": "vmware",
+    "guest_os_type": "fedora",
+    "http_directory": "http",
+    "iso_url": "http://mirrors.kernel.org/fedora/releases/test/20-Alpha/Fedora/i386/iso/Fedora-20-Alpha-i386-DVD.iso",
+    "iso_checksum": "24e3a6446b7e2e2b0a3591271c896c41eae01f733a65aa4f5bf43e99bfcfc25e",
+    "iso_checksum_type": "sha256",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "tools_upload_flavor": "linux",
+    "boot_command": [
+      "<tab> linux text biosdevname=0 ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter><enter>"
+    ],
+    "floppy_files": ["floppy/vmware9.k3.8rc4.patch", "floppy/vmware9.compat_mm.patch", "floppy/vmware9.k3.9.vmhgfs.patch", "floppy/vmhgfs-d_count-kernel-3.11-tools-9.6.0.patch"],
+    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+    "disk_size": 10140,
+    "vmx_data": {
+      "memsize": "512",
+      "numvcpus": "1",
+      "cpuid.coresPerSocket": "1"
+    }
+  },
+  {
+    "vm_name": "fedora20-i386",
+    "type": "virtualbox",
+    "http_directory": "http",
+    "iso_url": "http://mirrors.kernel.org/fedora/releases/test/20-Alpha/Fedora/i386/iso/Fedora-20-Alpha-i386-DVD.iso",
+    "iso_checksum": "24e3a6446b7e2e2b0a3591271c896c41eae01f733a65aa4f5bf43e99bfcfc25e",
+    "iso_checksum_type": "sha256",
+    "guest_os_type": "Fedora",
+    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+    "virtualbox_version_file": ".vbox_version",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "boot_command": [
+      "<tab> linux text biosdevname=0 ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter><enter>"
+    ],
+    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+    "disk_size": 10140,
+    "vboxmanage": [
+      ["modifyvm", "{{.Name}}", "--memory", "512"],
+      ["modifyvm", "{{.Name}}", "--cpus", "1"]
+    ]
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "scripts": [
+      "script/base.sh",
+      "script/vagrant.sh",
+      "script/vmtools.sh",
+      "script/cleanup.sh",
+      "script/zerodisk.sh"
+    ],
+    "override": {
+      "virtualbox": {
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
+      },
+      "vmware": {
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
+      }
+    }
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": false,
+    "output": "../../{{.Provider}}/fedora20-i386.box"
+  }]
+}
