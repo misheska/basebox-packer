@@ -10,7 +10,7 @@
       "iso_checksum_type": "sha256",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "10000s",
+      "ssh_wait_timeout": "80000s",
       "tools_upload_flavor": "linux",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
