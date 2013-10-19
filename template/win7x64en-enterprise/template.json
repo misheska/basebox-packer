@@ -1,0 +1,72 @@
+{
+  "builders": [
+    {
+      "vm_name": "win7x64en-enterprise",
+      "type": "vmware",
+      "guest_os_type": "windows7-64",
+      "iso_url": "../../../../ISO/Windows 7/en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
+      "iso_checksum": "6467c3875955df4514395f0afcaaa62a",
+      "iso_checksum_type": "md5",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "floppy_files": ["floppy/Autounattend.xml",
+                       "../floppy/set-power-config.bat",
+                       "../floppy/install-winrm.bat",
+                       "../floppy/install-cygwin-sshd.bat",
+                       "../floppy/uninstall-cygwin-and-shutdown.bat",
+                       "../floppy/ChangeCategory.ps1"
+                      ],
+      "tools_upload_flavor": "windows",
+      "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "cmd /C start A:\\uninstall-cygwin-and-shutdown.bat",
+      "disk_size": 61440,
+      "disk_type_id": 0,
+      "skip_compaction": true,
+      "vmx_data": {
+        "memsize": "768",
+        "numvcpus": "1",
+        "cpuid.coresPerSocket": "1"
+      }
+    },
+    {
+      "vm_name": "win7x64en-enterprise",
+      "type": "virtualbox",
+      "guest_os_type": "Windows7_64",
+      "iso_url": "../../../../ISO/Windows 7/en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
+      "iso_checksum": "6467c3875955df4514395f0afcaaa62a",
+      "iso_checksum_type": "md5",
+      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "10000s",
+      "disk_size": 61440,
+      "floppy_files": ["floppy/Autounattend.xml",
+                       "../floppy/oracle-cert.cer",
+                       "../floppy/set-power-config.bat",
+                       "../floppy/install-winrm.bat",
+                       "../floppy/install-cygwin-sshd.bat",
+                       "../floppy/uninstall-cygwin-and-shutdown.bat",
+                       "../floppy/ChangeCategory.ps1"
+                      ],
+      "shutdown_command": "cmd /C start A:\\uninstall-cygwin-and-shutdown.bat",
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "768"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ]
+    }
+  ],
+  "provisioners": [{
+    "type": "shell",
+    "scripts": [
+      "../script/change-home-dirs.sh",
+      "../script/postinstall.sh",
+      "../script/install-vmtools.sh"
+    ]
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": true,
+    "output": "../../{{.Provider}}/win7x64en-enterprise.box"
+  }]
+}

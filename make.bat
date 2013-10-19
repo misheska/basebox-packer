@@ -21,6 +21,10 @@ set LOGNAME=log\packer-%FAVOR%-%TEMPLATE%.log
 if "%PACKER_CACHE_DIR%x" == "x" set "PACKER_CACHE_DIR=%CUR%\packer_cache"
 set PACKER_LOG_PATH=..\..\%LOGNAME%
 set PACKER_LOG=1
+if "%PACKER_TEMP_DIR%x" == "x" set "PACKER_TEMP_DIR=%CUR%\packer_temp"
+set TEMP=%PACKER_TEMP_DIR%
+set TMP=%PACKER_TEMP_DIR%
+if not exist "%PACKER_TEMP_DIR%" mkdir "%PACKER_TEMP_DIR%"
 packer build -only=%FAVOR% template.json
 cd /D "%CUR%"
 echo.
@@ -31,6 +35,6 @@ goto done
 :list
 cd /D "%CUR%"
 echo Choose one of the following favor/template. Then call make favor/template
-for /F " usebackq delims==" %%i in (`dir /b template`) do @echo virtualbox/%%i
-for /F " usebackq delims==" %%i in (`dir /b template`) do @echo vmware/%%i
+for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\template.json echo virtualbox/%%i
+for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\template.json echo vmware/%%i
 :done
