@@ -37,7 +37,7 @@ clean-builders:
 	@for builder in $(BUILDER_TYPES) ; do \
 		if test -d $$builder ; then \
 			echo Deleting $$builder ; \
-			$(ROM) -rf $$builder ; \
+			$(RM) -rf $$builder ; \
 		fi ; \
 	done
 
