@@ -1,11 +1,11 @@
 {
   "builders": [{
-    "vm_name": "debian71-i386",
+    "vm_name": "debian607-i386",
     "type": "vmware",
     "guest_os_type": "debian6-64",
     "http_directory": "http",
-    "iso_url": "http://cdimage.debian.org/cdimage/archive/7.1.0/i386/iso-dvd/debian-7.1.0-i386-DVD-1.iso",
-    "iso_checksum": "cea26c7764188426da8c96bdf40eff138eb26fdc",
+    "iso_url": "http://cdimage.debian.org/cdimage/archive/6.0.7/i386/iso-cd/debian-6.0.7-i386-CD-1.iso",
+    "iso_checksum": "de0d9ce1eb8d238dd3747a28586655b526b398a2",
     "iso_checksum_type": "sha1",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
@@ -13,15 +13,20 @@
     "tools_upload_flavor": "linux",
     "boot_command": [
       "<esc><wait>",
-      "install",
-      " auto",
-      " url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
-      " debian-installer=en_US",
-      " locale=en_US",
-      " keymap=us",
-      " netcfg/get_hostname=vagrant",
-      " netcfg/get_domain=vm ",
-      "<enter>"
+      "install <wait>",
+      "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
+      "debian-installer=en_US <wait>",
+      "auto <wait>",
+      "locale=en_US <wait>",
+      "kbd-chooser/method=us <wait>",
+      "keyboard-configuration/xkb-keymap=us <wait>",
+      "netcfg/get_hostname={{ .Name }} <wait>",
+      "netcfg/get_domain=vagrantup.com <wait>",
+      "fb=false <wait>",
+      "debconf/frontend=noninteractive <wait>",
+      "console-setup/ask_detect=false <wait>",
+      "console-keymaps-at/keymap=us <wait>",
+      "<enter><wait>"
     ],
     "shutdown_command": "echo 'vagrant'|sudo -S shutdown -h now",
     "disk_size": 10140,
@@ -32,11 +37,11 @@
     }
   },
   {
-    "vm_name": "debian71-i386",
+    "vm_name": "debian607-i386",
     "type": "virtualbox",
     "http_directory": "http",
-    "iso_url": "http://cdimage.debian.org/cdimage/archive/7.1.0/i386/iso-dvd/debian-7.1.0-i386-DVD-1.iso",
-    "iso_checksum": "cea26c7764188426da8c96bdf40eff138eb26fdc",
+    "iso_url": "http://cdimage.debian.org/cdimage/archive/6.0.7/i386/iso-cd/debian-6.0.7-i386-CD-1.iso",
+    "iso_checksum": "de0d9ce1eb8d238dd3747a28586655b526b398a2",
     "iso_checksum_type": "sha1",
     "guest_os_type": "Debian_64",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
@@ -46,15 +51,20 @@
     "ssh_wait_timeout": "10000s",
     "boot_command": [
       "<esc><wait>",
-      "install",
-      " auto",
-      " url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
-      " debian-installer=en_US",
-      " locale=en_US",
-      " keymap=us",
-      " netcfg/get_hostname=vagrant",
-      " netcfg/get_domain=vm ",
-      "<enter>"
+      "install <wait>",
+      "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
+      "debian-installer=en_US <wait>",
+      "auto <wait>",
+      "locale=en_US <wait>",
+      "kbd-chooser/method=us <wait>",
+      "keyboard-configuration/xkb-keymap=us <wait>",
+      "netcfg/get_hostname={{ .Name }} <wait>",
+      "netcfg/get_domain=vagrantup.com <wait>",
+      "fb=false <wait>",
+      "debconf/frontend=noninteractive <wait>",
+      "console-setup/ask_detect=false <wait>",
+      "console-keymaps-at/keymap=us <wait>",
+      "<enter><wait>"
     ],
     "shutdown_command": "echo 'vagrant'|sudo -S shutdown -h now",
     "disk_size": 10140,
@@ -84,6 +94,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/debian71-i386.box"
+    "output": "../../{{.Provider}}/debian607-i386.box"
   }]
 }
