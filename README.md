@@ -24,7 +24,7 @@ Current VMware Baseboxes
 * [fedora20](https://dl.dropboxusercontent.com/s/3ofk3ukecn32puh/fedora20.box?token_hash=AAENN4YnU2gUYXaEtredzl4gQhabivyOqbtXVkHktDaNsg&dl=1) - Fedora 20 Alpha 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [fedora19](https://dl.dropboxusercontent.com/s/85c0kfsp8mywn34/fedora19.box?token_hash=AAGlwDtp_e-ECqdloI9xvV38v5sfjBLgVtpr2s69mO_eQg&dl=1) - Fedora 19 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [fedora18](https://dl.dropboxusercontent.com/s/iitaxsm7teyb5of/fedora18.box?token_hash=AAE5hNNItPz6k76gw-1aBX5IzuqLSerMIhCbA27UUyy6lA&dl=1) - Fedora 18 64-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [opensuse114]() - openSUSE 11.4 64-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [opensuse114](https://dl.dropboxusercontent.com/s/oam6bpuhiyoz3si/opensuse114.box?token_hash=AAH-p02FfSpAEwNswyVmSJL8-7xUpqmZo_6DSm-8t5LIaA&dl=1) - openSUSE 11.4 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle64](https://dl.dropboxusercontent.com/s/iy0tzyyq8u2c1vj/oracle64.box?token_hash=AAFm0NXq2Uatrt3rDEGAEJdKOq58DTIFrYUAwZO2UUYYzw&dl=1) - Oracle Linux Release 6 Update 4 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle63](https://dl.dropboxusercontent.com/s/3n7w8fyddu2e8eb/oracle63.box?token_hash=AAEyWZb917VCzq1ltal5ppJomulafOtaOZDzN9lkwtdtTQ&dl=1) - Oracle Linux Release 6 Update 3 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle62](https://dl.dropboxusercontent.com/s/r2mpk49bdymhc99/oracle62.box?token_hash=AAE9TisJf7L18tq8G-Jjk4R1Uh17p9Cu6p9tbVVKPa25Iw&dl=1) - Oracle Linux Release 6 Update 2 64-bit (VMware Tools 9.6.0.26048 build-1294478)
@@ -35,8 +35,8 @@ Current VMware Baseboxes
 * [oracle57](https://dl.dropboxusercontent.com/s/ap92o5071qiie6d/oracle57.box?token_hash=AAF_dXpGPbpCf6ujoP-_zaFe7DlXLZDAy7g8ueOTHpI0EQ&dl=1) - Oracle Linux Release 5 Update 7 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian72](https://dl.dropboxusercontent.com/s/g8djjlz1x5tz30j/debian72.box?token_hash=AAH1_-tgqx5PabhxLXD-X7hFEZ9x_-a899fMAYI_Kgd4Bg&dl=1) - Debian "wheezy" 7.2 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian71](https://dl.dropboxusercontent.com/s/wnuj8ei8cdx3gks/debian71.box?token_hash=AAEL9-VOItr80U5YtZhbXnw8TIxHBfuPhCVuuXQSfFtx3A&dl=1) - Debian "wheezy" 7.1 64-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [debian607]() - Debian "squeeze" 6.0.7 64-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [freebsd91]() - FreeBSD 9.1 64-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [debian607](https://dl.dropboxusercontent.com/s/hahnaz8sjtutzbb/debian607.box?token_hash=AAEXucOvXJyDq2y3WwxT90q2RTh7AsLcI8dJG9q_DCKLlg&dl=1) - Debian "squeeze" 6.0.7 64-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [freebsd91](https://dl.dropboxusercontent.com/s/upe7f6f3vf97ppj/freebsd91.box?token_hash=AAE4KNq9TvJLvwNIo5Ryt4x81MRMReUFxl9EoWrVNcmCtQ&dl=1) - FreeBSD 9.1 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 
 32-bit boxes:
 
@@ -49,7 +49,6 @@ Current VMware Baseboxes
 * [fedora20-i386](https://dl.dropboxusercontent.com/s/105bpzclsbquiu0/fedora20-i386.box?token_hash=AAGWXyy9jPakG86COy_zu-95gA4WJnzzyzpGWh_Og2TBdg&dl=1) - Fedora 20 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [fedora19-i386](https://dl.dropboxusercontent.com/s/3offsg1ye0qzxqv/fedora19-i386.box?token_hash=AAEpYEzWAbbfJFQOemD8e1F6qjQGy5FhGjFXKRoLJOF1vw&dl=1) - Fedora 19 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [fedora18-i386](https://dl.dropboxusercontent.com/s/t0l5cblqei4icub/fedora18-i386.box?token_hash=AAEmQ04KBFiPit0GVQuN3THlWARlFm9nUzvbsUp2dyaGhA&dl=1) - Fedora 18 32-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [opensuse114]() - openSUSE 11.4 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle64-i386](https://dl.dropboxusercontent.com/s/fc60ragrrzmlxgp/oracle64-i386.box?token_hash=AAHB2H0lSgXrk5YbP74rlecpyAz3pJOh447M2_jFWQyG7g&dl=1) - Oracle Linux Release 6 Update 4 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle63-i386](https://dl.dropboxusercontent.com/s/kvu57c55g2ylcgd/oracle63-i386.box?token_hash=AAH3GovPAdNoz5G5RT2QB7n4prPxdd_151q-OxCsIB8Y2A&dl=1) - Oracle Linux Release 6 Update 3 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle62-i386](https://dl.dropboxusercontent.com/s/q83bnph23vt5ars/oracle62-i386.box?token_hash=AAFIQb5Ak9vhxmdvuDQ75kYCR-mkMQ3lDATR9vEoufqShA&dl=1) - Oracle Linux Release 6 Update 2 32-bit (VMware Tools 9.6.0.26048 build-1294478)
@@ -60,7 +59,7 @@ Current VMware Baseboxes
 * [oracle57-i386](https://dl.dropboxusercontent.com/s/qj9kwtwgiw5x72b/oracle57-i386.box?token_hash=AAHe0ShK47CCkIpbh6lOlPIyDTm0f81ac-3YwLFFWLJWzA&dl=1) - Oracle Linux Release 5 Update 7 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian72-i386](https://dl.dropboxusercontent.com/s/75z1jqliq1jnl7k/debian72-i386.box?token_hash=AAH_Fj1Loiz58Q7wbNjDu2ZWYskIFMfo1hBULJFwGboGRw&dl=1) - Debian "wheezy" 7.2 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian71-i386](https://dl.dropboxusercontent.com/s/75z1jqliq1jnl7k/debian72-i386.box?token_hash=AAH_Fj1Loiz58Q7wbNjDu2ZWYskIFMfo1hBULJFwGboGRw&dl=1) - Debian "wheezy" 7.1 32-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [debian607-i386]() - Debian "squeeze" 6.0.7 32-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [debian607-i386](https://dl.dropboxusercontent.com/s/ke0lxwj6lcqrwub/debian607-i386.box?token_hash=AAFbIBokfQUvx4Esrl-lF6_4rtpPVt_YLgFR5ckD4nM-BA&dl=1) - Debian "squeeze" 6.0.7 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 
 
 ## VMware Fusion 5 - VMware Tools 9.2.2.18018 (build-893683)
@@ -102,10 +101,10 @@ Current VirtualBox Baseboxes
 * [fedora20](https://dl.dropboxusercontent.com/s/1sk8lf8y3kksmrm/fedora20.box?token_hash=AAH8JvbDsdrSODuoMHpBcVC54B0RlDGwD_ToLvhXDE5wYA&dl=1) - Fedora 20 Alpha 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [fedora19](https://dl.dropboxusercontent.com/s/y94spyrgx39m8l5/fedora19.box?token_hash=AAEeKFtHwYZew-esq6eKn3rEoirsXs1BokzAsT3BcQ22oA&dl=1) - Fedora 19 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [fedora18](https://dl.dropboxusercontent.com/s/iitaxsm7teyb5of/fedora18.box?token_hash=AAE5hNNItPz6k76gw-1aBX5IzuqLSerMIhCbA27UUyy6lA&dl=1) - Fedora 18 64-bit (VirtualBox 4.3.0 Guest Additions)
-* [opensuse114]() - openSUSE 11.4 64-bit (VirtualBox 4.3.0 Guest Additions)
-* [oracle64]() - Oracle Linux Release 6 Update 4 64-bit (VirtualBox 4.3.0 Guest Additions)
-* [oracle63]() - Oracle Linux Release 6 Update 3 64-bit (VirtualBox 4.3.0 Guest Additions)
-* [oracle62]() - Oracle Linux Release 6 Update 2 64-bit (VirtualBox 4.3.0 Guest Additions)
+* [opensuse114](https://dl.dropboxusercontent.com/s/hw5eavum4wbncql/opensuse114.box?token_hash=AAHwI7mQFA89GL1nIhdp7AJJOoMKMBHFdOQUDB1h5IxppQ&dl=1) - openSUSE 11.4 64-bit (VirtualBox 4.3.0 Guest Additions)
+* [oracle64](https://dl.dropboxusercontent.com/s/xjx34ount9wnnka/oracle64.box?token_hash=AAEpOsnSUXTHRv4YQ_xbut1y8qjWITXA6D_hD07H6ryyLQ&dl=1) - Oracle Linux Release 6 Update 4 64-bit (VirtualBox 4.3.0 Guest Additions)
+* [oracle63](https://dl.dropboxusercontent.com/s/487x62nwgrolz4d/oracle63.box?token_hash=AAHJzk5IeMAH1NEBn8qB101OR-DnUx4_CH2-jfy972eEsQ&dl=1) - Oracle Linux Release 6 Update 3 64-bit (VirtualBox 4.3.0 Guest Additions)
+* [oracle62](https://dl.dropboxusercontent.com/s/r5a6l61cjkp6qe1/oracle62.box?token_hash=AAF6xqR1wbkssO3X_ZdYA_rraA6afyyL5uS-15QkauyBZw&dl=1) - Oracle Linux Release 6 Update 2 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [oracle61](https://dl.dropboxusercontent.com/s/mbrwybukovxio3n/oracle61.box?token_hash=AAEcfK_Q0R6-L5yqut73koPLsYtIUbMbnn_5xIPqZ-oVrw&dl=1) - Oracle Linux Release 6 Update 1 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [oracle510](https://dl.dropboxusercontent.com/s/3vzz0yj6cz5suul/oracle510.box?token_hash=AAFF5CC2Fz7_pgV-Y9FyEYR1hfklDNawHXY2YkalKOe8qw&dl=1) - Oracle Linux Release 5 Update 10 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [oracle59](https://dl.dropboxusercontent.com/s/7cxj39f8qojiuos/oracle59.box?token_hash=AAEqHN6JPXwBaYiragTUWapF61Ieu68KdMGHkUANV48o-g&dl=1) - Oracle Linux Release 5 Update 9 64-bit (VirtualBox 4.3.0 Guest Additions)
@@ -113,8 +112,8 @@ Current VirtualBox Baseboxes
 * [oracle57](https://dl.dropboxusercontent.com/s/9piju07tq2y181w/oracle57.box?token_hash=AAHuPjD3hBPp6-20jBnSIhGZeXHshmwIeZ8WMHa6JLM0gw&dl=1) - Oracle Linux Release 5 Update 7 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [debian72](https://dl.dropboxusercontent.com/s/4wy52s3a8jf94yd/debian72.box?token_hash=AAEss_7qdYkY5zfUwVkOHUcc15BJJJAscTKkzFwzAIti4g&dl=1) Debian "wheezy" 7.2 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [debian71](https://dl.dropboxusercontent.com/s/nc3jz7ba6g9yhb8/debian71.box?token_hash=AAFe7E3ml49o7MFfVdwd_LdZ8AqX7kKzSCYfW0W4xLkHhg&dl=1) Debian "wheezy" 7.1 64-bit (VirtualBox 4.3.0 Guest Additions)
-* [debian607]() Debian "squeeze" 6.0.7 64-bit (VirtualBox 4.3.0 Guest Additions)
-* [freebsd91]() - FreeBSD 9.1 64-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [debian607](https://dl.dropboxusercontent.com/s/acot2yqhm50g76a/debian607.box?token_hash=AAF3IEr2V_1MA4H2hYOPdSujaKHSsEUQ3F23QQKZ16WYpg&dl=1) Debian "squeeze" 6.0.7 64-bit (VirtualBox 4.3.0 Guest Additions)
+* [freebsd91](https://dl.dropboxusercontent.com/s/c46td8badoba87c/freebsd91.box?token_hash=AAGoiqOwnWOFFRKXg4KQs9oXWo-s-p0QcqG_XviCU8Mz_g&dl=1) - FreeBSD 9.1 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 
 32-bit boxes:
 
@@ -125,16 +124,17 @@ Current VirtualBox Baseboxes
 * [ubuntu1004-i386](https://dl.dropboxusercontent.com/s/u5uvx9kjdh3i6uk/ubuntu1004-i386.box?token_hash=AAFrMeCZ6dHGFMJRioK50mP75Jao77LdKQoKY0l1LRpPeQ&dl=1) - Ubuntu 10.04.4 server 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [fedora19-i386](https://dl.dropboxusercontent.com/s/3offsg1ye0qzxqv/fedora19-i386.box?token_hash=AAEpYEzWAbbfJFQOemD8e1F6qjQGy5FhGjFXKRoLJOF1vw&dl=1) - Fedora 19 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [fedora18-i386](https://dl.dropboxusercontent.com/s/v2u3tb3743aicmw/fedora18-i386.box?token_hash=AAG1D4arQahYZhtn33kWB9Yf4XmKkOz3XZi1p0mWLLOwGA&dl=1) - Fedora 18 32-bit (VirtualBox 4.3.0 Guest Additions)
-* [oracle64-i386]() - Oracle Linux Release 6 Update 4 32-bit (VirtualBox 4.3.0 Guest Additions)
-* [oracle63-i386]() - Oracle Linux Release 6 Update 3 32-bit (VirtualBox 4.3.0 Guest Additions)
+* [oracle64-i386](https://dl.dropboxusercontent.com/s/kymqyvd2mwcyx20/oracle64-i386.box?token_hash=AAGtjFt2ZXe_SGz97i_NXvvkiFL6_rAaN4J6GTCBODsWPA&dl=1) - Oracle Linux Release 6 Update 4 32-bit (VirtualBox 4.3.0 Guest Additions)
+* [oracle63-i386](https://dl.dropboxusercontent.com/s/zxn8wya8hd7z19s/oracle63-i386.box?token_hash=AAHY8ipMREwT55QjKmMDLdsnCsRcBqopxPKGvnkgD0uT9Q&dl=1) - Oracle Linux Release 6 Update 3 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [oracle62-i386](https://dl.dropboxusercontent.com/s/cxj4cliim55zcdn/oracle62-i386.box?token_hash=AAEDaWS9C8kfC0vIUfuVB74fCB-qUHOS5KN-CUao3r7L6Q&dl=1) - Oracle Linux Release 6 Update 2 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [oracle61-i386](https://dl.dropboxusercontent.com/s/ly0bcfbbumy6a09/oracle61-i386.box?token_hash=AAEMAg4VaB7uEHFMLVeP1rPThv-gW8yqGyDOzD4HuLKLmQ&dl=1) - Oracle Linux Release 6 Update 1 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [oracle510-i386](https://dl.dropboxusercontent.com/s/iv74mw8x3scahts/oracle510-i386.box?token_hash=AAEr-fNhUvQxAzsRRd1vRbajT7H_eP749JKJJSkY79KraQ&dl=1) - Oracle Linux Release 5 Update 10 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [oracle59-i386](https://dl.dropboxusercontent.com/s/fsburywbcmikf06/oracle59-i386.box?token_hash=AAEMCflkvE1GGvJyKo70NA4otzqG_YqkDw9qMGgTHpXLZQ&dl=1) - Oracle Linux Release 5 Update 9 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [oracle58-i386](https://dl.dropboxusercontent.com/s/ixt0ao0m30sfsxl/oracle58-i386.box?token_hash=AAHi9CgAF6tuPpHt07U5OKSByGngDPZ0HooZtJTArq1j1Q&dl=1) - Oracle Linux Release 5 Update 8 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [oracle57-i386](https://dl.dropboxusercontent.com/s/qj9kwtwgiw5x72b/oracle57-i386.box?token_hash=AAHe0ShK47CCkIpbh6lOlPIyDTm0f81ac-3YwLFFWLJWzA&dl=1) - Oracle Linux Release 5 Update 7 32-bit (VirtualBox 4.3.0 Guest Additions)
-* [debian72-i386]() - Debian "wheezy" 7.2 32-bit (VirtualBox 4.3.0 Guest Additions)
+* [debian72-i386](https://dl.dropboxusercontent.com/s/32h8c1lioi6w4to/debian72-i386.box?token_hash=AAHiAjLs6a7UI-iNoWF3OJDQAYGMjqHl8y5wpK3cgW4rFQ&dl=1) - Debian "wheezy" 7.2 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [debian71-i386](https://dl.dropboxusercontent.com/s/rizi8v4w8w3obgr/debian71-i386.box?token_hash=AAE-6j043VjNPFZto95myi0OYTIfER83M8kpJd7-FGBAWw&dl=1) - Debian "wheezy" 7.1 32-bit (VirtualBox 4.3.0 Guest Additions)
+* [debian607-i386](https://dl.dropboxusercontent.com/s/h60useqfvpqlujd/debian607-i386.box?token_hash=AAFPi35n6ZGtgc9kNWff8rrgx6P-fjENhqkK6WqHbDt1Vg&dl=1) - Debian "squeeze" 6.0.7 32-bit (VirtualBox 4.3.0 Guest Additions)
 
 
 ## VirtualBox 4.2.18
