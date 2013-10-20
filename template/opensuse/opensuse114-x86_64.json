@@ -1,7 +1,7 @@
 {
   "builders": [
     {
-      "vm_name": "misheska-opensuse114",
+      "vm_name": "opensuse114",
       "type": "vmware",
       "guest_os_type": "sles11-64",
       "http_directory": "http",
@@ -29,7 +29,7 @@
       }
     },
     {
-      "vm_name": "misheska-opensuse114",
+      "vm_name": "opensuse114",
       "type": "virtualbox",
       "guest_os_type": "OpenSUSE_64",
       "http_directory": "http",
@@ -64,16 +64,16 @@
     ],
     "override": {
       "virtualbox": {
-        "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
       },
       "vmware": {
-        "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
       }
     }
   }],
   "post-processors": [{
     "type": "vagrant",
-    "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/misheska-opensuse114.box"
+    "keep_input_artifact": false,
+    "output": "../../{{.Provider}}/opensuse114.box"
   }]
 }
