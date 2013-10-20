@@ -18,11 +18,11 @@ On a Windows host, use the make.bat instead.
 To build a VirtualBox box:
 
     make list
-    # Choose a definition, like 'virtualbox/stefan-win7x64'
-    make virtualbox/stefan-win7x64
+    # Choose a definition, like 'virtualbox/win7x64en-enterprise'
+    make virtualbox/win7x64en-enterprise
 
 To build a VMware Fusion/VMware Workstation box:
 
     make list
-    # Choose a definition, like 'vmware/stefan-win7x64'
-    make vmware/stefan-win7x64
+    # Choose a definition, like 'vmware/win7x64en-enterprise'
+    make vmware/win7x64en-enterprise
