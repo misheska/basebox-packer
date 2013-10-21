@@ -15,7 +15,7 @@ Current VMware Baseboxes
 64-bit boxes:
 
 * [centos64](https://dl.dropboxusercontent.com/s/dqv65qk6j79mq3o/centos64.box?token_hash=AAEO0urkBZTTpS3ndrKg5ek2rnGCxfa2T56tQk3fK8-sBQ&dl=1) - CentOS 6.4 64-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [centos59](https://dl.dropboxusercontent.com/s/6nc2grl7bneaou7/centos59.box?token_hash=AAHJ4-rJMtBDawC-qDCRC_YWsoHE2D2t3iuchPWdJ9cNqw&dl=1) - CentOS 5.9 64-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [centos59](https://dl.dropboxusercontent.com/s/1a80ds2fux4xb0v/centos59.box?token_hash=AAETEu59I5nvQKen0yVDDRIzAoqIfz3mWn4I6XN_iFfkuw&dl=1) - CentOS 5.9 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1310](https://dl.dropboxusercontent.com/s/xi0jp8bfb6gdnkf/ubuntu1310.box?token_hash=AAEcaD5YTCx9FoOB55vDYKLEhBfBcezo2RN8MYpyAaHFLg&dl=1) - Ubuntu 13.10 server 64-bit basebox (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1304](https://dl.dropboxusercontent.com/s/txhifb1qy0hfu8k/ubuntu1304.box?token_hash=AAF4bQ6F_BU5lJcX-pIa5rzo3BtOJGAL6GXbyJxGv3iobQ&dl=1) - Ubuntu 13.04 server 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1204](https://dl.dropboxusercontent.com/s/19o6poe9jmk2kk4/ubuntu1204.box?token_hash=AAHeetBOJzLiKm9pLqvvB3SuBhcsh6DzNpGi6CWJP-vi9g&dl=1) - Ubuntu 12.04.3 server 64-bit (VMware Tools 9.6.0.26048 build-1294478)
