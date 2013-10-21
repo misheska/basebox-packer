@@ -41,7 +41,7 @@ Current VMware Baseboxes
 32-bit boxes:
 
 * [centos64-i386](https://dl.dropboxusercontent.com/s/guk2p3ypz456xlc/centos64-i386.box?token_hash=AAEwLvxb-pZUeyKYGABoHb-kwwD0OtvQuJQO0msKIVJWKQ&dl=1) - CentOS 6.4 32-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [centos59-i386](https://dl.dropboxusercontent.com/s/lb0q1vk3ojxypa2/centos59-i386.box?token_hash=AAHxzOJG4GhG5yJAAqqLPhRBFoL6liFnTT9nP-9dzkLH8g&dl=1) - CentOS 5.9 32-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [centos59-i386](https://dl.dropboxusercontent.com/s/veikmkf47q72l9x/centos59-i386.box?token_hash=AAEXBd9PsUA7VY2EXp81wQyhnN9eJSfJ7HfRaZHjJGpKhA&dl=1) - CentOS 5.9 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1310-i386](https://dl.dropboxusercontent.com/s/c7jy8efytf1p9oy/ubuntu1310-i386.box?token_hash=AAHf0Ff1DqbIJRvoc7BokREngRoTLqD6viZOJv3IN3Q8yg&dl=1) - Ubuntu 13.10 server 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1304-i386](https://dl.dropboxusercontent.com/s/nl396uiacxtl9qk/ubuntu1304-i386.box?token_hash=AAHPxHmTdWGaBHyllCRKJ7aThRq3HCFNtU-cLVbN9uKaHg&dl=1) - Ubuntu 13.04 server 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1204-i386](https://dl.dropboxusercontent.com/s/v8xg8h0prcwyzi5/ubuntu1204-i386.box?token_hash=AAFxXyN6YepuMwR7ENYxDWDjTuhCwyKwhgicikD9_fNiTg&dl=1) - Ubuntu 12.04.3 server 32-bit (VMware Tools 9.6.0.26048 build-1294478)
