@@ -14,13 +14,13 @@ Current VMware Baseboxes
 
 64-bit boxes:
 
-* [centos64](https://dl.dropboxusercontent.com/s/dqv65qk6j79mq3o/centos64.box?token_hash=AAEO0urkBZTTpS3ndrKg5ek2rnGCxfa2T56tQk3fK8-sBQ&dl=1) - CentOS 6.4 64-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [centos64](https://dl.dropboxusercontent.com/s/bmgfevqo4y8qfud/centos64.box?token_hash=AAG9-XZj-zfjmlI-GTwVlGEbq3Xe9AW8a3daETiuhNwIBw&dl=1) - CentOS 6.4 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [centos510](https://dl.dropboxusercontent.com/s/cjf14jzffcb9r9o/centos510.box?token_hash=AAEJNzp06vF6q7HpgL_tLrQYmTky_86ro4U49Lbu3OiZuA&dl=1) - CentOS 5.10 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [centos59](https://dl.dropboxusercontent.com/s/1a80ds2fux4xb0v/centos59.box?token_hash=AAETEu59I5nvQKen0yVDDRIzAoqIfz3mWn4I6XN_iFfkuw&dl=1) - CentOS 5.9 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1310](https://dl.dropboxusercontent.com/s/xi0jp8bfb6gdnkf/ubuntu1310.box?token_hash=AAEcaD5YTCx9FoOB55vDYKLEhBfBcezo2RN8MYpyAaHFLg&dl=1) - Ubuntu 13.10 server 64-bit basebox (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1304](https://dl.dropboxusercontent.com/s/txhifb1qy0hfu8k/ubuntu1304.box?token_hash=AAF4bQ6F_BU5lJcX-pIa5rzo3BtOJGAL6GXbyJxGv3iobQ&dl=1) - Ubuntu 13.04 server 64-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [ubuntu1204](https://dl.dropboxusercontent.com/s/19o6poe9jmk2kk4/ubuntu1204.box?token_hash=AAHeetBOJzLiKm9pLqvvB3SuBhcsh6DzNpGi6CWJP-vi9g&dl=1) - Ubuntu 12.04.3 server 64-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [ubuntu1204-docker](https://dl.dropboxusercontent.com/s/c38u559ateohq64/ubuntu1204-docker.box?token_hash=AAHAM6vPqs12iGnty-yipAP9X1vjNeMqB9DdWe98DXcpsA&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker (VMware Tools 9.6.0.26048 build-1294478)
+* [ubuntu1204](https://dl.dropboxusercontent.com/s/jif5dy87f0cxswb/ubuntu1204.box?token_hash=AAEALEnL4-BgkLf-pap0Ah0AqAPMvzPbuk4zi7XYBfWXnA&dl=1) - Ubuntu 12.04.3 server 64-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [ubuntu1204-docker](https://dl.dropboxusercontent.com/s/yl6g450ow5nhezk/ubuntu1204-docker.box?token_hash=AAGi2uHr14fLPbjtHu89kMCSAbzn--u31SaCaP9MmKcXIg&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1004](https://dl.dropboxusercontent.com/s/07o9cg40o2aey4p/ubuntu1004.box?token_hash=AAHLT0O1-L1PuUk7DT3kg4MnwXL79NoStuzKM3Q2JV4x9Q&dl=1) - Ubuntu 10.04.4 server 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [fedora20](https://dl.dropboxusercontent.com/s/3ofk3ukecn32puh/fedora20.box?token_hash=AAENN4YnU2gUYXaEtredzl4gQhabivyOqbtXVkHktDaNsg&dl=1) - Fedora 20 Alpha 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [fedora19](https://dl.dropboxusercontent.com/s/85c0kfsp8mywn34/fedora19.box?token_hash=AAGlwDtp_e-ECqdloI9xvV38v5sfjBLgVtpr2s69mO_eQg&dl=1) - Fedora 19 64-bit (VMware Tools 9.6.0.26048 build-1294478)
@@ -40,11 +40,11 @@ Current VMware Baseboxes
 
 32-bit boxes:
 
-* [centos64-i386](https://dl.dropboxusercontent.com/s/guk2p3ypz456xlc/centos64-i386.box?token_hash=AAEwLvxb-pZUeyKYGABoHb-kwwD0OtvQuJQO0msKIVJWKQ&dl=1) - CentOS 6.4 32-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [centos64-i386](https://dl.dropboxusercontent.com/s/7q11bsqmv151hll/centos64-i386.box?token_hash=AAF-K-6FFcsNNWnJK7yY6Qixvpk1aau5efoGNO9kX5TP9Q&dl=1) - CentOS 6.4 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [centos59-i386](https://dl.dropboxusercontent.com/s/veikmkf47q72l9x/centos59-i386.box?token_hash=AAEXBd9PsUA7VY2EXp81wQyhnN9eJSfJ7HfRaZHjJGpKhA&dl=1) - CentOS 5.9 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1310-i386](https://dl.dropboxusercontent.com/s/c7jy8efytf1p9oy/ubuntu1310-i386.box?token_hash=AAHf0Ff1DqbIJRvoc7BokREngRoTLqD6viZOJv3IN3Q8yg&dl=1) - Ubuntu 13.10 server 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1304-i386](https://dl.dropboxusercontent.com/s/nl396uiacxtl9qk/ubuntu1304-i386.box?token_hash=AAHPxHmTdWGaBHyllCRKJ7aThRq3HCFNtU-cLVbN9uKaHg&dl=1) - Ubuntu 13.04 server 32-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [ubuntu1204-i386](https://dl.dropboxusercontent.com/s/v8xg8h0prcwyzi5/ubuntu1204-i386.box?token_hash=AAFxXyN6YepuMwR7ENYxDWDjTuhCwyKwhgicikD9_fNiTg&dl=1) - Ubuntu 12.04.3 server 32-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [ubuntu1204-i386](https://dl.dropboxusercontent.com/s/byymif14sqk0t62/ubuntu1204-i386.box?token_hash=AAEmrk7O42VaZinFnwyJrtzuy_b9NcExp1qLGRG-nPkeGQ&dl=1) - Ubuntu 12.04.3 server 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1004-i386](https://dl.dropboxusercontent.com/s/2g5xljldyrqc31m/ubuntu1004-i386.box?token_hash=AAE6paITk8lH0q4WJNff6nmqRzJmdqLKW8dZxbMmDjbNXg&dl=1) - Ubuntu 10.04.4 server 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [fedora20-i386](https://dl.dropboxusercontent.com/s/105bpzclsbquiu0/fedora20-i386.box?token_hash=AAGWXyy9jPakG86COy_zu-95gA4WJnzzyzpGWh_Og2TBdg&dl=1) - Fedora 20 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [fedora19-i386](https://dl.dropboxusercontent.com/s/w1g056civ4qpn51/fedora19-i386.box?token_hash=AAEXLXz-wRgcFdPIJSjcoIxh_l8kbkImveDQEV6w-VYrNw&dl=1) - Fedora 19 32-bit (VMware Tools 9.6.0.26048 build-1294478)
@@ -54,9 +54,9 @@ Current VMware Baseboxes
 * [oracle62-i386](https://dl.dropboxusercontent.com/s/q83bnph23vt5ars/oracle62-i386.box?token_hash=AAFIQb5Ak9vhxmdvuDQ75kYCR-mkMQ3lDATR9vEoufqShA&dl=1) - Oracle Linux Release 6 Update 2 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle61-i386](https://dl.dropboxusercontent.com/s/axx0qwzupsxszw0/oracle61-i386.box?token_hash=AAE7RKqyTUFQucUbDfUX1-3HPQQFmsWvun61ptfz7MjTpA&dl=1) - Oracle Linux Release 6 Update 1 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [oracle510-i386](https://dl.dropboxusercontent.com/s/fpuupri3do9b8uz/oracle510-i386.box?token_hash=AAEFx1w9OBHGXn87dk0KdEsSRr4TP3bQhfBFmevh0ft1qg&dl=1) - Oracle Linux Release 5 Update 10 32-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [oracle59-i386](https://dl.dropboxusercontent.com/s/fsburywbcmikf06/oracle59-i386.box?token_hash=AAEMCflkvE1GGvJyKo70NA4otzqG_YqkDw9qMGgTHpXLZQ&dl=1) - Oracle Linux Release 5 Update 9 32-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [oracle58-i386](https://dl.dropboxusercontent.com/s/ixt0ao0m30sfsxl/oracle58-i386.box?token_hash=AAHi9CgAF6tuPpHt07U5OKSByGngDPZ0HooZtJTArq1j1Q&dl=1) - Oracle Linux Release 5 Update 8 32-bit (VMware Tools 9.6.0.26048 build-1294478)
-* [oracle57-i386](https://dl.dropboxusercontent.com/s/qj9kwtwgiw5x72b/oracle57-i386.box?token_hash=AAHe0ShK47CCkIpbh6lOlPIyDTm0f81ac-3YwLFFWLJWzA&dl=1) - Oracle Linux Release 5 Update 7 32-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [oracle59-i386](https://dl.dropboxusercontent.com/s/hvy9fd0rgqlfn3z/oracle59-i386.box?token_hash=AAHlpoUL8yOFJoqkLbqRRva-c0ct4KnYeIHvTipPJ5jJaQ&dl=1) - Oracle Linux Release 5 Update 9 32-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [oracle58-i386](https://dl.dropboxusercontent.com/s/fw3h6sx3x3p4jxi/oracle58-i386.box?token_hash=AAFlSuZYR8gmts8RoTJN5sud-3qlZ-6dxlNwCZvwa_cgJw&dl=1) - Oracle Linux Release 5 Update 8 32-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [oracle57-i386](https://dl.dropboxusercontent.com/s/t89tlol4i2m6vod/oracle57-i386.box?token_hash=AAEbP1UIz3heEYYUhxy5xpLZNW-ZzcnUefd81pAbyExv7A&dl=1) - Oracle Linux Release 5 Update 7 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian72-i386](https://dl.dropboxusercontent.com/s/75z1jqliq1jnl7k/debian72-i386.box?token_hash=AAH_Fj1Loiz58Q7wbNjDu2ZWYskIFMfo1hBULJFwGboGRw&dl=1) - Debian "wheezy" 7.2 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian71-i386](https://dl.dropboxusercontent.com/s/75z1jqliq1jnl7k/debian72-i386.box?token_hash=AAH_Fj1Loiz58Q7wbNjDu2ZWYskIFMfo1hBULJFwGboGRw&dl=1) - Debian "wheezy" 7.1 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian607-i386](https://dl.dropboxusercontent.com/s/ke0lxwj6lcqrwub/debian607-i386.box?token_hash=AAFbIBokfQUvx4Esrl-lF6_4rtpPVt_YLgFR5ckD4nM-BA&dl=1) - Debian "squeeze" 6.0.7 32-bit (VMware Tools 9.6.0.26048 build-1294478)
