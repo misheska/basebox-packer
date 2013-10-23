@@ -1,1 +1,0 @@
-../../.windows/set-power-config.bat

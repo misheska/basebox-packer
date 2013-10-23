@@ -1,1 +1,0 @@
-../../.windows/postinstall32.sh

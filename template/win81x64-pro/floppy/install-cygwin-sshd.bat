@@ -1,1 +1,0 @@
-../../.windows/install-cygwin-sshd.bat
