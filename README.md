@@ -41,6 +41,7 @@ Current VMware Baseboxes
 32-bit boxes:
 
 * [centos64-i386](https://dl.dropboxusercontent.com/s/7q11bsqmv151hll/centos64-i386.box?token_hash=AAF-K-6FFcsNNWnJK7yY6Qixvpk1aau5efoGNO9kX5TP9Q&dl=1) - CentOS 6.4 32-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [centos510-i386](https://dl.dropboxusercontent.com/s/yubi66xwnuvm212/centos510-i386.box?token_hash=AAFpBFCmjmfdVZB293tj5NtChAEgjJymZ_DYR5kzP8tZnw&dl=1) - CentOS 5.10 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [centos59-i386](https://dl.dropboxusercontent.com/s/veikmkf47q72l9x/centos59-i386.box?token_hash=AAEXBd9PsUA7VY2EXp81wQyhnN9eJSfJ7HfRaZHjJGpKhA&dl=1) - CentOS 5.9 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1310-i386](https://dl.dropboxusercontent.com/s/c7jy8efytf1p9oy/ubuntu1310-i386.box?token_hash=AAHf0Ff1DqbIJRvoc7BokREngRoTLqD6viZOJv3IN3Q8yg&dl=1) - Ubuntu 13.10 server 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [ubuntu1304-i386](https://dl.dropboxusercontent.com/s/nl396uiacxtl9qk/ubuntu1304-i386.box?token_hash=AAHPxHmTdWGaBHyllCRKJ7aThRq3HCFNtU-cLVbN9uKaHg&dl=1) - Ubuntu 13.04 server 32-bit (VMware Tools 9.6.0.26048 build-1294478)
@@ -122,8 +123,10 @@ Current VirtualBox Baseboxes
 * [centos510-i386](https://dl.dropboxusercontent.com/s/bbmbtibz69f6b4j/centos510-i386.box?token_hash=AAFQbZqHmSNr_rgENjPaQfLRhAItImoKFUejjIXINSNADw&dl=1) - CentOS 5.10 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [centos59-i386](https://dl.dropboxusercontent.com/s/lb0q1vk3ojxypa2/centos59-i386.box?token_hash=AAHxzOJG4GhG5yJAAqqLPhRBFoL6liFnTT9nP-9dzkLH8g&dl=1) - CentOS 5.9 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1310-i386](https://dl.dropboxusercontent.com/s/dg5xlil94hjvl23/ubuntu1310-i386.box?token_hash=AAE9Bykyb2lPQw49hDaWVQGSb4DleogF7ldboRHkdJdojQ&dl=1) - Ubuntu 13.10 32-bit (VirtualBox 4.3.0 Guest Additions)
+* [ubuntu1304-i386]() - Ubuntu 13.04 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1204-i386](https://dl.dropboxusercontent.com/s/v8xg8h0prcwyzi5/ubuntu1204-i386.box?token_hash=AAFxXyN6YepuMwR7ENYxDWDjTuhCwyKwhgicikD9_fNiTg&dl=1) - Ubuntu 12.04.3 server 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1004-i386](https://dl.dropboxusercontent.com/s/u5uvx9kjdh3i6uk/ubuntu1004-i386.box?token_hash=AAFrMeCZ6dHGFMJRioK50mP75Jao77LdKQoKY0l1LRpPeQ&dl=1) - Ubuntu 10.04.4 server 32-bit (VirtualBox 4.3.0 Guest Additions)
+* [fedora20-i386](https://dl.dropboxusercontent.com/s/mrqruf8765cken1/fedora20-i386.box?token_hash=AAGcAbOHfKhddalz1KZ7DxYpWsbI7Y8XAqR88dpH7HTWSQ&dl=1) - Fedora 20 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [fedora19-i386](https://dl.dropboxusercontent.com/s/3offsg1ye0qzxqv/fedora19-i386.box?token_hash=AAEpYEzWAbbfJFQOemD8e1F6qjQGy5FhGjFXKRoLJOF1vw&dl=1) - Fedora 19 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [fedora18-i386](https://dl.dropboxusercontent.com/s/v2u3tb3743aicmw/fedora18-i386.box?token_hash=AAG1D4arQahYZhtn33kWB9Yf4XmKkOz3XZi1p0mWLLOwGA&dl=1) - Fedora 18 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [oracle64-i386](https://dl.dropboxusercontent.com/s/kymqyvd2mwcyx20/oracle64-i386.box?token_hash=AAGtjFt2ZXe_SGz97i_NXvvkiFL6_rAaN4J6GTCBODsWPA&dl=1) - Oracle Linux Release 6 Update 4 32-bit (VirtualBox 4.3.0 Guest Additions)
