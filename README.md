@@ -123,7 +123,7 @@ Current VirtualBox Baseboxes
 * [centos510-i386](https://dl.dropboxusercontent.com/s/bbmbtibz69f6b4j/centos510-i386.box?token_hash=AAFQbZqHmSNr_rgENjPaQfLRhAItImoKFUejjIXINSNADw&dl=1) - CentOS 5.10 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [centos59-i386](https://dl.dropboxusercontent.com/s/lb0q1vk3ojxypa2/centos59-i386.box?token_hash=AAHxzOJG4GhG5yJAAqqLPhRBFoL6liFnTT9nP-9dzkLH8g&dl=1) - CentOS 5.9 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1310-i386](https://dl.dropboxusercontent.com/s/dg5xlil94hjvl23/ubuntu1310-i386.box?token_hash=AAE9Bykyb2lPQw49hDaWVQGSb4DleogF7ldboRHkdJdojQ&dl=1) - Ubuntu 13.10 32-bit (VirtualBox 4.3.0 Guest Additions)
-* [ubuntu1304-i386]() - Ubuntu 13.04 32-bit (VirtualBox 4.3.0 Guest Additions)
+* [ubuntu1304-i386](https://dl.dropboxusercontent.com/s/pymac1ei0gvum4i/ubuntu1304-i386.box?token_hash=AAHp350sMJe2-YM1TTak4-Hn7T3ZOqwbvTVmgh5JoWCAKg&dl=1) - Ubuntu 13.04 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1204-i386](https://dl.dropboxusercontent.com/s/v8xg8h0prcwyzi5/ubuntu1204-i386.box?token_hash=AAFxXyN6YepuMwR7ENYxDWDjTuhCwyKwhgicikD9_fNiTg&dl=1) - Ubuntu 12.04.3 server 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1004-i386](https://dl.dropboxusercontent.com/s/u5uvx9kjdh3i6uk/ubuntu1004-i386.box?token_hash=AAFrMeCZ6dHGFMJRioK50mP75Jao77LdKQoKY0l1LRpPeQ&dl=1) - Ubuntu 10.04.4 server 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [fedora20-i386](https://dl.dropboxusercontent.com/s/mrqruf8765cken1/fedora20-i386.box?token_hash=AAGcAbOHfKhddalz1KZ7DxYpWsbI7Y8XAqR88dpH7HTWSQ&dl=1) - Fedora 20 32-bit (VirtualBox 4.3.0 Guest Additions)
