@@ -1,1 +1,0 @@
-../../osx/scripts/vagrant.sh
