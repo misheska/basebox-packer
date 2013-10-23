@@ -24,7 +24,7 @@ if [ $PACKER_BUILDER_TYPE == 'vmware' ]; then
     rm /home/vagrant/linux.iso
     umount /mnt/cdrom
     rmdir /mnt/cdrom
-elif [ $PACKER_BUILDER_TYPE == 'vmware' ]; then
+elif [ $PACKER_BUILDER_TYPE == 'virtualbox' ]; then
     echo "Installing VirtualBox guest additions"
 
     # Assume that we've installed all the prerequisites:
