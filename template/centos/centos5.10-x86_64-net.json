@@ -1,0 +1,75 @@
+{
+  "builders": [{
+    "vm_name": "centos510",
+    "type": "vmware",
+    "guest_os_type": "centos-64",
+    "headless": true,
+    "http_directory": "http",
+    "iso_url": "http://centos.mirrors.hoobly.com/5.10/isos/x86_64/CentOS-5.10-x86_64-netinstall.iso",
+    "iso_checksum": "e09e44f04f0a4b97b04935e0ba88833f",
+    "iso_checksum_type": "md5",
+    "ssh_username": "root",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "tools_upload_flavor": "linux",
+      "boot_command": [
+          "<esc>",
+          "<wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks-net.cfg<enter>"
+      ],
+    "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -h now",
+    "disk_size": 10140,
+    "vmx_data": {
+      "memsize": "512",
+      "numvcpus": "1",
+      "cpuid.coresPerSocket": "1"
+    }
+  },
+  {
+    "vm_name": "centos510",
+    "type": "virtualbox",
+    "headless": true,
+    "http_directory": "http",
+    "iso_url": "http://centos.mirrors.hoobly.com/5.10/isos/x86_64/CentOS-5.10-x86_64-netinstall.iso",
+    "iso_checksum": "e09e44f04f0a4b97b04935e0ba88833f",
+    "iso_checksum_type": "md5",
+    "guest_os_type": "RedHat_64",
+    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+    "virtualbox_version_file": ".vbox_version",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+      "boot_command": [
+          "<esc>",
+          "<wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks-net.cfg<enter>"
+      ],
+    "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -h now",
+    "disk_size": 10140,
+    "vboxmanage": [
+      ["modifyvm", "{{.Name}}", "--memory", "512"],
+      ["modifyvm", "{{.Name}}", "--cpus", "1"]
+    ]
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "scripts": [
+      "script/base.sh",
+      "script/vagrant.sh",
+      "script/vmtools.sh",
+      "script/cleanup.sh",
+      "script/zerodisk.sh"
+    ],
+    "override": {
+      "virtualbox": {
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
+      },
+      "vmware": {
+        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
+      }
+    }
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": false,
+    "output": "centos510.box"
+  }]
+}
