@@ -4,8 +4,6 @@ REM create the cygwin directory
 cmd /c mkdir %SystemDrive%\cygwin
 
 if "%PROCESSOR_ARCHITECTURE%" == "AMD64" (set ARCH=x86_64) else (set ARCH=x86)
-rem the x86_64 version is still a little buggy
-set ARCH=x86
 set URL=http://cygwin.com/setup-%ARCH%.exe
 
 cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal %URL% %SystemDrive%\cygwin\cygwin-setup.exe
@@ -13,12 +11,51 @@ cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal %URL% %Syst
 REM goto a temp directory
 cd /D %SystemDrive%\windows\temp
 
-set PACKAGES=openssh
+set PACKAGES= alternatives
+set PACKAGES=%PACKAGES%,csih
+set PACKAGES=%PACKAGES%,cygrunsrv
+set PACKAGES=%PACKAGES%,crypt
+set PACKAGES=%PACKAGES%,diffutils
+set PACKAGES=%PACKAGES%,libasn1_8
+set PACKAGES=%PACKAGES%,libattr1
+set PACKAGES=%PACKAGES%,libcom_err2
+set PACKAGES=%PACKAGES%,libcrypt0
+set PACKAGES=%PACKAGES%,libffi6
+set PACKAGES=%PACKAGES%,libgcc1
+set PACKAGES=%PACKAGES%,libgcrypt11
+set PACKAGES=%PACKAGES%,libgmp10
+set PACKAGES=%PACKAGES%,libgmp3
+set PACKAGES=%PACKAGES%,libgnutls26
+set PACKAGES=%PACKAGES%,libgpg-error0
+set PACKAGES=%PACKAGES%,libgssapi3
+set PACKAGES=%PACKAGES%,libheimbase1
+set PACKAGES=%PACKAGES%,libheimntlm0
+set PACKAGES=%PACKAGES%,libhx509_5
+set PACKAGES=%PACKAGES%,libiconv2
+set PACKAGES=%PACKAGES%,libidn11
+set PACKAGES=%PACKAGES%,libintl8
+set PACKAGES=%PACKAGES%,libkafs0
+set PACKAGES=%PACKAGES%,libkrb5_26
+set PACKAGES=%PACKAGES%,libmpfr4
+set PACKAGES=%PACKAGES%,libncursesw10
+set PACKAGES=%PACKAGES%,libopenssl100
+set PACKAGES=%PACKAGES%,libp11-kit0
+set PACKAGES=%PACKAGES%,libpcre0
+set PACKAGES=%PACKAGES%,libpcre1
+set PACKAGES=%PACKAGES%,libreadline7
+set PACKAGES=%PACKAGES%,libroken18
+set PACKAGES=%PACKAGES%,libsqlite3_0
+set PACKAGES=%PACKAGES%,libssp0
+set PACKAGES=%PACKAGES%,libtasn1_3
+set PACKAGES=%PACKAGES%,libwind0
+set PACKAGES=%PACKAGES%,libwrap0
+set PACKAGES=%PACKAGES%,openssh
 set PACKAGES=%PACKAGES%,openssl
 set PACKAGES=%PACKAGES%,rebase
 set PACKAGES=%PACKAGES%,termcap
 set PACKAGES=%PACKAGES%,terminfo
 set PACKAGES=%PACKAGES%,wget
+set PACKAGES=%PACKAGES%,zlib0
 
 REM run the installation
 %SystemDrive%\cygwin\cygwin-setup.exe -a %ARCH% -q -R %SystemDrive%\cygwin -P %PACKAGES% -s http://cygwin.mirrors.pair.com
