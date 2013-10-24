@@ -92,7 +92,7 @@ Current VirtualBox Baseboxes
 
 64-bit boxes:
 
-* [centos64](https://dl.dropboxusercontent.com/s/dqv65qk6j79mq3o/centos64.box?token_hash=AAEO0urkBZTTpS3ndrKg5ek2rnGCxfa2T56tQk3fK8-sBQ&dl=1) - CentOS 6.4 64-bit (VirtualBox 4.3.0 Guest Additions)
+* [centos64](https://dl.dropboxusercontent.com/s/dqv65qk6j79mq3o/centos64.box?dl=1&token_hash=AAEO0urkBZTTpS3ndrKg5ek2rnGCxfa2T56tQk3fK8-sBQ) - CentOS 6.4 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [centos510](https://dl.dropboxusercontent.com/s/xdfby69j4bl1xy9/centos510.box?token_hash=AAFTaO6uHu52KTbCBSNVaWA00Mpa5Lqz9Lue3J2NICQzOw&dl=1) - CentOS 5.10 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [centos59](https://dl.dropboxusercontent.com/s/6nc2grl7bneaou7/centos59.box?token_hash=AAHJ4-rJMtBDawC-qDCRC_YWsoHE2D2t3iuchPWdJ9cNqw&dl=1) - CentOS 5.9 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1310](https://dl.dropboxusercontent.com/s/ng79gg5bg24r38p/ubuntu1310.box?token_hash=AAGKH9rJTMozemrLMLw8n8Htvg8-gGhb7xo8cwh0TaYCaw&dl=1) - Ubuntu 13.10 64-bit (VirtualBox 4.3.0 Guest Additions)
@@ -119,9 +119,9 @@ Current VirtualBox Baseboxes
 
 32-bit boxes:
 
-* [centos64-i386](https://dl.dropboxusercontent.com/s/guk2p3ypz456xlc/centos64-i386.box?token_hash=AAEwLvxb-pZUeyKYGABoHb-kwwD0OtvQuJQO0msKIVJWKQ&dl=1) - CentOS 6.4 32-bit (VirtualBox 4.3.0 Guest Additions)
+* [centos64-i386](https://dl.dropboxusercontent.com/s/guk2p3ypz456xlc/centos64-i386.box?dl=1&token_hash=AAEwLvxb-pZUeyKYGABoHb-kwwD0OtvQuJQO0msKIVJWKQ) - CentOS 6.4 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [centos510-i386](https://dl.dropboxusercontent.com/s/bbmbtibz69f6b4j/centos510-i386.box?token_hash=AAFQbZqHmSNr_rgENjPaQfLRhAItImoKFUejjIXINSNADw&dl=1) - CentOS 5.10 32-bit (VirtualBox 4.3.0 Guest Additions)
-* [centos59-i386](https://dl.dropboxusercontent.com/s/lb0q1vk3ojxypa2/centos59-i386.box?token_hash=AAHxzOJG4GhG5yJAAqqLPhRBFoL6liFnTT9nP-9dzkLH8g&dl=1) - CentOS 5.9 32-bit (VirtualBox 4.3.0 Guest Additions)
+* [centos59-i386](https://dl.dropboxusercontent.com/s/lb0q1vk3ojxypa2/centos59-i386.box?dl=1&token_hash=AAHxzOJG4GhG5yJAAqqLPhRBFoL6liFnTT9nP-9dzkLH8g) - CentOS 5.9 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1310-i386](https://dl.dropboxusercontent.com/s/dg5xlil94hjvl23/ubuntu1310-i386.box?token_hash=AAE9Bykyb2lPQw49hDaWVQGSb4DleogF7ldboRHkdJdojQ&dl=1) - Ubuntu 13.10 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1304-i386](https://dl.dropboxusercontent.com/s/pymac1ei0gvum4i/ubuntu1304-i386.box?token_hash=AAHp350sMJe2-YM1TTak4-Hn7T3ZOqwbvTVmgh5JoWCAKg&dl=1) - Ubuntu 13.04 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [ubuntu1204-i386](https://dl.dropboxusercontent.com/s/v8xg8h0prcwyzi5/ubuntu1204-i386.box?token_hash=AAFxXyN6YepuMwR7ENYxDWDjTuhCwyKwhgicikD9_fNiTg&dl=1) - Ubuntu 12.04.3 server 32-bit (VirtualBox 4.3.0 Guest Additions)
