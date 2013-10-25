@@ -1,6 +1,7 @@
 BUILDER_TYPES = vmware virtualbox
 TEMPLATE_PATHS := $(wildcard template/*/*.json)
 TEMPLATE_FILENAMES := $(notdir ${TEMPLATE_PATHS})
+TEMPLATE_DIRS := $(dir ${TEMPLATE_PATHS})
 BOX_FILENAMES := $(TEMPLATE_FILENAMES:.json=.box)
 BOX_FILES := $(foreach builder, $(BUILDER_TYPES), $(foreach box_filename, $(BOX_FILENAMES), $(builder)/$(box_filename)))
 RM = rm -f
