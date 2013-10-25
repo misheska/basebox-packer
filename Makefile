@@ -1,20 +1,22 @@
 BUILDER_TYPES = vmware virtualbox
-TEMPLATE_DIRS := $(wildcard template/*)
-TEMPLATE_FILES := $(patsubst %, %/template.json, ${TEMPLATE_DIRS})
-BOX_FILENAMES := $(patsubst template/%, %.box, ${TEMPLATE_DIRS})
+TEMPLATE_PATHS := $(wildcard template/*/*.json)
+TEMPLATE_FILENAMES := $(notdir ${TEMPLATE_PATHS})
+BOX_FILENAMES := $(TEMPLATE_FILENAMES:.json=.box)
 BOX_FILES := $(foreach builder, $(BUILDER_TYPES), $(foreach box_filename, $(BOX_FILENAMES), $(builder)/$(box_filename)))
 RM = rm -f
+
+vpath %.json template/centos:template/debian:template/fedora:template/freebsd:template/opensuse:template/oraclelinux:template/osx:template/ubuntu:template/windows2008r2:template/windows2012:template/windows2012r2:template/windows7:template/windows8:template/windows81
 
 .PHONY: all
 all: $(BOX_FILES)
 
-vmware/%.box: template/%/template.json
+vmware/%.box: %.json
 	cd $(dir $<); \
 	rm -rf output-vmware; \
 	mkdir -p ../../vmware; \
 	packer build -only=vmware $(notdir $<)
 
-virtualbox/%.box: template/%/template.json
+virtualbox/%.box: %.json
 	cd $(dir $<); \
 	rm -rf output-virtualbox; \
 	mkdir -p ../../virtualbox; \
