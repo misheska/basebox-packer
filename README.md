@@ -168,16 +168,16 @@ Getting Started
 
 A GNU Make makefile is provided to support automated builds.  It assumes
 that both GNU Make and Packer are in the PATH.  Download and install
-Packer from <http://www.packer.io/downloads.html>  
+Packer from <http://www.packer.io/downloads.html>
 
 To build a VirtualBox box:
 
     make list
-    # Choose a definition, like 'virtualbox/misheska-ubuntu1204'
-    make virtualbox/misheska-ubuntu1204.box
+    # Choose a definition, like 'virtualbox/ubuntu1204'
+    make virtualbox/ubuntu1204.box
 
 To build a VMware Fusion/VMware Workstation box:
 
     make list
-    # Choose a definition, like 'misheska-centos64'
-    make vmware/misheska-centos64.box
+    # Choose a definition, like 'vmware/centos64'
+    make vmware/centos64.box
