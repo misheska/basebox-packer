@@ -1,19 +1,19 @@
 {
   "builders": [{
-    "vm_name": "centos510-net",
+    "vm_name": "centos59",
     "type": "vmware",
     "guest_os_type": "centos-64",
     "http_directory": "http",
     "headless":true,
-    "iso_url": "http://mirror.stanford.edu/yum/pub/centos/5.10/isos/x86_64/CentOS-5.10-x86_64-netinstall.iso",
-    "iso_checksum": "e09e44f04f0a4b97b04935e0ba88833f",
+    "iso_url": "http://mirror.stanford.edu/yum/pub/centos/5.9/isos/x86_64/CentOS-5.9-x86_64-netinstall.iso",
+    "iso_checksum": "445cfe6236327450bcbda17319b73559",
     "iso_checksum_type": "md5",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
     "ssh_wait_timeout": "10000s",
     "tools_upload_flavor": "linux",
     "boot_command": [
-      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks510-net.cfg<enter>"
+      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks59-net.cfg<enter>"
     ],
     "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -h now",
     "disk_size": 10140,
@@ -24,12 +24,12 @@
     }
   },
   {
-    "vm_name": "centos510-net",
+    "vm_name": "centos59",
     "type": "virtualbox",
     "http_directory": "http",
     "headless":true,
-    "iso_url": "http://mirror.stanford.edu/yum/pub/centos/5.10/isos/x86_64/CentOS-5.10-x86_64-netinstall.iso",
-    "iso_checksum": "e09e44f04f0a4b97b04935e0ba88833f",
+    "iso_url": "http://mirror.stanford.edu/yum/pub/centos/5.9/isos/x86_64/CentOS-5.9-x86_64-netinstall.iso",
+    "iso_checksum": "445cfe6236327450bcbda17319b73559",
     "iso_checksum_type": "md5",
     "guest_os_type": "RedHat_64",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
@@ -38,7 +38,7 @@
     "ssh_password": "vagrant",
     "ssh_wait_timeout": "10000s",
     "boot_command": [
-      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks510-net.cfg<enter>"
+      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks59-net.cfg<enter>"
     ],
     "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -h now",
     "disk_size": 10140,
@@ -68,6 +68,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/centos510-net.box"
+    "output": "../../{{.Provider}}/centos59.box"
   }]
 }
