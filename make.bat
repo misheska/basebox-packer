@@ -3,6 +3,7 @@ setlocal
 set CUR=%~dp0
 set FAVOR=%~p1
 if "listx" == "%1x" goto list
+if "cleanx" == "%1x" goto clean
 if "vmware" == "%FAVOR:~-7,6%" set FAVOR=vmware
 if "virtualbox" == "%FAVOR:~-11,10%" set FAVOR=virtualbox
 if "%FAVOR%" == "vmware" goto make
@@ -37,4 +38,13 @@ cd /D "%CUR%"
 echo Choose one of the following favor/template. Then call make favor/template
 for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\template.json echo virtualbox/%%i
 for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\template.json echo vmware/%%i
+goto done
+
+:clean
+cd /D "%CUR%"
+echo Deleting all template/*/output-* directories
+for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\output-virtualbox rmdir /s /q template\%%i\output-virtualbox
+for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\output-vmware rmdir /s /q template\%%i\output-vmware
+goto done
+
 :done

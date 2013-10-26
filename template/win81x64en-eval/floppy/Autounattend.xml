@@ -87,20 +87,26 @@
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
+                    <CommandLine>REG ADD &quot;HKLM\SOFTWARE\Policies\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\010103000F0000F0010000000F0000F0C967A3643C3AD745950DA7859209176EF5B87C875FA20DF21951640E807D7C24&quot; /v Category /t REG_DWORD /d 1 /f</CommandLine>
+                    <Description>Set unidentified network to private</Description>
+                    <Order>3</Order>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c a:set-power-config.bat</CommandLine>
                     <Description>Turn off all power saving and timeouts</Description>
-                    <Order>3</Order>
+                    <Order>4</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c a:install-winrm.bat</CommandLine>
                     <Description>Install Win RM</Description>
-                    <Order>4</Order>
+                    <Order>5</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <RequiresUserInput>true</RequiresUserInput>
-                    <Order>5</Order>
+                    <Order>6</Order>
                     <Description>Install Cygwin SSHD</Description>
                     <CommandLine>cmd /c a:install-cygwin-sshd.bat</CommandLine>
                 </SynchronousCommand>

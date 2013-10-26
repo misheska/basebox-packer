@@ -8,6 +8,7 @@ cmd /c winrm set winrm/config/service/auth @{Basic="true"}
 cmd /c winrm set winrm/config/listener?Address=*+Transport=HTTP @{Port="5985"}
 cmd /c netsh advfirewall firewall set rule group="remote administration" new enable=yes
 cmd /c netsh advfirewall firewall add portopening TCP 5985 "Port 5985"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Set-NetFirewallRule -DisplayGroup 'Windows Remote Management' -Enabled True"
 cmd /c net stop winrm
 cmd /c net start winrm
 cmd /c sc config "WinRM" start= auto
