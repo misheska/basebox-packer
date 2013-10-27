@@ -5,7 +5,7 @@
       "type": "vmware",
       "guest_os_type": "darwin12-64",
       "iso_url": "../../iso/OSX_InstallESD_10.8_12A269.dmg",
-      "iso_checksum": "81b2ebbeb6a7d3455da27c903ceeb0fb",
+      "iso_checksum": "e557c0f656b1d59f583f4744e5773972",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
