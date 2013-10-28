@@ -53,7 +53,7 @@ VMware Fusion:
       p.gui = true
     end
 
-Also, if you are using VirtualBox and want to use a resolution bigger than
+Also, if you are using VirtualBox and want to use a resolution higher than
 800x600, add the following extra settings to your `config.vm.provider` block
 to increase the amount of video memory, remove guest resolution restrictions,
 and to set the default resolution (1024x768 is just an example):
