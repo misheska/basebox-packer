@@ -5,6 +5,29 @@ Due to licensing restrictions, you will need to build the Windows baseboxes
 yourself from the provided templates, using your own install media.  Edit
 the template accordingly.
 
+Windows Guest Bug
+-----------------
+
+As of this writing, despite setting `config.vm.guest` properly in your `Vagrantfile` 
+per the Vagrant documentation:
+
+    config.vm.guest = :windows
+    
+You will still see the following warning message (and vagrant will return an error code):
+
+    The guest operating system of the machine could not be detected!
+    Vagrant requires this knowledge to perform specific tasks such
+    as mounting shared folders and configuring networks. Please add
+    the ability to detect this guest operating system to Vagrant
+    by creating a plugin or reporting a bug.
+
+Despite the warning, and `vagrant up` returning an error code, the message is benign and if
+the templates from this repository are used, the box will load and function correctly and
+shared folders will behave as expected.  It just affects integration with tools like Chef's 
+`test-kitchen` which (correctly) looks at the failure exit code and treat it as an error,
+preventing test runs using these Windows baseboxes.  This issue has been reported to 
+the vagrant folks as an bug
+
 GUI
 ---
 
