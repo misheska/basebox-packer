@@ -1,4 +1,4 @@
-Windows Basebox Nodes
+Windows Basebox Notes
 =====================
 
 Due to licensing restrictions, you will need to build the Windows baseboxes
