@@ -3,7 +3,7 @@ Windows Basebox Notes
 
 Due to licensing restrictions, you will need to build the Windows baseboxes
 yourself from the provided templates, using your own install media.  Edit
-the template accordingly.
+the templates accordingly.
 
 Windows Guest Bug
 -----------------
