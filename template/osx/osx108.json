@@ -32,7 +32,7 @@
   ],
   "post-processors": [{
     "type": "vagrant",
-    "output": "../../{{.Provider}}/osx18.box"
+    "output": "../../{{.Provider}}/osx108.box"
   }],
   "provisioners": [
     {
