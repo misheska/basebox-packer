@@ -2,8 +2,6 @@ packer_cache
 output-*
 *.box
 *.tar.gz
-virtualbox
-vmware
 iso
 crash.log
 tmp
