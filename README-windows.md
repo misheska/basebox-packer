@@ -13,7 +13,8 @@ per the Vagrant documentation:
 
     config.vm.guest = :windows
     
-You will still see the following warning message (and vagrant will return an error code):
+You will still see the following warning message (and vagrant will return an error code)
+when you run `vagrant up` against a Windows basebox:
 
     The guest operating system of the machine could not be detected!
     Vagrant requires this knowledge to perform specific tasks such
