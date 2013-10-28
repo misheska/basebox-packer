@@ -25,7 +25,7 @@ when you run `vagrant up` against a Windows basebox:
 Despite the warning, and `vagrant up` returning an error code, the message is benign and if
 the templates from this repository are used, the box will load and function correctly and
 shared folders will behave as expected.  It just affects integration with tools like Chef's 
-`test-kitchen` which (correctly) looks at the failure exit code and treat it as an error,
+`test-kitchen` which (correctly) looks at the failure exit code and treats it as an error,
 preventing test runs using these Windows baseboxes.  This issue has been reported to 
 the vagrant folks as an bug
 
