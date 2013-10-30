@@ -35,6 +35,7 @@ Current VMware Baseboxes
 * [oracle57](https://dl.dropboxusercontent.com/s/ap92o5071qiie6d/oracle57.box?token_hash=AAF_dXpGPbpCf6ujoP-_zaFe7DlXLZDAy7g8ueOTHpI0EQ&dl=1) - Oracle Linux Release 5 Update 7 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian72](https://dl.dropboxusercontent.com/s/g8djjlz1x5tz30j/debian72.box?token_hash=AAH1_-tgqx5PabhxLXD-X7hFEZ9x_-a899fMAYI_Kgd4Bg&dl=1) - Debian "wheezy" 7.2 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian71](https://dl.dropboxusercontent.com/s/wnuj8ei8cdx3gks/debian71.box?token_hash=AAEL9-VOItr80U5YtZhbXnw8TIxHBfuPhCVuuXQSfFtx3A&dl=1) - Debian "wheezy" 7.1 64-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [debian608](https://dl.dropboxusercontent.com/s/cg01qqdi0ge92kr/debian608.box?dl=1&token_hash=AAEjEDbn-Lb6Dt8HIy258AwZEV2UASkPhSeQqM1mQM7PQA) - Debian "squeeze" 6.0.8 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian607](https://dl.dropboxusercontent.com/s/hahnaz8sjtutzbb/debian607.box?token_hash=AAEXucOvXJyDq2y3WwxT90q2RTh7AsLcI8dJG9q_DCKLlg&dl=1) - Debian "squeeze" 6.0.7 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [freebsd91](https://dl.dropboxusercontent.com/s/upe7f6f3vf97ppj/freebsd91.box?token_hash=AAE4KNq9TvJLvwNIo5Ryt4x81MRMReUFxl9EoWrVNcmCtQ&dl=1) - FreeBSD 9.1 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 
@@ -60,6 +61,7 @@ Current VMware Baseboxes
 * [oracle57-i386](https://dl.dropboxusercontent.com/s/t89tlol4i2m6vod/oracle57-i386.box?token_hash=AAEbP1UIz3heEYYUhxy5xpLZNW-ZzcnUefd81pAbyExv7A&dl=1) - Oracle Linux Release 5 Update 7 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian72-i386](https://dl.dropboxusercontent.com/s/75z1jqliq1jnl7k/debian72-i386.box?token_hash=AAH_Fj1Loiz58Q7wbNjDu2ZWYskIFMfo1hBULJFwGboGRw&dl=1) - Debian "wheezy" 7.2 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian71-i386](https://dl.dropboxusercontent.com/s/75z1jqliq1jnl7k/debian72-i386.box?token_hash=AAH_Fj1Loiz58Q7wbNjDu2ZWYskIFMfo1hBULJFwGboGRw&dl=1) - Debian "wheezy" 7.1 32-bit (VMware Tools 9.6.0.26048 build-1294478)
+* [debian608-i386](https://dl.dropboxusercontent.com/s/qfs4fqoh9bexmgt/debian608-i386.box?dl=1&token_hash=AAEn_fM5nPGlDQJwQkxRUJ_srWp-XV6pGlyMhtOM6O7ARQ) - Debian "squeeze" 6.0.8 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 * [debian607-i386](https://dl.dropboxusercontent.com/s/ke0lxwj6lcqrwub/debian607-i386.box?token_hash=AAFbIBokfQUvx4Esrl-lF6_4rtpPVt_YLgFR5ckD4nM-BA&dl=1) - Debian "squeeze" 6.0.7 32-bit (VMware Tools 9.6.0.26048 build-1294478)
 
 
@@ -114,6 +116,7 @@ Current VirtualBox Baseboxes
 * [oracle57](https://dl.dropboxusercontent.com/s/9piju07tq2y181w/oracle57.box?token_hash=AAHuPjD3hBPp6-20jBnSIhGZeXHshmwIeZ8WMHa6JLM0gw&dl=1) - Oracle Linux Release 5 Update 7 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [debian72](https://dl.dropboxusercontent.com/s/4wy52s3a8jf94yd/debian72.box?token_hash=AAEss_7qdYkY5zfUwVkOHUcc15BJJJAscTKkzFwzAIti4g&dl=1) Debian "wheezy" 7.2 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [debian71](https://dl.dropboxusercontent.com/s/nc3jz7ba6g9yhb8/debian71.box?token_hash=AAFe7E3ml49o7MFfVdwd_LdZ8AqX7kKzSCYfW0W4xLkHhg&dl=1) Debian "wheezy" 7.1 64-bit (VirtualBox 4.3.0 Guest Additions)
+* [debian608](https://dl.dropboxusercontent.com/s/bb3bsjlt73bk17c/debian608.box?dl=1&token_hash=AAEa9U_NS6Ncmels8-rNICHtEhbjW8oLSuRMCEwiXF2UpA) Debian "squeeze" 6.0.8 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [debian607](https://dl.dropboxusercontent.com/s/acot2yqhm50g76a/debian607.box?token_hash=AAF3IEr2V_1MA4H2hYOPdSujaKHSsEUQ3F23QQKZ16WYpg&dl=1) Debian "squeeze" 6.0.7 64-bit (VirtualBox 4.3.0 Guest Additions)
 * [freebsd91](https://dl.dropboxusercontent.com/s/c46td8badoba87c/freebsd91.box?token_hash=AAGoiqOwnWOFFRKXg4KQs9oXWo-s-p0QcqG_XviCU8Mz_g&dl=1) - FreeBSD 9.1 64-bit (VMware Tools 9.6.0.26048 build-1294478)
 
@@ -139,6 +142,7 @@ Current VirtualBox Baseboxes
 * [oracle57-i386](https://dl.dropboxusercontent.com/s/qj9kwtwgiw5x72b/oracle57-i386.box?token_hash=AAHe0ShK47CCkIpbh6lOlPIyDTm0f81ac-3YwLFFWLJWzA&dl=1) - Oracle Linux Release 5 Update 7 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [debian72-i386](https://dl.dropboxusercontent.com/s/32h8c1lioi6w4to/debian72-i386.box?token_hash=AAHiAjLs6a7UI-iNoWF3OJDQAYGMjqHl8y5wpK3cgW4rFQ&dl=1) - Debian "wheezy" 7.2 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [debian71-i386](https://dl.dropboxusercontent.com/s/rizi8v4w8w3obgr/debian71-i386.box?token_hash=AAE-6j043VjNPFZto95myi0OYTIfER83M8kpJd7-FGBAWw&dl=1) - Debian "wheezy" 7.1 32-bit (VirtualBox 4.3.0 Guest Additions)
+* [debian608-i386](https://dl.dropboxusercontent.com/s/xm7th9zkcu16ryx/debian608-i386.box?dl=1&token_hash=AAH_0NY3JdkhxDAjciasF1_HYAgO1zFkB3YNuipZYa9Blg) - Debian "squeeze" 6.0.8 32-bit (VirtualBox 4.3.0 Guest Additions)
 * [debian607-i386](https://dl.dropboxusercontent.com/s/h60useqfvpqlujd/debian607-i386.box?token_hash=AAFPi35n6ZGtgc9kNWff8rrgx6P-fjENhqkK6WqHbDt1Vg&dl=1) - Debian "squeeze" 6.0.7 32-bit (VirtualBox 4.3.0 Guest Additions)
 
 
