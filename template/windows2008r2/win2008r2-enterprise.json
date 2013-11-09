@@ -18,7 +18,8 @@
       "vmx_data": {
         "memsize": "768",
         "numvcpus": "1",
-        "cpuid.coresPerSocket": "1"
+        "cpuid.coresPerSocket": "1",
+        "scsi0.virtualDev": "lsisas1068"
       }
     },
     {
@@ -44,7 +45,6 @@
   "provisioners": [{
     "type": "shell",
     "scripts": [
-      "script/change-home-dirs.sh",
       "script/postinstall64.sh"
     ]
   }],

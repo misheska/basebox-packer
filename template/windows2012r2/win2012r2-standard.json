@@ -46,7 +46,6 @@
   "provisioners": [{
     "type": "shell",
     "scripts": [
-      "script/change-home-dirs.sh",
       "script/postinstall64.sh"
     ]
   }],
