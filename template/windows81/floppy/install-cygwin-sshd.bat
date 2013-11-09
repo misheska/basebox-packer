@@ -1,88 +1,57 @@
-REM http://webcache.googleusercontent.com/search?q=cache:SjoPPpuQxuoJ:www.tcm.phy.cam.ac.uk/~mr349/cygwin_install.html+install+cygwin+ssh+commandline&cd=2&hl=nl&ct=clnk&gl=be&source=www.google.be
+echo on
 
-REM create the cygwin directory
-cmd /c mkdir %SystemDrive%\cygwin
+REM inspired by http://webcache.googleusercontent.com/search?q=cache:SjoPPpuQxuoJ:www.tcm.phy.cam.ac.uk/~mr349/cygwin_install.html+install+cygwin+ssh+commandline&cd=2&hl=nl&ct=clnk&gl=be&source=www.google.be
 
-if "%PROCESSOR_ARCHITECTURE%" == "AMD64" (set ARCH=x86_64) else (set ARCH=x86)
-set URL=http://cygwin.com/setup-%ARCH%.exe
+REM comma-separated list of Cygwin packages to install
+set PACKAGES=openssh,wget
 
-cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal %URL% %SystemDrive%\cygwin\cygwin-setup.exe
+REM if "%PROCESSOR_ARCHITECTURE%" == "AMD64" (set ARCH=x86_64) else (set ARCH=x86)
+rem the x86_64 version currently appears to have some issues, so let's use the x86 version, for now:
+set ARCH=x86
+
+REM the directory to install Cygwin into
+set CYGWIN_HOME=%SystemDrive%\cygwin
+
+title Installing Cygwin and %PACKAGES% to %CYGWIN_HOME%. Please wait...
 
 REM goto a temp directory
-cd /D %SystemDrive%\windows\temp
+cd /D "%temp%"
 
-set PACKAGES= alternatives
-set PACKAGES=%PACKAGES%,csih
-set PACKAGES=%PACKAGES%,cygrunsrv
-set PACKAGES=%PACKAGES%,crypt
-set PACKAGES=%PACKAGES%,diffutils
-set PACKAGES=%PACKAGES%,libasn1_8
-set PACKAGES=%PACKAGES%,libattr1
-set PACKAGES=%PACKAGES%,libcom_err2
-set PACKAGES=%PACKAGES%,libcrypt0
-set PACKAGES=%PACKAGES%,libffi6
-set PACKAGES=%PACKAGES%,libgcc1
-set PACKAGES=%PACKAGES%,libgcrypt11
-set PACKAGES=%PACKAGES%,libgmp10
-set PACKAGES=%PACKAGES%,libgmp3
-set PACKAGES=%PACKAGES%,libgnutls26
-set PACKAGES=%PACKAGES%,libgpg-error0
-set PACKAGES=%PACKAGES%,libgssapi3
-set PACKAGES=%PACKAGES%,libheimbase1
-set PACKAGES=%PACKAGES%,libheimntlm0
-set PACKAGES=%PACKAGES%,libhx509_5
-set PACKAGES=%PACKAGES%,libiconv2
-set PACKAGES=%PACKAGES%,libidn11
-set PACKAGES=%PACKAGES%,libintl8
-set PACKAGES=%PACKAGES%,libkafs0
-set PACKAGES=%PACKAGES%,libkrb5_26
-set PACKAGES=%PACKAGES%,libmpfr4
-set PACKAGES=%PACKAGES%,libncursesw10
-set PACKAGES=%PACKAGES%,libopenssl100
-set PACKAGES=%PACKAGES%,libp11-kit0
-set PACKAGES=%PACKAGES%,libpcre0
-set PACKAGES=%PACKAGES%,libpcre1
-set PACKAGES=%PACKAGES%,libreadline7
-set PACKAGES=%PACKAGES%,libroken18
-set PACKAGES=%PACKAGES%,libsqlite3_0
-set PACKAGES=%PACKAGES%,libssp0
-set PACKAGES=%PACKAGES%,libtasn1_3
-set PACKAGES=%PACKAGES%,libwind0
-set PACKAGES=%PACKAGES%,libwrap0
-set PACKAGES=%PACKAGES%,openssh
-set PACKAGES=%PACKAGES%,openssl
-set PACKAGES=%PACKAGES%,rebase
-set PACKAGES=%PACKAGES%,termcap
-set PACKAGES=%PACKAGES%,terminfo
-set PACKAGES=%PACKAGES%,wget
-set PACKAGES=%PACKAGES%,zlib0
+REM add Cygwin bin directory to search path
+PATH=%PATH%;%CYGWIN_HOME%\bin
 
-REM run the installation
-%SystemDrive%\cygwin\cygwin-setup.exe -a %ARCH% -q -R %SystemDrive%\cygwin -P %PACKAGES% -s http://cygwin.mirrors.pair.com
+REM download the Cygwin installer
+bitsadmin /transfer CygwinSetupExe /download /priority normal http://cygwin.com/setup-%ARCH%.exe "%temp%\cygwin-setup.exe"
 
-REM stop the service, instead of attempting to remove it
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -E sshd'
+REM run the Cygwin installer
+"%temp%\cygwin-setup" -a %ARCH% -q -R %CYGWIN_HOME% -P %PACKAGES% -s http://mirrors.kernel.org/sourceware/cygwin/
 
-REM /bin/ash is the right shell for this command
-cmd /c %SystemDrive%\cygwin\bin\ash -c /bin/rebaseall
+REM stop the ssh service
+bash -c 'cygrunsrv -E sshd'
 
-cmd /c %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkgroup -l'>%SystemDrive%\cygwin\etc\group
+REM push hole in Windows firewall for sshd service
+netsh advfirewall firewall add rule name="SSHD" dir=in action=allow program="%CYGWIN_HOME%\usr\sbin\sshd.exe" enable=yes
 
-cmd /c %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l'>%SystemDrive%\cygwin\etc\passwd
+REM push hole in Windows firewall for ssh port 22
+netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
 
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin /usr/bin/ssh-host-config -y -c "ntsecbinmode mintty" -w "abc&&123!!" '
+REM link c:/Users/vagrant to /home/vagrant
+bash -c 'ln -s "$(dirname $(cygpath -D))" /home/$USERNAME'
 
-cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add rule name="SSHD" dir=in action=allow program="%SystemDrive%\cygwin\usr\sbin\sshd.exe" enable=yes
+REM put local users home directories in the Windows Profiles directory
+bash -c 'mkpasswd -l -p "$(cygpath -H)" >/etc/passwd'
 
-cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
+REM create /etc/group (required by sshd)
+bash -c 'mkgroup -l >/etc/group'
 
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin ln -s "$(/bin/dirname $(/bin/cygpath -D))" /home/$USERNAME'
+REM set up sshd config files
+bash -c 'ssh-host-config -y -c "ntsecbinmode mintty nodosfilewarning" -w "abc&&123!!" '
 
+REM delete the Cygwin installer, and downloaded packages
+del /s /q "%temp%\*.*"
+
+REM fix corrupt recycle bin - see http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
+rd /s /q %SystemDrive%\$Recycle.bin
+
+REM start the ssh service
 net start sshd
-
-REM Put local users home directories in the Windows Profiles directory
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l -p "$(/bin/cygpath -H)"'>%SystemDrive%\cygwin\etc\passwd
-
-REM Fix corrupt recycle bin
-REM http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
-cmd /c rd /s /q %SystemDrive%\$Recycle.bin
