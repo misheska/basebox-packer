@@ -3,7 +3,7 @@
     {
       "vm_name": "win81x86-enterprise",
       "type": "vmware",
-      "guest_os_type": "windows8-64",
+      "guest_os_type": "windows8",
       "iso_url": "../../iso/en_windows_8_1_enterprise_x86_dvd_2791510.iso",
       "iso_checksum": "405091efe4d58947db45a106b37dd064",
       "iso_checksum_type": "md5",
@@ -20,7 +20,6 @@
         "numvcpus": "1",
         "cpuid.coresPerSocket": "1",
         "scsi0.virtualDev": "lsisas1068",
-		"guestOS": "windows8",
 		"ethernet0.virtualDev": "vmxnet3",
 		"ide1:1.deviceType": "cdrom-image",
 		"ide1:1.fileName": "../../../windows.iso",
@@ -30,7 +29,7 @@
     {
       "vm_name": "win81x86-enterprise",
       "type": "virtualbox",
-      "guest_os_type": "Windows8_64",
+      "guest_os_type": "Windows8",
       "iso_url": "../../iso/en_windows_8_1_enterprise_x86_dvd_2791510.iso",
       "iso_checksum": "405091efe4d58947db45a106b37dd064",
       "iso_checksum_type": "md5",

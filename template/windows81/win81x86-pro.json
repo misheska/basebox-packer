@@ -20,7 +20,6 @@
         "numvcpus": "1",
         "cpuid.coresPerSocket": "1",
         "scsi0.virtualDev": "lsisas1068",
-		"guestOS": "windows8",
 		"ethernet0.virtualDev": "vmxnet3",
 		"ide1:1.deviceType": "cdrom-image",
 		"ide1:1.fileName": "../../../windows.iso",
