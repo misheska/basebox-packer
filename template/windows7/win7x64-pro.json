@@ -9,16 +9,17 @@
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
+      "ssh_wait_timeout": "10000s",
       "floppy_files": ["floppy/win7x64-pro/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat"],
       "tools_upload_flavor": "windows",
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
-      "ssh_wait_timeout": "10000s",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "disk_size": 40960,
       "vmx_data": {
         "memsize": "768",
         "numvcpus": "1",
-        "cpuid.coresPerSocket": "1"
+        "cpuid.coresPerSocket": "1",
+        "scsi0.virtualDev": "lsisas1068"
       }
     },
     {
@@ -44,7 +45,6 @@
   "provisioners": [{
     "type": "shell",
     "scripts": [
-      "script/change-home-dirs.sh",
       "script/postinstall64.sh"
     ]
   }],

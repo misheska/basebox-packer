@@ -118,21 +118,33 @@
             </AutoLogon>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd /c reg ADD &quot;HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System&quot; /v ConsentPromptBehaviorAdmin /t REG_DWORD /d 0 /f</CommandLine>
+                    <Description>Disable UAC</Description>
+                    <Order>1</Order>
+                    <RequiresUserInput>false</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>e:\setup /S /v &quot;/qn REBOOT=R ADDLOCAL=ALL&quot;</CommandLine>
+                    <Description>Install VMware tools</Description>
+                    <Order>2</Order>
+                    <RequiresUserInput>false</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
                     <CommandLine>REG ADD &quot;HKLM\System\CurrentControlSet\Services\Netlogon\Parameters&quot; /v DisablePasswordChange /t REG_DWORD /d 2 /f</CommandLine>
                     <Description>Disable computer password change</Description>
-                    <Order>1</Order>
+                    <Order>3</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c a:set-power-config.bat</CommandLine>
                     <Description>Turn off all power saving and timeouts</Description>
-                    <Order>2</Order>
+                    <Order>4</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd /c a:install-cygwin-sshd.bat</CommandLine>
                     <Description>Install Cygwin SSHD</Description>
-                    <Order>3</Order>
+                    <Order>5</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
             </FirstLogonCommands>
