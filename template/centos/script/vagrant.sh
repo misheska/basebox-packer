@@ -23,3 +23,5 @@ chown -R $VAGRANT_USER:$VAGRANT_USER $VAGRANT_HOME/.ssh
 
 # Customize the message of the day
 echo 'Welcome to your Packer-built virtual machine.' > /etc/motd
+
+yum install -y nfs-utils

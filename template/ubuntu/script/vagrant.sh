@@ -21,3 +21,5 @@ cd $VAGRANT_HOME/.ssh
 wget --no-check-certificate "${VAGRANT_KEY_URL}" -O authorized_keys
 chmod 600 $VAGRANT_HOME/.ssh/authorized_keys
 chown -R $VAGRANT_USER:$VAGRANT_USER $VAGRANT_HOME/.ssh
+
+apt-get -y install nfs-common
