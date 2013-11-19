@@ -1,88 +1,51 @@
-REM http://webcache.googleusercontent.com/search?q=cache:SjoPPpuQxuoJ:www.tcm.phy.cam.ac.uk/~mr349/cygwin_install.html+install+cygwin+ssh+commandline&cd=2&hl=nl&ct=clnk&gl=be&source=www.google.be
+@echo off
 
-REM create the cygwin directory
-cmd /c mkdir %SystemDrive%\cygwin
+setlocal
 
-if "%PROCESSOR_ARCHITECTURE%" == "AMD64" (set ARCH=x86_64) else (set ARCH=x86)
-set URL=http://cygwin.com/setup-%ARCH%.exe
+:: Force ARCH to 64-bit - 32-bit seems to crash a lot on Windows 2012
+set ARCH=x86_64
+set CYGWIN_SETUP_URL=http://cygwin.com/setup-%ARCH%.exe
+set CYGWIN_SETUP_LOCAL_PATH=%TEMP%\cygwin-setup.exe
+set CYGWIN_HOME=%SystemDrive%\cygwin
+set CYGWIN_PACKAGES=openssh,wget
+set CYGWIN_MIRROR_URL=http://mirrors.kernel.org/sourceware/cygwin
 
-cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal %URL% %SystemDrive%\cygwin\cygwin-setup.exe
+PATH=%PATH%;%CYGWIN_HOME%\bin
 
-REM goto a temp directory
-cd /D %SystemDrive%\windows\temp
+title Installing Cygwin and %CYGWIN_PACKAGES% to %CYGWIN_HOME%. Please wait...
 
-set PACKAGES= alternatives
-set PACKAGES=%PACKAGES%,csih
-set PACKAGES=%PACKAGES%,cygrunsrv
-set PACKAGES=%PACKAGES%,crypt
-set PACKAGES=%PACKAGES%,diffutils
-set PACKAGES=%PACKAGES%,libasn1_8
-set PACKAGES=%PACKAGES%,libattr1
-set PACKAGES=%PACKAGES%,libcom_err2
-set PACKAGES=%PACKAGES%,libcrypt0
-set PACKAGES=%PACKAGES%,libffi6
-set PACKAGES=%PACKAGES%,libgcc1
-set PACKAGES=%PACKAGES%,libgcrypt11
-set PACKAGES=%PACKAGES%,libgmp10
-set PACKAGES=%PACKAGES%,libgmp3
-set PACKAGES=%PACKAGES%,libgnutls26
-set PACKAGES=%PACKAGES%,libgpg-error0
-set PACKAGES=%PACKAGES%,libgssapi3
-set PACKAGES=%PACKAGES%,libheimbase1
-set PACKAGES=%PACKAGES%,libheimntlm0
-set PACKAGES=%PACKAGES%,libhx509_5
-set PACKAGES=%PACKAGES%,libiconv2
-set PACKAGES=%PACKAGES%,libidn11
-set PACKAGES=%PACKAGES%,libintl8
-set PACKAGES=%PACKAGES%,libkafs0
-set PACKAGES=%PACKAGES%,libkrb5_26
-set PACKAGES=%PACKAGES%,libmpfr4
-set PACKAGES=%PACKAGES%,libncursesw10
-set PACKAGES=%PACKAGES%,libopenssl100
-set PACKAGES=%PACKAGES%,libp11-kit0
-set PACKAGES=%PACKAGES%,libpcre0
-set PACKAGES=%PACKAGES%,libpcre1
-set PACKAGES=%PACKAGES%,libreadline7
-set PACKAGES=%PACKAGES%,libroken18
-set PACKAGES=%PACKAGES%,libsqlite3_0
-set PACKAGES=%PACKAGES%,libssp0
-set PACKAGES=%PACKAGES%,libtasn1_3
-set PACKAGES=%PACKAGES%,libwind0
-set PACKAGES=%PACKAGES%,libwrap0
-set PACKAGES=%PACKAGES%,openssh
-set PACKAGES=%PACKAGES%,openssl
-set PACKAGES=%PACKAGES%,rebase
-set PACKAGES=%PACKAGES%,termcap
-set PACKAGES=%PACKAGES%,terminfo
-set PACKAGES=%PACKAGES%,wget
-set PACKAGES=%PACKAGES%,zlib0
+cd /D "%TEMP%"
 
-REM run the installation
-%SystemDrive%\cygwin\cygwin-setup.exe -a %ARCH% -q -R %SystemDrive%\cygwin -P %PACKAGES% -s http://cygwin.mirrors.pair.com
+echo ==^> Downloading the Cygwin installer
+powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%CYGWIN_SETUP_URL%', '%CYGWIN_SETUP_LOCAL_PATH%')"
 
-REM stop the service, instead of attempting to remove it
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin cygrunsrv -E sshd'
+echo ==^> Installing Cygwin
+"%CYGWIN_SETUP_LOCAL_PATH%" -a %ARCH% -q -R %CYGWIN_HOME% -P %CYGWIN_PACKAGES% -s %CYGWIN_MIRROR_URL%
 
-REM /bin/ash is the right shell for this command
-cmd /c %SystemDrive%\cygwin\bin\ash -c /bin/rebaseall
+echo ==^> Stopping the ssh service
+cygrunsrv -E sshd
 
-cmd /c %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkgroup -l'>%SystemDrive%\cygwin\etc\group
+echo ==^> Opening firewall port 22 for the sshd service
+netsh advfirewall firewall add rule name="SSHD" dir=in action=allow program="%CYGWIN_HOME%\usr\sbin\sshd.exe" enable=yes
+netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
 
-cmd /c %SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l'>%SystemDrive%\cygwin\etc\passwd
+echo ==^> Make user home directories default to their windows profile directory
+bash -c 'ln -s "$(dirname $(cygpath -D))" /home/$USERNAME'
+bash -c 'mkpasswd -l -p "$(cygpath -H)" >/etc/passwd'
 
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin /usr/bin/ssh-host-config -y -c "ntsecbinmode mintty" -w "abc&&123!!" '
+echo ==^> Creating /etc/group (required by sshd)
+bash -c 'mkgroup -l >/etc/group'
 
-cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add rule name="SSHD" dir=in action=allow program="%SystemDrive%\cygwin\usr\sbin\sshd.exe" enable=yes
+echo ==^> set up sshd config files
+bash -c 'ssh-host-config -y -c "ntsecbinmode mintty nodosfilewarning" -w "abc&&123!!" '
 
-cmd /c if exist %Systemroot%\system32\netsh.exe netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
+echo ==^> Deleting the Cygwin installer and downloaded packages
+del /s /q "%TEMP%\*.*"
 
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin ln -s "$(/bin/dirname $(/bin/cygpath -D))" /home/$USERNAME'
+echo ==^> Fixing corrupt recycle bin - see http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
+rd /s /q %SystemDrive%\$Recycle.bin
 
+echo ==^> Starting the ssh service
 net start sshd
 
-REM Put local users home directories in the Windows Profiles directory
-%SystemDrive%\cygwin\bin\bash -c 'PATH=/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin mkpasswd -l -p "$(/bin/cygpath -H)"'>%SystemDrive%\cygwin\etc\passwd
-
-REM Fix corrupt recycle bin
-REM http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
-cmd /c rd /s /q %SystemDrive%\$Recycle.bin
+endlocal

@@ -4,7 +4,7 @@
       "vm_name": "win2008r2-enterprise",
       "type": "vmware",
       "guest_os_type": "windows7srv-64",
-      "iso_url": "../../iso/en_windows_server_2008_r2_standard_enterprise_datacenter_and_web_with_sp1_vl_build_x64_dvd_617403.iso",
+      "iso_url": "../../iso/en_windows_server_2008_r2_with_sp1_vl_build_x64_dvd_617403.iso",
       "iso_checksum": "8d397b69135d207452a78c3c3051339d",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
@@ -25,7 +25,7 @@
       "vm_name": "win2008r2-enterprise",
       "type": "virtualbox",
       "guest_os_type": "Windows2008_64",
-      "iso_url": "../../iso/en_windows_server_2008_r2_standard_enterprise_datacenter_and_web_with_sp1_vl_build_x64_dvd_617403.iso",
+      "iso_url": "../../iso/en_windows_server_2008_r2_with_sp1_vl_build_x64_dvd_617403.iso",
       "iso_checksum": "8d397b69135d207452a78c3c3051339d",
       "iso_checksum_type": "md5",
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
@@ -41,13 +41,21 @@
       ]
     }
   ],
-  "provisioners": [{
-    "type": "shell",
-    "scripts": [
-      "script/change-home-dirs.sh",
-      "script/postinstall64.sh"
-    ]
-  }],
+  "provisioners": [
+    {
+      "type": "shell",
+      "remote_path": "/tmp/script.bat",
+      "execute_command": "{{.Vars}} cmd /c C:/cygwin/tmp/script.bat",
+      "scripts": [
+        "script/vagrant.bat",
+        "script/vmtools.bat"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": ["rm -f /tmp/script.bat"]
+    }
+  ],
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,

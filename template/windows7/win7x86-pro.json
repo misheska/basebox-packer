@@ -41,13 +41,21 @@
       ]
     }
   ],
-  "provisioners": [{
-    "type": "shell",
-    "scripts": [
-      "script/change-home-dirs.sh",
-      "script/postinstall32.sh"
-    ]
-  }],
+  "provisioners": [
+    {
+      "type": "shell",
+      "remote_path": "/tmp/script.bat",
+      "execute_command": "{{.Vars}} cmd /c C:/cygwin/tmp/script.bat",
+      "scripts": [
+        "script/vagrant.bat",
+        "script/vmtools.bat"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": ["rm -f /tmp/script.bat"]
+    }
+  ],
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
