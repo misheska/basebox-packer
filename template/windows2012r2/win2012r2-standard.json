@@ -1,4 +1,7 @@
 {
+  "variables": {
+    "chef_version": "provisionerless"
+  },
   "builders": [
     {
       "vm_name": "win2012r2-standard",
@@ -48,8 +51,10 @@
       "type": "shell",
       "remote_path": "/tmp/script.bat",
       "execute_command": "{{.Vars}} cmd /c C:/cygwin/tmp/script.bat",
+      "environment_vars": [ "CHEF_VERSION={{user `chef_version`}}" ],
       "scripts": [
         "script/vagrant.bat",
+        "script/chef.bat",
         "script/vmtools.bat"
       ]
     },
