@@ -1,11 +1,14 @@
 {
+  "variables": {
+    "chef_version": "provisionerless"
+  },
   "builders": [
     {
       "vm_name": "win81x64-pro",
       "type": "vmware",
       "guest_os_type": "windows8-64",
-      "iso_url": "../../iso/en_windows_8_1_pro_vl_x64_dvd_2791292.iso",
-      "iso_checksum": "89b2a5dedee8f387b8131b2199758ce9",
+      "iso_url": "../../iso/en_windows_8_1_x64_dvd_2707217.iso",
+      "iso_checksum": "f104b78019e86e74b149ae5e510f7be9",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
@@ -26,8 +29,8 @@
       "vm_name": "win81x64-pro",
       "type": "virtualbox",
       "guest_os_type": "Windows8_64",
-      "iso_url": "../../iso/en_windows_8_1_pro_vl_x64_dvd_2791292.iso",
-      "iso_checksum": "89b2a5dedee8f387b8131b2199758ce9",
+      "iso_url": "../../iso/en_windows_8_1_x64_dvd_2707217.iso",
+      "iso_checksum": "f104b78019e86e74b149ae5e510f7be9",
       "iso_checksum_type": "md5",
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "ssh_username": "vagrant",
@@ -47,9 +50,11 @@
     {
       "type": "shell",
       "remote_path": "/tmp/script.bat",
+      "environment_vars": [ "CHEF_VERSION={{user `chef_version`}}" ],
       "execute_command": "{{.Vars}} cmd /c C:/cygwin/tmp/script.bat",
       "scripts": [
         "script/vagrant.bat",
+        "script/chef.bat",
         "script/vmtools.bat"
       ]
     },

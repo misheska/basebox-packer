@@ -16,23 +16,25 @@
                     <InstallFrom>
                         <MetaData wcm:action="add">
                             <Key>/IMAGE/NAME</Key>
-                            <Value>Windows 8.1 Pro</Value>
+                            <Value>Windows 8 Pro</Value>
                         </MetaData>
                     </InstallFrom>
                     <InstallTo>
                         <DiskID>0</DiskID>
                         <PartitionID>1</PartitionID>
                     </InstallTo>
+                    <WillShowUI>OnError</WillShowUI>
                 </OSImage>
             </ImageInstall>
             <UserData>
                 <AcceptEula>true</AcceptEula>
                 <ProductKey>
-                    <Key>GCRJD-8NW9H-F2CDX-CCM8D-9D6T9</Key>
                     <WillShowUI>OnError</WillShowUI>
+                    <Key>NG4HW-VH26C-733KW-K6F98-J8CK4</Key>
                 </ProductKey>
             </UserData>
             <DiskConfiguration>
+                <WillShowUI>OnError</WillShowUI>
                 <Disk wcm:action="add">
                     <CreatePartitions>
                         <CreatePartition wcm:action="add">
@@ -41,6 +43,8 @@
                             <Type>Primary</Type>
                         </CreatePartition>
                     </CreatePartitions>
+                    <DiskID>0</DiskID>
+                    <WillWipeDisk>true</WillWipeDisk>
                     <ModifyPartitions>
                         <ModifyPartition wcm:action="add">
                             <Active>true</Active>
@@ -51,10 +55,7 @@
                             <PartitionID>1</PartitionID>
                         </ModifyPartition>
                     </ModifyPartitions>
-                    <DiskID>0</DiskID>
-                    <WillWipeDisk>true</WillWipeDisk>
                 </Disk>
-                <WillShowUI>OnError</WillShowUI>
             </DiskConfiguration>
         </component>
     </settings>
@@ -74,7 +75,7 @@
             </SearchScopes>
             <DisableAccelerators>true</DisableAccelerators>
             <DisableFirstRunWizard>true</DisableFirstRunWizard>
-            <Help_Page>about:blank</Help_Page>
+            <Home_Page>about:blank</Home_Page>
         </component>
         <component name="Microsoft-Windows-TerminalServices-LocalSessionManager" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <fDenyTSConnections>false</fDenyTSConnections>
@@ -122,7 +123,7 @@
             </AutoLogon>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>REG ADD &quot;HKLM\System\CurrentControlSet\Services\Netlogon\Parameters&quot; /v DisablePasswordChange /t REG_DWORD /d 2 /f</CommandLine>
+                    <CommandLine>REG ADD “HKLM\System\CurrentControlSet\Services\Netlogon\Parameters” /v DisablePasswordChange /t REG_DWORD /d 2 /f</CommandLine>
                     <Description>Disable computer password change</Description>
                     <Order>1</Order>
                     <RequiresUserInput>true</RequiresUserInput>
@@ -144,8 +145,8 @@
     </settings>
     <settings pass="offlineServicing">
         <component name="Microsoft-Windows-LUA-Settings" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <EnableLUA>true</EnableLUA>
+            <EnableLUA>false</EnableLUA>
         </component>
     </settings>
-    <cpi:offlineImage cpi:source="catalog:c:/users/misheska/sources/win81/x86/install_windows 8.1 pro.clg" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+    <cpi:offlineImage cpi:source="catalog:c:/users/misheska/sources/win8/x86/install_windows 8 pro.clg" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 </unattend>

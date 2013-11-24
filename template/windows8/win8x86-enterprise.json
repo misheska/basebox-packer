@@ -1,4 +1,7 @@
 {
+  "variables": {
+    "chef_version": "provisionerless"
+  },
   "builders": [
     {
       "vm_name": "win8x86-enterprise",
@@ -45,9 +48,11 @@
     {
       "type": "shell",
       "remote_path": "/tmp/script.bat",
+      "environment_vars": [ "CHEF_VERSION={{user `chef_version`}}" ],
       "execute_command": "{{.Vars}} cmd /c C:/cygwin/tmp/script.bat",
       "scripts": [
         "script/vagrant.bat",
+        "script/chef.bat",
         "script/vmtools.bat"
       ]
     },

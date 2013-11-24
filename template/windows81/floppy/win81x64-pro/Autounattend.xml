@@ -49,6 +49,10 @@
             </ImageInstall>
             <UserData>
                 <AcceptEula>true</AcceptEula>
+                <ProductKey>
+                    <Key>GCRJD-8NW9H-F2CDX-CCM8D-9D6T9</Key>
+                    <WillShowUI>OnError</WillShowUI>
+                </ProductKey>
             </UserData>
         </component>
     </settings>
@@ -154,5 +158,5 @@
             <EnableLUA>false</EnableLUA>
         </component>
     </settings>
-    <cpi:offlineImage cpi:source="wim:c:/users/misheska/sources/win81pro/x64/install.wim#Windows 8.1 Pro" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+    <cpi:offlineImage cpi:source="wim:c:/users/misheska/sources/win81/x64/install.wim#Windows 8.1 Pro" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 </unattend>
