@@ -70,6 +70,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/win81x64-pro-{{user `provisioner`}}{user `provisioner_version`}}.box"
+    "output": "../../{{.Provider}}/win81x64-pro-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }

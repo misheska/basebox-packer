@@ -68,6 +68,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/win2008r2-web-{{user `provisioner`}}{user `provisioner_version`}}.box"
+    "output": "../../{{.Provider}}/win2008r2-web-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
