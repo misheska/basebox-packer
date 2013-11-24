@@ -2,7 +2,7 @@
   "builders": [{
     "vm_name": "centos64-i386",
     "type": "vmware",
-    "guest_os_type": "centos-64",
+    "guest_os_type": "centos",
     "http_directory": "http",
     "iso_url": "http://mirrors.kernel.org/centos/6.4/isos/i386/CentOS-6.4-i386-bin-DVD1.iso",
     "iso_checksum": "4bd3a1de6f6dfcd7a2199487abf5a9304d696cae",
@@ -29,7 +29,7 @@
     "iso_url": "http://mirrors.kernel.org/centos/6.4/isos/i386/CentOS-6.4-i386-bin-DVD1.iso",
     "iso_checksum": "4bd3a1de6f6dfcd7a2199487abf5a9304d696cae",
     "iso_checksum_type": "sha1",
-    "guest_os_type": "RedHat_64",
+    "guest_os_type": "RedHat",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
     "virtualbox_version_file": ".vbox_version",
     "ssh_username": "vagrant",

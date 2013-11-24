@@ -2,7 +2,7 @@
   "builders": [{
     "vm_name": "centos510-i386",
     "type": "vmware",
-    "guest_os_type": "centos-64",
+    "guest_os_type": "centos",
     "http_directory": "http",
     "iso_url": "http://mirrors.kernel.org/centos/5.10/isos/i386/CentOS-5.10-i386-bin-DVD-1of2.iso",
     "iso_checksum": "ec0acc2a4f6a813ea85bf1e36acb03f0",
@@ -29,7 +29,7 @@
     "iso_url": "http://mirrors.kernel.org/centos/5.10/isos/i386/CentOS-5.10-i386-bin-DVD-1of2.iso",
     "iso_checksum": "ec0acc2a4f6a813ea85bf1e36acb03f0",
     "iso_checksum_type": "md5",
-    "guest_os_type": "RedHat_64",
+    "guest_os_type": "RedHat",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
     "virtualbox_version_file": ".vbox_version",
     "ssh_username": "vagrant",
@@ -47,25 +47,23 @@
   }],
   "provisioners": [{
     "type": "shell",
+    "environment_vars": [ 
+      "PROVISIONER={{user `provisioner`}}",
+      "PROVISIONER_VERSION={{user `provisioner_version`}}"
+    ],
+    "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [
       "script/base.sh",
       "script/vagrant.sh",
       "script/vmtools.sh",
+      "script/provisioner.sh",
       "script/cleanup.sh",
       "script/zerodisk.sh"
-    ],
-    "override": {
-      "virtualbox": {
-        "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'"
-      },
-      "vmware": {
-        "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'"
-      }
-    }
+    ]
   }],
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/centos510-i386.box"
+    "output": "../../{{.Provider}}/centos510-i386-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
