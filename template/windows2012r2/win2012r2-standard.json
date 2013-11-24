@@ -1,6 +1,7 @@
 {
   "variables": {
-    "chef_version": "provisionerless"
+    "provisioner": "provisionerless",
+    "provisioner_version": ""
   },
   "builders": [
     {
@@ -50,11 +51,14 @@
     {
       "type": "shell",
       "remote_path": "/tmp/script.bat",
+      "environment_vars": [
+        "PROVISIONER={{user `provisioner`}}",
+        "PROVISIONER_VERSION={{user `provisioner_version`}}"
+      ],
       "execute_command": "{{.Vars}} cmd /c C:/cygwin/tmp/script.bat",
-      "environment_vars": [ "CHEF_VERSION={{user `chef_version`}}" ],
       "scripts": [
         "script/vagrant.bat",
-        "script/chef.bat",
+        "script/provisioner.bat",
         "script/vmtools.bat"
       ]
     },
@@ -66,6 +70,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/win2012r2-standard.box"
+    "output": "../../{{.Provider}}/win2012r2-standard-{{user `provisioner`}}{user `provisioner_version`}}.box"
   }]
 }
