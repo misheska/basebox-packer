@@ -5,6 +5,8 @@ powercfg -Change -monitor-timeout-ac 0
 powercfg -Change -monitor-timeout-dc 0
 
 rem turn off Windows 8.1 CPU load tasks
-schtasks /Change /TN "\Microsoft\Windows\Application Experience\ProgramDataUpdater" /DISABLE
-schtasks /Change /TN "\Microsoft\Windows\Application Experience\AitAgent" /DISABLE
-schtasks /Change /TN "\Microsoft\Windows\Application Experience\StartupAppTask" /DISABLE
+rem schtasks /Change /TN "\Microsoft\Windows\Application Experience\ProgramDataUpdater" /DISABLE
+rem schtasks /Change /TN "\Microsoft\Windows\Application Experience\AitAgent" /DISABLE
+rem schtasks /Change /TN "\Microsoft\Windows\Application Experience\StartupAppTask" /DISABLE
+rem cmd /c sc config "AeLookupSvc" start= disabled
+rem cmd /c sc config "WinDefend" start= disabled
