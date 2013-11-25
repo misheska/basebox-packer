@@ -1,10 +1,14 @@
 {
+  "variables": {
+    "provisioner": "provisionerless",
+    "provisioner_version": ""
+  },
   "builders": [{
     "vm_name": "centos59-i386",
     "type": "vmware",
     "guest_os_type": "centos",
     "http_directory": "http",
-    "iso_url": "http://mirrors.kernel.org/centos/5.9/isos/i386/CentOS-5.9-i386-bin-DVD-1of2.iso",
+    "iso_url": "http://mirror.symnds.com/distributions/CentOS-vault/5.9/isos/i386/CentOS-5.9-i386-bin-DVD-1of2.iso",
     "iso_checksum": "78f976b190ce44716eb672f71203df978474dfb4",
     "iso_checksum_type": "sha1",
     "ssh_username": "vagrant",
@@ -26,7 +30,7 @@
     "vm_name": "centos59-i386",
     "type": "virtualbox",
     "http_directory": "http",
-    "iso_url": "http://mirrors.kernel.org/centos/5.9/isos/i386/CentOS-5.9-i386-bin-DVD-1of2.iso",
+    "iso_url": "http://mirror.symnds.com/distributions/CentOS-vault/5.9/isos/i386/CentOS-5.9-i386-bin-DVD-1of2.iso",
     "iso_checksum": "78f976b190ce44716eb672f71203df978474dfb4",
     "iso_checksum_type": "sha1",
     "guest_os_type": "RedHat",
@@ -47,25 +51,23 @@
   }],
   "provisioners": [{
     "type": "shell",
+    "environment_vars": [
+      "PROVISIONER={{user `provisioner`}}",
+      "PROVISIONER_VERSION={{user `provisioner_version`}}"
+    ],
+    "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [
       "script/base.sh",
       "script/vagrant.sh",
       "script/vmtools.sh",
+      "script/provisioner.sh",
       "script/cleanup.sh",
       "script/zerodisk.sh"
-    ],
-    "override": {
-      "virtualbox": {
-        "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'"
-      },
-      "vmware": {
-        "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'"
-      }
-    }
+    ]
   }],
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/centos59-i386.box"
+    "output": "../../{{.Provider}}/centos59-i386-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
