@@ -1,4 +1,8 @@
 {
+  "variables": {
+    "provisioner": "provisionerless",
+    "provisioner_version": ""
+  },
   "builders": [{
     "vm_name": "centos510-i386",
     "type": "vmware",

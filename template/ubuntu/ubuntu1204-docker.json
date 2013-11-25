@@ -1,4 +1,8 @@
 {
+  "variables": {
+    "provisioner": "provisionerless",
+    "provisioner_version": ""
+  },
   "builders": [{
     "vm_name": "ubuntu1204-docker",
     "type": "vmware",
@@ -74,26 +78,24 @@
   }],
   "provisioners": [{
     "type": "shell",
+    "environment_vars": [
+      "PROVISIONER={{user `provisioner`}}",
+      "PROVISIONER_VERSION={{user `provisioner_version`}}"
+    ],
+    "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [
       "script/base.sh",
       "script/vagrant.sh",
       "script/vmtools.sh",
+      "script/provisioner.sh",
       "script/docker.sh",
       "script/cleanup.sh",
       "script/zerodisk.sh"
-    ],
-    "override": {
-      "virtualbox": {
-        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
-      },
-      "vmware": {
-        "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
-      }
-    }
+    ]
   }],
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/ubuntu1204-docker.box"
+    "output": "../../{{.Provider}}/ubuntu1204-docker-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
