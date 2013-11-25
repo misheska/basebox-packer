@@ -1,0 +1,76 @@
+{
+  "builders": [
+    {
+      "vm_name": "win81x64de-eval",
+      "type": "vmware",
+      "guest_os_type": "windows8-64",
+      "iso_url": "../../../../ISO/Windows 8.1/9600.16384.WINBLUE_RTM.130821-1623_X64FRE_ENTERPRISE_EVAL_DE-DE-IRM_CENA_X64FREE_DE-DE_DV5.iso",
+      "iso_checksum": "8298548423d8a7d05756f93c9375b690",
+      "iso_checksum_type": "md5",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "floppy_files": ["floppy/Autounattend.xml",
+                       "../floppy/set-power-config.bat",
+                       "../floppy/install-winrm.bat",
+                       "../floppy/install-cygwin-sshd.bat",
+                       "../floppy/uninstall-cygwin-and-shutdown.bat"
+                      ],
+      "tools_upload_flavor": "windows",
+      "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "cmd /C start A:\\uninstall-cygwin-and-shutdown.bat",
+      "disk_size": 61440,
+      "disk_type_id": 0,
+      "skip_compaction": true,
+      "vmx_data": {
+        "memsize": "768",
+        "numvcpus": "1",
+        "cpuid.coresPerSocket": "1",
+        "scsi0.virtualDev": "lsisas1068"
+      }
+    },
+    {
+      "vm_name": "win81x64de-eval",
+      "type": "virtualbox",
+      "guest_os_type": "Windows81_64",
+      "iso_url": "d:/ISO/Windows 8.1/9600.16384.WINBLUE_RTM.130821-1623_X64FRE_ENTERPRISE_EVAL_DE-DE-IRM_CENA_X64FREE_DE-DE_DV5.iso",
+      "iso_checksum": "8298548423d8a7d05756f93c9375b690",
+      "iso_checksum_type": "md5",
+      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
+"guest_additions_url": "http://dlc.sun.com.edgesuite.net/virtualbox/4.3.2/VBoxGuestAdditions_4.3.2.iso",
+"guest_additions_sha256": "f0b8fec99c65231641d5d01558abb53fe8b81f131dc71519cb7994c9e297300d",
+
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "10000s",
+      "disk_size": 40960,
+      "floppy_files": ["floppy/Autounattend.xml",
+                       "../floppy/oracle-cert.cer",
+                       "../floppy/set-power-config.bat",
+                       "../floppy/install-winrm.bat",
+                       "../floppy/install-cygwin-sshd.bat",
+                       "../floppy/uninstall-cygwin-and-shutdown.bat"
+                      ],
+      "shutdown_command": "cmd /C start A:\\uninstall-cygwin-and-shutdown.bat",
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "768"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"],
+        ["setextradata", "{{.Name}}", "VBoxInternal/CPUM/CMPXCHG16B", "1"]
+      ]
+    }
+  ],
+  "provisioners": [{
+    "type": "shell",
+    "scripts": [
+      "../script/change-home-dirs.sh",
+      "../script/postinstall.sh",
+      "../script/install-vmtools.sh",
+      "../script/install-chef.sh"
+    ]
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": true,
+    "output": "../../{{.Provider}}/win81x64de-eval.box"
+  }]
+}
