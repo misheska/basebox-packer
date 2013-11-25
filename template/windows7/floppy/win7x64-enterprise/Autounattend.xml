@@ -82,28 +82,10 @@
             </OOBE>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>REG ADD &quot;HKLM\System\CurrentControlSet\Control\Network\NewNetworkWindowOff&quot;</CommandLine>
-                    <Description>Disable Set Network Location</Description>
+                    <CommandLine>cmd.exe /c a:\00-run-all-scripts.cmd</CommandLine>
+                    <Description>Run all *.bat and *.cmd scripts on drive A:</Description>
                     <Order>1</Order>
-                    <RequiresUserInput>true</RequiresUserInput>
-                </SynchronousCommand>
-                <SynchronousCommand wcm:action="add">
-                    <CommandLine>REG ADD &quot;HKLM\System\CurrentControlSet\Services\Netlogon\Parameters&quot; /v DisablePasswordChange /t REG_DWORD /d 1 /f</CommandLine>
-                    <Description>Disable computer password change</Description>
-                    <Order>2</Order>
-                    <RequiresUserInput>true</RequiresUserInput>
-                </SynchronousCommand>
-                <SynchronousCommand wcm:action="add">
-                    <CommandLine>cmd.exe /c a:set-power-config.bat</CommandLine>
-                    <Description>Turn off all power saving and timeouts</Description>
-                    <Order>3</Order>
-                    <RequiresUserInput>true</RequiresUserInput>
-                </SynchronousCommand>
-                <SynchronousCommand wcm:action="add">
-                    <RequiresUserInput>true</RequiresUserInput>
-                    <Order>4</Order>
-                    <Description>Install Cygwin SSHD</Description>
-                    <CommandLine>cmd /c a:install-cygwin-sshd.bat</CommandLine>
+                    <RequiresUserInput>false</RequiresUserInput>
                 </SynchronousCommand>
             </FirstLogonCommands>
         </component>
