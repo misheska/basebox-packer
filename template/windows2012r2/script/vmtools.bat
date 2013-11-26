@@ -12,43 +12,43 @@ if exist "%SystemDrive%\Program Files (x86)" (
   set VMWARE_INSTALL=setup.exe
 )
 
-:: TEMP is not defined in this shell instance, so define it ourselves
-set LOCAL_TEMP=%USERPROFILE%\AppData\Local\Temp
+:: If TEMP is not defined in this shell instance, define it ourselves
+if not defined TEMP set TEMP=%USERPROFILE%\AppData\Local\Temp
 set SEVENZIP_URL=http://downloads.sourceforge.net/sevenzip/%SEVENZIP_INSTALL%
-set SEVENZIP_INSTALL_LOCAL_PATH=%LOCAL_TEMP%\%SEVENZIP_INSTALL%
+set SEVENZIP_INSTALL_LOCAL_PATH=%TEMP%\%SEVENZIP_INSTALL%
 
-echo ==^> Downloadling %SEVENZIP_URL% to %SEVENZIP_INSTALL_LOCAL_PATH%
-powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%SEVENZIP_URL%', '%SEVENZIP_INSTALL_LOCAL_PATH%')" <NUL
+echo ==^> Downloadling %SEVENZIP_URL% to "%SEVENZIP_INSTALL_LOCAL_PATH%"
+powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%SEVENZIP_URL%', '"%SEVENZIP_INSTALL_LOCAL_PATH%"')" <NUL
 echo ==^> Download complete
-echo ==^> Installing 7zip from %SEVENZIP_INSTALL_LOCAL_PATH%
-msiexec /qb /i %SEVENZIP_INSTALL_LOCAL_PATH%
+echo ==^> Installing 7zip from "%SEVENZIP_INSTALL_LOCAL_PATH%"
+msiexec /qb /i "%SEVENZIP_INSTALL_LOCAL_PATH%"
 
 if "%PACKER_BUILDER_TYPE%" equ "vmware" (
   echo ==^> Extracting the VMWare Tools installer
-  "%SystemDrive%\Program Files\7-Zip\7z.exe" x %USERPROFILE%\windows.iso -o%LOCAL_TEMP%\vmware
+  "%SystemDrive%\Program Files\7-Zip\7z.exe" x %USERPROFILE%\windows.iso -o%TEMP%\vmware
 
   echo ==^> Installing VMware tools
-  "%LOCAL_TEMP%\vmware\%VMWARE_INSTALL%" /S /v "/qn REBOOT=R ADDLOCAL=ALL"
+  "%TEMP%\vmware\%VMWARE_INSTALL%" /S /v "/qn REBOOT=R ADDLOCAL=ALL"
 
   echo ==^> Cleaning up VMware tools install
-  del /F /S /Q "%LOCAL_TEMP%\vmware"
+  del /F /S /Q "%TEMP%\vmware"
 )
 
 if "%PACKER_BUILDER_TYPE%" equ "virtualbox" (
   echo ==^> Extracting the VirtualBox Guest Additions installer
-  "%SystemDrive%\Program Files\7-Zip\7z.exe" x %USERPROFILE%\VBoxGuestAdditions.iso -o%LOCAL_TEMP%\virtualbox
+  "%SystemDrive%\Program Files\7-Zip\7z.exe" x %USERPROFILE%\VBoxGuestAdditions.iso -o%TEMP%\virtualbox
 
   echo ==^> Installing Oracle certificate to keep install silent
   certutil -addstore -f "TrustedPublisher" a:\oracle-cert.cer
 
   echo ==^> Installing VirtualBox Guest Additions
-  %LOCAL_TEMP%\virtualbox\%VBOX_INSTALL% /S
+  "%TEMP%\virtualbox\%VBOX_INSTALL%" /S
 
   echo ==^> Cleaning up VirtualBox Guest Additions install
-  del /F /S /Q "%LOCAL_TEMP%\virtualbox"
+  del /F /S /Q "%TEMP%\virtualbox"
 )
 
 echo ==^> Uninstalling 7zip
-msiexec /qb /x %SEVENZIP_INSTALL_LOCAL_PATH%
+msiexec /qb /x "%SEVENZIP_INSTALL_LOCAL_PATH%"
 
-endlocal
+del "%SEVENZIP_INSTALL_LOCAL_PATH%"

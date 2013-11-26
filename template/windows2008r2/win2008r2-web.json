@@ -52,8 +52,11 @@
       "environment_vars": [
         "PROVISIONER={{user `provisioner`}}",
         "PROVISIONER_VERSION={{user `provisioner_version`}}"
+        "TEMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
+        "TMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
+        "USERNAME=$USER"
       ],
-      "execute_command": "{{.Vars}} cmd /c C:/cygwin/tmp/script.bat",
+      "execute_command": "{{.Vars}} cmd /c $(/bin/cygpath -m '{{.Path}}')",
       "scripts": [
         "script/vagrant.bat",
         "script/provisioner.bat",
