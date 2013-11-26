@@ -46,5 +46,3 @@ rd /s /q %SystemDrive%\$Recycle.bin
 
 echo ==^> Starting the ssh service
 net start sshd
-
-endlocal

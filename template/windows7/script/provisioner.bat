@@ -3,10 +3,10 @@
 setlocal EnableExtensions EnableDelayedExpansion
 
 if "%PROVISIONER%" == "chef" (
-  :: TEMP is not defined in this shell instance, so define it ourselves
-  set LOCAL_TEMP=%USERPROFILE%\AppData\Local\Temp
+  :: If TEMP is not defined in this shell instance, define it ourselves
+  if not defined TEMP set TEMP=%USERPROFILE%\AppData\Local\Temp
   set REMOTE_SOURCE_MSI_URL=https://www.opscode.com/chef/install.msi
-  set LOCAL_DESTINATION_MSI_PATH=%LOCAL_TEMP%\chef-client-latest.msi
+  set LOCAL_DESTINATION_MSI_PATH=%TEMP%\chef-client-latest.msi
   set FALLBACK_QUERY_STRING=?DownloadContext=PowerShell
 
   :: Always latest, for now
@@ -21,5 +21,3 @@ if "%PROVISIONER%" == "chef" (
 ) else (
   echo ==^> Building box without a provisioner."
 )
-
-endlocal
