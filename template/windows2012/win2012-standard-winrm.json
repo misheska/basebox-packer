@@ -5,19 +5,19 @@
   },
   "builders": [
     {
-      "vm_name": "win2008r2-web",
+      "vm_name": "win2012-standard-winrm",
       "type": "vmware",
-      "guest_os_type": "windows7srv-64",
-      "iso_url": "../../iso/en_windows_server_2008_r2_with_sp1_vl_build_x64_dvd_617403.iso",
-      "iso_checksum": "8d397b69135d207452a78c3c3051339d",
+      "guest_os_type": "windows8srv-64",
+      "iso_url": "../../iso/en_windows_server_2012_x64_dvd_915478.iso",
+      "iso_checksum": "da91135483e24689bfdaf05d40301506",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
-      "floppy_files": ["floppy/win2008r2-web/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat"],
+      "floppy_files": ["floppy/win2012-standard-winrm/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-openssh-sshd.bat"],
       "tools_upload_flavor": "windows",
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
-      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c \"Packer Shutdown\"",
       "disk_size": 40960,
       "vmx_data": {
         "memsize": "768",
@@ -26,19 +26,19 @@
       }
     },
     {
-      "vm_name": "win2008r2-web",
+      "vm_name": "win2012-standard-winrm",
       "type": "virtualbox",
-      "guest_os_type": "Windows2008_64",
-      "iso_url": "../../iso/en_windows_server_2008_r2_with_sp1_vl_build_x64_dvd_617403.iso",
-      "iso_checksum": "8d397b69135d207452a78c3c3051339d",
+      "guest_os_type": "Windows2012_64",
+      "iso_url": "../../iso/en_windows_server_2012_x64_dvd_915478.iso",
+      "iso_checksum": "da91135483e24689bfdaf05d40301506",
       "iso_checksum_type": "md5",
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
+      "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "floppy_files": ["floppy/win2012-standard-winrm/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-openssh-sshd.bat", "floppy/oracle-cert.cer"],
       "disk_size": 40960,
-      "floppy_files": ["floppy/win2008r2-web/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat", "floppy/oracle-cert.cer"],
-      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "768"],
         ["modifyvm", "{{.Name}}", "--cpus", "1"]
@@ -51,12 +51,9 @@
       "remote_path": "/tmp/script.bat",
       "environment_vars": [
         "PROVISIONER={{user `provisioner`}}",
-        "PROVISIONER_VERSION={{user `provisioner_version`}}",
-        "TEMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
-        "TMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
-        "USERNAME=$USER"
+        "PROVISIONER_VERSION={{user `provisioner_version`}}"
       ],
-      "execute_command": "{{.Vars}} cmd /c $(/bin/cygpath -m '{{.Path}}')",
+      "execute_command": "{{.Vars}} cmd /c C:/Windows/Temp/script.bat",
       "scripts": [
         "script/vagrant.bat",
         "script/provisioner.bat",
@@ -71,6 +68,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/win2008r2-web-{{user `provisioner`}}{{user `provisioner_version`}}.box"
+    "output": "../../{{.Provider}}/win2012-standard-winrm-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
