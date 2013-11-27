@@ -10,6 +10,60 @@ added below:
 Current VMware Baseboxes
 ========================
 
+## VMware Fusion 6.0.2 / VMware Workstation 10.0.1 - VMware Tools 9.6.1.27366 (build-1378637)
+
+64-bit boxes:
+
+* [centos64](https://dl.dropboxusercontent.com/s/1j2miliatfjjm6s/centos64.box?dl=1&token_hash=AAGGOUbykyoX-x3ME_PJzD9bR-7gl5ZRsLlRAHBbr9B4lg) - CentOS 6.4 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [centos510](https://dl.dropboxusercontent.com/s/su486gtjbx1qmo1/centos510.box?dl=1&token_hash=AAFxkTXVpzCxhCmZ0CIthMgDuhH4ilD06RzB4F0GhzdK4Q) - CentOS 5.10 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [centos59](https://dl.dropboxusercontent.com/s/e4yypm16s90dtku/centos59.box?dl=1&token_hash=AAEaGUaYEnObq6mcqFAr__YJ5gWq-0k-kMXER8tolOGcRg) - CentOS 5.9 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [ubuntu1310](https://dl.dropboxusercontent.com/s/v9qh4fq8yd13vip/ubuntu1310.box?dl=1&token_hash=AAGRCE1pbWeXndUd73kVQBZkRpfO6v6oULMMEEFmfn_LDg) - Ubuntu 13.10 server 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [ubuntu1304](https://dl.dropboxusercontent.com/s/4rfz6p67lz9exfx/ubuntu1304.box?dl=1&token_hash=AAH7diXCoBxI83I5Wa_MLJG9nFkM3kb5fcIk7j74VF5BVg) - Ubuntu 13.04 server 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [ubuntu1204](https://dl.dropboxusercontent.com/s/0mzwv0gxpvpbkqv/ubuntu1204.box?dl=1&token_hash=AAHs5RtYBqWLD9_cU1sWXVIFp5blLd5eu9mj2D2uNggVlg) - Ubuntu 12.04.3 server 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [ubuntu1204-docker](https://dl.dropboxusercontent.com/s/digmjskut4ubztt/ubuntu1204-docker.box?dl=1&token_hash=AAHIRHCe3QDokbYFkO_AObyHPoMaYs4GpYzuRScSCHeZqg) - Ubuntu 12.04.3 server 64-bit with Docker (VMware Tools 9.6.1.27366 build-1378637)
+* [ubuntu1004](https://dl.dropboxusercontent.com/s/wad7r6c4ka5vc9d/ubuntu1004.box?dl=1&token_hash=AAFXIQ8PVcTdPgIOhA7xQwZ4KhKuSUm8vWroVQ1Q-4CfDA) - Ubuntu 10.04.4 server 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [fedora20]() - Fedora 20 Alpha 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [fedora19]() - Fedora 19 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [fedora18]() - Fedora 18 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle64]() - Oracle Linux Release 6 Update 4 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle63]() - Oracle Linux Release 6 Update 3 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle62]() - Oracle Linux Release 6 Update 2 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle61]() - Oracle Linux Release 6 Update 1 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle510]() - Oracle Linux Release 5 Update 10 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle59]() - Oracle Linux Release 5 Update 9 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle58]() - Oracle Linux Release 5 Update 8 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle57]() - Oracle Linux Release 5 Update 7 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [debian72]() - Debian "wheezy" 7.2 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [debian71]() - Debian "wheezy" 7.1 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [debian608]() - Debian "squeeze" 6.0.8 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [debian607]() - Debian "squeeze" 6.0.7 64-bit (VMware Tools 9.6.1.27366 build-1378637)
+
+32-bit boxes:
+
+* [centos64-i386](https://dl.dropboxusercontent.com/s/dfgp7psjq1igyrt/centos64-i386.box?dl=1&token_hash=AAH-qbGB1lxH5mr5yclqGQaywlrauB4yAphDgh3MQjJltg) - CentOS 6.4 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [centos510-i386](https://dl.dropboxusercontent.com/s/60of3jz65f0bezb/centos510-i386.box?dl=1&token_hash=AAEN_VN3VZjdWr6cEAiTjgLifroB1Dx8H9JMH75K8M0fdQ) - CentOS 6.4 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [centos59-i386](https://dl.dropboxusercontent.com/s/1w3dnigbwxjej92/centos59-i386.box?dl=1&token_hash=AAFZpi6JubNGY_2ViI7f3em7UuZ4rzIYB21fy5FRqF-qaw) - CentOS 5.9 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [ubuntu1310-i386](https://dl.dropboxusercontent.com/s/0sx83ma6uwj4ek7/ubuntu1310-i386.box?dl=1&token_hash=AAFWcdaWGnWCdTytRmiqbl5w3NXlyJE_iJ_-aLL1P1snLw) - Ubuntu 13.10 server 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [ubuntu1304-i386](https://www.dropbox.com/s/5bg4wc7ovr85twq/ubuntu1304-i386.box) - Ubuntu 13.04 server 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [ubuntu1204-i386](https://dl.dropboxusercontent.com/s/ev9txs7c4s0muqr/ubuntu1204-i386.box?dl=1&token_hash=AAGiqQidlZxEgUtSRPrQ4vy3KxKLVnVw6aYZtGw4EROiuQ) - Ubuntu 12.04.3 server 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [ubuntu1004-i386](https://dl.dropboxusercontent.com/s/r11m1b7f8ddza7x/ubuntu1004-i386.box?dl=1&token_hash=AAE9t3W6zrTWyu_MHcnjag9S-mQ_SJpZDguwoDt_pNHpGA) - Ubuntu 10.04.4 server 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [fedora20-i386]() - Fedora 20 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [fedora19-i386]() - Fedora 19 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [fedora18-i386]() - Fedora 18 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle64-i386]() - Oracle Linux Release 6 Update 4 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle63-i386]() - Oracle Linux Release 6 Update 3 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle62-i386]() - Oracle Linux Release 6 Update 2 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle61-i386]() - Oracle Linux Release 6 Update 1 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle510-i386]() - Oracle Linux Release 5 Update 10 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle59-i386]() - Oracle Linux Release 5 Update 9 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle58-i386]() - Oracle Linux Release 5 Update 8 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [oracle57-i386]() - Oracle Linux Release 5 Update 7 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [debian72-i386]() - Debian "wheezy" 7.2 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [debian71-i386]() - Debian "wheezy" 7.1 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [debian608-i386]() - Debian "squeeze" 6.0.8 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+* [debian607-i386]() - Debian "squeeze" 6.0.7 32-bit (VMware Tools 9.6.1.27366 build-1378637)
+
+
 ## VMware Fusion 6.0.1 / VMware Workstation 10 - VMware Tools 9.6.0.26048 (build-1294478)
 
 64-bit boxes:
@@ -90,6 +144,61 @@ Current VMware Baseboxes
 Current VirtualBox Baseboxes
 ============================
 
+## VirtualBox 4.3.2
+
+64-bit boxes:
+
+* [centos64](https://dl.dropboxusercontent.com/s/qxleo0y1231h382/centos64.box?dl=1&token_hash=AAHZQmB1AiDX5sHD7xYvOVMDc495Wn6h1Qo8axj0s4yiPw) - CentOS 6.4 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [centos510](https://dl.dropboxusercontent.com/s/dqrznvv4i90ohls/centos510.box?dl=1&token_hash=AAGuQzR0B6uj9-pkcEgGSwRFgqjjx1sPnxuaga2dsOB3yw) - CentOS 5.10 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [centos59](https://dl.dropboxusercontent.com/s/uz77479tp1rgjg6/centos59.box?dl=1&token_hash=AAGlyhspLu-kwOB8ZV3-f4O0JL-gFireU2Hrqdi3qGeInw) - CentOS 5.9 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [ubuntu1310](https://dl.dropboxusercontent.com/s/srdwr8w3ku76kcm/ubuntu1310.box?dl=1&token_hash=AAGEFxwSuyuPumLOeoKPQLqHcWEHdWTzDFrL-AAJq1XZHg) - Ubuntu 13.10 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [ubuntu1304](https://dl.dropboxusercontent.com/s/js4vzy18xgdfzt4/ubuntu1304.box?dl=1&token_hash=AAFpedYk-fqYiGwhrHI6EaB-avbAEIVcREpTgYtDsHvujQ) - Ubuntu 13.04 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [ubuntu1204](https://dl.dropboxusercontent.com/s/617tghuyi6t9k9o/ubuntu1204.box?dl=1&token_hash=AAFTC4ZRYmKUzZDRanARx5KYnZy4xHWOu74Q_jBU46JeKg) - Ubuntu 12.04.3 server 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [ubuntu1204-docker](https://dl.dropboxusercontent.com/s/v2g5u1b0yb764uv/ubuntu1204-docker.box?dl=1&token_hash=AAGF-ym_RwlDTxsSZC4OACHoqBxUBsGz-P1bi5b42HHtSw) - Ubuntu 12.04.3 server 64-bit with Docker (VirtualBox 4.3.2 Guest Additions)
+* [ubuntu1004](https://dl.dropboxusercontent.com/s/2ohphkzbxxkoi14/ubuntu1004.box?dl=1&token_hash=AAEX-Y_dkPYlWTg5ZDzYrLelBNt7VWmHzqV1Uq3vTjkEdw) - Ubuntu 10.04.4 server 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [fedora20]() - Fedora 20 Alpha 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [fedora19]() - Fedora 19 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [fedora18]() - Fedora 18 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [opensuse114]() - openSUSE 11.4 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle64]() - Oracle Linux Release 6 Update 4 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle63]() - Oracle Linux Release 6 Update 3 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle62]() - Oracle Linux Release 6 Update 2 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle61]() - Oracle Linux Release 6 Update 1 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle510]() - Oracle Linux Release 5 Update 10 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle59]() - Oracle Linux Release 5 Update 9 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle58]() - Oracle Linux Release 5 Update 8 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle57]() - Oracle Linux Release 5 Update 7 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [debian72]() Debian "wheezy" 7.2 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [debian71]() Debian "wheezy" 7.1 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [debian608]() Debian "squeeze" 6.0.8 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [debian607]() Debian "squeeze" 6.0.7 64-bit (VirtualBox 4.3.2 Guest Additions)
+* [freebsd91]() - FreeBSD 9.1 64-bit (VirtualBox 4.3.2 Guest Additions)
+
+32-bit boxes:
+
+* [centos64-i386](https://dl.dropboxusercontent.com/s/1mxwvk0mcionqd7/centos64-i386.box?dl=1&token_hash=AAE5CaiL-24uBWyN18CncfWbubZwpD81mf-xXCiyWuxXxg) - CentOS 6.4 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [centos510-i386](https://dl.dropboxusercontent.com/s/e36th2ea7eh5ekm/centos510-i386.box?dl=1&token_hash=AAFm-Z1CmO7gE6AeWgjJEcnyhBI3wmReNLP4TDbimhD2wQ) - CentOS 5.10 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [centos59-i386](https://dl.dropboxusercontent.com/s/io1pq972b31m9u9/centos59-i386.box?dl=1&token_hash=AAEbe8UMzS_rwQJRjX4_0kLJ0Z3i2gBBolNJJQvmyWXNFw) - CentOS 5.9 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [ubuntu1310-i386](https://dl.dropboxusercontent.com/s/q9i2nhulw3laphz/ubuntu1310-i386.box?dl=1&token_hash=AAEs4tgiMnn7Byhe6utemvhx7RQfFka6nN6A9u-30Zhu7w) - Ubuntu 13.10 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [ubuntu1304-i386](https://dl.dropboxusercontent.com/s/2npihqa3xq4tpbq/ubuntu1304-i386.box?dl=1&token_hash=AAHwPIT4z5rgd339peKnyCawzG7V7LWvMfKxzz16GlW27w) - Ubuntu 13.04 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [ubuntu1204-i386](https://dl.dropboxusercontent.com/s/qyfj80ek91hhhhw/ubuntu1204-i386.box?dl=1&token_hash=AAG1Q_zeiFYU9qnxYQXUU_1aNxbaKPEc9_su6UJO7O8euw) - Ubuntu 12.04.3 server 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [ubuntu1004-i386](https://dl.dropboxusercontent.com/s/d8aqabuewnoymri/ubuntu1004-i386.box?dl=1&token_hash=AAF9tPI4RxVVzlzN_g0ZbKgzAFSvMHv6_YtTPlRv4URxKA) - Ubuntu 10.04.4 server 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [fedora20-i386]() - Fedora 20 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [fedora19-i386]() - Fedora 19 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [fedora18-i386]() - Fedora 18 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle64-i386]() - Oracle Linux Release 6 Update 4 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle63-i386]() - Oracle Linux Release 6 Update 3 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle62-i386]() - Oracle Linux Release 6 Update 2 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle61-i386]() - Oracle Linux Release 6 Update 1 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle510-i386]() - Oracle Linux Release 5 Update 10 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle59-i386]() - Oracle Linux Release 5 Update 9 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle58-i386]() - Oracle Linux Release 5 Update 8 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [oracle57-i386]() - Oracle Linux Release 5 Update 7 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [debian72-i386]() - Debian "wheezy" 7.2 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [debian71-i386]() - Debian "wheezy" 7.1 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [debian608-i386]() - Debian "squeeze" 6.0.8 32-bit (VirtualBox 4.3.2 Guest Additions)
+* [debian607-i386]() - Debian "squeeze" 6.0.7 32-bit (VirtualBox 4.3.2 Guest Additions)
+
 ## VirtualBox 4.3.0
 
 64-bit boxes:
@@ -158,15 +267,6 @@ Current VirtualBox Baseboxes
 * [misheska-oracle64](https://dl.dropboxusercontent.com/s/by0f6nsu1h894jg/misheska-oracle64.box?token_hash=AAG6ndr-r_uLXfsbzZy6jUu8w0nxw548do73CIgCb0uTCw&dl=1) - Oracle Enterprise Linux 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 * [misheska-debian71](https://dl.dropboxusercontent.com/s/tk0za6x2c1mcz7k/misheska-debian71.box?token_hash=AAHb-H5dJxeofl-QSMwBzBUAwLwJAliNNiQpv8mUekahFQ&dl=1) - Debian "wheezy" 7.1 64-bit VirtualBox basebox (VirtualBox 4.2.18 Guest Additions)
 
-## VirtualBox 4.2.16
-
-* [misheska-centos64](https://dl.dropboxusercontent.com/s/3lrdhl9vl369fra/misheska-centos64.box?token_hash=AAG6ShMMuWZ7PRVthc0qRZZht79PS5x39NQlJRwEDS5YyQ&dl=1) - CentOS 6.4 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-* [misheska-centos59](https://dl.dropboxusercontent.com/s/szneou08w4vd7rq/misheska-centos59.box?token_hash=AAFmphUJq_5eK9menG15DLnvyQm1nCXxTcyWGCuQb_Flqg&dl=1) - CentOS 5.9 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-* [misheska-ubuntu1304](https://dl.dropboxusercontent.com/s/huewpismivlz5qr/misheska-ubuntu1304.box?token_hash=AAFrXAl45olxavfWfBfbwor44lqAu3cUrSdAbTEZBc7Q9Q&dl=1) - Ubuntu 13.04 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-* [misheska-ubuntu1204](https://dl.dropboxusercontent.com/s/gp6h130k3un777s/misheska-ubuntu1204.box?token_hash=AAEfRQcSjsTBpbqnvmB3sw5_XzOP-GVGffnrWidMjg7Npg&dl=1) - Ubuntu 12.04.3 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-* [misheska-ubuntu1204-docker](https://dl.dropboxusercontent.com/s/7p8242nmpovzdrc/misheska-ubuntu1204-docker.box?token_hash=AAHDRDicLP2t0-CRMYxH36n2ewZa1AW_yjRPlRT8y-9I0g&dl=1) - Ubuntu 12.04.3 server 64-bit with Docker VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-* [misheska-ubuntu1004](https://dl.dropboxusercontent.com/s/c7jjbanrpnzvd4d/misheska-ubuntu1004.box?token_hash=AAF2ebqnO16bWyyEhTxfIhaiHSni70a4Mmi1kM_oVn53rQ&dl=1) - Ubuntu 10.04.4 server 64-bit VirtualBox basebox (VirtualBox 4.2.16 Guest Additions)
-
 Getting Started
 ===============
 
@@ -185,3 +285,124 @@ To build a VMware Fusion/VMware Workstation box:
     make list
     # Choose a definition, like 'vmware/centos64'
     make vmware/centos64.box
+
+Provisioners
+============
+
+By default, the templates build without installing a provisioning client, like for Chef or Puppet.  You can choose
+to install a provisioning client by using the following
+Packer [user variables](http://www.packer.io/docs/templates/user-variables.html) when a basebox is built.
+
+The `provisioner` variable controls which client provisioner is installed.  Current values can be:
+
+    -var "provisioner=provisionerless" - the default, no client provisioner is installed
+    -var "provisioner=chef"            - the Chef client provisioner is installed
+
+If the 'provisioner' variable is set to something besides `provisionerless`, you can use the `provisioner_version`
+variable to specify the version of the provisioner to be installed.  Legal values are:
+
+    -var "provisioner_version=latest"  - install the latest version of the provisioner
+    -var "provisioner_version=x.y.z"   - the provisioner version in dotted triplet form (example: 11.8.0)
+
+Both variables should be used together when you specify a provisioner to be installed.  For example, to install the
+latest version of the Chef client in an Ubuntu 12.04 basebox, run the following `packer` command in the appropriate
+`teamplate` directory:
+
+    packer build -var "provisioner=chef" -var "provisioner_version=11.8.0" ubuntu1204.json
+
+Windows
+=======
+
+Microsoft won't allow us to redistribute Windows baseboxes, so you must obtain the appropriate ISO for each
+Windows template and build them yourself.
+
+The resultant Windows baseboxes also need the `vagrant-windows` plugin installed to run properly.  Run the following
+command to install the `vagrant-windows` plugin:
+
+    vagrant plugin install vagrant-windows
+
+## Vagrantfile Settings
+
+You'll also need to add the following settings to your `Vagrantfile` to enable the correct WinRM settings for
+`vagrant` to talk to the Windows guest and set up shared folders properly:
+
+    config.vm.guest = :windows
+    config.windows.halt_timeout = 25
+    config.winrm.username = "vagrant"
+    config.winrm.password = "vagrant"
+    config.vm.network :forwarded_port, guest: 5985, host: 5985
+
+## Other Userful Vagrantfile Settings
+
+### GUI:
+
+If you plan on using Windows in GUI mode, add the following section to your Vagrantfile in order to enable GUI mode:
+
+If you plan on using Windows in GUI mode, add the following section to your
+Vagrantfile in order to enable GUI mode:
+
+VirtualBox:
+
+    config.vm.provider :virtualbox do |p|
+      p.gui = true
+    end
+
+VMware Workstation:
+
+    config.vm.provider :vmware_workstation do |p|
+      p.gui = true
+    end
+
+VMware Fusion:
+
+    config.vm.provider :vmware_fusion do |p|
+      p.gui = true
+    end
+
+### Workaround for Virtualbox resolution limitations:
+
+If you are using VirtualBox and want to use a resolution higher than
+800x600, add the following extra settings to your `config.vm.provider` block
+to increase the amount of video memory, remove guest resolution restrictions,
+and to set the default resolution (1024x768 is just an example):
+
+    config.vm.provider :virtualbox do |p|
+      p.gui = true
+      v.customize ["modifyvm", :id, "--vram", "256"]
+      v.customize ["setextradata", "global", "GUI/MaxGuestResolution", "any"]
+      v.customize ["setextradata", :id, "CustomVideoMode1", "1024x768x32"]
+    end
+
+### Use high-speed virtual NICs on VMware
+
+To use the 10Gb VMXNET3 virtual NIC instead of the default 1Gb E1000 virtual NIC on VMware:
+
+VMware Workstation:
+
+    config.vm.provider :vmware_workstation do |p|
+      p.vmx["ethernet0.virtualDev"] = "vmxnet3"
+    end
+
+VMware Fusion:
+
+    config.vm.provider :vmware_fusion do |p|
+      p.vmx["ethernet0.virtualDev"] = "vmxnet3"
+    end
+
+### Allow VNC access via the VMware built-in VNC server
+
+If you want to provider back-door VNC access to your VMware guest instances:
+
+Mware Workstation:
+
+    config.vm.provider :vmware_workstation do |p|
+      p.vmx["RemoteDisplay.vnc.enabled"] = "true"
+      p.vmx["RemoteDisplay.vnc.port"] = "5900"
+    end
+
+VMware Fusion:
+
+    config.vm.provider :vmware_fusion do |p|
+      p.vmx["RemoteDisplay.vnc.enabled"] = "true"
+      p.vmx["RemoteDisplay.vnc.port"] = "5900"
+    end
