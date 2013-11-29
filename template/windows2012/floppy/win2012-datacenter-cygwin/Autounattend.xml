@@ -10,7 +10,7 @@
         <component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <UserData>
                 <ProductKey>
-                    <Key>XC9B7-NBPP2-83J2H-RHMBY-92BT4</Key>
+                    <Key>48HP8-DN98B-MYWDG-T2DCC-8W83P</Key>
                     <WillShowUI>OnError</WillShowUI>
                 </ProductKey>
                 <AcceptEula>true</AcceptEula>
@@ -20,7 +20,7 @@
                     <InstallFrom>
                         <MetaData wcm:action="add">
                             <Key>/IMAGE/NAME</Key>
-                            <Value>Windows Server 2012 SERVERSTANDARD</Value>
+                            <Value>Windows Server 2012 SERVERDATACENTER</Value>
                         </MetaData>
                     </InstallFrom>
                     <InstallTo>
@@ -98,8 +98,8 @@
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>cmd /c a:install-openssh-sshd.bat START</CommandLine>
-                    <Description>Install openssh SSHD</Description>
+                    <CommandLine>cmd /c a:install-cygwin-sshd.bat</CommandLine>
+                    <Description>Install cygwin SSHD</Description>
                     <Order>99</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
@@ -160,7 +160,7 @@
                 <SynchronousCommand wcm:action="add">
                     <Order>19</Order>
                     <CommandLine>cmd.exe /c winrm set winrm/config/listener?Address=*+Transport=HTTP @{Port=&quot;5985&quot;}</CommandLine>
-                    <Description>Win RM listener Address/Port</Description>
+                    <Description> Win RM listener Address/Port</Description>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
@@ -248,5 +248,5 @@
             <EnableLUA>false</EnableLUA>
         </component>
     </settings>
-    <cpi:offlineImage cpi:source="wim:c:/users/misheska/sources/win2012/install.wim#Windows Server 2012 SERVERSTANDARD" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+    <cpi:offlineImage cpi:source="wim:c:/users/misheska/sources/win2012/install.wim#Windows Server 2012 SERVERDATACENTER" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 </unattend>
