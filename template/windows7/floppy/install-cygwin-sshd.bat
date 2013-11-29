@@ -2,7 +2,8 @@
 
 setlocal
 
-set ARCH=x86
+:: Force ARCH to 64-bit - 32-bit seems to crash a lot on Windows 2012
+set ARCH=x86_64
 set CYGWIN_SETUP_URL=http://cygwin.com/setup-%ARCH%.exe
 set CYGWIN_SETUP_LOCAL_PATH=%TEMP%\cygwin-setup.exe
 set CYGWIN_HOME=%SystemDrive%\cygwin

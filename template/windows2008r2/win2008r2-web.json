@@ -14,10 +14,10 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
-      "floppy_files": ["floppy/win2008r2-web/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat"],
+      "floppy_files": ["floppy/win2008r2-web/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-openssh-sshd.bat"],
       "tools_upload_flavor": "windows",
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
-      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c 'Packer Shutdown'",
       "disk_size": 40960,
       "vmx_data": {
         "memsize": "768",
@@ -37,8 +37,8 @@
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
       "disk_size": 40960,
-      "floppy_files": ["floppy/win2008r2-web/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat", "floppy/oracle-cert.cer"],
-      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "floppy_files": ["floppy/win2008r2-web/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-openssh-sshd.bat", "floppy/oracle-cert.cer"],
+      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c 'Packer Shutdown'",
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "768"],
         ["modifyvm", "{{.Name}}", "--cpus", "1"]
@@ -51,12 +51,9 @@
       "remote_path": "/tmp/script.bat",
       "environment_vars": [
         "PROVISIONER={{user `provisioner`}}",
-        "PROVISIONER_VERSION={{user `provisioner_version`}}",
-        "TEMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
-        "TMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
-        "USERNAME=$USER"
+        "PROVISIONER_VERSION={{user `provisioner_version`}}"
       ],
-      "execute_command": "{{.Vars}} cmd /c $(/bin/cygpath -m '{{.Path}}')",
+      "execute_command": "{{.Vars}} cmd /c C:/Windows/Temp/script.bat",
       "scripts": [
         "script/vagrant.bat",
         "script/provisioner.bat",

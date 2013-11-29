@@ -1,5 +1,7 @@
 @echo off
 
+title Installing Openssh. Please wait...
+
 setlocal EnableDelayedExpansion EnableExtensions
 
 :: If TEMP is not defined in this shell instance, define it ourselves

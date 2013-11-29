@@ -140,9 +140,99 @@
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>cmd /c a:install-cygwin-sshd.bat</CommandLine>
-                    <Description>Install Cygwin SSHD</Description>
-                    <Order>3</Order>
+                    <CommandLine>cmd /c a:install-openssh-sshd.bat START</CommandLine>
+                    <Description>Install openssh SSHD</Description>
+                    <Order>99</Order>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c powershell -Command &quot;Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force&quot;</CommandLine>
+                    <Description>Set Execution Policy 64 Bit</Description>
+                    <Order>10</Order>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>11</Order>
+                    <CommandLine>C:\Windows\SysWOW64\cmd.exe /c powershell -Command &quot;Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force&quot;</CommandLine>
+                    <Description>Set Execution Policy 32 Bit</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>12</Order>
+                    <CommandLine>cmd.exe /c winrm quickconfig -q</CommandLine>
+                    <Description>winrm quickconfig -q</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>13</Order>
+                    <CommandLine>cmd.exe /c winrm quickconfig -transport:http</CommandLine>
+                    <Description>winrm quickconfig -transport:http</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>14</Order>
+                    <CommandLine>cmd.exe /c winrm set winrm/config @{MaxTimeoutms=&quot;1800000&quot;}</CommandLine>
+                    <Description>Win RM MaxTimoutms</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>15</Order>
+                    <CommandLine>cmd.exe /c winrm set winrm/config/winrs @{MaxMemoryPerShellMB=&quot;300&quot;}</CommandLine>
+                    <Description>Win RM MaxMemoryPerShellMB</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>16</Order>
+                    <CommandLine>cmd.exe /c winrm set winrm/config/service @{AllowUnencrypted=&quot;true&quot;}</CommandLine>
+                    <Description>Win RM AllowUnencrypted</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>17</Order>
+                    <CommandLine>cmd.exe /c winrm set winrm/config/service/auth @{Basic=&quot;true&quot;}</CommandLine>
+                    <Description>Win RM auth Basic</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>18</Order>
+                    <CommandLine>cmd.exe /c winrm set winrm/config/client/auth @{Basic=&quot;true&quot;}</CommandLine>
+                    <Description>Win RM client auth Basic</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>19</Order>
+                    <CommandLine>cmd.exe /c winrm set winrm/config/listener?Address=*+Transport=HTTP @{Port=&quot;5985&quot;}</CommandLine>
+                    <Description>Win RM listener Address/Port</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>20</Order>
+                    <CommandLine>cmd.exe /c netsh advfirewall firewall set rule group=&quot;remote administration&quot; new enable=yes</CommandLine>
+                    <Description>Win RM adv firewall enable</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c netsh firewall add portopening TCP 5985 &quot;Port 5985&quot;</CommandLine>
+                    <Order>21</Order>
+                    <Description>Win RM port open</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c net stop winrm</CommandLine>
+                    <Order>22</Order>
+                    <Description>Stop Win RM Service</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>23</Order>
+                    <CommandLine>cmd.exe /c sc config winrm start=auto</CommandLine>
+                    <Description>Win RM Autostart</Description>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c net start winrm</CommandLine>
+                    <Description>Start Win RM Service</Description>
+                    <Order>24</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
             </FirstLogonCommands>
