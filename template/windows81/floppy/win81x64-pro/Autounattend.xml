@@ -133,22 +133,10 @@
             </AutoLogon>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>REG ADD &quot;HKLM\System\CurrentControlSet\Services\Netlogon\Parameters&quot; /v DisablePasswordChange /t REG_DWORD /d 2 /f</CommandLine>
-                    <Description>Disable computer password change</Description>
+                    <CommandLine>cmd.exe /c a:\00-run-all-scripts.cmd</CommandLine>
+                    <Description>Run all *.bat and *.cmd scripts on drive A:</Description>
                     <Order>1</Order>
-                    <RequiresUserInput>true</RequiresUserInput>
-                </SynchronousCommand>
-                <SynchronousCommand wcm:action="add">
-                    <CommandLine>cmd.exe /c a:set_power_config.bat</CommandLine>
-                    <Description>Turn off all power saving and timeouts</Description>
-                    <Order>2</Order>
-                    <RequiresUserInput>true</RequiresUserInput>
-                </SynchronousCommand>
-                <SynchronousCommand wcm:action="add">
-                    <Order>3</Order>
-                    <CommandLine>cmd /c a:install-cygwin-sshd.bat</CommandLine>
-                    <Description>Install Cygwin SSHD</Description>
-                    <RequiresUserInput>true</RequiresUserInput>
+                    <RequiresUserInput>false</RequiresUserInput>
                 </SynchronousCommand>
             </FirstLogonCommands>
         </component>
