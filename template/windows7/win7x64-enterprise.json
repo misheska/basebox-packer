@@ -13,7 +13,12 @@
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "floppy_files": ["floppy/win7x64-enterprise/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-openssh-sshd.bat"],
+      "floppy_files": [
+        "floppy/win7x64-enterprise/Autounattend.xml",
+        "floppy/00-run-all-scripts.cmd",
+        "floppy/set-power-config.bat",
+        "floppy/install-openssh-sshd.bat"
+      ],
       "tools_upload_flavor": "windows",
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
       "ssh_wait_timeout": "10000s",
@@ -32,13 +37,19 @@
       "iso_url": "../../iso/en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
       "iso_checksum": "6467c3875955df4514395f0afcaaa62a",
       "iso_checksum_type": "md5",
-      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
       "disk_size": 40960,
-      "floppy_files": ["floppy/win7x64-enterprise/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-openssh-sshd.bat", "floppy/oracle-cert.cer"],
+      "floppy_files": [
+        "floppy/win7x64-enterprise/Autounattend.xml",
+        "floppy/00-run-all-scripts.cmd",
+        "floppy/set-power-config.bat",
+        "floppy/install-openssh-sshd.bat", 
+        "floppy/oracle-cert.cer"],
+      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c 'Packer Shutdown'",
+      "disk_size": 40960,
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "768"],
         ["modifyvm", "{{.Name}}", "--cpus", "1"]

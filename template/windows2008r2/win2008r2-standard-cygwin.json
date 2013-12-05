@@ -14,7 +14,12 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
-      "floppy_files": ["floppy/win2008r2-standard-cygwin/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat"],
+      "floppy_files": [
+        "floppy/win2008r2-standard/Autounattend.xml",
+        "floppy/00-run-all-scripts.cmd",
+        "floppy/set-power-config.bat",
+        "floppy/install-cygwin-sshd.bat"
+      ],
       "tools_upload_flavor": "windows",
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c 'Packer Shutdown'",
@@ -32,12 +37,18 @@
       "iso_url": "../../iso/en_windows_server_2008_r2_with_sp1_vl_build_x64_dvd_617403.iso",
       "iso_checksum": "8d397b69135d207452a78c3c3051339d",
       "iso_checksum_type": "md5",
-      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
       "disk_size": 40960,
-      "floppy_files": ["floppy/win2008r2-standard-cygwin/Autounattend.xml", "floppy/set-power-config.bat", "floppy/install-cygwin-sshd.bat", "floppy/oracle-cert.cer"],
+      "floppy_files": [
+        "floppy/win2008r2-standard/Autounattend.xml",
+        "floppy/00-run-all-scripts.cmd",
+        "floppy/set-power-config.bat",
+        "floppy/install-cygwin-sshd.bat",
+        "floppy/oracle-cert.cer"
+      ],
+      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c 'Packer Shutdown'",
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "768"],
