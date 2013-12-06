@@ -64,7 +64,7 @@
       "script/provisioner.sh",
       "script/cleanup.sh",
       "script/zerodisk.sh"
-    ],
+    ]
   }],
   "post-processors": [{
     "type": "vagrant",
