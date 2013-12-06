@@ -17,6 +17,8 @@
       "floppy_files": [
         "floppy/win2012r2-standard/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/disable-computer-password-change.bat",
+        "floppy/disable-password-expiration.cmd",
         "floppy/set-power-config.bat",
         "floppy/install-cygwin-sshd.bat"
       ],
@@ -45,6 +47,8 @@
         "floppy/win2012r2-standard/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/set-power-config.bat",
+        "floppy/disable-computer-password-change.bat",
+        "floppy/disable-password-expiration.cmd",
         "floppy/install-cygwin-sshd.bat",
         "floppy/oracle-cert.cer"
       ],

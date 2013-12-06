@@ -18,6 +18,8 @@
         "floppy/win2008r2-enterprise/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/set-power-config.bat",
+        "floppy/disable-computer-password-change.bat",
+        "floppy/disable-password-expiration.cmd",
         "floppy/install-cygwin-sshd.bat"
       ],
       "tools_upload_flavor": "windows",
@@ -44,6 +46,8 @@
         "floppy/win2008r2-enterprise/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/set-power-config.bat",
+        "floppy/disable-computer-password-change.bat",
+        "floppy/disable-password-expiration.cmd",
         "floppy/install-cygwin-sshd.bat",
         "floppy/oracle-cert.cer"
       ],

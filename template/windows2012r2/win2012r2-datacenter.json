@@ -18,6 +18,8 @@
         "floppy/win2012r2-datacenter/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/set-power-config.bat",
+        "floppy/disable-computer-password-change.bat",
+        "floppy/disable-password-expiration.cmd",
         "floppy/install-openssh-sshd.bat"
       ],
       "tools_upload_flavor": "windows",
@@ -46,6 +48,8 @@
         "floppy/win2012r2-datacenter/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/set-power-config.bat",
+        "floppy/disable-computer-password-change.bat",
+        "floppy/disable-password-expiration.cmd",
         "floppy/install-openssh-sshd.bat",
         "floppy/oracle-cert.cer"
       ],

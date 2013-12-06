@@ -18,6 +18,8 @@
         "floppy/win2012r2-datacenter/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/set-power-config.bat",
+        "floppy/disable-computer-password-change.bat",
+        "floppy/disable-password-expiration.cmd",
         "floppy/install-cygwin-sshd.bat"
       ],
       "tools_upload_flavor": "windows",
@@ -45,6 +47,8 @@
         "floppy/win2012r2-datacenter/Autounattend.xml",
         "floppy/set-power-config.bat",
         "floppy/install-cygwin-sshd.bat",
+        "floppy/disable-computer-password-change.bat",
+        "floppy/disable-password-expiration.cmd",
         "floppy/oracle-cert.cer"
       ],
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
