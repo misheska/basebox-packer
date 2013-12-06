@@ -42,10 +42,6 @@ powershell -Command "Add-Content C:\Users\vagrant\.ssh\environment "TEMP=C:\Wind
 echo ==^> Record the path for use by provisioners
 <nul set /p ".=%PATH%" > %TEMP%\PATH
 
-if "%1" neq "START" (
-  cmd /c net stop opensshd
-)
-
 echo ==^> Configuring firewall
 netsh advfirewall firewall add rule name="SSHD" dir=in action=allow service=OpenSSHd enable=yes
 netsh advfirewall firewall add rule name="SSHD" dir=in action=allow program="%ProgramFiles%\OpenSSH\usr\sbin\sshd.exe" enable=yes
