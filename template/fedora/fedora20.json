@@ -8,8 +8,8 @@
     "type": "vmware",
     "guest_os_type": "fedora-64",
     "http_directory": "http",
-    "iso_url": "http://mirrors.kernel.org/fedora/releases/test/20-Alpha/Fedora/x86_64/iso/Fedora-20-Alpha-x86_64-DVD.iso",
-    "iso_checksum": "749763da40ebf6cb3a9ed46434b2d165d09938cf24b51992da656d9125ff0290",
+    "iso_url": "http://mirrors.kernel.org/fedora/releases/test/20-Beta/Fedora/x86_64/iso/Fedora-20-Beta-x86_64-DVD.iso",
+    "iso_checksum": "04e76a36eb97d6fcdc35e6a2ecdb7b7631a4d220cf70cfbffd0f17db000ae3ac",
     "iso_checksum_type": "sha256",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
@@ -19,7 +19,7 @@
       "<tab> linux text biosdevname=0 ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter><enter>"
     ],
     "floppy_files": ["floppy/vmware9.k3.8rc4.patch", "floppy/vmware9.compat_mm.patch", "floppy/vmware9.k3.9.vmhgfs.patch", "floppy/vmhgfs-d_count-kernel-3.11-tools-9.6.0.patch"],
-    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -h now",
     "disk_size": 10140,
     "vmx_data": {
       "memsize": "512",
@@ -31,8 +31,8 @@
     "vm_name": "fedora20",
     "type": "virtualbox",
     "http_directory": "http",
-    "iso_url": "http://mirrors.kernel.org/fedora/releases/test/20-Alpha/Fedora/x86_64/iso/Fedora-20-Alpha-x86_64-DVD.iso",
-    "iso_checksum": "749763da40ebf6cb3a9ed46434b2d165d09938cf24b51992da656d9125ff0290",
+    "iso_url": "http://mirrors.kernel.org/fedora/releases/test/20-Beta/Fedora/x86_64/iso/Fedora-20-Beta-x86_64-DVD.iso",
+    "iso_checksum": "04e76a36eb97d6fcdc35e6a2ecdb7b7631a4d220cf70cfbffd0f17db000ae3ac",
     "iso_checksum_type": "sha256",
     "guest_os_type": "Fedora_64",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
@@ -43,7 +43,7 @@
     "boot_command": [
       "<tab> linux text biosdevname=0 ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter><enter>"
     ],
-    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -h now",
     "disk_size": 10140,
     "vboxmanage": [
       ["modifyvm", "{{.Name}}", "--memory", "512"],
