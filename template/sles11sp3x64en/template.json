@@ -1,0 +1,78 @@
+{
+  "builders": [
+    {
+      "vm_name": "sles11sp3x64en",
+      "type": "vmware",
+      "guest_os_type": "OpenSUSE_64",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst_en.xmlcfg<enter><wait>"
+      ],
+      "boot_wait": "10s",
+      "http_directory": "http",
+      "iso_url": "D:/ISO/SLES 11 SP3/SLES-11-SP3-DVD-x86_64-GM-DVD1.iso",
+      "iso_checksum": "480b70d50cbb538382dc2b9325221e1b",
+      "iso_checksum_type": "md5",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "echo '/sbin/halt -h -p' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
+      "tools_upload_flavor": "linux",
+      "vmx_data": {
+        "memsize": "768",
+        "numvcpus": "1",
+        "cpuid.coresPerSocket": "1"
+      }
+    },
+    {
+      "vm_name": "sles11sp3x64en",
+      "type": "virtualbox",
+      "guest_os_type": "OpenSUSE_64",
+      "boot_wait": "10s",
+      "boot_command": [
+        "<esc><enter><wait>",
+        "linux netdevice=eth0 netsetup=dhcp install=cd:/<wait>",
+        " lang=en_US autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst_en.xml<wait>",
+        " textmode=1<wait>",
+        "<enter><wait>"
+      ],
+      "iso_url": "D:/ISO/SLES 11 SP3/SLES-11-SP3-DVD-x86_64-GM-DVD1.iso",
+      "iso_checksum": "480b70d50cbb538382dc2b9325221e1b",
+      "iso_checksum_type": "md5",
+      "http_directory": "http",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
+      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+      "virtualbox_version_file": ".vbox_version",
+      "disk_size": 40960,
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "768"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "scripts": [
+        "scripts/postinstall.sh"
+      ],
+      "override": {
+        "virtualbox": {
+          "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+        },
+        "vmware": {
+          "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+        }
+      }
+    }
+  ],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": true,
+    "output": "../../{{.Provider}}/win2008R2-datacenter-eval.box"
+  }]
+}
