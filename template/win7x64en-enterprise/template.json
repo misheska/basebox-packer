@@ -13,8 +13,7 @@
                        "../floppy/set-power-config.bat",
                        "../floppy/install-winrm.bat",
                        "../floppy/install-cygwin-sshd.bat",
-                       "../floppy/uninstall-cygwin-and-shutdown.bat",
-                       "../floppy/ChangeCategory.ps1"
+                       "../floppy/uninstall-cygwin-and-shutdown.bat"
                       ],
       "tools_upload_flavor": "windows",
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
@@ -37,9 +36,6 @@
       "iso_checksum": "6467c3875955df4514395f0afcaaa62a",
       "iso_checksum_type": "md5",
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
-"guest_additions_url": "http://dlc.sun.com.edgesuite.net/virtualbox/4.3.2/VBoxGuestAdditions_4.3.2.iso",
-"guest_additions_sha256": "f0b8fec99c65231641d5d01558abb53fe8b81f131dc71519cb7994c9e297300d",
-
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
@@ -49,8 +45,7 @@
                        "../floppy/set-power-config.bat",
                        "../floppy/install-winrm.bat",
                        "../floppy/install-cygwin-sshd.bat",
-                       "../floppy/uninstall-cygwin-and-shutdown.bat",
-                       "../floppy/ChangeCategory.ps1"
+                       "../floppy/uninstall-cygwin-and-shutdown.bat"
                       ],
       "shutdown_command": "cmd /C start A:\\uninstall-cygwin-and-shutdown.bat",
       "vboxmanage": [

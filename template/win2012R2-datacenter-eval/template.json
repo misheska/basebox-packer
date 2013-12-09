@@ -38,9 +38,6 @@
       "iso_checksum": "458ff91f8abc21b75cb544744bf92e6a",
       "iso_checksum_type": "md5",
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
-"guest_additions_url": "http://dlc.sun.com.edgesuite.net/virtualbox/4.3.2/VBoxGuestAdditions_4.3.2.iso",
-"guest_additions_sha256": "f0b8fec99c65231641d5d01558abb53fe8b81f131dc71519cb7994c9e297300d",
-
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
