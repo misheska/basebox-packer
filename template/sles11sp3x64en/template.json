@@ -9,6 +9,7 @@
       ],
       "boot_wait": "10s",
       "http_directory": "http",
+      "http_port_min": "8100",
       "iso_url": "D:/ISO/SLES 11 SP3/SLES-11-SP3-DVD-x86_64-GM-DVD1.iso",
       "iso_checksum": "480b70d50cbb538382dc2b9325221e1b",
       "iso_checksum_type": "md5",
@@ -31,15 +32,16 @@
       "boot_wait": "10s",
       "boot_command": [
         "<esc><enter><wait>",
-        "linux netdevice=eth0 netsetup=dhcp install=cd:/<wait>",
-        " lang=en_US autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst_en.xml<wait>",
-        " textmode=1<wait>",
+        "linux netdevice=eth0 netsetup=dhcp install=cd:/",
+        " lang=en_US autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst_en.xml",
+        " textmode=1",
         "<enter><wait>"
       ],
       "iso_url": "D:/ISO/SLES 11 SP3/SLES-11-SP3-DVD-x86_64-GM-DVD1.iso",
       "iso_checksum": "480b70d50cbb538382dc2b9325221e1b",
       "iso_checksum_type": "md5",
       "http_directory": "http",
+      "http_port_min": "8100",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -73,6 +75,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/win2008R2-datacenter-eval.box"
+    "output": "../../{{.Provider}}/sles11sp3x64en.box"
   }]
 }
