@@ -6,7 +6,7 @@
   "builders": [{
     "vm_name": "debian71",
     "type": "vmware",
-    "guest_os_type": "debian6-64",
+    "guest_os_type": "debian7-64",
     "http_directory": "http",
     "iso_url": "http://cdimage.debian.org/cdimage/archive/7.1.0/amd64/iso-dvd/debian-7.1.0-amd64-DVD-1.iso",
     "iso_checksum": "1c55a7d938fd9cb5fdbd6c41543c90e89e6cff8c67ae263933c13775d8bf0be3",
