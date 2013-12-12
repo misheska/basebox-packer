@@ -6,7 +6,7 @@
   "builders": [{
     "vm_name": "debian71-i386",
     "type": "vmware",
-    "guest_os_type": "debian6-64",
+    "guest_os_type": "debian7",
     "http_directory": "http",
     "iso_url": "http://cdimage.debian.org/cdimage/archive/7.1.0/i386/iso-dvd/debian-7.1.0-i386-DVD-1.iso",
     "iso_checksum": "cea26c7764188426da8c96bdf40eff138eb26fdc",
@@ -42,7 +42,7 @@
     "iso_url": "http://cdimage.debian.org/cdimage/archive/7.1.0/i386/iso-dvd/debian-7.1.0-i386-DVD-1.iso",
     "iso_checksum": "cea26c7764188426da8c96bdf40eff138eb26fdc",
     "iso_checksum_type": "sha1",
-    "guest_os_type": "Debian_64",
+    "guest_os_type": "Debian",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
     "virtualbox_version_file": ".vbox_version",
     "ssh_username": "vagrant",
