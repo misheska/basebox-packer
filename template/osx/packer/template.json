@@ -35,17 +35,17 @@
   "provisioners": [
     {
       "destination": "/private/tmp/kcpassword",
-      "source": "../scripts/support/kcpassword",
+      "source": "../script/support/kcpassword",
       "type": "file"
     },
     {
       "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
       "scripts": [
-        "../scripts/vagrant.sh",
-        "../scripts/vmware.sh",
-        "../scripts/xcode-cli-tools.sh",
-        "../scripts/chef-omnibus.sh",
-        "../scripts/puppet.sh"
+        "../script/vagrant.sh",
+        "../script/vmware.sh",
+        "../script/xcode-cli-tools.sh",
+        "../script/chef-omnibus.sh",
+        "../script/puppet.sh"
       ],
       "type": "shell"
     },
