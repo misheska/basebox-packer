@@ -1,16 +1,22 @@
 @echo off
 
-setlocal
+setlocal EnableDelayedExpansion EnableExtensions
 
-if exist "%SystemDrive%\Program Files (x86)" (
-  set ARCH=x86_64
-) else (
-  set ARCH=x86
-)
-set CYGWIN_SETUP_URL=http://cygwin.com/setup-%ARCH%.exe
-set CYGWIN_SETUP_LOCAL_PATH=%TEMP%\cygwin-setup.exe
+:: Force CYGWIN_ARCH to 32-bit - 64-bit seems to crash a lot
+set CYGWIN_ARCH=x86
+
+:: Force CYGWIN_ARCH to 64-bit - 32-bit seems to crash a lot on Windows 2012
+systeminfo | findstr /B /C:"OS Name" | findstr "2012"
+if not errorlevel 1 set CYGWIN_ARCH=x86_64
+
+:: Force CYGWIN_ARCH to 64-bit - 32-bit seems to crash a lot on Windows 2008
+systeminfo | findstr /B /C:"OS Name" | findstr "2008"
+if not errorlevel 1 set CYGWIN_ARCH=x86_64
+
+set CYGWIN_SETUP_URL=http://cygwin.com/setup-%CYGWIN_ARCH%.exe
+set CYGWIN_SETUP_LOCAL_PATH=%TEMP%\setup-%CYGWIN_ARCH%.exe
 set CYGWIN_HOME=%SystemDrive%\cygwin
-set CYGWIN_PACKAGES=openssh,wget
+set CYGWIN_PACKAGES=openssh
 set CYGWIN_MIRROR_URL=http://mirrors.kernel.org/sourceware/cygwin
 
 PATH=%PATH%;%CYGWIN_HOME%\bin
@@ -19,11 +25,11 @@ title Installing Cygwin and %CYGWIN_PACKAGES% to %CYGWIN_HOME%. Please wait...
 
 cd /D "%TEMP%"
 
-echo ==^> Downloading the Cygwin installer
+echo ==^> Downloading "%CYGWIN_SETUP_URL%" to "%CYGWIN_SETUP_LOCAL_PATH%"
 powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%CYGWIN_SETUP_URL%', '%CYGWIN_SETUP_LOCAL_PATH%')"
 
 echo ==^> Installing Cygwin
-"%CYGWIN_SETUP_LOCAL_PATH%" -a %ARCH% -q -R %CYGWIN_HOME% -P %CYGWIN_PACKAGES% -s %CYGWIN_MIRROR_URL%
+"%CYGWIN_SETUP_LOCAL_PATH%" -a %CYGWIN_ARCH% -q -R %CYGWIN_HOME% -P %CYGWIN_PACKAGES% -s %CYGWIN_MIRROR_URL%
 
 echo ==^> Stopping the ssh service
 cygrunsrv -E sshd
@@ -33,17 +39,18 @@ netsh advfirewall firewall add rule name="SSHD" dir=in action=allow program="%CY
 netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
 
 echo ==^> Make user home directories default to their windows profile directory
-bash -c 'ln -s "$(dirname $(cygpath -D))" /home/$USERNAME'
-bash -c 'mkpasswd -l -p "$(cygpath -H)" >/etc/passwd'
+bash -c "ln -s ""$(dirname $(cygpath -D))"" /home/$USERNAME"
+bash -c "mkpasswd -l -p ""$(cygpath -H)"" >/etc/passwd"
 
 echo ==^> Creating /etc/group (required by sshd)
-bash -c 'mkgroup -l >/etc/group'
+bash -c "mkgroup -l >/etc/group"
 
 echo ==^> set up sshd config files
-bash -c 'ssh-host-config -y -c "ntsecbinmode mintty nodosfilewarning" -w "abc&&123!!" '
+bash -c "ssh-host-config -y -c ""ntsecbinmode mintty nodosfilewarning"" -w ""abc&&123!!"" "
 
 echo ==^> Deleting the Cygwin installer and downloaded packages
-del /s /q "%TEMP%\*.*"
+del "%CYGWIN_SETUP_LOCAL_PATH%"
+for /D %%i in (%TEMP%\http*.*) do del /s /q "%%~i"
 
 echo ==^> Fixing corrupt recycle bin - see http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
 rd /s /q %SystemDrive%\$Recycle.bin
