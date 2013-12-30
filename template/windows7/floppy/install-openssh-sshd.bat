@@ -23,9 +23,6 @@ echo ==^> Download complete
 echo ==^> Installing "%OPENSSH_EXE%"
 cmd /c "%OPENSSH_EXE%" /S /port=22 /privsep=1 /password=D@rj33l1ng
 
-echo ==^> Deleting "%OPENSSH_EXE%"
-del "%OPENSSH_EXE%"
-
 echo ==^> Ensuring vagrant can login
 mkdir "%USERPROFILE%\.ssh"
 cmd /c %windir%\System32\icacls.exe "%USERPROFILE%" /grant %USERNAME%:(OI)(CI)F
@@ -50,3 +47,6 @@ echo ==^> Configuring firewall
 netsh advfirewall firewall add rule name="SSHD" dir=in action=allow service=OpenSSHd enable=yes
 netsh advfirewall firewall add rule name="SSHD" dir=in action=allow program="%ProgramFiles%\OpenSSH\usr\sbin\sshd.exe" enable=yes
 netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
+
+echo ==^> Deleting "%OPENSSH_EXE%"
+del "%OPENSSH_EXE%"
