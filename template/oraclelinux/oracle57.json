@@ -1,56 +1,56 @@
 {
   "variables": {
     "provisioner": "provisionerless",
-    "provisioner_version": ""
+    "provisioner_version": "",
+    "iso_url": "http://mirrors.dotsrc.org/oracle-linux/EL5/U7/x86_64/Enterprise-R5-U7-Server-x86_64-dvd.iso",
+    "iso_checksum": "04fcd6af234eebda71d8c336db050f42"
   },
-  "builders": [
-    {
-      "vm_name": "oracle57",
-      "type": "vmware",
-      "guest_os_type": "oraclelinux-64",
-      "http_directory": "http",
-      "iso_url": "http://mirrors.dotsrc.org/oracle-linux/EL5/U7/x86_64/Enterprise-R5-U7-Server-x86_64-dvd.iso",
-      "iso_checksum": "04fcd6af234eebda71d8c336db050f42",
-      "iso_checksum_type": "md5",
-      "ssh_username": "vagrant",
-      "ssh_password": "vagrant",
-      "ssh_wait_timeout": "10000s",
-      "tools_upload_flavor": "linux",
-      "boot_command": [
-        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
-      ],
-      "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -h now",
-      "disk_size": 10140,
-      "vmx_data": {
-        "memsize": "512",
-        "numvcpus": "1",
-        "cpuid.coresPerSocket": "1"
-      }
-    },
-    {
-      "vm_name": "oracle57",
-      "type": "virtualbox",
-      "http_directory": "http",
-      "iso_url": "http://mirrors.dotsrc.org/oracle-linux/EL5/U7/x86_64/Enterprise-R5-U7-Server-x86_64-dvd.iso",
-      "iso_checksum": "04fcd6af234eebda71d8c336db050f42",
-      "iso_checksum_type": "md5",
-      "guest_os_type": "RedHat_64",
-      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
-      "virtualbox_version_file": ".vbox_version",
-      "ssh_username": "vagrant",
-      "ssh_password": "vagrant",
-      "ssh_wait_timeout": "10000s",
-      "boot_command": [
-        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
-      ],
-      "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -h now",
-      "disk_size": 10140,
-      "vboxmanage": [
-        ["modifyvm", "{{.Name}}", "--memory", "512"],
-        ["modifyvm", "{{.Name}}", "--cpus", "1"]
-      ]
+  "builders": [{
+    "vm_name": "oracle57",
+    "type": "vmware-iso",
+    "guest_os_type": "oraclelinux-64",
+    "http_directory": "http",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
+    "iso_checksum_type": "md5",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "tools_upload_flavor": "linux",
+    "boot_command": [
+      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
+    ],
+    "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -h now",
+    "disk_size": 10140,
+    "vmx_data": {
+      "memsize": "512",
+      "numvcpus": "1",
+      "cpuid.coresPerSocket": "1"
     }
-  ],
+  },
+  {
+    "vm_name": "oracle57",
+    "type": "virtualbox-iso",
+    "http_directory": "http",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
+    "iso_checksum_type": "md5",
+    "guest_os_type": "RedHat_64",
+    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+    "virtualbox_version_file": ".vbox_version",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "boot_command": [
+      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
+    ],
+    "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -h now",
+    "disk_size": 10140,
+    "vboxmanage": [
+      ["modifyvm", "{{.Name}}", "--memory", "512"],
+      ["modifyvm", "{{.Name}}", "--cpus", "1"]
+    ]
+  }],
   "provisioners": [{
     "type": "shell",
     "environment_vars": [
