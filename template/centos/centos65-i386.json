@@ -1,15 +1,17 @@
 {
   "variables": {
     "provisioner": "provisionerless",
-    "provisioner_version": ""
+    "provisioner_version": "",
+    "iso_url": "http://mirrors.kernel.org/centos/6.5/isos/i386/CentOS-6.5-i386-bin-DVD1.iso",
+    "iso_checksum": "67ea68068ae53d1f23431072ec0288b3e1abfe4d"
   },
   "builders": [{
     "vm_name": "centos65-i386",
-    "type": "vmware",
+    "type": "vmware-iso",
     "guest_os_type": "centos",
     "http_directory": "http",
-    "iso_url": "http://mirrors.kernel.org/centos/6.5/isos/i386/CentOS-6.5-i386-bin-DVD1.iso",
-    "iso_checksum": "67ea68068ae53d1f23431072ec0288b3e1abfe4d",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha1",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
@@ -28,10 +30,10 @@
   },
   {
     "vm_name": "centos65-i386",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
-    "iso_url": "http://mirrors.kernel.org/centos/6.5/isos/i386/CentOS-6.5-i386-bin-DVD1.iso",
-    "iso_checksum": "67ea68068ae53d1f23431072ec0288b3e1abfe4d",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha1",
     "guest_os_type": "RedHat",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",

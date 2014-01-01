@@ -1,15 +1,17 @@
 {
   "variables": {
     "provisioner": "provisionerless",
-    "provisioner_version": ""
+    "provisioner_version": "",
+    "iso_url": "http://mirror.symnds.com/distributions/CentOS-vault/5.9/isos/i386/CentOS-5.9-i386-bin-DVD-1of2.iso",
+    "iso_checksum": "78f976b190ce44716eb672f71203df978474dfb4"
   },
   "builders": [{
     "vm_name": "centos59-i386",
-    "type": "vmware",
+    "type": "vmware-iso",
     "guest_os_type": "centos",
     "http_directory": "http",
-    "iso_url": "http://mirror.symnds.com/distributions/CentOS-vault/5.9/isos/i386/CentOS-5.9-i386-bin-DVD-1of2.iso",
-    "iso_checksum": "78f976b190ce44716eb672f71203df978474dfb4",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha1",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
@@ -28,10 +30,10 @@
   },
   {
     "vm_name": "centos59-i386",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
-    "iso_url": "http://mirror.symnds.com/distributions/CentOS-vault/5.9/isos/i386/CentOS-5.9-i386-bin-DVD-1of2.iso",
-    "iso_checksum": "78f976b190ce44716eb672f71203df978474dfb4",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha1",
     "guest_os_type": "RedHat",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
