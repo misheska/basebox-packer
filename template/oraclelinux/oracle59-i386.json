@@ -29,7 +29,7 @@
     },
     {
       "vm_name": "oracle59-i386",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "http_directory": "http",
       "iso_url": "http://mirrors.dotsrc.org/oracle-linux/EL5/U9/i386/Enterprise-R5-U9-Server-i386-dvd.iso",
       "iso_checksum": "d6207fddf102c053dba05a29ed4770a3",

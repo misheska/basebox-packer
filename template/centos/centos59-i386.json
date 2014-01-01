@@ -28,7 +28,7 @@
   },
   {
     "vm_name": "centos59-i386",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "http://mirror.symnds.com/distributions/CentOS-vault/5.9/isos/i386/CentOS-5.9-i386-bin-DVD-1of2.iso",
     "iso_checksum": "78f976b190ce44716eb672f71203df978474dfb4",

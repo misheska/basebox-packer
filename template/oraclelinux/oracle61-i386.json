@@ -29,7 +29,7 @@
     },
     {
       "vm_name": "oracle61-i386",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "http_directory": "http",
       "iso_url": "http://mirrors.dotsrc.org/oracle-linux/OL6/U1/x86/OracleLinux-R6-U1-Server-i386-dvd.iso",
       "iso_checksum": "237419b43e949f2596b81cf9d63221cf16904d25c28ba0da9e0b3937517c6fa5",

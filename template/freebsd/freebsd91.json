@@ -37,7 +37,7 @@
   },
   {
     "vm_name": "freebsd91",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "guest_os_type": "FreeBSD_64",
     "http_directory": "http",
     "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/ISO-IMAGES/9.1/FreeBSD-9.1-RELEASE-amd64-disc1.iso",

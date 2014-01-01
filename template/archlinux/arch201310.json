@@ -29,7 +29,7 @@
   },
   {
     "vm_name": "arch201310",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "iso_url": "http://mirrors.kernel.org/archlinux/iso/2013.10.01/archlinux-2013.10.01-dual.iso",
     "iso_checksum": "c0de9cde5f3c8f765a8fad06a07c5f6db3a93b15",
     "iso_checksum_type": "sha1",

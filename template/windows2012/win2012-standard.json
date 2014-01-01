@@ -33,7 +33,7 @@
     },
     {
       "vm_name": "win2012-standard",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "guest_os_type": "Windows2012_64",
       "iso_url": "../../iso/en_windows_server_2012_x64_dvd_915478.iso",
       "iso_checksum": "da91135483e24689bfdaf05d40301506",

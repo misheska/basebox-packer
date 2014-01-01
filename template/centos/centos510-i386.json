@@ -28,7 +28,7 @@
   },
   {
     "vm_name": "centos510-i386",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "http://mirrors.kernel.org/centos/5.10/isos/i386/CentOS-5.10-i386-bin-DVD-1of2.iso",
     "iso_checksum": "ec0acc2a4f6a813ea85bf1e36acb03f0",

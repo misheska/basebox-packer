@@ -29,7 +29,7 @@
     },
     {
       "vm_name": "oracle57",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "http_directory": "http",
       "iso_url": "http://mirrors.dotsrc.org/oracle-linux/EL5/U7/x86_64/Enterprise-R5-U7-Server-x86_64-dvd.iso",
       "iso_checksum": "04fcd6af234eebda71d8c336db050f42",

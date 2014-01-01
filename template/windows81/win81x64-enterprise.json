@@ -34,7 +34,7 @@
     },
     {
       "vm_name": "win81x64-enterprise",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "guest_os_type": "Windows8_64",
       "iso_url": "../../iso/en_windows_8_1_enterprise_x64_dvd_2971902.iso",
       "iso_checksum": "8e194185fcce4ea737f274ee9005ddf0",
