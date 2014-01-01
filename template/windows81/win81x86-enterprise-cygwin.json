@@ -34,7 +34,7 @@
     },
     {
       "vm_name": "win81x86-enterprise-cygwin",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "guest_os_type": "Windows8",
       "iso_url": "../../iso/en_windows_8_1_enterprise_x86_dvd_2972289.iso",
       "iso_checksum": "bf620a67b5dda1e18e9ce17d25711201",

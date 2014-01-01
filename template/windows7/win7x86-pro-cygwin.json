@@ -33,7 +33,7 @@
     },
     {
       "vm_name": "win7x86-pro-cygwin",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "guest_os_type": "Windows7",
       "iso_url": "../../iso/en_windows_7_professional_with_sp1_vl_build_x86_dvd_u_677896.iso",
       "iso_checksum": "f55d3916622dd4125be6336876559690",

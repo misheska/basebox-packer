@@ -29,7 +29,7 @@
   },
   {
     "vm_name": "fedora20",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "http://mirrors.kernel.org/fedora/releases/test/20-Beta/Fedora/x86_64/iso/Fedora-20-Beta-x86_64-DVD.iso",
     "iso_checksum": "04e76a36eb97d6fcdc35e6a2ecdb7b7631a4d220cf70cfbffd0f17db000ae3ac",

@@ -33,7 +33,7 @@
     },
     {
       "vm_name": "win7x64-enterprise",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "guest_os_type": "Windows7_64",
       "iso_url": "../../iso/en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
       "iso_checksum": "6467c3875955df4514395f0afcaaa62a",

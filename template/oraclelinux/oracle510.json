@@ -29,7 +29,7 @@
     },
     {
       "vm_name": "oracle510",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "http_directory": "http",
       "iso_url": "../../iso/V40139-01.iso",
       "iso_checksum": "1aa0a1246b1a55108abf20aa2bcac00e",

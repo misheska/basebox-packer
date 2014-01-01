@@ -47,7 +47,7 @@
   },
   {
     "vm_name": "ubuntu1310",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "http://releases.ubuntu.com/13.10/ubuntu-13.10-server-amd64.iso",
     "iso_checksum": "5dd72c694c3a7e06a3b4dd651ca26cfc70985004",

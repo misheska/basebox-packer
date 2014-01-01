@@ -33,7 +33,7 @@
     },
     {
       "vm_name": "win2008r2-datacenter",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "guest_os_type": "Windows2008_64",
       "iso_url": "../../iso/en_windows_server_2008_r2_with_sp1_vl_build_x64_dvd_617403.iso",
       "iso_checksum": "8d397b69135d207452a78c3c3051339d",

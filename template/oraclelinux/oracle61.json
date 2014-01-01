@@ -29,7 +29,7 @@
     },
     {
       "vm_name": "centos61",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "http_directory": "http",
       "iso_url": "http://mirrors.dotsrc.org/oracle-linux/OL6/U1/x86_64/OracleLinux-R6-U1-Server-x86_64-dvd.iso",
       "iso_checksum": "8ecb3fdd8ad3a5f9802b483a3c688e4b779e6b6b6a09758831a825d6dfdc5be7",

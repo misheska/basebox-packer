@@ -30,7 +30,7 @@
     },
     {
       "vm_name": "opensuse114",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "guest_os_type": "OpenSUSE_64",
       "http_directory": "http",
       "iso_url": "http://download.opensuse.org/distribution/11.4/iso/openSUSE-11.4-DVD-x86_64.iso",

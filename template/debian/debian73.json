@@ -40,7 +40,7 @@
   },
   {
     "vm_name": "debian73",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "{{user `iso_url`}}",
     "iso_checksum": "{{user `iso_checksum`}}",

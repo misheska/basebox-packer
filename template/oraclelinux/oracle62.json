@@ -29,7 +29,7 @@
     },
     {
       "vm_name": "oracle62",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "http_directory": "http",
       "iso_url": "http://mirrors.dotsrc.org/oracle-linux/OL6/U2/x86_64/OracleLinux-R6-U2-Server-x86_64-dvd.iso",
       "iso_checksum": "cf84edfe9167bc46195cb426b4ef74add6c81aa2",

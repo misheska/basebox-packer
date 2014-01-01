@@ -47,7 +47,7 @@
   },
   {
     "vm_name": "ubuntu1310-i386",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "http://releases.ubuntu.com/13.10/ubuntu-13.10-server-i386.iso",
     "iso_checksum": "2dda06d01d3ad495b53f7c03a4313b4af76a1c96",

@@ -21,7 +21,7 @@ virtualbox/%.box: %.json
 	cd $(dir $<); \
 	rm -rf output-virtualbox; \
 	mkdir -p ../../virtualbox; \
-	packer build -only=virtualbox $(notdir $<)
+	packer build -only=virtualbox-iso $(notdir $<)
 
 .PHONY: list
 list:

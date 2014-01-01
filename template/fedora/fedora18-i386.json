@@ -29,7 +29,7 @@
   },
   {
     "vm_name": "fedora18-i386",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "http://mirrors.kernel.org/fedora/releases/18/Fedora/i386/iso/Fedora-18-i386-DVD.iso",
     "iso_checksum": "a22e6ab7b0e5e93397e4a1d8d994693d0afb9ad46b1f47a4fe10bfbbc2e7f354",
