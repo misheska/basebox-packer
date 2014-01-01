@@ -1,15 +1,17 @@
 {
   "variables": {
     "provisioner": "provisionerless",
-    "provisioner_version": ""
+    "provisioner_version": "",
+    "iso_url": "http://mirrors.kernel.org/fedora/releases/20/Fedora/x86_64/iso/Fedora-20-x86_64-DVD.iso",
+    "iso_checksum": "f2eeed5102b8890e9e6f4b9053717fe73031e699c4b76dc7028749ab66e7f917"
   },
   "builders": [{
     "vm_name": "fedora20",
-    "type": "vmware",
+    "type": "vmware-iso",
     "guest_os_type": "fedora-64",
     "http_directory": "http",
-    "iso_url": "http://mirrors.kernel.org/fedora/releases/test/20-Beta/Fedora/x86_64/iso/Fedora-20-Beta-x86_64-DVD.iso",
-    "iso_checksum": "04e76a36eb97d6fcdc35e6a2ecdb7b7631a4d220cf70cfbffd0f17db000ae3ac",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha256",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
@@ -29,10 +31,10 @@
   },
   {
     "vm_name": "fedora20",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
-    "iso_url": "http://mirrors.kernel.org/fedora/releases/test/20-Beta/Fedora/x86_64/iso/Fedora-20-Beta-x86_64-DVD.iso",
-    "iso_checksum": "04e76a36eb97d6fcdc35e6a2ecdb7b7631a4d220cf70cfbffd0f17db000ae3ac",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha256",
     "guest_os_type": "Fedora_64",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
