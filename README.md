@@ -2,7 +2,7 @@ basebox
 =======
 
 Packer definitions for vagrant VirtualBox and VMware baseboxes. 
-These are the vagrant baseboxes I use for my own personal projents. 
+These are the vagrant baseboxes I use for my own personal projects. 
 For more informations, see original project
 <https://github.com/misheska/basebox-packer>
 This project is a fork running packer on a Windows host.
@@ -10,10 +10,15 @@ This project is a fork running packer on a Windows host.
 Getting Started
 ===============
 
-For Unix, a GNU Make makefile is provided to support automated builds.  It
-assumes that both GNU Make and Packer are in the PATH.  Download and install
-Packer from <http://www.packer.io/downloads.html>  
-On a Windows host, use the make.bat instead.
+To install Packer on a Windows host, use this command:
+
+    cinst packer
+
+If you don't know what cinst is, head over to <http://chocolatey.org> and install Chocolatey first. You also propably need VirtualBox which could be installed with
+
+    cinst virtualbox
+
+For Windows there is a make.bat file which does some helpful steps for you.
 
 To build a VirtualBox box:
 
