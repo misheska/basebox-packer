@@ -1,16 +1,18 @@
 {
   "variables": {
     "provisioner": "provisionerless",
-    "provisioner_version": ""
+    "provisioner_version": "",
+    "iso_url": "http://releases.ubuntu.com/10.04.4/ubuntu-10.04.4-server-amd64.iso",
+    "iso_checksum": "796e80702d65f2ee96e88874a1ab437e24df9cd6"
   },
   "builders": [{
     "vm_name": "ubuntu1004",
-    "type": "vmware",
+    "type": "vmware-iso",
     "guest_os_type": "ubuntu-64",
     "http_directory": "http",
-    "iso_url": "http://releases.ubuntu.com/10.04.4/ubuntu-10.04.4-server-amd64.iso",
-    "iso_checksum": "9b218654cdcdf9722171648c52f8a088",
-    "iso_checksum_type": "md5",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
+    "iso_checksum_type": "sha1",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
     "ssh_wait_timeout": "10000s",
@@ -46,11 +48,11 @@
   },
   {
     "vm_name": "ubuntu1004",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
-    "iso_url": "http://releases.ubuntu.com/10.04.4/ubuntu-10.04.4-server-amd64.iso",
-    "iso_checksum": "9b218654cdcdf9722171648c52f8a088",
-    "iso_checksum_type": "md5",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
+    "iso_checksum_type": "sha1",
     "guest_os_type": "Ubuntu_64",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
     "virtualbox_version_file": ".vbox_version",

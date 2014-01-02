@@ -1,15 +1,17 @@
 {
   "variables": {
     "provisioner": "provisionerless",
-    "provisioner_version": ""
+    "provisioner_version": "",
+    "iso_url": "http://releases.ubuntu.com/13.10/ubuntu-13.10-server-i386.iso",
+    "iso_checksum": "2dda06d01d3ad495b53f7c03a4313b4af76a1c96"
   },
   "builders": [{
     "vm_name": "ubuntu1310-i386",
-    "type": "vmware",
+    "type": "vmware-iso",
     "guest_os_type": "ubuntu",
     "http_directory": "http",
-    "iso_url": "http://releases.ubuntu.com/13.10/ubuntu-13.10-server-i386.iso",
-    "iso_checksum": "2dda06d01d3ad495b53f7c03a4313b4af76a1c96",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha1",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
@@ -47,10 +49,10 @@
   },
   {
     "vm_name": "ubuntu1310-i386",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
-    "iso_url": "http://releases.ubuntu.com/13.10/ubuntu-13.10-server-i386.iso",
-    "iso_checksum": "2dda06d01d3ad495b53f7c03a4313b4af76a1c96",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha1",
     "guest_os_type": "Ubuntu",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
