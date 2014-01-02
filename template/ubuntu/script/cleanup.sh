@@ -15,3 +15,6 @@ if [ -d "/var/lib/dhcp" ]; then
     echo "cleaning up dhcp leases"
     rm /var/lib/dhcp/*
 fi
+
+apt-get -y autoremove
+apt-get -y clean

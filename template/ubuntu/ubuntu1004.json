@@ -97,6 +97,7 @@
     "scripts": [
       "script/base.sh",
       "script/vagrant.sh",
+      "script/sshd.sh",
       "script/vmtools.sh",
       "script/provisioner.sh",
       "script/cleanup.sh",
