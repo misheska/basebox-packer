@@ -2,7 +2,7 @@
   "builders": [
     {
       "vm_name": "osx107",
-      "type": "vmware",
+      "type": "vmware-iso",
       "guest_os_type": "darwin11-64",
       "iso_url": "../../iso/OSX_InstallESD_10.7_11A511.dmg",
       "iso_checksum": "82f1cc4fe1eaa080382042b527214473",
