@@ -1,6 +1,6 @@
 #!/bin/bash -eux
 
-if [ $PACKER_BUILDER_TYPE == 'vmware' ]; then
+if [ $PACKER_BUILDER_TYPE == 'vmware-iso' ]; then
     # Uninstall fuse to fake out the vmware install so it won't try to
     # enable the VMware blocking filesystem
     yum erase -y fuse
@@ -94,7 +94,7 @@ if [ $PACKER_BUILDER_TYPE == 'vmware' ]; then
     rm /home/vagrant/linux.iso
     umount /mnt/cdrom
     rmdir /mnt/cdrom
-elif [ $PACKER_BUILDER_TYPE == 'virtualbox' ]; then
+elif [ $PACKER_BUILDER_TYPE == 'virtualbox-iso' ]; then
     echo "Installing VirtualBox guest additions"
 
     # Assume that we've installed all the prerequisites:

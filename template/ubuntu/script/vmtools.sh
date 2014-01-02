@@ -201,7 +201,7 @@ function install_vmware_tools_ubuntu1310 {
     /tmp/vmware-tools-distrib/vmware-install.pl -d
 }
 
-if [ $PACKER_BUILDER_TYPE == 'vmware' ]; then
+if [ $PACKER_BUILDER_TYPE == 'vmware-iso' ]; then
     echo "Installing VMware Tools"
     apt-get install -y linux-headers-$(uname -r) build-essential perl
 
@@ -233,7 +233,7 @@ if [ $PACKER_BUILDER_TYPE == 'vmware' ]; then
 
     #apt-get -y remove linux-headers-$(uname -r) build-essential perl
     #apt-get -y autoremove
-elif [ $PACKER_BUILDER_TYPE == 'virtualbox' ]; then
+elif [ $PACKER_BUILDER_TYPE == 'virtualbox-iso' ]; then
     echo "Installing VirtualBox guest additions"
 
     apt-get install -y linux-headers-$(uname -r) build-essential perl

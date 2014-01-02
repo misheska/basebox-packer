@@ -23,7 +23,7 @@ echo ==^> Download complete
 echo ==^> Installing 7zip from "%SEVENZIP_INSTALL_LOCAL_PATH%"
 msiexec /qb /i "%SEVENZIP_INSTALL_LOCAL_PATH%"
 
-if "%PACKER_BUILDER_TYPE%" equ "vmware" (
+if "%PACKER_BUILDER_TYPE%" equ "vmware-iso" (
   echo ==^> Extracting the VMWare Tools installer
   "%SystemDrive%\Program Files\7-Zip\7z.exe" x %USERPROFILE%\windows.iso -o!TEMP!\vmware
 
@@ -34,7 +34,7 @@ if "%PACKER_BUILDER_TYPE%" equ "vmware" (
   del /F /S /Q "%TEMP%\vmware"
 )
 
-if "%PACKER_BUILDER_TYPE%" equ "virtualbox" (
+if "%PACKER_BUILDER_TYPE%" equ "virtualbox-iso" (
   echo ==^> Extracting the VirtualBox Guest Additions installer
   "%SystemDrive%\Program Files\7-Zip\7z.exe" x %USERPROFILE%\VBoxGuestAdditions.iso -o!TEMP!\virtualbox
 
