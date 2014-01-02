@@ -1,58 +1,75 @@
 {
+  "builders": [
+    {
+      "boot_command": [
+        "<tab><wait><tab><wait><enter><wait5>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><enter><wait5>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>",
+        "<tab><wait><tab><wait><enter><wait5>",
+        "ger<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>",
+        "vagrant<tab>ubuntu1310x64desktop<tab>vagrant<tab>vagrant<tab>vagrant<tab><tab><tab><tab><enter><wait5>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>"
+      ],
+      "boot_wait": "40s",
+      "disk_size": 20480,
+      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+      "guest_os_type": "Ubuntu_64",
+      "http_directory": "http",
+      "iso_checksum": "3bcd2de27a219eae7bcc0ca060a767f86c7ad160",
+      "iso_checksum_type": "sha1",
+      "iso_url": "D:/ISO/Ubuntu/ubuntu-13.10-desktop-amd64.iso",
+      "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "10000s",
+      "type": "virtualbox-iso",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "512"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "1"
+        ]
+      ],
+      "virtualbox_version_file": ".vbox_version",
+      "vm_name": "ubuntu1310x64-desktop"
+    }
+  ],
+  "post-processors": [
+    {
+      "keep_input_artifact": false,
+      "output": "../../{{.Provider}}/ubuntu1310x64-desktop.box",
+      "type": "vagrant"
+    }
+  ],
+  "provisioners": [
+    {
+      "environment_vars": [
+        "PROVISIONER={{user `provisioner`}}",
+        "PROVISIONER_VERSION={{user `provisioner_version`}}"
+      ],
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+      "scripts": [
+        "script/base.sh",
+        "script/vagrant.sh",
+        "script/vmtools.sh",
+        "script/provisioner.sh",
+        "script/cleanup.sh",
+        "script/zerodisk.sh"
+      ],
+      "type": "shell"
+    }
+  ],
   "variables": {
     "provisioner": "provisionerless",
     "provisioner_version": ""
-  },
-  "builders": [{
-    "vm_name": "ubuntu1310x64-desktop",
-    "type": "virtualbox",
-    "http_directory": "http",
-    "iso_url": "D:/ISO/Ubuntu/ubuntu-13.10-desktop-amd64.iso",
-    "iso_checksum": "3bcd2de27a219eae7bcc0ca060a767f86c7ad160",
-    "iso_checksum_type": "sha1",
-    "guest_os_type": "Ubuntu_64",
-    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
-    "virtualbox_version_file": ".vbox_version",
-    "ssh_username": "vagrant",
-    "ssh_password": "vagrant",
-    "ssh_wait_timeout": "10000s",
-    "boot_wait": "40s",
-    "boot_command": [
-      "<tab><wait><tab><wait><enter><wait5>",
-      "<tab><wait><tab><wait><tab><wait><tab><wait><enter><wait5>",
-      "<tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>",
-      "<tab><wait><tab><wait><enter><wait5>",
-      "ger<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>",
-      "vagrant<tab>ubuntu1310x64desktop<tab>vagrant<tab>vagrant<tab>vagrant<tab><tab><tab><tab><enter><wait5>",
-      "<tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>",
-      "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>"
-    ],
-    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
-    "disk_size": 20480,
-    "vboxmanage": [
-      ["modifyvm", "{{.Name}}", "--memory", "512"],
-      ["modifyvm", "{{.Name}}", "--cpus", "1"]
-    ]
-  }],
-  "provisioners": [{
-    "type": "shell",
-    "environment_vars": [
-      "PROVISIONER={{user `provisioner`}}",
-      "PROVISIONER_VERSION={{user `provisioner_version`}}"
-    ],
-    "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
-    "scripts": [
-      "script/base.sh",
-      "script/vagrant.sh",
-      "script/vmtools.sh",
-      "script/provisioner.sh",
-      "script/cleanup.sh",
-      "script/zerodisk.sh"
-    ]
-  }],
-  "post-processors": [{
-    "type": "vagrant",
-    "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/ubuntu1310x64-desktop.box"
-  }]
+  }
 }
+

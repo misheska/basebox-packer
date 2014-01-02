@@ -26,3 +26,9 @@ To build a VMware Fusion/VMware Workstation box:
     make list
     # Choose a definition, like 'vmware/win7x64en-enterprise'
     make vmware/win7x64en-enterprise
+
+To fix all packer templates after a packer update (eg. 0.4.x -> 0.5.0)
+call this:
+
+    make fix
+

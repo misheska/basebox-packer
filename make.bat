@@ -4,6 +4,7 @@ set CUR=%~dp0
 set FAVOR=%~p1
 if "listx" == "%1x" goto list
 if "cleanx" == "%1x" goto clean
+if "fixx" == "%1x" goto fix
 if "vmware" == "%FAVOR:~-7,6%" set FAVOR=vmware
 if "virtualbox" == "%FAVOR:~-11,10%" set FAVOR=virtualbox
 if "%FAVOR%" == "vmware" goto make
@@ -31,6 +32,20 @@ cd /D "%CUR%"
 echo.
 echo A log file of this step could be found at %LOGNAME%
 call parselog.bat %LOGNAME%
+goto done
+
+:fix
+set PACKER_LOG=
+set PACKER_LOG_PATH=
+cd /D "%CUR%"
+echo Fixing all templates...
+for /F " usebackq delims==" %%i in (`dir /b template`) do (
+  if exist template\%%i\template.json (
+    packer fix template\%%i\template.json >template\%%i\template.json.new
+    copy /y template\%%i\template.json.new template\%%i\template.json
+    del template\%%i\template.json.new
+  )
+)
 goto done
 
 :list
