@@ -27,7 +27,7 @@ if "%PACKER_TEMP_DIR%x" == "x" set "PACKER_TEMP_DIR=%CUR%\packer_temp"
 set TEMP=%PACKER_TEMP_DIR%
 set TMP=%PACKER_TEMP_DIR%
 if not exist "%PACKER_TEMP_DIR%" mkdir "%PACKER_TEMP_DIR%"
-packer build -only=%FAVOR% template.json
+packer build -only=%FAVOR%-iso template.json
 cd /D "%CUR%"
 echo.
 echo A log file of this step could be found at %LOGNAME%
