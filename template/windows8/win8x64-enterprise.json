@@ -1,16 +1,18 @@
 {
   "variables": {
     "provisioner": "provisionerless",
-    "provisioner_version": ""
+    "provisioner_version": "",
+    "iso_url": "../../iso/en_windows_8_enterprise_x64_dvd_917522.iso",
+    "iso_checksum": "4eadfe83e736621234c63e8465986f0af6aa3c82"
   },
   "builders": [
     {
       "vm_name": "win8x64-enterprise",
-      "type": "vmware",
+      "type": "vmware-iso",
       "guest_os_type": "windows8-64",
-      "iso_url": "../../iso/en_windows_8_enterprise_x64_dvd_917522.iso",
-      "iso_checksum": "27aa354b8088527ffcd32007b51b25bf",
-      "iso_checksum_type": "md5",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_checksum_type": "sha1",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "floppy_files": [
@@ -33,11 +35,11 @@
     },
     {
       "vm_name": "win8x64-enterprise",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "guest_os_type": "Windows8_64",
-      "iso_url": "../../iso/en_windows_8_enterprise_x64_dvd_917522.iso",
-      "iso_checksum": "27aa354b8088527ffcd32007b51b25bf",
-      "iso_checksum_type": "md5",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_checksum_type": "sha1",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",

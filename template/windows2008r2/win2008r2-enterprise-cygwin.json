@@ -1,16 +1,18 @@
 {
   "variables": {
     "provisioner": "provisionerless",
-    "provisioner_version": ""
+    "provisioner_version": "",
+    "iso_url": "../../iso/en_windows_server_2008_r2_with_sp1_vl_build_x64_dvd_617403.iso",
+      "iso_checksum": "7e7e9425041b3328ccf723a0855c2bc4f462ec57"
   },
   "builders": [
     {
       "vm_name": "win2008r2-enterprise-cygwin",
-      "type": "vmware",
+      "type": "vmware-iso",
       "guest_os_type": "windows7srv-64",
-      "iso_url": "../../iso/en_windows_server_2008_r2_with_sp1_vl_build_x64_dvd_617403.iso",
-      "iso_checksum": "8d397b69135d207452a78c3c3051339d",
-      "iso_checksum_type": "md5",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_checksum_type": "sha1",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
@@ -33,11 +35,11 @@
     },
     {
       "vm_name": "win2008r2-enterprise-cygwin",
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "guest_os_type": "Windows2008_64",
-      "iso_url": "../../iso/en_windows_server_2008_r2_with_sp1_vl_build_x64_dvd_617403.iso",
-      "iso_checksum": "8d397b69135d207452a78c3c3051339d",
-      "iso_checksum_type": "md5",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_checksum_type": "sha1",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
