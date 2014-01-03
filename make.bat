@@ -18,7 +18,7 @@ if not exist "%CUR%\log" mkdir "%CUR%\log"
 set TEMPLATE=%~n1
 if not exist %FAVOR% mkdir %FAVOR%
 cd /D template\%TEMPLATE%\
-if exist output-%FAVOR% rmdir /S /Q output-%FAVOR%
+if exist output-%FAVOR% rmdir /S /Q output-%FAVOR%-iso
 set LOGNAME=log\packer-%FAVOR%-%TEMPLATE%.log
 if "%PACKER_CACHE_DIR%x" == "x" set "PACKER_CACHE_DIR=%CUR%\packer_cache"
 set PACKER_LOG_PATH=..\..\%LOGNAME%
@@ -58,8 +58,8 @@ goto done
 :clean
 cd /D "%CUR%"
 echo Deleting all template/*/output-* directories
-for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\output-virtualbox rmdir /s /q template\%%i\output-virtualbox
-for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\output-vmware rmdir /s /q template\%%i\output-vmware
+for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\output-virtualbox-iso rmdir /s /q template\%%i\output-virtualbox-iso
+for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\output-vmware-iso rmdir /s /q template\%%i\output-vmware-iso
 goto done
 
 :done
