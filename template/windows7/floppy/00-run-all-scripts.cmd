@@ -30,5 +30,3 @@ for /F %%I in ('dir /b /on *.bat *.cmd') do (
 echo|time|findstr "current" >>"%TEMP%\%~n0.log"
 echo %0: finished. >>"%TEMP%\%~n0.log"
 title %0: finished
-
-pause
