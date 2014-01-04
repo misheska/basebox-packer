@@ -24,7 +24,6 @@
         "floppy/install-openssh-sshd.bat"
       ],
       "tools_upload_flavor": "windows",
-      "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
       "disk_size": 40960,
       "vmx_data": {
@@ -41,7 +40,6 @@
       "iso_url": "{{ user `iso_url` }}",
       "iso_checksum": "{{ user `iso_checksum` }}",
       "iso_checksum_type": "sha1",
-      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "10000s",
@@ -53,7 +51,6 @@
         "floppy/install-openssh-sshd.bat",
         "floppy/oracle-cert.cer"
       ],
-      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
       "disk_size": 40960,
       "vboxmanage": [
