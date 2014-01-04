@@ -61,6 +61,10 @@
             <UserAccounts>
                 <LocalAccounts>
                     <LocalAccount wcm:action="add">
+                        <Password>
+                            <Value>vagrant</Value>
+                            <PlainText>true</PlainText>
+                        </Password>
                         <Description>Vagrant User</Description>
                         <DisplayName>vagrant</DisplayName>
                         <Group>Administrators</Group>
@@ -235,5 +239,5 @@
             <EnableLUA>false</EnableLUA>
         </component>
     </settings>
-    <cpi:offlineImage cpi:source="wim:c:/users/misheska/sources/win2012r2/install.wim#Windows Server 2012 R2 SERVERDATACENTER" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+    <cpi:offlineImage cpi:source="catalog:c:/users/misheska/sources/win2012r2/install_windows server 2012 r2 serverdatacenter.clg" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 </unattend>
