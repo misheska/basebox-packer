@@ -18,10 +18,10 @@
       "floppy_files": [
         "floppy/win7x86-pro/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
-        "floppy/set-power-config.bat",
-        "floppy/disable-computer-password-change.bat",
-        "floppy/disable-network-prompt.bat",
-        "floppy/install-cygwin-sshd.bat"
+        "floppy/powerconfig.bat",
+        "floppy/passwordchange.bat",
+        "floppy/networkprompt.bat",
+        "floppy/cygwinsshd.bat"
       ],
       "tools_upload_flavor": "windows",
       "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
@@ -48,10 +48,10 @@
       "floppy_files": [
         "floppy/win7x86-pro/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
-        "floppy/set-power-config.bat",
-        "floppy/disable-computer-password-change.bat",
-        "floppy/disable-network-prompt.bat",
-        "floppy/install-cygwin-sshd.bat",
+        "floppy/powerconfig.bat",
+        "floppy/passwordchange.bat",
+        "floppy/networkprompt.bat",
+        "floppy/cygwin.bat",
         "floppy/oracle-cert.cer"
       ],
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
