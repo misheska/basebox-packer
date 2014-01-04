@@ -85,7 +85,7 @@
                     <CommandLine>cmd.exe /c a:\00-run-all-scripts.cmd</CommandLine>
                     <Description>Run all *.bat and *.cmd scripts on dirve A:</Description>
                     <Order>1</Order>
-                    <RequiresUserInput>true</RequiresUserInput>
+                    <RequiresUserInput>false</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <Order>10</Order>
