@@ -1,6 +1,8 @@
 #!/bin/bash -eux
 
-if [ $PACKER_BUILDER_TYPE == 'vmware' ]; then
+case "$PACKER_BUILDER_TYPE" in
+
+vmware-iso|vmware-ovf)
     echo "Installing VMware Tools"
     apt-get install -y linux-headers-$(uname -r) build-essential perl
 
@@ -15,7 +17,9 @@ if [ $PACKER_BUILDER_TYPE == 'vmware' ]; then
 
     apt-get -y remove linux-headers-$(uname -r) build-essential perl
     apt-get -y autoremove
-elif [ $PACKER_BUILDER_TYPE == 'virtualbox' ]; then
+    ;;
+
+virtualbox-iso|virtualbox-ovf)
     echo "Installing VirtualBox guest additions"
 
     apt-get install -y linux-headers-$(uname -r) build-essential perl
@@ -26,4 +30,11 @@ elif [ $PACKER_BUILDER_TYPE == 'virtualbox' ]; then
     sh /mnt/VBoxLinuxAdditions.run --nox11
     umount /mnt
     rm /home/vagrant/VBoxGuestAdditions_${VBOX_VERSION}.iso
-fi
+    ;;
+
+*)
+    echo "Unknown Packer Builder Type >>$PACKER_BUILDER_TYPE<< selected."
+    echo "Known are virtualbox-iso|virtualbox-ovf|vmware-iso|vmware-ovf."
+    ;;
+
+esac

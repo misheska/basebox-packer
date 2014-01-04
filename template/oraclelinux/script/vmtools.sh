@@ -1,6 +1,8 @@
 #!/bin/bash -eux
 
-if [ $PACKER_BUILDER_TYPE == 'vmware-iso' ]; then
+case "$PACKER_BUILDER_TYPE" in
+
+vmware-iso|vmware-ovf)
     if grep -q -i "release 6" /etc/redhat-release ; then
         # Uninstall fuse to fake out the vmware install so it won't try to
         # enable the VMware blocking filesystem
@@ -18,7 +20,9 @@ if [ $PACKER_BUILDER_TYPE == 'vmware-iso' ]; then
     rm /home/vagrant/linux.iso
     umount /mnt/cdrom
     rmdir /mnt/cdrom
-elif [ $PACKER_BUILDER_TYPE == 'virtualbox-iso' ]; then
+    ;;
+
+virtualbox-iso|virtualbox-ovf)
     echo "Installing VirtualBox guest additions"
 
     # Assume that we've installed all the prerequisites:
@@ -30,4 +34,11 @@ elif [ $PACKER_BUILDER_TYPE == 'virtualbox-iso' ]; then
     sh /mnt/VBoxLinuxAdditions.run --nox11
     umount /mnt
     rm -rf /home/vagrant/VBoxGuestAdditions_$VBOX_VERSION.iso
-fi
+    ;;
+
+*)
+    echo "Unknown Packer Builder Type >>$PACKER_BUILDER_TYPE<< selected."
+    echo "Known are virtualbox-iso|virtualbox-ovf|vmware-iso|vmware-ovf."
+    ;;
+
+esac
