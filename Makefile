@@ -15,13 +15,13 @@ vmware/%.box: %.json
 	cd $(dir $<); \
 	rm -rf output-vmware; \
 	mkdir -p ../../vmware; \
-	packer build -only=vmware $(notdir $<)
+	packer build -only=vmware-iso $(notdir $<)
 
 virtualbox/%.box: %.json
 	cd $(dir $<); \
 	rm -rf output-virtualbox; \
 	mkdir -p ../../virtualbox; \
-	packer build -only=virtualbox $(notdir $<)
+	packer build -only=virtualbox-iso $(notdir $<)
 
 .PHONY: list
 list:
