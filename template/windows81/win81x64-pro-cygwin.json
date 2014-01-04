@@ -19,12 +19,11 @@
       "floppy_files": [
         "floppy/win81x64-pro/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
-        "floppy/set-power-config.bat",
-        "floppy/disable-computer-password-change.bat",
-        "floppy/install-cygwin-sshd.bat"
+        "floppy/powerconfig.bat",
+        "floppy/passwordchange.bat",
+        "floppy/cygwin.bat"
       ],
       "tools_upload_flavor": "windows",
-      "tools_upload_path": "/cygdrive/c/Users/vagrant/{{.Flavor}}.iso",
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
       "disk_size": 40960,
       "vmx_data": {
@@ -47,12 +46,11 @@
       "floppy_files": [
         "floppy/win81x64-pro/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
-        "floppy/set-power-config.bat",
-        "floppy/disable-computer-password-change.bat",
-        "floppy/install-cygwin-sshd.bat",
+        "floppy/powerconfig.bat",
+        "floppy/passwordchange.bat",
+        "floppy/cygwin.bat",
         "floppy/oracle-cert.cer"
       ],
-      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
       "disk_size": 40960,
       "vboxmanage": [
@@ -88,6 +86,8 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
+    "compression_level": 1,
+    "vagrantfile_template": "vagrantfile-win81x64-pro-cygwin.template",
     "output": "../../{{.Provider}}/win81x64-pro-cygwin-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }

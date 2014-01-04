@@ -86,6 +86,8 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
+    "compression_level": 1,
+    "vagrantfile_template": "vagrantfile-win7x64-enterprise.template",
     "output": "../../{{.Provider}}/win7x64-enterprise-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }

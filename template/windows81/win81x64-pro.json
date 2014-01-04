@@ -85,6 +85,8 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
+    "compression_level": 1,
+    "vagrantfile_template": "vagrantfile-win81x64-pro.template",
     "output": "../../{{.Provider}}/win81x64-pro-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
