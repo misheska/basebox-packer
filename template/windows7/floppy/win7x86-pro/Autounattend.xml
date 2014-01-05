@@ -86,7 +86,7 @@
                     <CommandLine>cmd.exe /c a:\00-run-all-scripts.cmd</CommandLine>
                     <Description>Run all *.bat and *.cmd scripts on drive A:</Description>
                     <Order>1</Order>
-                    <RequiresUserInput>false</RequiresUserInput>
+                    <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c powershell -Command &quot;Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force&quot;</CommandLine>
