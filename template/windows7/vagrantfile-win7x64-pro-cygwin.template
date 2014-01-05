@@ -28,6 +28,9 @@ Vagrant.configure("2") do |config|
         v.gui = true
         v.customize ["modifyvm", :id, "--memory", 768]
         v.customize ["modifyvm", :id, "--cpus", 1]
+        v.customize ["modifyvm", :id, "--vram", "256"]
+        v.customize ["setextradata", "global", "GUI/MaxGuestResolution", "any"]
+        v.customize ["setextradata", :id, "CustomVideoMode1", "1024x768x32"]
     end
 
     config.vm.provider :vmware_fusion do |v, override|
