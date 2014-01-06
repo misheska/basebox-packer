@@ -1,16 +1,18 @@
 {
   "variables": {
     "provisioner": "provisionerless",
-    "provisioner_version": ""
+    "provisioner_version": "",
+    "iso_url": "http://cdimage.debian.org/cdimage/archive/7.2.0/amd64/iso-dvd/debian-7.2.0-amd64-DVD-1.iso",
+    "iso_checksum": "a24dd53ceb94a67206a5353e885eb38d479a8a1e"
   },
   "builders": [{
     "vm_name": "debian72",
-    "type": "vmware",
+    "type": "vmware-iso",
     "guest_os_type": "debian7-64",
     "http_directory": "http",
-    "iso_url": "http://cdimage.debian.org/cdimage/release/current/amd64/iso-dvd/debian-7.2.0-amd64-DVD-1.iso",
-    "iso_checksum": "5c926252b6dd4705d05bb4852e9a584ae5b3e7999b49d64a48e346714251466e",
-    "iso_checksum_type": "sha256",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
+    "iso_checksum_type": "sha1",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
     "ssh_wait_timeout": "10000s",
@@ -37,11 +39,11 @@
   },
   {
     "vm_name": "debian72",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
-    "iso_url": "http://cdimage.debian.org/cdimage/release/current/amd64/iso-dvd/debian-7.2.0-amd64-DVD-1.iso",
-    "iso_checksum": "5c926252b6dd4705d05bb4852e9a584ae5b3e7999b49d64a48e346714251466e",
-    "iso_checksum_type": "sha256",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
+    "iso_checksum_type": "sha1",
     "guest_os_type": "Debian_64",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
     "virtualbox_version_file": ".vbox_version",

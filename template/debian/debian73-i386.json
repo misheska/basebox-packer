@@ -8,7 +8,7 @@
   },
   "builders": [{
     "vm_name": "debian73-i386",
-    "type": "vmware",
+    "type": "vmware-iso",
     "guest_os_type": "debian7",
     "http_directory": "http",
     "iso_url": "{{user `iso_url`}}",
@@ -40,7 +40,7 @@
   },
   {
     "vm_name": "debian73-i386",
-    "type": "virtualbox",
+    "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "{{user `iso_url`}}",
     "iso_checksum": "{{user `iso_checksum`}}",
