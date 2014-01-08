@@ -20,7 +20,6 @@
       "iso_checksum": "2cbe868812a871242cdcdd8f2fd6feb9",
       "iso_checksum_type": "md5",
       "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso",
-      "output_directory": "ubuntu64_basebox_virtualbox",
       "shutdown_command": "echo 'shutdown -P now' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
       "ssh_password": "vagrant",
       "ssh_username": "vagrant",
@@ -43,10 +42,9 @@
       "guest_os_type": "ubuntu-64",
       "http_directory": "preseed",
       "http_port_min": "8100",
-      "iso_checksum": "af5f788aee1b32c4b2634734309cc9e9",
+      "iso_checksum": "2cbe868812a871242cdcdd8f2fd6feb9",
       "iso_checksum_type": "md5",
-      "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.2-server-amd64.iso",
-      "output_directory": "ubuntu64_basebox_vmware",
+      "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso",
       "shutdown_command": "echo 'shutdown -P now' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
       "ssh_password": "vagrant",
       "ssh_username": "vagrant",
@@ -54,7 +52,11 @@
     }
   ],
   "post-processors": [
-    "vagrant"
+    {
+      "keep_input_artifact": false,
+      "output": "../../{{.Provider}}/ubuntu1204x64-desktop.box",
+      "type": "vagrant"
+    }
   ],
   "provisioners": [
     {
@@ -62,6 +64,7 @@
       "inline": [
         "apt-get update -y",
         "apt-get install -y linux-headers-$(uname -r) build-essential dkms",
+        "apt-get install -y --no-install-recommends ubuntu-desktop",
         "apt-get clean",
         "mount -o loop VBoxGuestAdditions.iso /media/cdrom",
         "sh /media/cdrom/VBoxLinuxAdditions.run",
