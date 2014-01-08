@@ -11,7 +11,7 @@
       "type": "vmware-iso",
       "guest_os_type": "windows8",
       "iso_url": "{{ user `iso_url` }}",
-      "iso_checksum": "{{ user `iso_checksum` }}"
+      "iso_checksum": "{{ user `iso_checksum` }}",
       "iso_checksum_type": "sha1",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
