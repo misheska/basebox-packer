@@ -1,0 +1,79 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<esc><esc><enter><wait>",
+        "/install/vmlinuz noapic ",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "hostname={{ .Name }} ",
+        "fb=false debconf/frontend=noninteractive ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+        "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+        "initrd=/install/initrd.gz -- ",
+        "<enter>"
+      ],
+      "boot_wait": "5s",
+      "guest_os_type": "Ubuntu_64",
+      "http_directory": "preseed",
+      "http_port_min": "8100",
+      "iso_checksum": "2cbe868812a871242cdcdd8f2fd6feb9",
+      "iso_checksum_type": "md5",
+      "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso",
+      "output_directory": "ubuntu64_basebox_virtualbox",
+      "shutdown_command": "echo 'shutdown -P now' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "type": "virtualbox-iso"
+    },
+    {
+      "boot_command": [
+        "<esc><esc><enter><wait>",
+        "/install/vmlinuz noapic ",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "hostname={{ .Name }} ",
+        "fb=false debconf/frontend=noninteractive ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+        "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+        "initrd=/install/initrd.gz -- ",
+        "<enter>"
+      ],
+      "boot_wait": "5s",
+      "guest_os_type": "ubuntu-64",
+      "http_directory": "preseed",
+      "http_port_min": "8100",
+      "iso_checksum": "af5f788aee1b32c4b2634734309cc9e9",
+      "iso_checksum_type": "md5",
+      "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.2-server-amd64.iso",
+      "output_directory": "ubuntu64_basebox_vmware",
+      "shutdown_command": "echo 'shutdown -P now' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "type": "vmware-iso"
+    }
+  ],
+  "post-processors": [
+    "vagrant"
+  ],
+  "provisioners": [
+    {
+      "execute_command": "echo 'vagrant' | sudo -S sh '{{ .Path }}'",
+      "inline": [
+        "apt-get update -y",
+        "apt-get install -y linux-headers-$(uname -r) build-essential dkms",
+        "apt-get clean",
+        "mount -o loop VBoxGuestAdditions.iso /media/cdrom",
+        "sh /media/cdrom/VBoxLinuxAdditions.run",
+        "umount /media/cdrom",
+        "mkdir ~/.ssh",
+        "wget -qO- https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub >> ~/.ssh/authorized_keys",
+        "echo 'vagrant ALL=NOPASSWD:ALL' > /tmp/vagrant",
+        "chmod 0440 /tmp/vagrant",
+        "mv /tmp/vagrant /etc/sudoers.d/"
+      ],
+      "type": "shell"
+    }
+  ]
+}
+
