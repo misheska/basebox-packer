@@ -67,6 +67,8 @@
         "apt-get update -y",
         "apt-get install -y linux-headers-$(uname -r) build-essential dkms",
         "apt-get install -y --no-install-recommends ubuntu-desktop",
+        "apt-get install -y unity-lens-applications",
+        "apt-get install -y vim git chromium-browser",
         "apt-get clean",
         "mount -o loop VBoxGuestAdditions.iso /media/cdrom",
         "sh /media/cdrom/VBoxLinuxAdditions.run",
