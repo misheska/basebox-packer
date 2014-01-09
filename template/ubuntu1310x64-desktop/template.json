@@ -2,44 +2,55 @@
   "builders": [
     {
       "boot_command": [
-        "<tab><wait><tab><wait><enter><wait5>",
-        "<tab><wait><tab><wait><tab><wait><tab><wait><enter><wait5>",
-        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>",
-        "<tab><wait><tab><wait><enter><wait5>",
-        "ger<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>",
-        "vagrant<tab>ubuntu1310x64desktop<tab>vagrant<tab>vagrant<tab>vagrant<tab><tab><tab><tab><enter><wait5>",
-        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>",
-        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><enter><wait5>"
+        "<esc><esc><enter><wait>",
+        "/install/vmlinuz noapic ",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "hostname={{ .Name }} ",
+        "fb=false debconf/frontend=noninteractive ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+        "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+        "initrd=/install/initrd.gz -- ",
+        "<enter>"
       ],
-      "boot_wait": "40s",
-      "disk_size": 20480,
-      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+      "boot_wait": "5s",
       "guest_os_type": "Ubuntu_64",
       "http_directory": "http",
-      "iso_checksum": "3bcd2de27a219eae7bcc0ca060a767f86c7ad160",
-      "iso_checksum_type": "sha1",
-      "iso_url": "D:/ISO/Ubuntu/ubuntu-13.10-desktop-amd64.iso",
-      "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+      "http_port_min": "8100",
+      "iso_checksum": "4d1a8b720cdd14b76ed9410c63a00d0e",
+      "iso_checksum_type": "md5",
+      "iso_urls": [ "D:/ISO/Ubuntu/ubuntu-13.10-server-amd64.iso",
+                    "http://releases.ubuntu.com/13.10/ubuntu-13.10-server-amd64.iso" ],
+      "shutdown_command": "echo 'shutdown -P now' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
       "ssh_password": "vagrant",
       "ssh_username": "vagrant",
-      "ssh_wait_timeout": "10000s",
-      "type": "virtualbox-iso",
-      "vboxmanage": [
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--memory",
-          "512"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--cpus",
-          "1"
-        ]
+      "type": "virtualbox-iso"
+    },
+    {
+      "boot_command": [
+        "<esc><esc><enter><wait>",
+        "/install/vmlinuz noapic ",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "hostname={{ .Name }} ",
+        "fb=false debconf/frontend=noninteractive ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+        "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+        "initrd=/install/initrd.gz -- ",
+        "<enter>"
       ],
-      "virtualbox_version_file": ".vbox_version",
-      "vm_name": "ubuntu1310x64-desktop"
+      "boot_wait": "5s",
+      "guest_os_type": "ubuntu-64",
+      "http_directory": "http",
+      "http_port_min": "8100",
+      "iso_checksum": "4d1a8b720cdd14b76ed9410c63a00d0e",
+      "iso_checksum_type": "md5",
+      "iso_urls": [ "D:/ISO/Ubuntu/ubuntu-13.10-server-amd64.iso",
+                    "http://releases.ubuntu.com/13.10/ubuntu-13.10-server-amd64.iso" ],
+      "shutdown_command": "echo 'shutdown -P now' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "type": "vmware-iso"
     }
   ],
   "post-processors": [
@@ -51,25 +62,25 @@
   ],
   "provisioners": [
     {
-      "environment_vars": [
-        "PROVISIONER={{user `provisioner`}}",
-        "PROVISIONER_VERSION={{user `provisioner_version`}}"
-      ],
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
-      "scripts": [
-        "script/base.sh",
-        "script/vagrant.sh",
-        "script/vmtools.sh",
-        "script/provisioner.sh",
-        "script/cleanup.sh",
-        "script/zerodisk.sh"
+      "execute_command": "echo 'vagrant' | sudo -S sh '{{ .Path }}'",
+      "inline": [
+        "apt-get update -y",
+        "apt-get install -y linux-headers-$(uname -r) build-essential dkms",
+        "apt-get install -y --no-install-recommends ubuntu-desktop",
+        "apt-get install -y gnome-terminal",
+        "apt-get clean",
+        "mount -o loop VBoxGuestAdditions.iso /media/cdrom",
+        "sh /media/cdrom/VBoxLinuxAdditions.run",
+        "umount /media/cdrom",
+        "rm VBoxGuestAdditions.iso",
+        "mkdir ~/.ssh",
+        "wget -qO- https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub >> ~/.ssh/authorized_keys",
+        "echo 'vagrant ALL=NOPASSWD:ALL' > /tmp/vagrant",
+        "chmod 0440 /tmp/vagrant",
+        "mv /tmp/vagrant /etc/sudoers.d/"
       ],
       "type": "shell"
     }
-  ],
-  "variables": {
-    "provisioner": "provisionerless",
-    "provisioner_version": ""
-  }
+  ]
 }
 
