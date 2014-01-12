@@ -24,3 +24,5 @@ chcon -R unconfined_u:object_r:user_home_t:s0 /home/vagrant/.ssh
 
 # Customize the message of the day
 echo 'Welcome to your Packer-built virtual machine.' > /etc/motd
+
+yum install -y nfs-utils
