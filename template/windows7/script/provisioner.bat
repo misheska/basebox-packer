@@ -21,3 +21,5 @@ if "%PROVISIONER%" == "chef" (
 ) else (
   echo ==^> Building box without a provisioner."
 )
+
+ping -n 1 127.0.0.1
