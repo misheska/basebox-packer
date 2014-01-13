@@ -19,6 +19,8 @@
       "floppy_files": [
         "floppy/win2008r2-standard/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
+        "floppy/set-all-networks-to-private.ps1",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
         "floppy/openssh.bat"
@@ -45,6 +47,8 @@
       "floppy_files": [
         "floppy/win2008r2-standard/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
+        "floppy/set-all-networks-to-private.ps1",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
         "floppy/openssh.bat",
