@@ -21,7 +21,8 @@
         "floppy/00-run-all-scripts.cmd",
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
-        "floppy/cygwin.bat"
+        "floppy/cygwin.bat",
+        "floppy/zz-net-start-sshd.cmd"
       ],
       "tools_upload_flavor": "windows",
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
@@ -49,6 +50,7 @@
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
         "floppy/cygwin.bat",
+        "floppy/zz-net-start-sshd.cmd",
         "floppy/oracle-cert.cer"
       ],
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
