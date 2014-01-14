@@ -1,32 +1,44 @@
 @echo off
-setlocal enableextensions
-setlocal disabledelayedexpansion
+setlocal EnableDelayedExpansion EnableExtensions
 
-CD /D %~dp0
+PATH=%SystemRoot%\System32;%SystemRoot%;%SystemRoot%\System32\WindowsPowerShell\v1.0;%PATH%;%~dp0
 
-PATH=%~dp0;%SystemRoot%\System32;%SystemRoot%;%SystemRoot%\System32\WindowsPowerShell\v1.0;%PATH%
+for %%i in (_packer_config.cmd) do set _packer_config=%%~$PATH:i
 
-echo|time|findstr "current" >>"%TEMP%\%~n0.log"
-echo %0: started. >>"%TEMP%\%~n0.log"
-title %0: started
+if defined _packer_config call "%_packer_config%"
 
-for /F %%I in ('dir /b /on *.bat *.cmd') do (
-  if /I not "%%~nxI" == "%~nx0" (
-    echo|time|findstr "current" >>"%TEMP%\%~n0.log"
-    echo %0: executing %%~I >>"%TEMP%\%~n0.log"
+set CMD_OPTS=/Q
 
-    title Executing %%~I...
-    if exist tee.exe (
-      cmd /c "%%~nxI" 2>&1 | tee "%TEMP%\%%~nI.log"
-    ) else (
-      cmd /c "%%~nxI"
-    )
-    set EL=%ERRORLEVEL%
+if defined PACKER_DEBUG set CMD_OPTS=
+if defined PACKER_DEBUG echo on
 
-    echo %%~I returned error %EL% >>"%TEMP%\%~n0.log"
+cd /d %~dp0
+
+set packer_log="%TEMP%\%~n0.log"
+
+echo.|time|findstr "current" >>%packer_log%
+echo %0: started. >>%packer_log%
+title Running %0, please wait...
+
+dir /b /on %~d0\*.bat %~d0\*.cmd | findstr /v "^_" | findstr /i /v %~nx0 >"%TEMP%\runlist.txt"
+
+for %%i in (tee.exe) do set _tee=%%~$PATH:i
+
+for /F %%i in (%TEMP%\runlist.txt) do (
+  echo.|time|findstr "current" >>%packer_log%
+  echo %0: executing %%~i >>%packer_log%
+
+  title Executing %%~i...
+  if defined _tee (
+    cmd %CMD_OPTS% /c "%%~nxi" 2>&1 | "%_tee%" "%TEMP%\%%~ni.log"
+  ) else (
+    cmd %CMD_OPTS% /c "%%~nxi"
   )
+  echo %0 %%~i returned errorlevel %ERRORLEVEL% >>%packer_log%
+  if defined PACKER_PAUSE choice /T %PACKER_PAUSE% /D Y /N /M "Waiting %PACKER_PAUSE% seconds or press Y to continue: "
 )
 
-echo|time|findstr "current" >>"%TEMP%\%~n0.log"
-echo %0: finished. >>"%TEMP%\%~n0.log"
-title %0: finished
+del "%TEMP%\runlist.txt"
+
+echo.|time|findstr "current" >>%packer_log%
+echo %0: finished. >>%packer_log%

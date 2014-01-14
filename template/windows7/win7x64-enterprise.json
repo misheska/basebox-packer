@@ -20,6 +20,9 @@
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
+        "floppy/01-install-wget.cmd",
+        "floppy/_download.cmd",
+        "floppy/_packer_config.cmd",
         "floppy/networkprompt.bat",
         "floppy/openssh.bat"
       ],
@@ -50,8 +53,11 @@
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
+        "floppy/01-install-wget.cmd",
+        "floppy/_download.cmd",
+        "floppy/_packer_config.cmd",
         "floppy/networkprompt.bat",
-        "floppy/openssh.bat", 
+        "floppy/openssh.bat",
         "floppy/oracle-cert.cer"
       ],
       "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
