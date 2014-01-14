@@ -1,5 +1,3 @@
-@echo off
-if defined PACKER_DEBUG echo on
 setlocal EnableDelayedExpansion EnableExtensions
 title Enabling Windows Remote Management. Please wait...
 
@@ -10,7 +8,7 @@ cmd.exe /c reg ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Syste
 cmd.exe /c powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force"
 echo ERRORLEVEL=%ERRORLEVEL%
 
-if exists C:\Windows\SysWOW64\cmd.exe C:\Windows\SysWOW64\cmd.exe /c powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force"
+if exist C:\Windows\SysWOW64\cmd.exe C:\Windows\SysWOW64\cmd.exe /c powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force"
 echo ERRORLEVEL=%ERRORLEVEL%
 
 :: see http://blogs.msdn.com/b/powershell/archive/2009/04/03/setting-network-location-to-private.aspx
