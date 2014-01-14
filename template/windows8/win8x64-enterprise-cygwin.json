@@ -19,6 +19,7 @@
         "floppy/win8x64-enterprise/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
+        "floppy/cygwin.sh",
         "floppy/passwordchange.bat",
         "floppy/cygwin.bat"
       ],
@@ -46,6 +47,7 @@
         "floppy/win8x64-enterprise/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
+        "floppy/cygwin.sh",
         "floppy/passwordchange.bat",
         "floppy/cygwin.bat",
         "floppy/oracle-cert.cer"
@@ -64,10 +66,7 @@
       "remote_path": "/tmp/script.bat",
       "environment_vars": [
         "PROVISIONER={{user `provisioner`}}",
-        "PROVISIONER_VERSION={{user `provisioner_version`}}",
-        "TEMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
-        "TMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
-        "USERNAME=$USER"
+        "PROVISIONER_VERSION={{user `provisioner_version`}}"
       ],
       "execute_command": "{{.Vars}} cmd /c $(/bin/cygpath -m '{{.Path}}')",
       "scripts": [

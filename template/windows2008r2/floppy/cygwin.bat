@@ -38,15 +38,9 @@ echo ==^> Opening firewall port 22 for the sshd service
 netsh advfirewall firewall add rule name="SSHD" dir=in action=allow program="%CYGWIN_HOME%\usr\sbin\sshd.exe" enable=yes
 netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
 
-echo ==^> Make user home directories default to their windows profile directory
-bash -c "ln -s ""$(dirname $(cygpath -D))"" /home/$USERNAME"
-bash -c "mkpasswd -l -p ""$(cygpath -H)"" >/etc/passwd"
+set CYGWIN=ntsecbinmode mintty nodosfilewarning
 
-echo ==^> Creating /etc/group (required by sshd)
-bash -c "mkgroup -l >/etc/group"
-
-echo ==^> set up sshd config files
-bash -c "ssh-host-config -y -c ""ntsecbinmode mintty nodosfilewarning"" -w ""abc&&123!!"" "
+bash a:/cygwin.sh "abc&&123!!"
 
 echo ==^> Deleting the Cygwin installer and downloaded packages
 del "%CYGWIN_SETUP_LOCAL_PATH%"

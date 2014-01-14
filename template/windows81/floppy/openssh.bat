@@ -33,12 +33,33 @@ powershell -Command "(Get-Content '%ProgramFiles%\OpenSSH\etc\passwd') | Foreach
 echo ==^> Fixing opensshd to not be strict
 powershell -Command "(Get-Content '%ProgramFiles%\OpenSSH\etc\sshd_config') | Foreach-Object { $_ -replace 'StrictModes yes', 'StrictModes no' } | Set-Content '%ProgramFiles%\OpenSSH\etc\sshd_config'"
 powershell -Command "(Get-Content '%ProgramFiles%\OpenSSH\etc\sshd_config') | Foreach-Object { $_ -replace '#PubkeyAuthentication yes', 'PubkeyAuthentication yes' } | Set-Content '%ProgramFiles%\OpenSSH\etc\sshd_config'"
+powershell -Command "(Get-Content '%ProgramFiles%\OpenSSH\etc\sshd_config') | Foreach-Object { $_ -replace '#PermitUserEnvironment no', 'PermitUserEnvironment yes' } | Set-Content '%ProgramFiles%\OpenSSH\etc\sshd_config'"
+powershell -Command "(Get-Content '%ProgramFiles%\OpenSSH\etc\sshd_config') | Foreach-Object { $_ -replace '#UseDNS yes', 'UseDNS no' } | Set-Content '%ProgramFiles%\OpenSSH\etc\sshd_config'"
+powershell -Command "(Get-Content '%ProgramFiles%\OpenSSH\etc\sshd_config') | Foreach-Object { $_ -replace 'Banner /etc/banner.txt', '#Banner /etc/banner.txt' } | Set-Content '%ProgramFiles%\OpenSSH\etc\sshd_config'"
 
 echo ==^> Setting temp location
 rd /S /Q "%ProgramFiles%\OpenSSH\tmp"
 cmd /c ""%ProgramFiles%\OpenSSH\bin\junction.exe" /accepteula "%ProgramFiles%\OpenSSH\tmp" C:\Windows\Temp"
 cmd /c %windir%\System32\icacls.exe "%TEMP%" /grant %USERNAME%:(OI)(CI)F
-powershell -Command "Add-Content %USERPROFILE%\.ssh\environment "TEMP=C:\Windows\Temp""
+powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'APPDATA=%SystemDrive%\Users\%USERNAME%\AppData\Roaming'"
+powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'CommonProgramFiles=%SystemDrive%\Program Files\Common Files'"
+powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'LOCALAPPDATA=%SystemDrive%\Users\%USERNAME%\AppData\Local'"
+powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'ProgramData=%SystemDrive%\ProgramData'"
+powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'ProgramFiles=%SystemDrive%\Program Files'"
+powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'PSModulePath=%SystemDrive%\Windows\system32\WindowsPowerShell\v1.0\Modules\'"
+powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'PUBLIC=%SystemDrive%\Users\Public'"
+powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'SESSIONNAME=Console'"
+powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'TEMP=%windir%\Temp'"
+powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'TMP=%windir%\Temp'"
+:: to override "cyg_server":
+powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'USERNAME=%USERNAME%'"
+
+if exist "%SystemDrive%\Program Files (x86)" (
+   powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'CommonProgramFiles(x86)=%SystemDrive%\Program Files (x86)\Common Files'"
+   powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'CommonProgramW6432=%SystemDrive%\Program Files\Common Files'"
+   powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'ProgramFiles(x86)=%SystemDrive%\Program Files (x86)'"
+   powershell -Command "Add-Content %USERPROFILE%\.ssh\environment 'ProgramW6432=%SystemDrive%\Program Files'"
+)
 
 echo ==^> Record the path for use by provisioners
 <nul set /p ".=%PATH%" > %TEMP%\PATH
