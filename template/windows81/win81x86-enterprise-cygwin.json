@@ -20,10 +20,10 @@
         "floppy/win81x86-enterprise/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
-        "floppy/passwordchange.bat",
         "floppy/01-install-wget.cmd",
         "floppy/_download.cmd",
         "floppy/_packer_config.cmd",
+        "floppy/passwordchange.bat",
         "floppy/cygwin.bat"
       ],
       "tools_upload_flavor": "windows",
@@ -50,10 +50,10 @@
         "floppy/win81x86-enterprise/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
-        "floppy/passwordchange.bat",
         "floppy/01-install-wget.cmd",
         "floppy/_download.cmd",
         "floppy/_packer_config.cmd",
+        "floppy/passwordchange.bat",
         "floppy/cygwin.bat",
         "floppy/oracle-cert.cer"
       ],
