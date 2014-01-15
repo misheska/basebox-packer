@@ -18,9 +18,9 @@
       "ssh_wait_timeout": "10000s",
       "floppy_files": [
         "floppy/win2008r2-datacenter/Autounattend.xml",
+        "floppy/cygwin.sh",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
-        "floppy/cygwin.sh",
         "floppy/passwordchange.bat",
         "floppy/cygwin.bat"
       ],
@@ -45,9 +45,9 @@
       "ssh_wait_timeout": "10000s",
       "floppy_files": [
         "floppy/win2008r2-datacenter/Autounattend.xml",
+        "floppy/cygwin.sh",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
-        "floppy/cygwin.sh",
         "floppy/passwordchange.bat",
         "floppy/cygwin.bat",
         "floppy/oracle-cert.cer"

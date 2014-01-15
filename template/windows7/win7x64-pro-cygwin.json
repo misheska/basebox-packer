@@ -19,8 +19,8 @@
         "floppy/win7x64-pro/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
-        "floppy/cygwin.sh",
         "floppy/passwordchange.bat",
+        "floppy/cygwin.sh",
         "floppy/networkprompt.bat",
         "floppy/cygwin.bat"
       ],
@@ -49,8 +49,8 @@
         "floppy/win7x64-pro/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
-        "floppy/cygwin.sh",
         "floppy/passwordchange.bat",
+        "floppy/cygwin.sh",
         "floppy/networkprompt.bat",
         "floppy/cygwin.bat",
         "floppy/oracle-cert.cer"
