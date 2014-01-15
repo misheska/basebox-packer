@@ -6,7 +6,7 @@ set VAGRANT_KEY_URL=https://raw.github.com/mitchellh/vagrant/master/keys/vagrant
 set AUTHORIZED_KEYS=%USERPROFILE%\.ssh\authorized_keys
 
 echo ==^> Installing vagrant public key
-if not exists "%USERPROFILE%\.ssh" mkdir "%USERPROFILE%\.ssh"
+if not exist "%USERPROFILE%\.ssh" mkdir "%USERPROFILE%\.ssh"
 
 PATH=%PATH%;a:\
 for %%i in (_download.cmd) do set _download=%%~$PATH:i
