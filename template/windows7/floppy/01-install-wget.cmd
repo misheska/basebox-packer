@@ -2,37 +2,26 @@ setlocal EnableDelayedExpansion EnableExtensions
 
 :: bitsadmin can't download http://users.ugent.be/~bpuype/cgi-bin/fetch.pl?dl=wget/wget.exe
 set url=http://users.ugent.be/~bpuype/wget/wget.exe
+set filename=%windir%\wget.exe
 
-set basename=wget.exe
+path=%path%;%~dp0
+for %%i in (_download.cmd) do set _download=%%~$PATH:i
+if not defined _download goto no_download
+call "%_download%" "%url%" "%filename%"
 
-set filename=%windir%\System32\%basename%
+if exist "%filename%" goto :eof
 
-if exist "a:\%basename%" (
-  copy /y "a:\%basename%" "%filename%"
-  goto :eof
-)
+:no_download
 
-title Downloading "%url%" to "%filename%". Please wait...
 echo ==^> Downloading "%url%" to "%filename%"
 
-path=%path%;a:\
-
-for %%i in (_download.cmd) do set _download=%%~$PATH:i
-
-if defined _download (
-  call "%_download%" "%url%" "%filename%"
-  goto :eof
-)
+set bitsadmin=
 
 for %%i in (bitsadmin.exe) do set bitsadmin=%%~$PATH:i
 
-if defined bitsadmin goto bitsadmin
+if not defined bitsadmin if exist %SystemRoot%\System32\bitsadmin.exe set bitsadmin=%SystemRoot%\System32\bitsadmin.exe
 
-powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%url%', '%filename%')" <NUL
-
-if ERRORLEVEL 1 echo ==^> Command returned errorlevel %ERRORLEVEL%
-
-goto :eof
+if not defined bitsadmin goto powershell
 
 :bitsadmin
 
@@ -40,6 +29,10 @@ for %%i in ("%filename%") do set jobname=%%~nxi
 
 "%bitsadmin%" /transfer "%jobname%" "%url%" "%filename%"
 
-if ERRORLEVEL 1 echo ==^> Command returned errorlevel %ERRORLEVEL%
+if exist "%filename%" goto :eof
+
+:powershell
+
+powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%url%', '%filename%')" <NUL
 
 goto :eof
