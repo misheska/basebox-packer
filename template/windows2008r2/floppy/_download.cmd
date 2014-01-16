@@ -7,7 +7,7 @@ if not defined url goto :eof
 
 if not defined filename set filename=%TEMP%\%~nx1
 
-for %%i in ("%filename%") do set basename=%%~nx
+for %%i in ("%filename%") do set basename=%%~nxi
 
 if not exist "%~dp0\%basename%" goto download
 
