@@ -40,8 +40,8 @@ echo "ProgramFiles=$SYSTEMDRIVE\\Program Files" >>$SSHENV
 echo "PSModulePath=$SYSTEMDRIVE\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\" >>$SSHENV
 echo "PUBLIC=$SYSTEMDRIVE\\Users\\Public" >>$SSHENV
 echo "SESSIONNAME=Console" >>$SSHENV
-echo "TEMP=$SYSTEMDRIVE\\Users\\$USERNAME\\AppData\\Temp" >>$SSHENV
-echo "TMP=$SYSTEMDRIVE\\Users\\$USERNAME\\AppData\\Temp" >>$SSHENV
+echo "TEMP=$SYSTEMDRIVE\\Users\\$USERNAME\\AppData\\Local\\Temp" >>$SSHENV
+echo "TMP=$SYSTEMDRIVE\\Users\\$USERNAME\\AppData\\Local\\Temp" >>$SSHENV
 # to override "cyg_server":
 echo "USERNAME=$USERNAME" >>$SSHENV
 
