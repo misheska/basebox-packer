@@ -18,7 +18,7 @@ echo ==^> Downloadng %OPENSSH_URL% to %OPENSSH_EXE%
 
 PATH=%PATH%;a:\
 for %%i in (_download.cmd) do set _download=%%~$PATH:i
-if defined _download goto powershell
+if not defined _download goto powershell
 call "%_download%" %OPENSSH_URL% %OPENSSH_EXE%
 goto after_download
 :powershell

@@ -1,4 +1,4 @@
-@echo off
+@if not defined PACKER_DEBUG echo off
 
 setlocal EnableExtensions EnableDelayedExpansion
 

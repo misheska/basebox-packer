@@ -14,7 +14,7 @@ if defined PACKER_DEBUG echo on
 
 cd /d %~dp0
 
-set packer_log="%TEMP%\%~n0.log"
+set packer_log="%TEMP%\%~n0.txt"
 
 echo.|time|findstr "current" >>%packer_log%
 echo %0: started. >>%packer_log%
@@ -30,7 +30,7 @@ for /F %%i in (%TEMP%\runlist.txt) do (
 
   title Executing %%~i...
   if defined _tee (
-    cmd %CMD_OPTS% /c "%%~nxi" 2>&1 | "%_tee%" "%TEMP%\%%~ni.log"
+    cmd %CMD_OPTS% /c "%%~nxi" 2>&1 | "%_tee%" "%TEMP%\%%~ni.txt"
   ) else (
     cmd %CMD_OPTS% /c "%%~nxi"
   )

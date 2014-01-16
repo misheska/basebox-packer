@@ -1,4 +1,4 @@
-@echo off
+@if not defined PACKER_DEBUG echo off
 
 setlocal EnableDelayedExpansion EnableExtensions
 
@@ -53,8 +53,6 @@ echo ==^> Cleaning up VMware tools install
 del /F /S /Q "%TEMP%\vmware"
 
 goto finish
-
-:finish
 
 :virtualbox
 
