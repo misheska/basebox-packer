@@ -1,5 +1,3 @@
-@echo off
-
 title Installing Openssh. Please wait...
 
 setlocal EnableDelayedExpansion EnableExtensions
@@ -8,17 +6,25 @@ setlocal EnableDelayedExpansion EnableExtensions
 if not defined TEMP set TEMP=%USERPROFILE%\AppData\Local\Temp
 
 if exist "%SystemDrive%\Program Files (x86)" (
-  set OPENSSH_INSTALL="setupssh-6.4p1-1(x64).exe"
+  set OPENSSH_URL="http://www.mls-software.com/files/setupssh-6.4p1-1(x64).exe"
 ) else (
-  set OPENSSH_INSTALL="setupssh-6.4p1-1.exe"
+  set OPENSSH_URL="http://www.mls-software.com/files/setupssh-6.4p1-1.exe"
 )
 
-set OPENSSH_URL=http://www.mls-software.com/files/%OPENSSH_INSTALL%
-set OPENSSH_EXE=%TEMP%\openssh.exe
+for %%i in (%OPENSSH_URL%) do SET OPENSSH_EXE="%TEMP%\%%~nxi"
 
 :: setup openssh
 echo ==^> Downloadng %OPENSSH_URL% to %OPENSSH_EXE%
-powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%OPENSSH_URL%', '%OPENSSH_EXE%')"
+
+PATH=%PATH%;a:\
+for %%i in (_download.cmd) do set _download=%%~$PATH:i
+if not defined _download goto powershell
+call "%_download%" %OPENSSH_URL% %OPENSSH_EXE%
+goto after_download
+:powershell
+powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%OPENSSH_URL%', '%OPENSSH_EXE%')" <NUL
+:after_download
+
 echo ==^> Download complete
 echo ==^> Installing "%OPENSSH_EXE%"
 cmd /c "%OPENSSH_EXE%" /S /port=22 /privsep=1 /password=D@rj33l1ng
@@ -36,7 +42,7 @@ powershell -Command "(Get-Content '%ProgramFiles%\OpenSSH\etc\sshd_config') | Fo
 
 echo ==^> Setting temp location
 rd /S /Q "%ProgramFiles%\OpenSSH\tmp"
-cmd /c ""%ProgramFiles%\OpenSSH\bin\junction.exe" /accepteula "%ProgramFiles%\OpenSSH\tmp" C:\Windows\Temp"
+cmd /c ""%ProgramFiles%\OpenSSH\bin\junction.exe" /accepteula "%ProgramFiles%\OpenSSH\tmp" "%windir%\Temp""
 cmd /c %windir%\System32\icacls.exe "%TEMP%" /grant %USERNAME%:(OI)(CI)F
 powershell -Command "Add-Content %USERPROFILE%\.ssh\environment "TEMP=C:\Windows\Temp""
 

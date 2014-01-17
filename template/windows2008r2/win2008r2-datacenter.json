@@ -20,6 +20,9 @@
         "floppy/win2008r2-datacenter/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
+        "floppy/01-install-wget.cmd",
+        "floppy/_download.cmd",
+        "floppy/_packer_config.cmd",
         "floppy/passwordchange.bat",
         "floppy/openssh.bat"
       ],
@@ -47,6 +50,9 @@
         "floppy/win2008r2-datacenter/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
+        "floppy/01-install-wget.cmd",
+        "floppy/_download.cmd",
+        "floppy/_packer_config.cmd",
         "floppy/passwordchange.bat",
         "floppy/openssh.bat",
         "floppy/oracle-cert.cer"
