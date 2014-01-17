@@ -1,0 +1,61 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<wait>1",
+        "<wait5><wait5><wait><wait>I",
+        "<wait><tab><tab><tab><enter>",
+        "<wait5><enter>",
+        "<wait5><enter>",
+        "<wait5><wait5><wait5><enter>",
+        "<wait5><enter>"
+      ],
+      "boot_wait": "7s",
+      "disk_size": 40960,
+      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+      "guest_os_type": "FreeBSD",
+      "http_directory": "http",
+      "http_port_min": "8100",
+      "iso_checksum": "1806e8b01cee732b3410279da7dcefc3",
+      "iso_checksum_type": "md5",
+      "iso_urls": [ "http://fleximus.org/mirror/pfsense/downloads/pfSense-LiveCD-2.1-RELEASE-i386.iso.gz_not-supported-by-packer-051",
+                    "D:/ISO/pfSense/pfSense-LiveCD-2.1-RELEASE-i386.iso" ],
+      "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "10000s",
+      "type": "virtualbox-iso",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "512"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--nic2",
+          "intnet"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "1"
+        ]
+      ],
+      "virtualbox_version_file": ".vbox_version",
+      "vm_name": "pfSense"
+    }
+  ],
+  "post-processors": [
+    {
+      "keep_input_artifact": true,
+      "output": "../../{{.Provider}}/pfSense.box",
+      "type": "vagrant"
+    }
+  ]
+}
+
