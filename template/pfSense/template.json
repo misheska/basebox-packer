@@ -11,7 +11,7 @@
         "<wait5><enter>"
       ],
       "boot_wait": "7s",
-      "disk_size": 40960,
+      "disk_size": 8192,
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_os_type": "FreeBSD",
       "http_directory": "http",
