@@ -1,4 +1,4 @@
-rem @echo off
+@echo off
 setlocal
 set CUR=%~dp0
 set FAVOR=%~p1
