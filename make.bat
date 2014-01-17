@@ -10,7 +10,7 @@ if "virtualbox" == "%FAVOR:~-11,10%" set FAVOR=virtualbox
 if "%FAVOR%" == "vmware" goto make
 if "%FAVOR%" == "virtualbox" goto make
 echo Wrong usage. Try a make list first, then make favor/template
-goto done
+goto :EOF
 
 :make
 cd /D "%CUR%"
@@ -32,7 +32,7 @@ cd /D "%CUR%"
 echo.
 echo A log file of this step could be found at %LOGNAME%
 call parselog.bat %LOGNAME%
-goto done
+goto :EOF
 
 :fix
 set PACKER_LOG=
@@ -46,20 +46,19 @@ for /F " usebackq delims==" %%i in (`dir /b template`) do (
     del template\%%i\template.json.new
   )
 )
-goto done
+goto :EOF
 
 :list
 cd /D "%CUR%"
 echo Choose one of the following favor/template. Then call make favor/template
 for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\template.json echo virtualbox/%%i
 for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\template.json echo vmware/%%i
-goto done
+goto :EOF
 
 :clean
 cd /D "%CUR%"
 echo Deleting all template/*/output-* directories
 for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\output-virtualbox-iso rmdir /s /q template\%%i\output-virtualbox-iso
 for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\output-vmware-iso rmdir /s /q template\%%i\output-vmware-iso
-goto done
+goto :EOF
 
-:done
