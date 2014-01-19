@@ -18,6 +18,7 @@
       "ssh_wait_timeout": "10000s",
       "floppy_files": [
         "floppy/win2012-datacenter/Autounattend.xml",
+        "floppy/cygwin.sh",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
@@ -44,6 +45,7 @@
       "ssh_wait_timeout": "10000s",
       "floppy_files": [
         "floppy/win2012-datacenter/Autounattend.xml",
+        "floppy/cygwin.sh",
         "floppy/00-run-all-scripts.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
@@ -64,10 +66,7 @@
       "remote_path": "/tmp/script.bat",
       "environment_vars": [
         "PROVISIONER={{user `provisioner`}}",
-        "PROVISIONER_VERSION={{user `provisioner_version`}}",
-        "TEMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
-        "TMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
-        "USERNAME=$USER"
+        "PROVISIONER_VERSION={{user `provisioner_version`}}"
       ],
       "execute_command": "{{.Vars}} cmd /c $(/bin/cygpath -m '{{.Path}}')",
       "scripts": [
