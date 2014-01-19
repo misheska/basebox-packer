@@ -27,7 +27,7 @@ if "%PACKER_BUILDER_TYPE%" equ "vmware-iso" (
   echo ==^> Extracting the VMWare Tools installer
   "%SystemDrive%\Program Files\7-Zip\7z.exe" x %USERPROFILE%\windows.iso -o!TEMP!\vmware
 
-  echo ==^> Installing VMware tools
+  echo ==^> Installing VMware tools %VMWARE_INSTALL%
   "%TEMP%\vmware\!VMWARE_INSTALL!" /S /v "/qn REBOOT=R ADDLOCAL=ALL"
 
   echo ==^> Cleaning up VMware tools install

@@ -54,6 +54,3 @@ for /D %%i in (%TEMP%\http*.*) do del /s /q "%%~i"
 
 echo ==^> Fixing corrupt recycle bin - see http://www.winhelponline.com/blog/fix-corrupted-recycle-bin-windows-7-vista/
 rd /s /q %SystemDrive%\$Recycle.bin
-
-echo ==^> Starting the ssh service
-net start sshd
