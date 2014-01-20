@@ -1,6 +1,6 @@
-# Current valid values: provisionerless | chef
+# Current valid values: provisionerless | chef | salt
 PROVISIONER := provisionerless
-# Current valid values: latest | x.y.x
+# Current valid values: latest | x.y.z | x.y
 PROVISIONER_VERSION :=
 # Packer does not allow empty variables, so only pass variables that are defined
 ifdef PROVISIONER_VERSION
