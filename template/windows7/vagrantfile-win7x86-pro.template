@@ -4,7 +4,6 @@
 Vagrant.configure("2") do |config|
     config.vm.define "vagrant-win7x86-pro"
     config.vm.box = "win7x86-pro"
-    config.vm.base_mac = "{{ .BaseMacAddress }}"
  
     # You should be using the vagrant-windows Vagrant Plugin!
     # Admin user name and password
@@ -41,6 +40,7 @@ Vagrant.configure("2") do |config|
         v.vmx["ethernet0.virtualDev"] = "vmxnet3"
         v.vmx["RemoteDisplay.vnc.enabled"] = "false"
         v.vmx["RemoteDisplay.vnc.port"] = "5900"
+        v.vmx["scsi0.virtualDev"] = "lsilogic"
     end
 
     config.vm.provider :vmware_workstation do |v, override|
@@ -51,5 +51,6 @@ Vagrant.configure("2") do |config|
         v.vmx["ethernet0.virtualDev"] = "vmxnet3"
         v.vmx["RemoteDisplay.vnc.enabled"] = "false"
         v.vmx["RemoteDisplay.vnc.port"] = "5900"
+        v.vmx["scsi0.virtualDev"] = "lsilogic"
     end
 end
