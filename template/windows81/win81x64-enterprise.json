@@ -1,7 +1,7 @@
 {
   "variables": {
-    "provisioner": "provisionerless",
-    "provisioner_version": "",
+    "provisioner": "chef",
+    "provisioner_version": "latest",
     "iso_url": "../../iso/en_windows_8_1_enterprise_x64_dvd_2971902.iso",
     "iso_checksum": "ae792b2ef982dac7391224b624eab8d6340d78ab"
   },
