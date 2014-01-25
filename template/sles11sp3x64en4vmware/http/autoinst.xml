@@ -93,7 +93,7 @@
     <FW_ALLOW_FW_BROADCAST_EXT>no</FW_ALLOW_FW_BROADCAST_EXT>
     <FW_ALLOW_FW_BROADCAST_INT>no</FW_ALLOW_FW_BROADCAST_INT>
     <FW_CONFIGURATIONS_DMZ></FW_CONFIGURATIONS_DMZ>
-    <FW_CONFIGURATIONS_EXT></FW_CONFIGURATIONS_EXT>
+    <FW_CONFIGURATIONS_EXT>sshd</FW_CONFIGURATIONS_EXT>
     <FW_CONFIGURATIONS_INT></FW_CONFIGURATIONS_INT>
     <FW_DEV_DMZ></FW_DEV_DMZ>
     <FW_DEV_EXT>any eth0</FW_DEV_EXT>
@@ -594,8 +594,8 @@
     </dhcp_options>
     <dns>
       <dhcp_hostname config:type="boolean">false</dhcp_hostname>
-      <domain>site</domain>
-      <hostname>linux-x8yi</hostname>
+      <domain>vagrantup.com</domain>
+      <hostname>vagrant-sles-11sp3-x64-for-vmware</hostname>
       <resolv_conf_policy>auto</resolv_conf_policy>
       <write_hostname config:type="boolean">false</write_hostname>
     </dns>

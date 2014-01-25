@@ -25,23 +25,6 @@ echo -e "\nspeed-up remote logins ..."
 echo -e "\n# added by packer/postinstall.sh" >> /etc/ssh/sshd_config
 echo -e "UseDNS no\n" >> /etc/ssh/sshd_config
 
-# install chef and puppet
-echo -e "\ninstall chef and puppet ..."
-gem install chef --no-ri --no-rdoc
-gem install puppet --no-ri --no-rdoc
-
-# install the virtualbox guest additions
-echo -e "\ninstall the virtualbox guest additions ..."
-zypper --non-interactive remove `rpm -qa virtualbox-guest-*` >/dev/null 2>&1
-VBOX_VERSION=$(cat /home/vagrant/.vbox_version)
-cd /tmp
-wget http://download.virtualbox.org/virtualbox/$VBOX_VERSION/VBoxGuestAdditions_$VBOX_VERSION.iso
-#wget http://192.168.178.10/VBoxGuestAdditions_$VBOX_VERSION.iso
-mount -o loop VBoxGuestAdditions_$VBOX_VERSION.iso /mnt
-sh /mnt/VBoxLinuxAdditions.run
-umount /mnt
-rm -f VBoxGuestAdditions_$VBOX_VERSION.iso
-
 echo -e "\nall done.\n"
 exit
 
