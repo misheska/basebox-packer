@@ -595,45 +595,23 @@
     <dns>
       <dhcp_hostname config:type="boolean">false</dhcp_hostname>
       <domain>vagrantup.com</domain>
-      <hostname>vagrant-sles-11sp3-x64-for-vmware</hostname>
+      <hostname>vagrant-sles-11sp3-x64</hostname>
       <resolv_conf_policy>auto</resolv_conf_policy>
-      <write_hostname config:type="boolean">false</write_hostname>
+      <searchlist config:type="list">
+        <search>vagrantup.com</search>
+      </searchlist>
+      <write_hostname config:type="boolean">true</write_hostname>
     </dns>
     <interfaces config:type="list">
       <interface>
         <bootproto>dhcp</bootproto>
         <device>eth0</device>
-        <name>82545EM Gigabit Ethernet Controller (Copper)</name>
-        <startmode>auto</startmode>
-        <usercontrol>no</usercontrol>
-      </interface>
-      <interface>
-        <aliases>
-          <alias2>
-            <IPADDR>127.0.0.2</IPADDR>
-            <NETMASK>255.0.0.0</NETMASK>
-            <PREFIXLEN>8</PREFIXLEN>
-          </alias2>
-        </aliases>
-        <broadcast>127.255.255.255</broadcast>
-        <device>lo</device>
-        <firewall>no</firewall>
-        <ipaddr>127.0.0.1</ipaddr>
-        <netmask>255.0.0.0</netmask>
-        <network>127.0.0.0</network>
-        <prefixlen>8</prefixlen>
         <startmode>auto</startmode>
         <usercontrol>no</usercontrol>
       </interface>
     </interfaces>
+    <keep_install_network config:type="boolean">true</keep_install_network>
     <managed config:type="boolean">false</managed>
-    <net-udev config:type="list">
-      <rule>
-        <name>eth0</name>
-        <rule>ATTR{address}</rule>
-        <value>00:0c:29:4c:0e:c5</value>
-      </rule>
-    </net-udev>
     <routing>
       <ip_forward config:type="boolean">false</ip_forward>
     </routing>
