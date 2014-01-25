@@ -1,0 +1,54 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<esc><enter><wait>",
+        "linux netdevice=eth0 netsetup=dhcp install=cd:/",
+        " lang=en_US autoyast=http://192.168.1.13:{{ .HTTPPort }}/autoinst.xml",
+        " textmode=1",
+        "<enter><wait>"
+      ],
+      "boot_wait": "10s",
+      "guest_os_type": "sles11-64",
+      "http_directory": "http",
+      "http_port_min": "8100",
+      "iso_checksum": "45f3feabc41dd90ae25a792b2a8babfb",
+      "iso_checksum_type": "md5",
+      "iso_url": "D:/ISO/san/sles/sles11sp3_for_vmware/SLES-11-SP3-for-VMware-DVD-x86_64-GM-DVD1.iso",
+      "shutdown_command": "echo '/sbin/halt -h -p' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "10000s",
+      "tools_upload_flavor": "linux",
+      "type": "vmware-iso",
+      "vm_name": "sles11sp3x64en4vmware",
+      "vmx_data": {
+        "cpuid.coresPerSocket": "1",
+        "memsize": "768",
+        "numvcpus": "1"
+      }
+    }
+  ],
+  "post-processors": [
+    {
+      "keep_input_artifact": true,
+      "output": "../../{{.Provider}}/sles11sp3x64en4vmware.box",
+      "type": "vagrant"
+    }
+  ],
+  "provisioners": [
+    {
+      "override": {
+        "vmware-iso": {
+          "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+        }
+      },
+      "scripts": [
+        "scripts/postinstall.sh"
+      ],
+      "type": "shell"
+    }
+  ]
+}
+
