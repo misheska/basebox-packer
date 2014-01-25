@@ -51,8 +51,22 @@ goto :EOF
 :list
 cd /D "%CUR%"
 echo Choose one of the following favor/template. Then call make favor/template
-for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\template.json echo virtualbox/%%i
-for /F " usebackq delims==" %%i in (`dir /b template`) do @if exist template\%%i\template.json echo vmware/%%i
+for /F " usebackq delims==" %%i in (`dir /b template`) do (
+  find /c "virtualbox" template\%%i\template.json 2>nul >nul
+  if ERRORLEVEL 1 (
+    rem 
+  ) else (
+    echo virtualbox/%%i
+  )
+)
+for /F " usebackq delims==" %%i in (`dir /b template`) do (
+  find /c "vmware" template\%%i\template.json 2>nul >nul
+  if ERRORLEVEL 1 (
+    rem
+  ) else (
+    echo vmware/%%i
+  )
+)
 goto :EOF
 
 :clean
