@@ -19,9 +19,12 @@
       "floppy_files": [
         "floppy/win2012r2-standard/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
-        "floppy/cygwin.bat"
+        "floppy/cygwin.bat",
+        "floppy/_uninstall-cygwin.bat",
+        "floppy/zz-start-sshd.cmd"
       ],
       "tools_upload_flavor": "windows",
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
@@ -46,9 +49,12 @@
       "floppy_files": [
         "floppy/win2012r2-standard/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
         "floppy/cygwin.bat",
+        "floppy/_uninstall-cygwin.bat",
+        "floppy/zz-start-sshd.cmd",
         "floppy/oracle-cert.cer"
       ],
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
@@ -87,7 +93,7 @@
     "type": "vagrant",
     "keep_input_artifact": false,
     "compression_level": 1,
-    "vagrantfile_template": "vagrantfile-win2012r2-standard-cygwin.template",
+    "vagrantfile_template": "vagrantfile/vagrantfile-win2012r2-standard-cygwin.template",
     "output": "../../{{.Provider}}/win2012r2-standard-cygwin-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
