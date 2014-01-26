@@ -10,7 +10,7 @@ preseed.cfg eol=lf
 *.bat text eol=crlf
 *.cmd text eol=crlf
 *.ps1 text eol=crlf
-Autounattend.xml test eol=crlf
+Autounattend.xml text eol=crlf
 
 # These files are binary
 *.cer binary
