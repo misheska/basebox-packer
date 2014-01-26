@@ -19,8 +19,10 @@
       "floppy_files": [
         "floppy/win81x86-enterprise/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
+        "floppy/zz-start-sshd.cmd",
         "floppy/openssh.bat"
       ],
       "tools_upload_flavor": "windows",
@@ -46,9 +48,11 @@
       "floppy_files": [
         "floppy/win81x86-enterprise/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
         "floppy/openssh.bat",
+        "floppy/zz-start-sshd.cmd",
         "floppy/oracle-cert.cer"],
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
       "disk_size": 40960,
@@ -82,7 +86,7 @@
     "type": "vagrant",
     "keep_input_artifact": false,
     "compression_level": 1,
-    "vagrantfile_template": "vagrantfile-win81x86-enterprise.template",
+    "vagrantfile_template": "vagrantfile/vagrantfile-win81x86-enterprise.template",
     "output": "../../{{.Provider}}/win81x86-enterprise-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
