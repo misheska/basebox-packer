@@ -23,6 +23,9 @@ echo ==^> Download complete
 echo ==^> Installing "%OPENSSH_EXE%"
 cmd /c "%OPENSSH_EXE%" /S /port=22 /privsep=1 /password=D@rj33l1ng
 
+echo ==^> Stopping opensshd
+sc stop opensshd
+
 echo ==^> Ensuring vagrant can login
 mkdir "%USERPROFILE%\.ssh"
 cmd /c %windir%\System32\icacls.exe "%USERPROFILE%" /grant %USERNAME%:(OI)(CI)F
