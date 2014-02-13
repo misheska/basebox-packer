@@ -16,3 +16,5 @@ cmd /c sc config "WinRM" start= auto
 
 cmd /c reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaveActive /t REG_SZ /d 0 /f
 cmd /c reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaveIsSecure /t REG_SZ /d 0 /f
+
+net accounts /MaxPWAge:unlimited
