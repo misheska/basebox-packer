@@ -40,7 +40,7 @@
         "../floppy/uninstall-cygwin-and-shutdown.bat",
         "../floppy/oracle-cert.cer"
       ],
-      "guest_additions_path": "/cygdrive/c/Users/vagrant/VBoxGuestAdditions.iso",
+      "guest_additions_mode": "disable",
       "guest_os_type": "Windows2012_64",
       "iso_checksum": "fb101ed6d7328aca6473158006630a9d",
       "iso_checksum_type": "md5",
