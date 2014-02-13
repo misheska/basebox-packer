@@ -7,7 +7,8 @@ if "%PROCESSOR_ARCHITECTURE%" == "AMD64" (set ARCH=x86_64) else (set ARCH=x86)
 set ARCH=x86
 set URL=http://cygwin.com/setup-%ARCH%.exe
 
-cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal %URL% %SystemDrive%\cygwin\cygwin-setup.exe
+rem cmd /c bitsadmin /transfer CygwinSetupExe /download /priority normal %URL% %SystemDrive%\cygwin\cygwin-setup.exe
+powershell -NoProfile -ExecutionPolicy unrestricted -Command "((new-object net.webclient).DownloadFile('%URL%', '%SystemDrive%\cygwin\cygwin-setup.exe'))"
 
 REM goto a temp directory
 cd %SystemDrive%\windows\temp
