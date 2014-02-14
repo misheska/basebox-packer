@@ -28,6 +28,48 @@
         "memsize": "768",
         "numvcpus": "1"
       }
+    },
+    {
+      "disk_size": 40960,
+      "floppy_files": [
+        "floppy/Autounattend.xml",
+        "../floppy/set-power-config.bat",
+        "../floppy/install-winrm.bat",
+        "../floppy/install-cygwin-sshd.bat",
+        "../floppy/uninstall-cygwin-and-shutdown.bat",
+        "../floppy/oracle-cert.cer"
+      ],
+      "guest_additions_mode": "disable",
+      "guest_os_type": "Windows2008_64",
+      "iso_checksum": "8d397b69135d207452a78c3c3051339d",
+      "iso_checksum_type": "md5",
+      "iso_url": "D:/ISO/san/windows/licensed/datacenter_san/win2008r2sp1_datacenter_en/SW_DVD5_Windows_Svr_DC_EE_SE_Web_2008_R2_64Bit_English_w_SP1_MLF_X17-22580.iso",
+      "shutdown_command": "cmd /C start A:\\uninstall-cygwin-and-shutdown.bat",
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "10000s",
+      "type": "virtualbox-iso",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "768"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "1"
+        ],
+        [
+          "setextradata",
+          "{{.Name}}",
+          "VBoxInternal/CPUM/CMPXCHG16B",
+          "1"
+        ]
+      ],
+      "vm_name": "win2008R2-datacenter4vmware"
     }
   ],
   "post-processors": [
