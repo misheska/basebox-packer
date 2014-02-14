@@ -2,8 +2,8 @@
   "variables": {
     "provisioner": "provisionerless",
     "provisioner_version": "",
-    "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.3-alternate-amd64.iso",
-    "iso_checksum": "7449125d5893df93f54fb3dd69d6208e34d486d8"
+    "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.4-alternate-amd64.iso",
+    "iso_checksum": "73a758a2353f21e3016be8135411342a605bccac"
   },
   "builders": [{
     "vm_name": "ubuntu1204-desktop",
