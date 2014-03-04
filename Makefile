@@ -11,13 +11,13 @@ all: $(BOX_FILES)
 vmware/%.box: template/%/template.json
 	cd $(dir $<); \
 	rm -rf output-vmware-iso; \
-	mkdir -p ../../vmware-iso; \
+	mkdir -p ../../vmware; \
 	packer build -only=vmware-iso $(notdir $<)
 
 virtualbox/%.box: template/%/template.json
 	cd $(dir $<); \
 	rm -rf output-virtualbox-iso; \
-	mkdir -p ../../virtualbox-iso; \
+	mkdir -p ../../virtualbox; \
 	packer build -only=virtualbox-iso $(notdir $<)
 
 .PHONY: list
