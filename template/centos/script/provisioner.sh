@@ -43,7 +43,7 @@ case "${PROVISIONER}" in
     ;;
 
   'puppet')
-    OS_MAJRELEASE=$(cat /etc/redhat-release | perl -n -e'/release ([\d]*)/ && print $1')
+    OS_MAJRELEASE=$(egrep -Eo 'release ([0-9][0-9.]*)' /etc/redhat-release | cut -f2 -d' ' | cut -f1 -d.)
 
     echo "Installing Puppet Labs repositories"
     rpm -ipv "http://yum.puppetlabs.com/puppetlabs-release-el-${OS_MAJRELEASE}.noarch.rpm"
