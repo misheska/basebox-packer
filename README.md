@@ -2,10 +2,10 @@ basebox
 =======
 
 Packer definitions for vagrant VirtualBox and VMware baseboxes. 
-These are the vagrant baseboxes I use for my own personal projects. 
-For more informations, see original project
-<https://github.com/misheska/basebox-packer>
-This project is a fork running packer on a Windows host.
+These are the vagrant baseboxes I use for my own personal projents. 
+This project is run against a private Jenkins instance, and as template
+definitions are added and/or updated, links to the generated images are
+added below:
 
 Current VMware Baseboxes
 ========================
@@ -141,7 +141,8 @@ Current VMware Baseboxes
 * [misheska-opensuse114](https://dl.dropboxusercontent.com/s/1b8vaj9vo4sz6h1/misheska-opensuse114.box?token_hash=AAFQ0Fov8FnrVy4bhEKu6G2wmYUeYJWfDzwsx-4MY5P32g&dl=1) - openSUSE 11.4 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.3.21136 build-1031360)
 * [misheska-debian71](https://www.dropbox.com/s/h8yktun0dd06xfr/misheska-debian71.box) - Debian "wheezy" 7.1 64-bit VMware Fusion 5.0.3 basebox (VMware Tools 9.2.3.21136 build-1031360)
 
-    cinst packer
+Current VirtualBox Baseboxes
+============================
 
 ## VirtualBox 4.3.6
 
@@ -197,6 +198,10 @@ Current VMware Baseboxes
 * [debian73-i386](https://dl.dropboxusercontent.com/s/eekwj9rc875fb3t/debian73-i386.box?dl=1&token_hash=AAFy7FZ7_TIsqezpMr43_P3r7yZljfDM29Ju5pSRoxagQg) - Debian "wheezy" 7.2 32-bit (VirtualBox 4.3.6 Guest Additions)
 * [debian72-i386](https://dl.dropboxusercontent.com/s/yp9l0fb1q2s7x8g/debian72-i386.box?dl=1&token_hash=AAHiPAosFGLQ-dUPADkCeeYp_-8cRbrrnPCMgcRc7obOdw) - Debian "wheezy" 7.2 32-bit (VirtualBox 4.3.6 Guest Additions)
 * [debian608-i386](https://dl.dropboxusercontent.com/s/0r30oopn56zyhy1/debian608-i386.box?dl=1&token_hash=AAFhoVFAqUEg8CfbZiwGykqZXRcVEyHSyXsoZwTY091yYw) - Debian "squeeze" 6.0.8 32-bit (VirtualBox 4.3.6 Guest Additions)
+
+
+Getting Started
+===============
 
 A GNU Make makefile is provided to support automated builds.  It assumes
 that both GNU Make and Packer are in the PATH.  Download and install
