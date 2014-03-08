@@ -1,8 +1,16 @@
-# Set default behaviour, in case users don't have core.autocrlf set.
+# Detect text files automatically
 * text=auto
 
-# all Unix / CYGWIN shell scripts must be unix
-*.sh text eol=lf
+# Force Unix-style line endings on these files
+*.sh eol=lf
+ks.cfg eol=lf
+preseed.cfg eol=lf
 
-# Linux Kickstart configs must use unix fileformat
-ks.cfg text eol=lf
+# Force CRLF line endings on these files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+Autounattend.xml text eol=crlf
+
+# These files are binary
+*.cer binary

@@ -1,0 +1,76 @@
+{
+  "variables": {
+    "provisioner": "provisionerless",
+    "provisioner_version": "",
+    "iso_url": "http://mirrors.kernel.org/fedora/releases/18/Fedora/i386/iso/Fedora-18-i386-DVD.iso",
+    "iso_checksum": "a22e6ab7b0e5e93397e4a1d8d994693d0afb9ad46b1f47a4fe10bfbbc2e7f354"
+  },
+  "builders": [{
+    "vm_name": "fedora18-i386",
+    "type": "vmware-iso",
+    "guest_os_type": "fedora",
+    "http_directory": "http",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
+    "iso_checksum_type": "sha256",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "tools_upload_flavor": "linux",
+    "boot_command": [
+      "<tab> linux text biosdevname=0 ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks-fedora18.cfg<enter><enter>"
+    ],
+    "floppy_files": ["floppy/vmware9.k3.8rc4.patch", "floppy/vmware9.compat_mm.patch", "floppy/vmware9.k3.9.vmhgfs.patch"],
+    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+    "disk_size": 10140,
+    "vmx_data": {
+      "memsize": "512",
+      "numvcpus": "1",
+      "cpuid.coresPerSocket": "1"
+    }
+  },
+  {
+    "vm_name": "fedora18-i386",
+    "type": "virtualbox-iso",
+    "http_directory": "http",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
+    "iso_checksum_type": "sha256",
+    "guest_os_type": "Fedora",
+    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+    "virtualbox_version_file": ".vbox_version",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "boot_command": [
+      "<tab> linux text biosdevname=0 ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks-fedora18.cfg<enter><enter>"
+    ],
+    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+    "disk_size": 10140,
+    "vboxmanage": [
+      ["modifyvm", "{{.Name}}", "--memory", "512"],
+      ["modifyvm", "{{.Name}}", "--cpus", "1"]
+    ]
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "environment_vars": [
+      "PROVISIONER={{user `provisioner`}}",
+      "PROVISIONER_VERSION={{user `provisioner_version`}}"
+    ],
+    "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+    "scripts": [
+      "script/base.sh",
+      "script/vagrant.sh",
+      "script/vmtools.sh",
+      "script/provisioner.sh",
+      "script/cleanup.sh",
+      "script/zerodisk.sh"
+    ]
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": false,
+    "output": "../../{{.Provider}}/fedora18-i386-{{user `provisioner`}}{{user `provisioner_version`}}.box"
+  }]
+}

@@ -2,11 +2,10 @@ packer_cache
 output-*
 *.box
 *.tar.gz
-virtualbox
-vmware
 iso
-*.swp
-packer.log
+crash.log
+tmp
+
 .DS_Store
 log
 *msi
