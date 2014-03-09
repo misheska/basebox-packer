@@ -4,12 +4,12 @@
     "provisioner_version": "",
     "iso_url": "../../iso/OSX_InstallESD_10.9_13A603.dmg",
     "iso_checksum": "c0eeab9eb0f1c7197ae97259b4100dd39d40dd74",
-    "autologin_vagrant_user": "",
+    "autologin_vagrant_user": "true",
     "install_xcode_cli_tools": "true"
   },
   "builders": [
     {
-      "vm_name": "osx109",
+      "vm_name": "osx109-desktop",
       "type": "vmware-iso",
       "guest_os_type": "darwin12-64",
       "iso_url": "{{ user `iso_url` }}",
@@ -73,6 +73,7 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/osx109-{{user `provisioner`}}{{user `provisioner_version`}}.box"
+    "vagrantfile_template": "vagrantfile/vagrantfile-osx109-desktop.template",
+    "output": "../../{{.Provider}}/osx109-desktop-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
