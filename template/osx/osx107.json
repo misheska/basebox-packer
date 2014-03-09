@@ -2,8 +2,8 @@
   "variables": {
     "provisioner": "provisionerless",
     "provisioner_version": "",
-    "iso_url": "../../OSX_InstallESD_10.7_11A511.dmg",
-    "iso_checksum": "82f1cc4fe1eaa080382042b527214473",
+    "iso_url": "../../iso/OSX_InstallESD_10.7_11A511.dmg",
+    "iso_checksum": "51068c57281bdc78c3564a16218468656760905e",
     "autologin_vagrant_user": "",
     "install_xcode_cli_tools": "true"
   },
@@ -73,6 +73,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/osx107{{user `provisioner`}}{{user `provisioner_version`}}.box"
+    "output": "../../{{.Provider}}/osx107-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
