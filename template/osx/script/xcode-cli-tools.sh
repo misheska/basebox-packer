@@ -1,4 +1,6 @@
 #!/bin/sh
+
+[ -z \"$INSTALL_XCODE_CLI_TOOLS\" ] && exit
  
 # Get and install Xcode CLI tools
 OSX_VERS=$(sw_vers -productVersion | awk -F "." '{print $2}')
