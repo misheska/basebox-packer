@@ -91,7 +91,7 @@
     "type": "vagrant",
     "keep_input_artifact": false,
     "compression_level": 1,
-    "vagrantfile_template": "vagrantfile-win7x86-pro.template",
+    "vagrantfile_template": "vagrantfile/vagrantfile-win7x86-pro.template",
     "output": "../../{{.Provider}}/win7x86-pro-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
