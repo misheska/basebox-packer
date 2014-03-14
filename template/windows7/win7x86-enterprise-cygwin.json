@@ -24,6 +24,7 @@
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
         "floppy/networkprompt.bat",
+        "floppy/cygwin.sh",
         "floppy/cygwin.bat",
         "floppy/_uninstall-cygwin.bat",
         "floppy/zz-start-sshd.cmd"
@@ -56,6 +57,7 @@
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
         "floppy/networkprompt.bat",
+        "floppy/cygwin.sh",
         "floppy/cygwin.bat",
         "floppy/_uninstall-cygwin.bat",
         "floppy/zz-start-sshd.cmd",
@@ -75,10 +77,7 @@
       "remote_path": "/tmp/script.bat",
       "environment_vars": [
         "PROVISIONER={{user `provisioner`}}",
-        "PROVISIONER_VERSION={{user `provisioner_version`}}",
-        "TEMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
-        "TMP=$USERPROFILE\\\\AppData\\\\Local\\\\Temp",
-        "USERNAME=$USER"
+        "PROVISIONER_VERSION={{user `provisioner_version`}}"
       ],
       "execute_command": "{{.Vars}} cmd /c $(/bin/cygpath -m '{{.Path}}')",
       "scripts": [
