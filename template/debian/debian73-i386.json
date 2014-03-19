@@ -2,7 +2,7 @@
   "variables": {
     "provisioner": "provisionerless",
     "provisioner_version": "",
-    "iso_url": "http://cdimage.debian.org/debian-cd/7.3.0/i386/iso-dvd/debian-7.3.0-i386-DVD-1.iso",
+    "iso_url": "http://cdimage.debian.org/cdimage/archive/7.3.0/i386/iso-dvd/debian-7.3.0-i386-DVD-1.iso",
     "iso_checksum": "0b6b29b7dd004362889a52fb06d68f4131d79801",
     "iso_checksum_type": "sha1"
   },
