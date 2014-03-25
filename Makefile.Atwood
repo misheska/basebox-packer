@@ -4,13 +4,13 @@ vmware/win2012r2-datacenter-$(PROVISIONER)$(PROVISIONER_VERSION).box: win2012r2-
 	cd $(dir $<); \
 	rm -rf output-vmware-iso; \
 	mkdir -p ../../vmware; \
-	packer build -only=vmware-iso -var "iso_url=file:///Users/Shared/MSDN_Opscode/win2012r2/en_windows_server_2012_r2_x64_dvd_2707946.iso" -var "provisioner=provisionerless" -var "provisioner_version=" $(PACKER_VARS) $(notdir $<)
+	packer build -only=vmware-iso -var "iso_url=file:///Users/Shared/MSDN_Opscode/win2012r2/en_windows_server_2012_r2_x64_dvd_2707946.iso" -var "provisioner=provisionerless" -var "provisioner_version=''" $(PACKER_VARS) $(notdir $<)
 
 vmware/osx109-desktop-$(PROVISIONER)$(PROVISIONER_VERSION).box: osx109-desktop.json
 	cd $(dir $<); \
 	rm -rf output-vmware-iso; \
 	mkdir -p ../../vmware; \
-	packer build -only=vmware-iso -var "iso_url=file:///Users/Shared/osx/OSXMavericks/OSX_InstallESD_10.9_13A603.dmg" -var "provisioner=provisionerless" -var "provisioner_version=" -var "autologin_vagrant_user=true" -var "install_xcode_cli_tools=false" $(PACKER_VARS) $(notdir $<)
+	packer build -only=vmware-iso -var "iso_url=file:///Users/Shared/osx/OSXMavericks/OSX_InstallESD_10.9_13A603.dmg" -var "provisioner=provisionerless" -var "provisioner_version=" -var "autologin_vagrant_user=true" -var "install_xcode_cli_tools=" $(PACKER_VARS) $(notdir $<)
 
 vmware/centos65-desktop-$(PROVISIONER)$(PROVISIONER_VERSION).box: centos65-desktop.json
 	cd $(dir $<); \
@@ -22,4 +22,4 @@ vmware/ubuntu1204-desktop-$(PROVISIONER)$(PROVISIONER_VERSION).box: ubuntu1204-d
 	cd $(dir $<); \
 	rm -rf output-vmware-iso; \
 	mkdir -p ../../vmware; \
-	packer build -only=vmware-iso -var "iso_url=file:///Users/Shared/Ubuntu/ubuntu-12.04.4-desktop-amd64.iso" -var "provisioner=provisionerless" -var "provisioner_version=" $(PACKER_VARS) $(notdir $<)
+	packer build -only=vmware-iso -var "iso_url=file:///Users/Shared/Ubuntu/ubuntu-12.04.4-alternate-amd64.iso" -var "provisioner=provisionerless" -var "provisioner_version=" $(PACKER_VARS) $(notdir $<)
