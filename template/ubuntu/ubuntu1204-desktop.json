@@ -99,7 +99,7 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "vagrantfile_template": "vagrantfile/vagrantfile-ubuntu1204-desktop.template",
+    "vagrantfile_template": "tpl/vagrantfile-ubuntu1204-desktop.tpl",
     "output": "../../{{.Provider}}/ubuntu1204-desktop-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
