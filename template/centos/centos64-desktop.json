@@ -72,7 +72,7 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "vagrantfile_template": "vagrantfile/vagrantfile-centos64-desktop.template",
+    "vagrantfile_template": "tpl/vagrantfile-centos64-desktop.tpl",
     "output": "../../{{.Provider}}/centos64-desktop-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
