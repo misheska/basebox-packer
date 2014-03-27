@@ -12,6 +12,24 @@ vmware/osx109-desktop-$(PROVISIONER)$(PROVISIONER_VERSION).box: osx109-desktop.j
 	mkdir -p ../../vmware; \
 	packer build -only=vmware-iso -var "iso_url=file:///Users/Shared/osx/OSXMavericks/OSX_InstallESD_10.9_13A603.dmg" -var "provisioner=provisionerless" -var "provisioner_version=" -var "autologin_vagrant_user=true" -var "install_xcode_cli_tools=" $(PACKER_VARS) $(notdir $<)
 
+vmware/centos510-$(PROVISIONER)$(PROVISIONER_VERSION).box: centos510.json
+	cd $(dir $<); \
+	rm -rf output-vmware-iso; \
+	mkdir -p ../../vmware; \
+	packer build -only=vmware-iso -var "iso_url=file:///Users/Shared/CentOS/5.10/CentOS-5.10-x86_64-bin-DVD-1of2.iso" -var "provisioner=provisionerless" -var "provisioner_version=" $(PACKER_VARS) $(notdir $<)
+
+vmware/centos59-$(PROVISIONER)$(PROVISIONER_VERSION).box: centos59.json
+	cd $(dir $<); \
+	rm -rf output-vmware-iso; \
+	mkdir -p ../../vmware; \
+	packer build -only=vmware-iso -var "iso_url=file:///Users/Shared/CentOS/5.9/CentOS-5.9-x86_64-bin-DVD-1of2.iso" -var "provisioner=provisionerless" -var "provisioner_version=" $(PACKER_VARS) $(notdir $<)
+
+vmware/centos64-desktop-$(PROVISIONER)$(PROVISIONER_VERSION).box: centos64-desktop.json
+	cd $(dir $<); \
+	rm -rf output-vmware-iso; \
+	mkdir -p ../../vmware; \
+	packer build -only=vmware-iso -var "iso_url=file:///Users/Shared/CentOS/6.4/CentOS-6.4-x86_64-bin-DVD1.iso" -var "provisioner=provisionerless" -var "provisioner_version=" $(PACKER_VARS) $(notdir $<)
+
 vmware/centos65-desktop-$(PROVISIONER)$(PROVISIONER_VERSION).box: centos65-desktop.json
 	cd $(dir $<); \
 	rm -rf output-vmware-iso; \
