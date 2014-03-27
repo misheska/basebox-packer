@@ -35,7 +35,7 @@ for /F %%i in (%TEMP%\runlist.txt) do (
     cmd %CMD_OPTS% /c "%%~nxi"
   )
   echo %0 %%~i returned errorlevel %ERRORLEVEL% >>%packer_log%
-  if defined PACKER_PAUSE choice /T %PACKER_PAUSE% /D Y /N /M "Waiting %PACKER_PAUSE% seconds or press Y to continue: "
+  if defined PACKER_PAUSE timeout /T %PACKER_PAUSE%
 )
 
 del "%TEMP%\runlist.txt"

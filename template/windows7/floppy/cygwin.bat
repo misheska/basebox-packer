@@ -1,5 +1,3 @@
-@echo off
-
 setlocal EnableDelayedExpansion EnableExtensions
 
 :: Force CYGWIN_ARCH to 32-bit - 64-bit seems to crash a lot
@@ -26,7 +24,14 @@ title Installing Cygwin and %CYGWIN_PACKAGES% to %CYGWIN_HOME%. Please wait...
 cd /D "%TEMP%"
 
 echo ==^> Downloading "%CYGWIN_SETUP_URL%" to "%CYGWIN_SETUP_LOCAL_PATH%"
-powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%CYGWIN_SETUP_URL%', '%CYGWIN_SETUP_LOCAL_PATH%')"
+
+PATH=%PATH%;~dp0
+for %%i in (_download.cmd) do set _download=%%~$PATH:i
+if defined _download (
+  call "%_download%" "%CYGWIN_SETUP_URL%" "%CYGWIN_SETUP_LOCAL_PATH%"
+) else (
+  powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%CYGWIN_SETUP_URL%', '%CYGWIN_SETUP_LOCAL_PATH%')" <NUL
+)
 
 echo ==^> Installing Cygwin
 "%CYGWIN_SETUP_LOCAL_PATH%" -a %CYGWIN_ARCH% -q -R %CYGWIN_HOME% -P %CYGWIN_PACKAGES% -s %CYGWIN_MIRROR_URL%
