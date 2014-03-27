@@ -1,0 +1,8 @@
+Vagrant.configure('2') do |config|
+  config.vm.box = 'centos64'
+  config.vm.box_url = 'file://../../../../vmware/centos64-provisionerless.box'
+
+  config.vm.provision :serverspec do |spec|
+    spec.pattern = '../*_spec.rb'
+  end
+end
