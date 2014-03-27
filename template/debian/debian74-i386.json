@@ -2,14 +2,14 @@
   "variables": {
     "provisioner": "provisionerless",
     "provisioner_version": "",
-    "iso_url": "http://cdimage.debian.org/cdimage/archive/7.3.0/amd64/iso-dvd/debian-7.3.0-amd64-DVD-1.iso",
-    "iso_checksum": "9552e760559ea33722412f8b42d37c7a6ac7b609",
+    "iso_url": "http://cdimage.debian.org/cdimage/release/7.4.0/i386/iso-dvd/debian-7.4.0-i386-DVD-1.iso",
+    "iso_checksum": "8c71ce201cfb0953e942f1b14970d62e852933d4",
     "iso_checksum_type": "sha1"
   },
   "builders": [{
-    "vm_name": "debian73",
+    "vm_name": "debian74-i386",
     "type": "vmware-iso",
-    "guest_os_type": "debian7-64",
+    "guest_os_type": "debian7",
     "http_directory": "http",
     "iso_url": "{{user `iso_url`}}",
     "iso_checksum": "{{user `iso_checksum`}}",
@@ -39,13 +39,13 @@
     }
   },
   {
-    "vm_name": "debian73",
+    "vm_name": "debian74-i386",
     "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "{{user `iso_url`}}",
     "iso_checksum": "{{user `iso_checksum`}}",
     "iso_checksum_type": "{{user `iso_checksum_type`}}",
-    "guest_os_type": "Debian_64",
+    "guest_os_type": "Debian",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
     "virtualbox_version_file": ".vbox_version",
     "ssh_username": "vagrant",
@@ -89,6 +89,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/debian73-{{user `provisioner`}}{{user `provisioner_version`}}.box"
+    "output": "../../{{.Provider}}/debian74-i386-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }

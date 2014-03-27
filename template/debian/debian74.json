@@ -2,12 +2,12 @@
   "variables": {
     "provisioner": "provisionerless",
     "provisioner_version": "",
-    "iso_url": "http://cdimage.debian.org/cdimage/archive/7.3.0/amd64/iso-dvd/debian-7.3.0-amd64-DVD-1.iso",
-    "iso_checksum": "9552e760559ea33722412f8b42d37c7a6ac7b609",
+    "iso_url": "http://cdimage.debian.org/cdimage/release/7.4.0/amd64/iso-dvd/debian-7.4.0-amd64-DVD-1.iso",
+    "iso_checksum": "f3aad259644d38244e5b9ba9b4b9c71fc8320e46",
     "iso_checksum_type": "sha1"
   },
   "builders": [{
-    "vm_name": "debian73",
+    "vm_name": "debian74",
     "type": "vmware-iso",
     "guest_os_type": "debian7-64",
     "http_directory": "http",
@@ -39,7 +39,7 @@
     }
   },
   {
-    "vm_name": "debian73",
+    "vm_name": "debian74",
     "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "{{user `iso_url`}}",
@@ -89,6 +89,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/debian73-{{user `provisioner`}}{{user `provisioner_version`}}.box"
+    "output": "../../{{.Provider}}/debian74-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
