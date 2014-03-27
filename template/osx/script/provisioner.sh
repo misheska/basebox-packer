@@ -85,6 +85,9 @@ install_puppet()
     install_dmg "Puppet" "${PUPPET_DMG}"
     install_dmg "Facter" "${FACTER_DMG}"
 
+    # Hide all users from the loginwindow with uid below 500, which will include the puppet user
+    defaults write /Library/Preferences/com.apple.loginwindow Hide500Users -bool YES
+
     # Clean up
     rm -rf "${PUPPET_DMG}" "${FACTER_DMG}" "~/Library/AutoPkg"
 }
