@@ -2,13 +2,13 @@
   "variables": {
     "provisioner": "provisionerless",
     "provisioner_version": "",
-    "iso_url": "http://cdimage.debian.org/cdimage/archive/6.0.8/amd64/iso-cd/debian-6.0.8-amd64-CD-1.iso",
-    "iso_checksum": "d0ec1c64c00ff601995139dbacfb54109a23788f"
+    "iso_url": "http://cdimage.debian.org/cdimage/archive/6.0.9/i386/iso-cd/debian-6.0.9-i386-CD-1.iso",
+    "iso_checksum": "bc2886211bce0e9c54bdf779f21a35d5e5a122fd"
   },
   "builders": [{
-    "vm_name": "debian608",
+    "vm_name": "debian609-i386",
     "type": "vmware-iso",
-    "guest_os_type": "debian6-64",
+    "guest_os_type": "debian6",
     "http_directory": "http",
     "iso_url": "{{ user `iso_url` }}",
     "iso_checksum": "{{ user `iso_checksum` }}",
@@ -43,13 +43,13 @@
     }
   },
   {
-    "vm_name": "debian608",
+    "vm_name": "debian609-i386",
     "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "{{ user `iso_url` }}",
     "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha1",
-    "guest_os_type": "Debian_64",
+    "guest_os_type": "Debian",
     "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
     "virtualbox_version_file": ".vbox_version",
     "ssh_username": "vagrant",
@@ -98,6 +98,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/debian608-{{user `provisioner`}}{{user `provisioner_version`}}.box"
+    "output": "../../{{.Provider}}/debian609-i386-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
