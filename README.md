@@ -1,8 +1,8 @@
 basebox
 =======
 
-Packer definitions for vagrant VirtualBox and VMware baseboxes. 
-These are the vagrant baseboxes I use for my own personal projents. 
+Packer definitions for vagrant VirtualBox and VMware baseboxes.
+These are the vagrant baseboxes I use for my own personal projects.
 This project is run against a private Jenkins instance, and as template
 definitions are added and/or updated, links to the generated images are
 added below:

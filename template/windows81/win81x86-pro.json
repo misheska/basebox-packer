@@ -1,7 +1,7 @@
 {
   "variables": {
-    "provisioner": "provisionerless",
-    "provisioner_version": "",
+    "provisioner": "chef",
+    "provisioner_version": "latest",
     "iso_url": "../../iso/en_windows_8_1_x86_dvd_2707392.iso",
     "iso_checksum": "802cfcd3a411d99c097ea7e747f0b6697f9bdac4"
   },
@@ -19,9 +19,11 @@
       "floppy_files": [
         "floppy/win81x86-pro/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
-        "floppy/openssh.bat"
+        "floppy/openssh.bat",
+        "floppy/zz-start-sshd.cmd"
       ],
       "tools_upload_flavor": "windows",
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
@@ -46,9 +48,11 @@
       "floppy_files": [
         "floppy/win81x86-pro/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
         "floppy/openssh.bat",
+        "floppy/zz-start-sshd.cmd",
         "floppy/oracle-cert.cer"
       ],
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
@@ -83,7 +87,7 @@
     "type": "vagrant",
     "keep_input_artifact": false,
     "compression_level": 1,
-    "vagrantfile_template": "vagrantfile-win81x86-pro.template",
+    "vagrantfile_template": "vagrantfile/vagrantfile-win81x86-pro.template",
     "output": "../../{{.Provider}}/win81x86-pro-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }

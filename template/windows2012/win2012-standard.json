@@ -1,7 +1,7 @@
 {
   "variables": {
-    "provisioner": "provisionerless",
-    "provisioner_version": "",
+    "provisioner": "chef",
+    "provisioner_version": "latest",
     "iso_url": "../../iso/en_windows_server_2012_x64_dvd_915478.iso",
     "iso_checksum": "d09e752b1ee480bc7e93dfa7d5c3a9b8aac477ba"
   },
@@ -19,9 +19,11 @@
       "floppy_files": [
         "floppy/win2012-standard/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
-        "floppy/openssh.bat"
+        "floppy/openssh.bat",
+        "floppy/zz-start-sshd.cmd"
       ],
       "tools_upload_flavor": "windows",
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
@@ -45,9 +47,11 @@
       "floppy_files": [
         "floppy/win2012-standard/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
         "floppy/openssh.bat",
+        "floppy/zz-start-sshd.cmd",
         "floppy/oracle-cert.cer"
       ],
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
@@ -82,7 +86,7 @@
     "type": "vagrant",
     "keep_input_artifact": false,
     "compression_level": 1,
-    "vagrantfile_template": "vagrantfile-win2012-standard.template",
+    "vagrantfile_template": "vagrantfile/vagrantfile-win2012-standard.template",
     "output": "../../{{.Provider}}/win2012-standard-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }

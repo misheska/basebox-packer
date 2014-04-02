@@ -1,0 +1,94 @@
+{
+  "variables": {
+    "provisioner": "provisionerless",
+    "provisioner_version": "",
+    "iso_url": "http://cdimage.debian.org/cdimage/release/7.4.0/amd64/iso-dvd/debian-7.4.0-amd64-DVD-1.iso",
+    "iso_checksum": "f3aad259644d38244e5b9ba9b4b9c71fc8320e46",
+    "iso_checksum_type": "sha1"
+  },
+  "builders": [{
+    "vm_name": "debian74",
+    "type": "vmware-iso",
+    "guest_os_type": "debian7-64",
+    "http_directory": "http",
+    "iso_url": "{{user `iso_url`}}",
+    "iso_checksum": "{{user `iso_checksum`}}",
+    "iso_checksum_type": "{{user `iso_checksum_type`}}",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "tools_upload_flavor": "linux",
+    "boot_command": [
+      "<esc><wait>",
+      "install",
+      " auto",
+      " url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
+      " debian-installer=en_US",
+      " locale=en_US",
+      " keymap=us",
+      " netcfg/get_hostname=vagrant",
+      " netcfg/get_domain=vm ",
+      "<enter>"
+    ],
+    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -h now",
+    "disk_size": 10140,
+    "vmx_data": {
+      "memsize": "512",
+      "numvcpus": "1",
+      "cpuid.coresPerSocket": "1"
+    }
+  },
+  {
+    "vm_name": "debian74",
+    "type": "virtualbox-iso",
+    "http_directory": "http",
+    "iso_url": "{{user `iso_url`}}",
+    "iso_checksum": "{{user `iso_checksum`}}",
+    "iso_checksum_type": "{{user `iso_checksum_type`}}",
+    "guest_os_type": "Debian_64",
+    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+    "virtualbox_version_file": ".vbox_version",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "boot_command": [
+      "<esc><wait>",
+      "install",
+      " auto",
+      " url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
+      " debian-installer=en_US",
+      " locale=en_US",
+      " keymap=us",
+      " netcfg/get_hostname=vagrant",
+      " netcfg/get_domain=vm ",
+      "<enter>"
+    ],
+    "shutdown_command": "echo 'vagrant'|sudo -S shutdown -h now",
+    "disk_size": 10140,
+    "vboxmanage": [
+      ["modifyvm", "{{.Name}}", "--memory", "512"],
+      ["modifyvm", "{{.Name}}", "--cpus", "1"]
+    ]
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "environment_vars": [
+      "PROVISIONER={{user `provisioner`}}",
+      "PROVISIONER_VERSION={{user `provisioner_version`}}"
+    ],
+    "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+    "scripts": [
+      "script/base.sh",
+      "script/vagrant.sh",
+      "script/vmtools.sh",
+      "script/provisioner.sh",
+      "script/cleanup.sh",
+      "script/zerodisk.sh"
+    ]
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": false,
+    "output": "../../{{.Provider}}/debian74-{{user `provisioner`}}{{user `provisioner_version`}}.box"
+  }]
+}

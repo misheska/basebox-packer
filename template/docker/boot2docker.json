@@ -1,0 +1,38 @@
+{
+  "variables": {
+    "iso_url": "prepare_iso/boot2docker-vagrant.iso"
+  },
+  "builders": [{
+    "vm_name": "boot2docker",
+    "type": "vmware-iso",
+    "guest_os_type": "other3xlinux-64",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum_type": "none",
+    "ssh_username": "docker",
+    "ssh_password": "tcuser",
+    "boot_wait": "5s",
+    "shutdown_command": "sudo poweroff"
+  },
+  {
+    "vm_name": "boot2docker",
+    "type": "virtualbox-iso",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum_type": "none",
+    "guest_os_type": "Linux_64",
+    "guest_additions_mode": "disable",
+    "ssh_username": "docker",
+    "ssh_password": "tcuser",
+    "boot_wait": "5s",
+    "shutdown_command": "sudo poweroff"
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "inline": ["mkfs.ext4 -F -L boot2docker-data /dev/sda"]
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "include": ["prepare_iso/boot2docker-vagrant.iso"],
+    "vagrantfile_template": "tpl/vagrantfile-boot2docker.tpl",
+    "output": "../../{{.Provider}}/boot2docker.box"
+  }]
+}

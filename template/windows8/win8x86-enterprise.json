@@ -1,9 +1,9 @@
 {
   "variables": {
-    "provisioner": "provisionerless",
-    "provisioner_version": "",
+    "provisioner": "chef",
+    "provisioner_version": "latest",
     "iso_url": "../../iso/en_windows_8_enterprise_x86_dvd_917587.iso",
-    "iso_checksum": "22d680ec53336bee8a5b276a972ceba104787f62"
+    "iso_checksum": "fefce3e64fb9ec1cc7977165328890ccc9a10656"
   },
   "builders": [
     {
@@ -18,9 +18,12 @@
       "floppy_files": [
         "floppy/win8x86-enterprise/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
-        "floppy/openssh.bat"
+        "floppy/openssh.bat",
+        "floppy/_uninstall-cygwin.bat",
+        "floppy/zz-start-sshd.cmd"
       ],
       "tools_upload_flavor": "windows",
       "ssh_wait_timeout": "10000s",
@@ -45,9 +48,12 @@
       "floppy_files": [
         "floppy/win8x86-enterprise/Autounattend.xml",
         "floppy/00-run-all-scripts.cmd",
+        "floppy/install-winrm.cmd",
         "floppy/powerconfig.bat",
         "floppy/passwordchange.bat",
         "floppy/openssh.bat",
+        "floppy/_uninstall-cygwin.bat",
+        "floppy/zz-start-sshd.cmd",
         "floppy/oracle-cert.cer"
       ],
       "shutdown_command": "shutdown /s /t 1 /f /d p:4:1 /c 'Packer Shutdown'",
@@ -82,7 +88,7 @@
     "type": "vagrant",
     "keep_input_artifact": false,
     "compression_level": 1,
-    "vagrantfile_template": "vagrantfile-win8x86-enterprise.template",
+    "vagrantfile_template": "vagrantfile/vagrantfile-win8x86-enterprise.template",
     "output": "../../{{.Provider}}/win8x86-enterprise-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }

@@ -1,9 +1,10 @@
-packer_cache
+packer_cache/
 output-*
 *.box
 *.tar.gz
 iso
 crash.log
 tmp
+.vagrant/
 
 .DS_Store
