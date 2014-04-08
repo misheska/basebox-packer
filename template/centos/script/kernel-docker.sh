@@ -11,6 +11,12 @@ yum --enablerepo=elrepo-kernel install -y kernel-ml
 # Grub tweaks - default to latest kernel
 echo "==> Changing grub to boot to latest kernel"
 sed -i 's/^default=1/default=0/' /boot/grub/grub.conf
+echo "==> Enabling memory limit & control of swap"
+sed -i '/kernel \/vmlinuz-3.14/ s/$/ cgroup_enabled=memory swapaccount=1/' /boot/grub/grub.conf
+
+echo "==> Disabling selinux"
+sed -i s/SELINUX=enforcing/SELINUX=disabled/g /etc/selinux/config
+
 
 # reboot
 echo "Rebooting the machine..."
