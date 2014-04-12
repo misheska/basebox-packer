@@ -6,5 +6,6 @@ iso
 crash.log
 tmp
 .vagrant/
+*.swp
 
 .DS_Store
