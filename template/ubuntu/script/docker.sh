@@ -12,3 +12,8 @@ apt-get install -y --force-yes lxc-docker
 # Enable memory and swap accounting
 sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"/' /etc/default/grub
 update-grub
+
+# reboot
+echo "Rebooting the machine..."
+reboot
+sleep 60
