@@ -2,6 +2,7 @@
   "variables": {
     "provisioner": "provisionerless",
     "provisioner_version": "",
+    "provisioner_set_path": "",
     "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.4-server-amd64.iso",
     "iso_checksum": "b802bb065df98c0530d782eb94778c2da19e10d6"
   },
@@ -82,7 +83,8 @@
     "type": "shell",
     "environment_vars": [
       "PROVISIONER={{user `provisioner`}}",
-      "PROVISIONER_VERSION={{user `provisioner_version`}}"
+      "PROVISIONER_VERSION={{user `provisioner_version`}}",
+      "PROVISIONER_SET_PATH={{user `provisioner_set_path`}}"
     ],
     "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [

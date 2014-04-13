@@ -2,6 +2,7 @@
   "variables": {
     "provisioner": "provisionerless",
     "provisioner_version": "",
+    "provisioner_set_path": "",
     "iso_url": "http://releases.ubuntu.com/13.10/ubuntu-13.10-server-amd64.iso",
     "iso_checksum": "5dd72c694c3a7e06a3b4dd651ca26cfc70985004"
   },
@@ -82,7 +83,8 @@
     "type": "shell",
     "environment_vars": [
       "PROVISIONER={{user `provisioner`}}",
-      "PROVISIONER_VERSION={{user `provisioner_version`}}"
+      "PROVISIONER_VERSION={{user `provisioner_version`}}",
+      "PROVISIONER_SET_PATH={{user `provisioner_set_path`}}"
     ],
     "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [
