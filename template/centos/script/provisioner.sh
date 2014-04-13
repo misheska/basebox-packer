@@ -35,7 +35,11 @@ install_chef()
     else
         echo "==> Installing Chef version ${PROVISIONER_VERSION}"
         curl -L https://www.opscode.com/chef/install.sh | sh -s -- -v ${PROVISIONER_VERSION}
-  fi
+    fi
+    if [[ ${PROVISIONER_SET_PATH:-} == 'true' ]]; then
+      echo "Automatically setting vagrant PATH to Chef Client"
+      echo 'export PATH="/opt/chef/embedded/bin:$PATH"' >> /home/vagrant/.bash_profile
+    fi
 }
 
 install_salt()
