@@ -243,8 +243,11 @@ if [[ $PACKER_BUILDER_TYPE =~ virtualbox ]]; then
 
     VBOX_VERSION=$(cat /home/vagrant/.vbox_version)
     mount -o loop /home/vagrant/VBoxGuestAdditions_$VBOX_VERSION.iso /mnt
-#    sh /mnt/VBoxLinuxAdditions.run --nox11
     sh /mnt/VBoxLinuxAdditions.run
     umount /mnt
     rm /home/vagrant/VBoxGuestAdditions_$VBOX_VERSION.iso
+
+    if [[ $VBOX_VERSION =~ 4.3.10 ]]; then
+        ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
+    fi
 fi
