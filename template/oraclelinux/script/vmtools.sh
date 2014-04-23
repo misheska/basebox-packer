@@ -1,6 +1,7 @@
 #!/bin/bash -eux
 
 if [[ $PACKER_BUILDER_TYPE =~ vmware ]]; then
+    echo "==> Installing VMware Tools"
     if grep -q -i "release 6" /etc/redhat-release ; then
         # Uninstall fuse to fake out the vmware install so it won't try to
         # enable the VMware blocking filesystem
@@ -21,7 +22,7 @@ if [[ $PACKER_BUILDER_TYPE =~ vmware ]]; then
 fi
 
 if [[ $PACKER_BUILDER_TYPE =~ virtualbox ]]; then
-    echo "Installing VirtualBox guest additions"
+    echo "==> Installing VirtualBox guest additions"
 
     # Assume that we've installed all the prerequisites:
     # kernel-headers-$(uname -r) kernel-devel-$(uname -r) gcc make perl
@@ -32,4 +33,11 @@ if [[ $PACKER_BUILDER_TYPE =~ virtualbox ]]; then
     sh /mnt/VBoxLinuxAdditions.run --nox11
     umount /mnt
     rm -rf /home/vagrant/VBoxGuestAdditions_$VBOX_VERSION.iso
+
+    if [[ $VBOX_VERSION = "4.3.10" ]]; then
+        ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
+    fi
 fi
+
+echo "==> Removing packages needed for building guest tools"
+yum -y remove gcc cpp kernel-devel kernel-headers perl

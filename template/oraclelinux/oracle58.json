@@ -2,6 +2,7 @@
   "variables": {
     "provisioner": "provisionerless",
     "provisioner_version": "",
+    "provisioner_set_path": "",
     "iso_url": "http://mirrors.dotsrc.org/oracle-linux/EL5/U8/x86_64/OracleLinux-R5-U8-Server-x86_64-dvd.iso",
     "iso_checksum": "1ec844c1090a417b741a9bf0d6dea240"
   },
@@ -18,7 +19,7 @@
     "ssh_wait_timeout": "10000s",
     "tools_upload_flavor": "linux",
     "boot_command": [
-      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
+      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks5.cfg<enter>"
     ],
     "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -h now",
     "disk_size": 10140,
@@ -42,7 +43,7 @@
     "ssh_password": "vagrant",
     "ssh_wait_timeout": "10000s",
     "boot_command": [
-      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
+      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks5.cfg<enter>"
     ],
     "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -h now",
     "disk_size": 10140,
@@ -55,14 +56,15 @@
     "type": "shell",
     "environment_vars": [
       "PROVISIONER={{user `provisioner`}}",
-      "PROVISIONER_VERSION={{user `provisioner_version`}}"
+      "PROVISIONER_VERSION={{user `provisioner_version`}}",
+      "PROVISIONER_SET_PATH={{user `provisioner_set_path`}}"
     ],
     "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [
       "script/kernel.sh",
-      "script/base.sh",
-      "script/vagrant.sh",
+      "script/fix-slow-dns.sh",
       "script/sshd.sh",
+      "script/vagrant.sh",
       "script/vmtools.sh",
       "script/provisioner.sh",
       "script/cleanup.sh",
