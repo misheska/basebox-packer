@@ -39,6 +39,10 @@ if [[ $PACKER_BUILDER_TYPE =~ virtualbox ]]; then
     sh /mnt/VBoxLinuxAdditions.run --nox11
     umount /mnt
     rm -rf /home/vagrant/VBoxGuestAdditions_$VBOX_VERSION.iso
+
+    if [[ $VBOX_VERSION = "4.3.10" ]]; then
+        ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
+    fi
 fi
 
 echo "==> Removing packages needed for building guest tools"
