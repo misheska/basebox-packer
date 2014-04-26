@@ -2,8 +2,8 @@
   "variables": {
     "provisioner": "chef",
     "provisioner_version": "latest",
-    "iso_url": "../../iso/en_windows_8_1_enterprise_x86_dvd_2972289.iso",
-    "iso_checksum": "5efb981c94e1223c85f3bb504d04e0642a85c1d4"
+    "iso_url": "../../iso/en_windows_8.1_enterprise_with_update_x86_dvd_4065185.iso",
+    "iso_checksum": "fe43558b4708b4b786bc3286924813b0aad21106"
   },
   "builders": [
     {
