@@ -2,8 +2,8 @@
   "variables": {
     "provisioner": "chef",
     "provisioner_version": "latest",
-    "iso_url": "../../iso/en_windows_server_2012_r2_x64_dvd_2707946.iso",
-    "iso_checksum": "b6f063436056510357cb19cb77db781ed9c11df3"
+    "iso_url": "../../iso/en_windows_server_2012_r2_with_update_x64_dvd_4065220.iso",
+    "iso_checksum": "af9ef225a510d6d51c5520396452d4f1c1e06935"
   },
   "builders": [
     {
