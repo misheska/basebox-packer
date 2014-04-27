@@ -2,7 +2,7 @@ date > /etc/vagrant_box_build_time
 
 VAGRANT_USER=vagrant
 VAGRANT_HOME=/home/$VAGRANT_USER
-VAGRANT_KEY_URL=https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub
+VAGRANT_KEY_URL=https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub
 
 # Create Vagrant user (if not already present)
 if ! id -u $VAGRANT_USER >/dev/null 2>&1; then

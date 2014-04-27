@@ -4,7 +4,7 @@ echo '==> Configuring settings for vagrant'
 
 VAGRANT_USER=${VAGRANT_USER:-vagrant}
 VAGRANT_HOME=${VAGRANT_HOME:-/home/${VAGRANT_USER}}
-VAGRANT_SSH_KEY_URL=${VAGRANT_SSH_KEY_URL:-https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub}
+VAGRANT_SSH_KEY_URL=${VAGRANT_SSH_KEY_URL:-https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub}
 
 # Add vagrant user (if it doesn't already exist)
 if ! id -u $VAGRANT_USER >/dev/null 2>&1; then

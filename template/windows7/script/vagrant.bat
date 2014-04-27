@@ -2,7 +2,7 @@
 
 setlocal EnableExtensions EnableDelayedExpansion
 
-set VAGRANT_KEY_URL=https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub
+set VAGRANT_KEY_URL=https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub
 set AUTHORIZED_KEYS=%USERPROFILE%\.ssh\authorized_keys
 
 echo ==^> Installing vagrant public key
