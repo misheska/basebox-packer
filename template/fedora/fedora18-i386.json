@@ -2,6 +2,7 @@
   "variables": {
     "provisioner": "provisionerless",
     "provisioner_version": "",
+    "provisioner_set_path": "",
     "iso_url": "http://mirrors.kernel.org/fedora/releases/18/Fedora/i386/iso/Fedora-18-i386-DVD.iso",
     "iso_checksum": "a22e6ab7b0e5e93397e4a1d8d994693d0afb9ad46b1f47a4fe10bfbbc2e7f354"
   },
@@ -56,11 +57,12 @@
     "type": "shell",
     "environment_vars": [
       "PROVISIONER={{user `provisioner`}}",
-      "PROVISIONER_VERSION={{user `provisioner_version`}}"
+      "PROVISIONER_VERSION={{user `provisioner_version`}}",
+      "PROVISIONER_SET_PATH={{user `provisioner_set_path`}}"
     ],
     "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [
-      "script/base.sh",
+      "script/sshd.sh",
       "script/vagrant.sh",
       "script/vmtools.sh",
       "script/provisioner.sh",
