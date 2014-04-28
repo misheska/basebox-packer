@@ -1,3 +1,5 @@
+#!/bin/bash -eux
+
 # Make sure Udev doesn't block our network
 # http://6.ptmc.org/?p=164
 echo "cleaning up udev rules"

@@ -1,7 +1,7 @@
 #!/bin/bash -eux
 
 if [[ $PACKER_BUILDER_TYPE =~ vmware ]]; then
-    echo "Installing VMware Tools"
+    echo "==> Installing VMware Tools"
     apt-get install -y linux-headers-$(uname -r) build-essential perl
 
     cd /tmp
@@ -18,7 +18,7 @@ if [[ $PACKER_BUILDER_TYPE =~ vmware ]]; then
 fi
 
 if [[ $PACKER_BUILDER_TYPE =~ virtualbox ]]; then
-    echo "Installing VirtualBox guest additions"
+    echo "==> Installing VirtualBox guest additions"
 
     apt-get install -y linux-headers-$(uname -r) build-essential perl
     apt-get install -y dkms
