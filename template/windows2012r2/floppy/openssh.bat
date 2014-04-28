@@ -6,9 +6,9 @@ setlocal EnableDelayedExpansion EnableExtensions
 if not defined TEMP set TEMP=%USERPROFILE%\AppData\Local\Temp
 
 if exist "%SystemDrive%\Program Files (x86)" (
-  set OPENSSH_URL="http://www.mls-software.com/files/setupssh-6.4p1-1(x64).exe"
+  set OPENSSH_URL="http://www.mls-software.com/files/setupssh-6.6p1-1-v1(x64).exe"
 ) else (
-  set OPENSSH_URL="http://www.mls-software.com/files/setupssh-6.4p1-1.exe"
+  set OPENSSH_URL="http://www.mls-software.com/files/setupssh-6.6p1-1-v1.exe"
 )
 
 for %%i in (%OPENSSH_URL%) do SET OPENSSH_EXE="%TEMP%\%%~nxi"
