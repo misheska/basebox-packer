@@ -12,7 +12,7 @@ cmd.exe /c powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigne
 if exist C:\Windows\SysWOW64\cmd.exe C:\Windows\SysWOW64\cmd.exe /c powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force" <NUL
 @if errorlevel 1 echo ERROR: The previous command returned error %ERRORLEVEL%
 
-systeminfo | findstr /B /C:"OS Name" | findstr "Windows 7"
+systeminfo | findstr /B /C:"OS Name" | findstr /C:"Windows 7"
 if not errorlevel 1 goto no_fixnetwork
 
 :: see http://blogs.msdn.com/b/powershell/archive/2009/04/03/setting-network-location-to-private.aspx
