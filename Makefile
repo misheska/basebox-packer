@@ -1,22 +1,29 @@
 # Current valid values: provisionerless | chef | salt
-PROVISIONER := provisionerless
+PROVISIONER ?= provisionerless
 # Current valid values: latest | x.y.z | x.y
-PROVISIONER_VERSION :=
+PROVISIONER_VERSION ?=
+
+ifndef PROVISIONER_VERSION
+	ifneq ('${PROVISIONER}', 'provisionerless')
+		PROVISIONER_VERSION = latest
+	endif
+endif
+
 # Packer does not allow empty variables, so only pass variables that are defined
 ifdef PROVISIONER_VERSION
 	PACKER_VARS := -var 'provisioner=${PROVISIONER}' -var 'provisioner_version=$(PROVISIONER_VERSION)'
 else
 	PACKER_VARS := -var 'provisioner=$(PROVISIONER)'
 endif
-BUILDER_TYPES = vmware virtualbox
+BUILDER_TYPES ?= vmware virtualbox
 TEMPLATE_PATHS := $(wildcard template/*/*.json)
 TEMPLATE_FILENAMES := $(notdir ${TEMPLATE_PATHS})
 TEMPLATE_DIRS := $(dir ${TEMPLATE_PATHS})
-BOX_FILENAMES := $(TEMPLATE_FILENAMES:.json=\-$(PROVISIONER)$(PROVISIONER_VERSION).box)
+BOX_FILENAMES := $(TEMPLATE_FILENAMES:.json=-$(PROVISIONER)$(PROVISIONER_VERSION).box)
 BOX_FILES := $(foreach builder, $(BUILDER_TYPES), $(foreach box_filename, $(BOX_FILENAMES), $(builder)/$(box_filename)))
 RM = rm -f
 
-vpath %.json template/centos:template/debian:template/fedora:template/freebsd:template/opensuse:template/oraclelinux:template/osx:template/ubuntu:template/windows2008r2:template/windows2012:template/windows2012r2:template/windows7:template/windows8:template/windows81
+vpath %.json template/centos:template/debian:template/docker:template/fedora:template/oraclelinux:template/osx:template/ubuntu:template/windows2008r2:template/windows2012:template/windows2012r2:template/windows7:template/windows8:template/windows81:
 
 .PHONY: all
 all: $(BOX_FILES)
