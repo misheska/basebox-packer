@@ -1,3 +1,8 @@
+# if local.mak exists, include it
+ifneq ("$(wildcard local.mak)","")
+include local.mak
+endif
+
 # Current valid values: provisionerless | chef | salt
 PROVISIONER ?= provisionerless
 # Current valid values: latest | x.y.z | x.y

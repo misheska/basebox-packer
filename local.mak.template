@@ -1,0 +1,4 @@
+# Current valid values: provisionerless | chef | salt
+PROVISIONER ?= chef
+# Current valid values: latest | x.y.z | x.y
+PROVISIONER_VERSION ?= latest
