@@ -5,36 +5,35 @@ Packer definitions for vagrant VirtualBox and VMware baseboxes.
 These are the vagrant baseboxes I use for my own personal projects.
 This project is run against a private Jenkins instance, and as template
 definitions are added and/or updated, links to the generated images are
-added below:
+generated in [Vagrant Cloud](https://vagrantcloud.com).
 
-Current VMware Baseboxes
-========================
+All boxes currently support VMware Fusion 6.0.3/VMware Workstation 10.02
+via the vmware_desktop provider and VirtualBox via the virtualbox provider.
+Refer to the VagrantCloud documentation on [Finding and Using Boxes](https://vagrantcloud.com/help/boxes/using)
+for more information on how to integrate these boxes into your projects:
 
-## VMware Fusion 6.0.3 / VMware Workstation 10.0.2 - VMware Tools 9.6.2.31837 (build-1688356)
+Current Boxes
+==============
 
 64-bit boxes:
 
-* [ubuntu1404](https://dl.dropboxusercontent.com/s/4nsx9l7q4of22oa/ubuntu1404-provisionerless.box?dl=1&token_hash=AAGJZiONV3YbgfSKVmg-xw_b3EwzD1WC2Ti8EgIPkckEpw) - Ubuntu 14.04 64-bit (VMware Tools 9.6.2.31837 build-1378637)
+* [misheska/centos510](https://vagrantcloud.com/misheska/centos510) - CentOS 5.10 64-bit
+* [misheska/centos65](https://vagrantcloud.com/misheska/centos65) - CentOS 6.5 64-bit
+* [misheska/oracle65](https://vagrantcloud.com/misheska/oracle65) - Oracle Enterprise Linux 6.5 64-bit
+* [misheska/ubuntu1204](https://vagrantcloud.com/misheska/ubuntu1204) - Ubuntu 12.04 Server 64-bit
+* [misheska/ubuntu1204-docker](https://vagrantcloud.com/misheska/ubuntu1204-docker) - Ubuntu 12.04 Server 64-bit with Docker
+* [misheska/ubuntu1404](https://vagrantcloud.com/misheska/ubuntu1204) - Ubuntu 14.04 Server 64-bit
+* [misheska/ubuntu1404-docker](https://vagrantcloud.com/misheska/ubuntu1404-docker)) - Ubuntu 14.04 Server 64-bit with Docker
  
 
 32-bit boxes:
 
-* [ubuntu1404-i386](https://dl.dropboxusercontent.com/s/sljnrald8rpmdaa/ubuntu1404-i386-provisionerless.box?dl=1&token_hash=AAGWrROt5eCbKUZkmbfjTrvvlPhKpirxDq_PiHTAHNxtEw) - Ubuntu 14.04 32-bit (VMware Tools 9.6.2.31837 build-1378637)
+* [misheska/centos510-i386](https://vagrantcloud.com/misheska/centos510-i386) - CentOS 5.10 32-bit
+* [misheska/centos65-i386](https://vagrantcloud.com/misheska/centos65-i386) - CentOS 6.5 32-bit
+* [misheska/oracle65-i386](https://vagrantcloud.com/misheska/oracle65-i386) - Oracle Enterprise Linux 6.5 32-bit
+* [misheska/ubuntu1204-i386](https://vagrantcloud.com/misheska/ubuntu1204-i386) - Ubuntu 12.04 Server 32-bit
+* [misheska/ubuntu1404-i386](https://vagrantcloud.com/misheska/ubuntu1404-i386) - Ubuntu 14.04 Server 32-bit
 
-
-Current VirtualBox Baseboxes
-============================
-
-## VirtualBox 4.3.10
-
-64-bit boxes:
-
-* [ubuntu1404](https://dl.dropboxusercontent.com/s/hxvl5cbnsbh11u4/ubuntu1404-provisionerless.box?dl=1&token_hash=AAGgieIVpfXetzEZcLFZFSqgVZV3__R5fU_-SDBp5krLMA) - Ubuntu 14.04 64-bit (VirtualBox 4.3.10 Guest Additions)
-
-
-32-bit boxes:
-
-* [ubuntu1404-i386](https://dl.dropboxusercontent.com/s/tgt6lxi6ty0qzie/ubuntu1404-i386-provisionerless.box?dl=1&token_hash=AAG2gNPZ1pMqQn__wN7dAWskCAjPMKEWGdwrGv5ETAyRog) - Ubunt u14.04 32-bit (VirtualBox 4.3.10 Guest Additions)
 
 
 Getting Started
