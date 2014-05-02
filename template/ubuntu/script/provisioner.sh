@@ -87,7 +87,7 @@ case "${PROVISIONER}" in
     install_salt
     ;;
 
-  'salt')
+  'puppet')
     install_puppet
     ;;
 
