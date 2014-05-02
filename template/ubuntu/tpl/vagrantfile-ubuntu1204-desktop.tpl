@@ -7,9 +7,8 @@ Vagrant.configure("2") do |config|
  
     # Berkshelf
     # config.berkshelf.enabled = true
-  
-    # Shell - Hello World
-    # config.vm.provision :shell, :inline => "C:\\vagrant\\scripts\\HelloWorld.bat"
+
+    config.vm.synced_folder "src/", "/srv/website", disabled: true  
   
     config.vm.provider :virtualbox do |v, override|
         v.gui = true

@@ -35,7 +35,7 @@
       " netcfg/get_domain=vm",
       " netcfg/get_hostname=vagrant",
       " noapic" ,
-      " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-desktop.cfg",
+      " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-desktop-1204.cfg",
       " -- ",
       "<enter>"
     ],
@@ -64,7 +64,7 @@
     "boot_command": [
       "<esc><esc><enter><wait>",
       "/install/vmlinuz noapic ",
-      "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-desktop.cfg ",
+      "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-desktop-1204.cfg ",
       "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
       "hostname={{ .Name }} ",
       "fb=false debconf/frontend=noninteractive ",
