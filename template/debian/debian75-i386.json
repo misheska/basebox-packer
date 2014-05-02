@@ -7,7 +7,7 @@
     "iso_checksum_type": "sha1"
   },
   "builders": [{
-    "vm_name": "debian74-i386",
+    "vm_name": "debian75-i386",
     "type": "vmware-iso",
     "guest_os_type": "debian7",
     "http_directory": "http",
@@ -39,7 +39,7 @@
     }
   },
   {
-    "vm_name": "debian74-i386",
+    "vm_name": "debian75-i386",
     "type": "virtualbox-iso",
     "http_directory": "http",
     "iso_url": "{{user `iso_url`}}",
@@ -89,6 +89,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": false,
-    "output": "../../{{.Provider}}/debian74-i386-{{user `provisioner`}}{{user `provisioner_version`}}.box"
+    "output": "../../{{.Provider}}/debian75-i386-{{user `provisioner`}}{{user `provisioner_version`}}.box"
   }]
 }
