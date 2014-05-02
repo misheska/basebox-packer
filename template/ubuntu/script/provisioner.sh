@@ -7,6 +7,7 @@
 #   'provisionerless' -- build a box without a provisioner
 #   'chef'            -- build a box with the Chef provisioner
 #   'salt'            -- build a box with the Salt provisioner
+#   'puppet'          -- build a box with the Puppet provisioner
 #
 # When $PROVISIONER != 'provisionerless' valid options for
 # $PROVISIONER_VERSION are:
@@ -58,6 +59,21 @@ install_salt()
     fi
 }
 
+install_puppet()
+{
+    echo "==> Installing Puppet provisioner"
+    source /etc/lsb-release
+    
+    if [[ ${DISTRIB_ID} == 'Ubuntu' ]]; then
+        wget http://apt.puppetlabs.com/puppetlabs-release-${DISTRIB_CODENAME}.deb
+        dpkg -i puppetlabs-release-${DISTRIB_CODENAME}.deb
+        apt-get update
+        apt-get install -y puppet facter
+    else
+        echo "This is not Ubuntu.  Provisioner not installed."
+    fi
+}
+
 #
 # Main script
 #
@@ -65,6 +81,10 @@ install_salt()
 case "${PROVISIONER}" in
   'chef')
     install_chef
+    ;;
+
+  'salt')
+    install_salt
     ;;
 
   'salt')
