@@ -7,5 +7,6 @@ crash.log
 tmp
 .vagrant/
 *.swp
+/local.mak
 
 .DS_Store
