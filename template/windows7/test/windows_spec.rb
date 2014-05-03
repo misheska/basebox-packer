@@ -1,4 +1,4 @@
-require_relative 'spec_helper'
+require 'spec_helper'
 
 describe port(22) do
   it 'should be listening on port 22' do
