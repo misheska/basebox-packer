@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
-describe port(22) do
-  it 'should be listening on port 22' do
-    expect(port '22').to be_listening
+describe 'box' do
+  it 'should have a root user' do
+    expect(user 'root').to exist
   end
 end
