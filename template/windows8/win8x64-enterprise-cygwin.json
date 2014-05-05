@@ -27,7 +27,7 @@
         "floppy/cygwin.sh",
         "floppy/cygwin.bat",
         "floppy/_uninstall-cygwin.bat",
-        "floppy/zz-start-sshd.cmd" 
+        "floppy/zz-start-sshd.cmd"
       ],
       "tools_upload_flavor": "windows",
       "ssh_wait_timeout": "10000s",
@@ -84,7 +84,11 @@
       "scripts": [
         "script/vagrant.bat",
         "script/provisioner.bat",
-        "script/vmtools.bat"
+        "script/vmtools.bat",
+        "script/clean.bat",
+        "script/ultradefrag.bat",
+        "script/uninstall-7zip.bat",
+        "script/sdelete.bat"
       ]
     },
     {
