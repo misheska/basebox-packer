@@ -6,7 +6,7 @@ setlocal EnableExtensions EnableDelayedExpansion
 if not defined TEMP set TEMP=%USERPROFILE%\AppData\Local\Temp
 
 if "%PROVISIONER%" == "chef" goto chef
-if "%PROVISIONER%" == "provisionless" goto provisionless
+if "%PROVISIONER%" == "provisionerless" goto provisionerless
 
 echo ==^> ERROR: Unknown provisioner: "%PROVISIONER%"
 
@@ -34,10 +34,15 @@ msiexec /qb /i "%LOCAL_DESTINATION_MSI_PATH%"
 echo ==^> Cleaning up Chef install
 del /F /Q "%LOCAL_DESTINATION_MSI_PATH%"
 
-goto :eof
+goto finish
 
-:provisionless
+:provisionerless
 
 echo ==^> Building box without a provisioner.
 
-goto :eof
+goto finish
+
+:finish
+
+exit 0
+
