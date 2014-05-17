@@ -27,6 +27,7 @@ function docker_install {
     apt-get update
 
     apt-get install -y docker.io
+    ln -sf /usr/bin/docker.io /usr/local/bin/docker
 
     # Enable memory and swap accounting
     sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"/' /etc/default/grub
