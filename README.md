@@ -22,7 +22,7 @@ Current Boxes
 * [misheska/oracle65](https://vagrantcloud.com/misheska/oracle65) - Oracle Enterprise Linux 6.5 64-bit
 * [misheska/ubuntu1204](https://vagrantcloud.com/misheska/ubuntu1204) - Ubuntu 12.04 Server 64-bit
 * [misheska/ubuntu1204-docker](https://vagrantcloud.com/misheska/ubuntu1204-docker) - Ubuntu 12.04 Server 64-bit with Docker
-* [misheska/ubuntu1404](https://vagrantcloud.com/misheska/ubuntu1204) - Ubuntu 14.04 Server 64-bit
+* [misheska/ubuntu1404](https://vagrantcloud.com/misheska/ubuntu1404) - Ubuntu 14.04 Server 64-bit
 * [misheska/ubuntu1404-docker](https://vagrantcloud.com/misheska/ubuntu1404-docker) - Ubuntu 14.04 Server 64-bit with Docker
  
 
