@@ -1,6 +1,0 @@
-.DS_Store
-packer_cache
-*.dmg
-*.box
-AutoPartition-*
-output-vmware
